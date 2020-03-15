@@ -1,0 +1,9 @@
+Modificações deste guia:
+
+Leonardo Ferreira dos Santos - 14/03/2020
+
+Organização das pastas
+
+	Documentos ---->|Doc de Visão de Negócio-Sistema Web.docx
+			|Documento de ES REQ Sistema Web.docx
+			|Documento de Negócio Webcrawler PMMC.docx
