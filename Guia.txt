@@ -1,9 +1,10 @@
-ModificaÁıes deste guia:
+Modifica√ß√µes deste guia:
 
 Leonardo Ferreira dos Santos - 14/03/2020
 
-OrganizaÁ„o das pastas
+Organiza√ß√£o das pastas
 
-	Documentos ---->|Doc de Vis„o de NegÛcio-Sistema Web.docx
+	Documentos ---->|Doc de Vis√£o de Neg√≥cio-Sistema Web.docx
 			|Documento de ES REQ Sistema Web.docx
-			|Documento de NegÛcio Webcrawler PMMC.docx
+			|Documento de Neg√≥cio Webcrawler PMMC.docx
+			|Pmmc.xd
