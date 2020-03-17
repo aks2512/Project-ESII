@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Modificações deste guia:
 
 Leonardo Ferreira dos Santos - 14/03/2020
@@ -7,3 +8,15 @@ Organização das pastas
 	Documentos ---->|Doc de Visão de Negócio-Sistema Web.docx
 			|Documento de ES REQ Sistema Web.docx
 			|Documento de Negócio Webcrawler PMMC.docx
+=======
+ModificaÃ§Ãµes deste guia:
+
+Leonardo Ferreira dos Santos - 14/03/2020
+
+OrganizaÃ§Ã£o das pastas
+
+	Documentos ---->|Doc de VisÃ£o de NegÃ³cio-Sistema Web.docx
+			|Documento de ES REQ Sistema Web.docx
+			|Documento de NegÃ³cio Webcrawler PMMC.docx
+			|Pmmc.xd
+>>>>>>> 7a1ea35848da8e4f05c9fe34774398550249c0ab
