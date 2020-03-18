@@ -1,32 +1,100 @@
-.principal button{
-    margin-top: 50px;
-    border: 0px;
-    padding:13px;
-    border-radius: 90px;
-    color:white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    font-size: 30pt;
-    background-color: aqua;
+body{
+    font-family: Nirmala UI;
+    font-weight: bold;
+    color: white;
 }
 
-#rodape p2{
+#banner{
+    background-image: url('./Imagens/FundoPrincipal.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height:100vh;
+    overflow: hidden;
+}
+
+#banner h1{
+    font-size: 100px;
+    text-shadow: 2px 2px 0px black;
+    font-family: Nirmala UI;
+    font-weight: bold;
+    color: white;
+    padding: 50px 0px;
+}
+
+#banner p{
+    text-shadow: 2px 1px 0px black;
+    font-size: 30px;
+    font-family: Nirmala UI;
+    font-weight: bold;
+    color: white;
+}
+
+#banner a{
+    font-size: 30px;
+    color: white;
+    background: #00E5FF;
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 15px 10px;
+}
+
+#btn-conteudo{
+    border-radius: 40px;
+    background-color: #00E5FF;
+    padding: 10px;
+}
+
+#btn-conteudo:hover{
+    border: 2px solid blue;
+    border-radius: 40px;
+    background-color: #00E5FF;
+    padding: 10px;
+}
+
+#footer{
+    text-align: center;
+    background-color: #919191;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#footer div p{
+    margin: 0;
+}
+#NomeMenu{
+    font-family: Nirmala UI;
+    font-weight: bold;
     align-items: center;
-    font-size: 25pt;
-    text-shadow: black 1px 1px 0px;
+    border-radius: 25px;
+    border:2px solid black;
+    width:364px;
+    height: 273px;
+}
+#NomeMenu h3{
+    font-family: Nirmala UI;
+    font-weight: bold;
+    font-size: 40pt;
+}
+#NomeMenu a{
+    color: #919191;
+    display: block;
+}
+#menuprincipal h1{
+    font-size: 70pt;
+}
+#menuprincipal p{
+    font-size: 20pt;
 }
 
-img {
-    align-items:center;
-    margin-left: auto;
-    margin-right: auto;
+#NavegacaoPrincipal{
+    border-radius: 25px;
+    border:2px solid black;
 }
-#rodape{
-    vertical-align: bottom;
-    background-color: gray;
-    text-align: center;
-}
-
-.cabecalho {
+#NavegacaoPrincipal h2{
+    color:#54E9DA;
     text-align: center;
 }
