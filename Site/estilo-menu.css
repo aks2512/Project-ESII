@@ -1,0 +1,50 @@
+#NomeMenu{
+    font-family: Nirmala UI;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 25px;
+    border:2px solid black;
+    width:364px;
+    height: 273px;
+}
+#NomeMenu h3{
+    font-family: Nirmala UI;
+    font-weight: bold;
+    font-size: 40pt;
+}
+#NomeMenu a{
+    color: #919191;
+    display: block;
+}
+#menuprincipal h1{
+    font-size: 70pt;
+}
+#menuprincipal p{
+    font-size: 20pt;
+}
+
+#NavegacaoPrincipal{
+    border-radius: 25px;
+    border:2px solid black;
+}
+#NavegacaoPrincipal h2{
+    color:#54E9DA;
+    text-align: center;
+}
+
+#footer{
+    text-align: center;
+    background-color: #919191;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#footer img{
+    padding-right: 50px;
+}
+
+#footer p{
+    margin: 0;
+}
