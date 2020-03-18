@@ -1,11 +1,32 @@
-#principalhome{
-    background-image: url();
-}
-.imagem-mogi {
-    background-image: url();
+.principal button{
+    margin-top: 50px;
+    border: 0px;
+    padding:13px;
+    border-radius: 90px;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 30pt;
+    background-color: aqua;
 }
 
 #rodape p2{
+    align-items: center;
     font-size: 25pt;
     text-shadow: black 1px 1px 0px;
+}
+
+img {
+    align-items:center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#rodape{
+    vertical-align: bottom;
+    background-color: gray;
+    text-align: center;
+}
+
+.cabecalho {
+    text-align: center;
 }
