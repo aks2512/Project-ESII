@@ -1,0 +1,50 @@
+div{
+    text-align: center;
+}
+
+h3{
+    color: #54E9DA;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Nirmala UI;
+}
+
+p{
+    font-weight: normal;
+    font-size: 15px;
+    font-family: Nirmala UI;
+}
+
+#informacao p{
+    font-weight: bold;
+}
+
+#informacao-conteudo p{
+    border: 1px solid black;
+}
+
+#btn-comparar{
+    color: white;
+    font-weight: bold;
+    background-color: #54E9DA;
+}
+
+.mt-60{
+    margin-top: 60px;
+}
+
+.mt-15{
+    margin-top: 15px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.bg-color{
+    background-color: #54E9DA;
+}
+
+.white-color{
+    color: white;
+}

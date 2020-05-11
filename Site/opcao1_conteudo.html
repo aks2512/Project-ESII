@@ -1,0 +1,211 @@
+<link rel="stylesheet" href="estilo-opcao1.css">
+<div class="row justify-content-center">
+  <div class="col-md-10">
+    <h3>Servidores Públicos</h3>
+    <p class="text-left">
+      Gastos com servidores públicos, dentro dos limites estabelecidos pela Lei de Responsabilidade
+      Fiscal, podem ser verificados e acompanhados periodicamente.
+    </p>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-3">
+    <span>
+      MOSTRAR
+      <select name="MOSTRAR" id="qtd-registro">
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </span>
+  </div>
+  <div class="col-md-3">
+    <span>
+      FILTRO
+      <select name="FILTRO" id="filtro">
+        <option value="NOME">NOME</option>
+        <option value="SALÁRIO">SALÁRIO</option>
+        <option value="CARGO">CARGO</option>
+      </select>
+    </span>
+  </div>
+  <div class="col-md-5">
+    <span>
+      BUSCAR <input type="text">
+    </span>
+  </div>
+</div>
+<div class="row justify-content-center mt-60">
+  <div class="col-md-6 text-right">
+    <a class="btn bg-color white-color bold" href="">MOSTRAR GRAFICO</a>
+  </div>
+  <div class="col-md-6">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <span class="page-link">Anterior</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            2
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Proximo</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="col-md-12">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Cargo</th>
+        <th scope="col">Remuneração</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td><img src="Imagens/plus_logo.png" alt="" data-toggle="modal" data-target="#exampleModal"></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        <td><img src="Imagens/plus_logo.png" alt="" data-toggle="modal" data-target="#exampleModal"></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+        <td><img src="Imagens/plus_logo.png" alt="" data-toggle="modal" data-target="#exampleModal"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="col-md-6 text-center">
+    <p>1 até 10 de 5,691 registros</p>
+  </div>
+  <div class="col-md-6">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <span class="page-link">Anterior</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            2
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Proximo</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-color">
+        <div class="row justify-content-end">
+          <img src="Imagens/usuario.png" alt="" class="col-md-2">
+          <h5 class="modal-title col-md-9" id="exampleModalLabel">Jefferson Akira Fukamizu</h5>
+          <button type="button" class="close col-md-1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </div>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 text-left">
+            <p class="bold">Cargo:<br>
+              Aux Administrativo</p>
+          </div>
+          <div class="col-md-12 text-left">
+            <p class="bold">Referência:<br>
+              Fev/2020</p>
+          </div>
+          <div class="col-md-12 text-left">
+            <p class="bold">Total Bruto:<br>
+              1418,99</p>
+          </div>
+          <div class="col-md-12 text-left">
+            <p class="bold">Total Bruto:<br>
+              1418,99</p>
+          </div>
+          <div class="col-md-12 text-left">
+            <p class="bold">Total Liquido:<br>
+              1418,99</p>
+          </div>
+          <div class="col-md-12 text-left">
+            <p class="bold">Total de Descontos:<br>
+              0</p>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-md-12 text-left">
+              <p>Remuneração</p>
+              <hr>
+              <div class="row">
+                <div class="col-md-6 text-left">
+                  <p>VENCIMENTO</p>
+                </div>
+                <div class="col-md-6 text-left">
+                  <p>1642,97</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 text-left">
+              <p>Descontos Obrigatorios:</p>
+              <hr>
+              <div class="row">
+                <div class="col-md-6 text-left">
+                  <p>IPREM</p>
+                </div>
+                <div class="col-md-6 text-left">
+                  <p>180,73</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 text-left">
+              <p>Outros Descontos:</p>
+              <hr>
+              <div class="row">
+                <div class="col-md-6 text-left">
+                  <p>Outros</p>
+                </div>
+                <div class="col-md-6 text-left">
+                  <p>248,07</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

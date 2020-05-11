@@ -1,35 +1,66 @@
-#NomeMenu{
-    font-family: Nirmala UI;
-    font-weight: bold;
-    align-items: center;
-    border-radius: 25px;
-    border:2px solid black;
-    width:364px;
-    height: 273px;
-}
-#NomeMenu h3{
-    font-family: Nirmala UI;
-    font-weight: bold;
-    font-size: 40pt;
-}
-#NomeMenu a{
-    color: #919191;
-    display: block;
-}
-#menuprincipal h1{
-    font-size: 70pt;
-}
-#menuprincipal p{
-    font-size: 20pt;
+body{
+    background-color: #D8D8D8!important;
 }
 
-#NavegacaoPrincipal{
-    border-radius: 25px;
-    border:2px solid black;
+
+
+#transparencia h1{
+    font-weight: bold;
+    font-family: Nirmala UI;
+    font-size: 60px;
+    color: white;
 }
-#NavegacaoPrincipal h2{
-    color:#54E9DA;
+
+#transparencia p{
+    font-weight: bold;
+    font-family: Nirmala UI;
+    font-size: 15px;
+    color: white;
+}
+
+#menu{
     text-align: center;
+    height: 190px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0px;
+}
+
+#menu h4{
+    font-family: Nirmala UI;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#menu ul{
+    list-style: none!important;
+    padding: 0px;
+}
+
+#menu li{
+    margin: 20px 0px;
+}
+
+#menu a{
+    font-size: 14px;
+    font-weight: 900;
+    color: #919191;
+}
+
+#menu a:hover{
+    text-decoration: none;
+    color: #7dc3f1;
+}
+
+#funcoes{
+    height: 631px;
+    margin-bottom: 40px;
+    color: #919191;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0px;
 }
 
 #footer{
@@ -39,6 +70,9 @@
     color: white;
     font-size: 15px;
     font-weight: bold;
+    width: 100%;
+    position: relative!important;
+    bottom: 0;
 }
 
 #footer img{
