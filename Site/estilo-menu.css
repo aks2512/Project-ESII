@@ -71,7 +71,7 @@ body{
     font-size: 15px;
     font-weight: bold;
     width: 100%;
-    position: relative!important;
+    position: fixed;
     bottom: 0;
 }
 
