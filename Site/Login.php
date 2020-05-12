@@ -1,0 +1,69 @@
+<?php
+    $q= isset($_GET['q']) ? $_GET['erro'] : 0;
+    if($q=='1')
+    {
+        ?>
+            <script>
+                document.getElementById('errmsg').innerHTML = "Erro ao inserir funcionário";
+            </script>
+        <?php
+    }
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="css/estilo-adm.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Página de Início</title>
+</head>
+
+<body>
+    <div id="banner" class="img-fluid">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-12">
+                    <img class="img-fluid" src="imagens/mogi-logo.png" id="imagemcomdesvio" alt="">
+                </div>
+                <div class="col-md-5">
+                    <form method="POST" id="formulariologin" action="PHP_Action/checarlogin.php"> 
+
+                        <div class="form-group" id="formalinhado">
+                            <label for="Usuario">Usuário:</label>
+                            <input name="user" type="text" class="form-control" id="inputbox" placeholder="Usuario" maxlength="32">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Senha">Senha:</label>
+                            <input name="pass" type="password" class="form-control" id="inputbox" placeholder="Senha" maxlength="22">
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" id="botaoentrar" class="btn btn-secondary" value="ACESSAR">Entrar</button>
+                        </div>
+                    </form>
+                    <div id="errmsg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <footer id="footer" class="footer-fixed-bottom">
+        <div class="container">
+            <div class="row align-items-end justify-content-center">
+                <img id="fatec" class="img-fluid" src="./Imagens/fatec.png" alt="">
+                <p>Desenvolvido pelos alunos da Fatec Mogi das Cruzes, orientados pelo professor Leandro Luque</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <scrip src="node_modules/@popperjs\core/dist/umd/popper.js"></scrip>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+
+</html>

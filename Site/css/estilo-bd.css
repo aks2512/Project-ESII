@@ -1,0 +1,116 @@
+body {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+}
+
+#titulo {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#formulario-funcionarios {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 35px;
+    background-color: rgba(246, 246, 255, 0.782);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.531);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footer {
+    text-align: center;
+    background-color: #919191;
+    padding: 10px;
+    height: 70px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#footer img {
+    padding-right: 50px;
+}
+
+#footer p {
+    margin: 0;
+}
+
+.form-group label {
+    color: rgb(61, 61, 61);
+}
+
+#botao {
+    font-weight: bold;
+    width: 150px;
+}
+
+#button-holder {
+    width: 100%;
+}
+
+#inputbox {
+    color: rgb(61, 61, 61);
+    border: 1px solid rgba(0, 0, 0, 0.326);
+    background-color: rgba(0, 0, 0, 0.238);
+}
+
+#inputbox:hover {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.455);
+}
+
+
+#site {
+    align-items: center;
+    background-size: cover;
+    background-image: url(../imagens/Fundo-banco.png)
+}
+
+#msg {
+    color: black;
+    font-weight: bold;
+    background-color: rgba(0, 128, 0, 0.564);
+}
+
+@media screen and (max-width: 1200px) {
+    #banner h1 {
+        font-size: 80px !important;
+    }
+
+    #banner p {
+        font-size: 40px !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #footer img {
+        padding-right: 0px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #banner h1 {
+        font-size: 70px !important;
+    }
+
+    #banner p {
+        font-size: 40px !important;
+    }
+}
+
+@media screen and (max-width: 522px) {
+    #banner h1 {
+        font-size: 45px !important;
+    }
+
+    #banner p {
+        font-size: 20px !important;
+    }
+
+    #banner a {
+        font-size: 20px;
+    }
+}
