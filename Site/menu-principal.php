@@ -69,8 +69,6 @@
                     <p1>Buscar</p1>
                     <input id="busca" type="text">
 
-                    <input class="Buscar" type="button"  title="Iniciar pesquisa">
-
                 </form>
 
                 <!-- Mostrar Gráfico -->
@@ -107,20 +105,20 @@
 
     <script>
         $(document).ready(function(){
-            $('.Buscar').click(function(){
+            $('#busca').keyup(function(){
                 var filtro = document.getElementById('filtro').value;
                 var linhas = document.getElementById('controlalinhas').value;
                 var busca = document.getElementById('busca').value;
-                $.ajax({
-                type:"POST",
-                url: "processartabela.php",
-                data: {'filtro': filtro, 'linhas': linhas,'busca': busca},
-                success: function(dados){
-                document.getElementById('conteudo-tabela').innerHTML = dados;
-            }
-        });
+                    $.ajax({
+                        type:"POST",
+                        url: "processartabela.php",
+                        data: {'filtro': filtro, 'linhas': linhas,'busca': busca},
+                        success: function(dados){
+                        document.getElementById('conteudo-tabela').innerHTML = dados;
+                        }
+                    })
+                });
             });
-        });
     </script>
 
     <!-- ajax -->
