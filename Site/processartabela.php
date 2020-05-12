@@ -3,17 +3,21 @@
     $linhas = $_POST['linhas'];
     $busca = $_POST['busca'];
 
+
+    //conexão com banco de dados
     $conn = new mysqli("localhost", "root", "", "transparenciamc");
     if( $conn ->connect_error) {
     exit('Erro na conexao');
     }
 
+
+    //obs: a variavel $busca está entre aspas simples pois deve ser analisada como valor e não como coluna
     $sql = "SELECT id,Nome,Cargo,Remuneracao FROM funcionarios_bd WHERE '$busca' = $filtro";
 
     $query =  $conn->query($sql);
     
 
-    if(!$query){
+    if(!$query){//Detecta erro da query
         trigger_error('Invalid query'.$conn->error);
     }
 
@@ -27,7 +31,7 @@
             $response = $response.'<td>'.$row["Remuneracao"].'</td>';
             $response = $response.'<td><button id="maisinfo" class="btn btn-primary">+</button><td>';
             $response = $response.'</tr>';
-            echo $response;
+            echo $response;//retorno
         }
         
       } else {
