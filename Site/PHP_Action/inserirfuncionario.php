@@ -27,12 +27,15 @@
                             "VALUES"."('NULL' , '$Nome', '$Cargo', '$Remuneracao', '$Modificado', '$Regime', '$Tbruto', '$Tliquido', '$Tdescontos', '$DescontosObr' , '$OutrosDescontos')";
 
                             if (mysqli_query($conn, $sql)) {
-                                header('BD.php?q=2');
+                            echo "Dados inseridos com sucesso!";
                             } else {
-                                echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
-                                header('BD.php?q=1');
+                            echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
                             }
 
                             mysqli_close($conn);
-                            $conn = null;
+                            
                             ?>
+                                                
+                                                    $conn = null;
+                   
+?>
