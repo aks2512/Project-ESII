@@ -1,0 +1,98 @@
+body{
+    background-color: #D8D8D8!important;
+}
+
+
+
+#transparencia h1{
+    font-weight: bold;
+    font-family: Nirmala UI;
+    font-size: 60px;
+    color: white;
+}
+
+#transparencia p{
+    font-weight: bold;
+    font-family: Nirmala UI;
+    font-size: 15px;
+    color: white;
+}
+
+#maisinfo{
+    background-color: #919191;
+    border: 0px;
+}
+
+#menu{
+    text-align: center;
+    height: 190px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0px;
+}
+
+#menu h4{
+    font-family: Nirmala UI;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#menu ul{
+    list-style: none!important;
+    padding: 0px;
+}
+
+#menu li{
+    margin: 20px 0px;
+}
+
+#menu a{
+    font-size: 14px;
+    font-weight: 900;
+    color: #919191;
+}
+
+#menu a:hover{
+    text-decoration: none;
+    color: #7dc3f1;
+}
+
+#funcoes{
+    min-height: 650px;
+    height: auto;
+    margin-bottom: 40px;
+    color: #919191;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 0px;
+}
+
+#footer{
+    text-align: center;
+    background-color: #919191;
+    padding: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    position: relative!important;
+    bottom: 0;
+}
+
+#footer img{
+    padding-right: 50px;
+}
+
+#footer p{
+    margin: 0;
+}
+
+#formulario-pesquisa{
+    margin-top:10px;
+}
+
+#tabela-principal{
+    margin-top:20px;
+}
