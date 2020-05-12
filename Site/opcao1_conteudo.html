@@ -1,18 +1,26 @@
 <header>
   <link rel="stylesheet" href="estilo-opcao1.css">
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  
+
   <script type="text/javascript">
-    $(document).ready(function(){
-        $.ajax({
-          url: 'get_funcionarios.php',
-          method: 'POST',
-          data: $('buscar-input'),
-          success: function(data){
-            $('#tabela-funcionarios').html(data);
-          }
+    $(document).ready(function () {
+      $('#buscar').keyup(function () {
+
+        $('form').submit(function () {
+
+          var dados = $(this).serialize;
+
+          $.ajax({
+            url: 'get_funcionarios.php',
+            method: 'POST',
+            data: data,
+            success: function (data) {
+              $('#tabela-funcionarios').empty().html(data);
+            }
+          })
         });
       });
+    });
   </script>
 </header>
 <div class="row justify-content-center">
@@ -24,34 +32,41 @@
     </p>
   </div>
 </div>
-<div class="row justify-content-center">
-  <div class="col-md-3">
-    <span>
-      MOSTRAR
-      <select name="MOSTRAR" id="qtd-registro">
-        <option value="10">10</option>
-        <option value="25">25</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-      </select>
-    </span>
+
+<!-- Form -->
+<form>
+  <div class="row justify-content-center">
+    <div class="col-md-3">
+      <span>
+        MOSTRAR
+        <select name="MOSTRAR" id="mostrar">
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </span>
+    </div>
+    <div class="col-md-3">
+      <span>
+        FILTRO
+        <select name="FILTRO" id="filtro">
+          <option value="NOME">NOME</option>
+          <option value="SALÁRIO">SALÁRIO</option>
+          <option value="CARGO">CARGO</option>
+        </select>
+      </span>
+    </div>
+    <div class="col-md-5">
+      <span>
+        BUSCAR <input type="text" id="buscar">
+      </span>
+      <button type="submit" class="btn btn-primary" id="submit">Enviar</button>
+    </div>
   </div>
-  <div class="col-md-3">
-    <span>
-      FILTRO
-      <select name="FILTRO" id="filtro">
-        <option value="NOME">NOME</option>
-        <option value="SALÁRIO">SALÁRIO</option>
-        <option value="CARGO">CARGO</option>
-      </select>
-    </span>
-  </div>
-  <div class="col-md-5">
-    <span>
-      BUSCAR <input type="text">
-    </span>
-  </div>
-</div>
+</form>
+<!-- /Form -->
+
 <div class="row justify-content-center mt-60">
   <div class="col-md-6 text-right">
     <a class="btn bg-color white-color bold" href="">MOSTRAR GRAFICO</a>
@@ -88,7 +103,7 @@
       </tr>
     </thead>
     <tbody id="tabela-funcionarios">
-      
+
     </tbody>
   </table>
 </div>

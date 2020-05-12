@@ -38,8 +38,10 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id`, `nome`, `cargo`, `remuneracao`) VALUES
-(1, 'jeffleo', 'jeff', 10),
-(2, 'jeffleo2', 'jeff2', 10);
+(1, 'Jefferson', 'Administrador', 10),
+(2, 'Danilo', 'Administrador', 10),
+(3, 'jefferson', 'Volta highlord', 10),
+(4, 'Leonardo', 'Aux ti', 10);
 
 --
 -- Indexes for dumped tables

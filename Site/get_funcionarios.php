@@ -1,35 +1,36 @@
 <?php
+    require_once('db.class.php');
 
-class db{
+    
+    $mostrar = $_POST['mostrar'];
+    $filtro = $_POST['filtro'];
+    $buscar = $_POST['buscar'];
+    $objDb = new db();
+    $link = $objDb->conecta_mysql();
+    
+    $sql = " SELECT u.*, us.* ";
+    $sql.= " FROM funcionarios";
+    $sql.= " WHERE nome like '%$buscar%'";
 
-    //host
-    private $host = 'localhost';
+    $resultado_id = mysqli_query($link, $sql);
 
-    //usuario
-    private $usuario = 'root';
+    if($resultado_id){
 
-    //senha
-    private $senha = '';
+        while($registro = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)){
 
-    //banco de dados
-    private $database = 'pmmc_db';
+            echo'<tr>';
+                echo'<th scope="row">'.$registro['id'].'</th>';
+                echo'<td>'.$registro['nome']'</td>';
+                echo'<td>'.$registro['cargo']'</td>';
+                echo'<td>'.$registro['remuneracao']'</td>';
+            echo'</tr>
 
-    public function conecta_mysql(){
-
-        //cria a conexao
-        $con = mysqli_connect($this->host, $this->usuario, $this->senha, $this->database);
-
-        //ajustar o charset de comunicação entre a aplicação e o banco de dados
-        mysqli_set_charset($con, 'utf8');
-
-        //verificar se houve erro de conexão
-        if(mysqli_connect_errno()){
-            echo 'Erro ao tentar se conectar com o BD MySQL: '.mysqli_connect_error();
         }
 
-        return $con;
-    }
+    }else{
+    
+        echo 'Erro na consulta!';
 
-}
+    }
 
 ?>
