@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <title>Document</title>
     
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
 </head>
 
@@ -103,22 +102,7 @@
         </div>
     </footer>
 
-    <script>
-        $(document).ready(function(){
-            $('#busca').keyup(function(){
-                var filtro = document.getElementById('filtro').value;
-                var linhas = document.getElementById('controlalinhas').value;
-                var busca = document.getElementById('busca').value;
-                    $.ajax({
-                        type:"POST",
-                        url: "processartabela.php",
-                        data: {'filtro': filtro, 'linhas': linhas,'busca': busca},
-                        success: function(dados){
-                        document.getElementById('conteudo-tabela').innerHTML = dados;
-                        }
-                    })
-                });
-            });
+    <script src="main.js">
     </script>
 
     <!-- ajax -->
