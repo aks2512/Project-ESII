@@ -57,6 +57,12 @@ body {
     background-color: rgba(0, 0, 0, 0.238);
 }
 
+#repeat-input {
+    color: rgb(61, 61, 61);
+    border: 1px solid rgba(0, 0, 0, 0.326);
+    background-color: rgba(0, 0, 0, 0.238);
+}
+
 #inputbox:hover {
     color: black;
     background-color: rgba(0, 0, 0, 0.455);

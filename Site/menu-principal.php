@@ -58,13 +58,6 @@
                         <option value=100>100</option>
                     </select>
 
-                    <p1>Filtro:</p1>
-                    <select name="Filtro" id="filtro" title="O filtro escolhe a coluna qual você vai pesquisar">
-                        <option value="Nome">Nome</option>
-                        <option value="Remuneracao">Remuneração</option>
-                        <option value="Cargo">Cargo</option>
-                    </select>
-
                     <p1>Buscar</p1>
                     <input id="busca" type="text">
 
@@ -83,6 +76,7 @@
                             <th scope="col">Cargo</th>
                             <th scope="col">Remuneração</th>
                             <th scope="col">*</th>
+                            <th scope="col"> </th>
                         </tr>
                     </thead>
                     <tbody id="conteudo-tabela">
@@ -102,27 +96,8 @@
         </div>
     </footer>
 
+    <!-- Javascript -->
     <script src="main.js">
-    </script>
-
-    <!-- ajax -->
-    <script>
-        $(document).ready(function () {
-            $('.menu-opcao').click(function () {
-                var carrega_url = this.id;
-                carrega_url = carrega_url + '_conteudo.html';
-
-                $.ajax({
-                    url: carrega_url,
-
-                    success: function (data) {
-                        $('#funcoes').html(data);
-                    }
-
-                });
-            });
-        });
-
     </script>
     
     <script src="node_modules/jquery/dist/jquery.js"></script>
