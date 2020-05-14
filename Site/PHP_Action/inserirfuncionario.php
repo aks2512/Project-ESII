@@ -33,6 +33,8 @@
                                 header('BD.php?q=1');
                             }
 
+
                             mysqli_close($conn);
                             $conn = null;
+                            header('BD.php')
                             ?>

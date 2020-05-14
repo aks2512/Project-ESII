@@ -1,5 +1,4 @@
-<?php
-?>
+
 
 <html lang="en">
 
@@ -14,8 +13,8 @@
 <body>
     <div id="site">
         <div id="bodyBD" class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12 align-items-center">
+            <div class="row">
+                <div class="col-md-12">
                     <form action="PHP_Action/inserirfuncionario.php" id="formulario-funcionarios" class="" method="POST">
 
                         <div id="titulo">
@@ -33,11 +32,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Remuneração (R$)</label>
-                            <input id="inputbox" class="form-control" name="Remuneracao">
-                        </div>
-
-                        <div class="form-group">
                             <label>Data/Referência</label>
                             <input id="inputbox" class="form-control" name="ModificadoEm">
                         </div>
@@ -46,35 +40,47 @@
                             <label>Regime</label>
                             <input id="inputbox" class="form-control" name="Regime">
                         </div>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <fieldset id="Remuneracao">
+                                    <label>Remuneração (R$)</label>
+                                    <input id="inputbox" class="form-control" name="Remuneracao" placeholder="TIPO:VALOR+TIPO:VALOR">
+                                    </fieldset>
+                                </div>
 
-                        <div class="form-group">
-                            <label>Total Bruto</label>
-                            <input id="inputbox" class="form-control" name="TBruto">
-                        </div>
+                                <div class="form-group">
+                                    <label>Total Bruto</label>
+                                    <input id="inputbox" class="form-control" name="TBruto">
+                                </div>
 
-                        <div class="form-group">
-                            <label>Total Liquído</label>
-                            <input id="inputbox" class="form-control" name="Tliquido">
-                        </div>
+                                <div class="form-group">
+                                    <label>Total Liquído</label>
+                                    <input id="inputbox" class="form-control" name="Tliquido">
+                                </div>
+                                </td>
 
-                        <div class="form-group">
-                            <label>Total de Descontos</label>
-                            <input id="inputbox" class="form-control" name="TDescontos">
-                        </div>
+                                <td>
+                                <div class="form-group">
+                                    <label>Descontos</label>
+                                    <input id="inputbox" class="form-control" name="TDescontos" placeholder="TIPO:VALOR+TIPO:VALOR">
+                                </div>
 
-                        <div class="form-group">
-                            <label>Descontos Obrigatórios</label>
-                            <input id="inputbox" class="form-control" name="DescontosObgr">
-                        </div>
+                                <div class="form-group">
+                                    <label>Descontos Obrigatórios</label>
+                                    <input id="inputbox" class="form-control" name="DescontosObgr" placeholder="TIPO:VALOR+TIPO:VALOR">
+                                </div>
 
-                        <div class="form-group">
-                            <label>Outros Descontos</label>
-                            <input id="inputbox" class="form-control" name="OutrosDescontos">
-                        </div>
+                                <div class="form-group">
+                                    <label>Outros Descontos</label>
+                                    <input id="inputbox" class="form-control" name="OutrosDescontos">
+                                </div>
 
-                        <div id="button-holder">
-                            <button class="btn btn-primary" id="botao" type="submit">Atualizar</button>
-                        </div>
+                                <div id="button-holder">
+                                    <button class="btn btn-primary" id="botao" type="submit">Atualizar</button>
+                                </div>
+                            </td>
+                        </tr>
                     </form>
                     <div id="errmsg"></div>
                     <div id="okmsg"></div>
@@ -93,7 +99,7 @@
     </footer>
 
 
-    <script></script>
+    <script src="extensaobd.js"></script>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
