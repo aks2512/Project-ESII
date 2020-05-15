@@ -15,22 +15,25 @@
     $Remuneracao = 0.00;
     $Tdescontos = 0.00;
 
+    $Tliquido=floatval(str_replace(',','.',$Tliquido));
+    $Tbruto=floatval(str_replace(',','.',$Tbruto));
+    $OutrosDescontos=floatval(str_replace(',','.',$OutrosDescontos));
+
 
     $i = count($Tiporemuneracao)-1; //armazena tamanho da inserção para tabela remuneração
     $j = count($Tipodesconto)-1; //'' tabela descontos
 
     for($k=$i;$k>=0;$k--)
     {
-        $Remuneracao = $Remuneracao + str_replace(',','.',$Valorremuneracao[$k]) ;
+        $Valorremuneracao[$k] = floatval(str_replace(',','.',$Valorremuneracao[$k]));
+        $Remuneracao = $Remuneracao + $Valorremuneracao[$k];
     }
 
-    echo $Remuneracao;
-
-    for($k=$i;$k>=0;$k--)
+    for($k=$j;$k>=0;$k--)
     {
-        $Tdescontos = $Tdescontos + str_replace(',','.',$Valordesconto[$k]);
+        $Valordesconto[$k] = floatval(str_replace(',','.',$Valordesconto[$k]));
+        $Tdescontos = $Tdescontos + $Valordesconto[$k];
     }
-    echo "-".$Tdescontos;
     // Create connection
     $conn = mysqli_connect("localhost", "root", "", "transparenciamc");
     // Check connection
@@ -48,22 +51,42 @@
         "VALUES" . "('NULL' , '$Nome', '$Cargo', '$Remuneracao', '$Modificado', '$Regime', '$Tbruto', '$Tliquido', '$Tdescontos', '$DescontosObr' , '$OutrosDescontos')";
 
     if (mysqli_query($conn, $sql)) {
-        header('BD.php?q=2');
     } else {
         echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
-        header('BD.php?q=1');
     }
 
-    while ($i >= 0) {
-        "INSERT INTO detalhes (id, categoria,subcategoria, valor) VALUES ('NULL', 'Remuneração','$Tiporemuneracao[$i]', '$Valorremuneracao[$i]')";
+    $sql = "SELECT * FROM Funcionarios_BD ORDER BY id DESC LIMIT 1";
+    $query =  $conn->query($sql) or die($conn->errno .' - '. $conn->error);;
+    $row = $query->fetch_assoc();
+    $id = $row["id"];
+
+    while ($i >= 0) {//Vai Carregar cada linha relacionada a remuneração do funcionario
+        $sql = "INSERT INTO detalhes (id,id_item, categoria,subcategoria, valor) VALUES ('$id','NULL', 'Remuneração','$Tiporemuneracao[$i]', '$Valorremuneracao[$i]')";
+        if(!$sql)
+        {
+            echo "erro na inserção - ".$sqlcheck->err;
+        }
+        if (mysqli_query($conn, $sql)) {//Detecta erro e confirma query
+        } else {
+            echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
+        }
         $i--;
     }
 
-    while ($j >= 0) {
-        "INSERT INTO detalhes (id, categoria,subcategoria, valor) VALUES ('NULL', 'Desconto','$Tipodesconto[$j]', '$Valordesconto[$j]')";
 
+    while ($j >= 0) {//Vai Carregar cada linha relacionada aos descontos obrigatórios do funcionario
+        $sql = "INSERT INTO detalhes (id,id_item, categoria,subcategoria, valor) VALUES ('$id','NULL', 'Desconto','$Tipodesconto[$j]', '$Valordesconto[$j]')";
+        if(!$sql)
+        {
+            echo "erro na inserção";
+        }
+        if (mysqli_query($conn, $sql)) {//Detecta erro e confirma query
+        } else {
+            echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
+        }
         $j--;
     }
+    
 
     header('BD.php');
 
