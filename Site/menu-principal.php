@@ -8,7 +8,7 @@
     <link type="text/css" href="css/estilo-menu.css" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <title>Document</title>
-    
+
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
 </head>
@@ -50,8 +50,7 @@
                 <form id="formulario-pesquisa" method="post">
 
                     <p1>Mostrar:</p1>
-                    <select id="controlalinhas"  name="qtdeLinhas" type="number"
-                        title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
+                    <select id="controlalinhas" name="qtdeLinhas" type="number" title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
                         <option value=10>10</option>
                         <option value=25>25</option>
                         <option value=50>50</option>
@@ -86,7 +85,7 @@
         </div>
 
     </div>
-    
+
     <footer id="footer">
         <div class="container">
             <div class="row align-items-end justify-content-center">
@@ -99,7 +98,7 @@
     <!-- Javascript -->
     <script src="main.js">
     </script>
-    
+
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <scrip src="node_modules/@popperjs\core/dist/umd/popper.js"></scrip>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
