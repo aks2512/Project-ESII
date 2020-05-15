@@ -106,6 +106,3 @@ else
 {
     echo "Houve um erro, por favor tente novamente mais tarde...";
 }
-
-
-?>
