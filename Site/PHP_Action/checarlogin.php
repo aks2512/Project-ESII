@@ -1,38 +1,46 @@
 <?php
-    session_start();
+	session_start();	
+    include("conexao.php");	
+    
+    $login = isset($_POST['Usuario']) ? addslashes(trim($_POST['Usuario'])) : FALSE; 
+    // Recupera a senha, a criptografando em MD5 
+    $senha = isset($_POST['Senha']) ? md5(trim($_POST['Senha'])) : FALSE; 
 
-    require_once('conexao.php');
-
-    if(empty($_POST['user'])or(empty($_POST['pass'])))
+    if(!$login||!$senha)
     {
-        header('location: ../Login.php');
-        exit();
+        $erro = "Preencha todos os campos!";
+        $contexto = array('mensagem'=>$erro,'codigo'=>0);
+        echo (json_encode($contexto));
     }
 
-    $usuario = mysqli_real_escape_string($conn, $_POST['user']);
-    $senha = mysqli_real_escape_string($conn, $_POST['pass']);
+    $sql = "SELECT * FROM administradores WHERE Senha = '$senha' and Usuario = '$login' ";
 
-    $query = "SELECT id_admin FROM administradores WHERE Usuario = '$usuario' AND Senha = '$senha'";
-    $result = mysqli_query($conn,$query);
+    if (mysqli_query($conn, $sql)) {
+    } else {
+        $erro = $sql."<br>".mysqli_error($conn);
+        $contexto = array('mensagem'=>$erro,'codigo'=>0);
+        echo (json_encode($contexto));//Ajax coleta echo como retorno
+    }
+     
+    $query = mysqli_query($conn,$sql);
+    $total = mysqli_num_rows($query);
 
-    if(!$result) {
-        die('Could not get data: ');
-     }
-
-    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-    if($row>0)
+    if($total)
     {
-        ?>
-        <h2>"conectado com sucesso!"</h2>
-        <?php
 
-        header('location: ../BD.php');
+        $dados = mysqli_fetch_array($query);
+
+        if(!strcmp($senha,$dados["Senha"]))
+        {
+            $_SESSION["id_admin"]=$dados["id_admin"];
+            $_SESSION["nome_usuario"] = stripslashes($dados["Usuario"]);
+            header("Location: ../BD.php");  
+        }
     }
     else
     {
-        ?>
-        <h2>"usuario e/ou senha incorretos!"</h2>
-        <?php
+        $erro = utf8_encode("Usuário e/ou senha não existem!");
+        $contexto = array("mensagem"=>$erro,"codigo"=>"0");
+        echo (json_encode($contexto));
     }
 ?>

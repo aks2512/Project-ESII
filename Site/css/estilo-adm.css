@@ -61,6 +61,12 @@
   font-style: italic;
 }
 
+#exampleModal {
+  line-height: 100%;
+  margin-top: 25vh;
+  vertical-align: middle;
+}
+
 #links:hover {
   background-color: rgba(41, 41, 255, 0.38);
 }
@@ -69,6 +75,12 @@
   color: white;
   border: 1px solid black;
   background-color: rgba(0, 0, 0, 0.584);
+}
+
+#inputbox2 {
+  color: white;
+  border: 1px solid black;
+  background-color: rgba(151, 151, 151, 0.584);
 }
 
 .msg {

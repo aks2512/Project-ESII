@@ -21,7 +21,7 @@
 <body>
     <div id="site">
      <div class="col-sm-12 controls margin-top-md">
-                <a href="PHP_Action/logoff.php" class="btn-lg btn-danger">Sair</a>
+                <a href="PHP_Action/logoff.php" id="sair" class="btn-lg btn-danger">Sair</a>
                 </div>
         <div id="bodyBD" class="container">
             <div class="col-md-12">
