@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION["nome_usuario"])||!isset($_SESSION["id_admin"]))
+    {
+        header("location: login.php?q=1");
+    }
+?>
+
 <html lang="en">
 
 <head>
@@ -11,6 +20,9 @@
 
 <body>
     <div id="site">
+     <div class="col-sm-12 controls margin-top-md">
+                <a href="PHP_Action/logoff.php" class="btn-lg btn-danger">Sair</a>
+                </div>
         <div id="bodyBD" class="container">
             <div class="col-md-12">
                 <form action="PHP_Action/inserirfuncionario.php" id="formulario-funcionarios" class="" method="POST">
@@ -72,7 +84,7 @@
                 <div id="okmsg"></div>
             </div>
         </div>
-    </div>
+     </div>
     </div>
 
     <footer id="footer" class="footer-fixed-bottom">
