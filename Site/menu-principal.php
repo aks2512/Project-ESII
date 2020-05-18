@@ -29,24 +29,8 @@
 
         </div>
 
-
-        <!-- Menu Lateral-->
-        <div class="row">
-            <div id="menu" class="col-md-3 mr-2">
-                <h4>Menu</h4>
-                <hr>
-                <ul>
-                    <li>
-                        <a href="#" class="menu-opcao" id="opcao1" alt="">Procurar Funcionários Publicos</a>
-                    </li>
-                    <li>
-                        <a href="#" class="menu-opcao" id="opcao2" alt="">Comparar Funcionários Publicos</a>
-                    </li>
-                </ul>
-            </div>
-
             <!-- Visualizaçao Principal (Exibição dos Servidores Públicos)-->
-            <div class="col-md-8 text-center p-3" id="funcoes">
+            <div class="col-md-12 text-center " id="funcoes">
                 <form id="formulario-pesquisa" method="post">
 
                     <p1>Mostrar:</p1>
@@ -102,6 +86,88 @@
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <scrip src="node_modules/@popperjs\core/dist/umd/popper.js"></scrip>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-color">
+        <div class="row justify-content-end">
+          <img src="Imagens/usuario.png" alt="" class="col-md-2">
+          <h5 class="modal-title col-md-9" id="exampleModalLabel">Jefferson Akira Fukamizu</h5>
+          <button type="button" class="close col-md-1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </div>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12 text-left">
+            <p class="bold">Cargo:<br>
+              Aux Administrativo</p>
+          </div>
+          <div class="col-md-12 text-left">
+            <p class="bold">Referência:<br>
+              Fev/2020</p>
+          </div>
+          <div class="col-md-12 text-left">
+            <p class="bold">Total Bruto:<br>
+              1418,99</p>
+          </div>
+          <div class="col-md-12 text-left">
+            <p class="bold">Total Liquido:<br>
+              1418,99</p>
+          </div>
+          <div class="col-md-12 text-left">
+            <p class="bold">Total de Descontos:<br>
+              0</p>
+          </div>
+        </div>
+        <div>
+          <div class="row">
+            <div class="col-md-12 text-left">
+              <p>Remuneração</p>
+              <hr>
+              <div class="row">
+                <div class="col-md-6 text-left">
+                  <p>VENCIMENTO</p>
+                </div>
+                <div class="col-md-6 text-left">
+                  <p>1642,97</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 text-left">
+              <p>Descontos Obrigatorios:</p>
+              <hr>
+              <div class="row">
+                <div class="col-md-6 text-left">
+                  <p>IPREM</p>
+                </div>
+                <div class="col-md-6 text-left">
+                  <p>180,73</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 text-left">
+              <p>Outros Descontos:</p>
+              <hr>
+              <div class="row">
+                <div class="col-md-6 text-left">
+                  <p>Outros</p>
+                </div>
+                <div class="col-md-6 text-left">
+                  <p>248,07</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 </body>

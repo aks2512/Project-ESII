@@ -20,7 +20,10 @@
 
 <body>
     <div id="site">
-     <div class="col-sm-12 controls margin-top-md">
+     <div class="col-md-12 controls margin-top-md" id="navegacaotopo">
+     <div id="wherebutton"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Cadastrar Funcionário
+                </button>
                 <a href="PHP_Action/logoff.php" id="sair" class="btn-lg btn-danger">Sair</a>
                 </div>
         <div id="bodyBD" class="container">
@@ -95,6 +98,38 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Administrador</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form id="formcadastro"method="POST" action="PHP_Action/inserirusuario.php"> 
+
+        <div class="form-group" id="formalinhado">
+            <label for="Usuario">Usuário:</label>
+            <input name="Usuariocadastro" type="text" class="form-control" id="inputbox2" placeholder="usuario" maxlength="32">
+        </div>
+
+        <div class="form-group">
+            <label for="Senha">Senha:</label>
+            <input name="Senhacadastro" type="password" class="form-control" id="inputbox2" placeholder="senha" maxlength="22">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="submit" id="cadastrar" class="btn btn-success">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     <script src="extensaobd.js"></script>

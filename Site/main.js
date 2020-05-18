@@ -19,23 +19,7 @@ $(document).ready(function () {
       data: {
         busca: onde,
       },
-      success: function (dados) {
-        $("#funcoes").html(dados);
-      },
-    });
-  });
-
-  $("#retornar").click(function () {});
-
-  //Carrega conteúdo adicional relacionado a opção do menu lateral
-  $(".menu-opcao").click(function () {
-    var carrega_url = this.id;
-    carrega_url = carrega_url + "_conteudo.html";
-    $.ajax({
-      url: carrega_url,
-      success: function (data) {
-        $("#funcoes").innerHTML = data;
-      },
+      success: function (dados) {},
     });
   });
 });
