@@ -41,14 +41,7 @@
 
 #formulariologin {
   margin-bottom: 10px;
-  background-color: rgba(20, 20, 233, 0.605);
-  border-radius: 25px;
-  padding: 25px;
-}
-
-#formulariocadastro {
-  margin-bottom: 10px;
-  background-color: rgba(20, 169, 233, 0.476);
+  background-color: rgba(77, 77, 255, 0.605);
   border-radius: 25px;
   padding: 25px;
 }

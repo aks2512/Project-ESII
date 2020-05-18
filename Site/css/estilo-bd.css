@@ -17,7 +17,7 @@ body {
 #formulario-funcionarios {
   margin-top: 30px;
   padding: 35px;
-  background-color: rgba(246, 246, 255, 0.782);
+  background-color: rgba(122, 122, 255, 0.782);
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.531);
   margin-left: auto;
@@ -60,16 +60,26 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.326);
   background-color: rgba(0, 0, 0, 0.238);
 }
-
+#reqtde:hover {
+  border: 2px solid burlywood;
+}
+#deqtde:hover {
+  border: 2px solid burlywood;
+}
 #repeat-input {
   color: rgb(61, 61, 61);
   border: 1px solid rgba(0, 0, 0, 0.326);
   background-color: rgba(0, 0, 0, 0.238);
 }
 
+#repeat-input:hover {
+  color: rgb(124, 124, 124);
+  border: 1px solid rgba(231, 227, 13, 0.346);
+  background-color: rgba(0, 0, 0, 0.238);
+}
+
 #inputbox:hover {
-  color: black;
-  background-color: rgba(0, 0, 0, 0.455);
+  border: 2px solid palegreen;
 }
 
 #msg {

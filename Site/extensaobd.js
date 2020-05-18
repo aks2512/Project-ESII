@@ -1,4 +1,28 @@
 $(document).ready(function () {
+  $("#formcadastro").submit(function () {
+    //Carrega dados sobre cadastro do funcionário
+    var dados = $(this).serialize();
+    $.ajax({
+      method: "POST",
+      dataType: "json",
+      url: "PHP_Action/inserirusuario.php",
+      data: dados,
+      cache: false,
+      success: function (contexto) {
+        alert("sucesso!");
+        if (contexto.codigo == 1) {
+          document.getElementById("okmsg").innerHTML =
+            '<div class="alert alert-success">Cadastro feito com sucesso!</div>';
+        } else {
+          document.getElementById("errmsg").innerHTML =
+            '<div class="alert alert-danger">' + contexto.mensagem + "</div>";
+        }
+      },
+      beforeSend: function () {
+        document.getElementById("cadastrar").innerText = "Verificando...";
+      },
+    });
+  });
   //Listeners para incrementar quantidade de campos input conforme requisitado
   $("#reqtde").keyup(function () {
     //obs: atributo name="nome[]" indica array, onde elementos que o forman devem ter o mesmo nome

@@ -1,6 +1,14 @@
 <?php
-	session_start();	
-    include("conexao.php");	
+    session_start();	
+    header('Content-Type: application/json');
+    include("conexao.php");
+
+    if(isset($_SERVER["HTTP_REFEREER"])&& $_SERVER["HTTP_REFEREER"] != "http://localhost/projeto-ESII/Site/login.php")
+        {
+            $erro = utf8_encode("Endereço do referente inválido!");
+            $contexto = array('mensagem'=>$erro,'codigo'=>0);
+            echo (json_encode($contexto));
+        }
     
     $login = isset($_POST['Usuario']) ? addslashes(trim($_POST['Usuario'])) : FALSE; 
     // Recupera a senha, a criptografando em MD5 
@@ -34,13 +42,15 @@
         {
             $_SESSION["id_admin"]=$dados["id_admin"];
             $_SESSION["nome_usuario"] = stripslashes($dados["Usuario"]);
+            $erro = "";
+            $contexto = array('mensagem'=>$erro,'codigo'=>1);
+            echo (json_encode($contexto));
             header("Location: ../BD.php");  
         }
     }
     else
     {
-        $erro = utf8_encode("Usuário e/ou senha não existem!");
-        $contexto = array("mensagem"=>$erro,"codigo"=>"0");
-        echo (json_encode($contexto));
+        $erro = utf8_encode("Usuario e ou senha nao existem!");
+        return json_encode(array("mensagem"=>$erro,"codigo"=>0));
     }
 ?>
