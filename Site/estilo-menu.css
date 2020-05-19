@@ -2,7 +2,10 @@ body{
     background-color: #D8D8D8!important;
 }
 
-
+#title-h3{
+    color: #54E9DA!important;
+    font-weight: bold;
+}
 
 #transparencia h1{
     font-weight: bold;
@@ -70,9 +73,6 @@ body{
     color: white;
     font-size: 15px;
     font-weight: bold;
-    width: 100%;
-    position: fixed!important;
-    bottom: 0;
 }
 
 #footer img{
