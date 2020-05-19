@@ -150,7 +150,7 @@
     </footer>
 
     <!-- Javascript -->
-    <script src="main.js">
+    <script src="scriptJS/main.js">
     </script>
 
     <script src="node_modules/jquery/dist/jquery.js"></script>
