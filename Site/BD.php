@@ -132,7 +132,7 @@
 </div>
 
 
-    <script src="extensaobd.js"></script>
+    <script src="scriptJS/extensaobd.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
 </body>
