@@ -6,13 +6,11 @@ $(document).ready(function () {
       data: dados,
       url: "PHP_Action/checarlogin.php",
       dataType: "json",
-      async: true,
       success: function (data) {
-        console.log("sucesso! " + data);
+        document.getElementById("errmsg").innerText = data.mensagem;
       },
-      error: function (jqXHR, textStatus, errorThrown) {
-        alert(textStatus, errorThrown);
-        alert(jqXHR, textStatus, errorThrown);
+      erro: function (data) {
+        document.getElementById("errmsg").innerText = data.mensagem;
       },
     });
   });

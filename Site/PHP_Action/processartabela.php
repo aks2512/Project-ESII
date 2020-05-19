@@ -10,7 +10,7 @@
     
 
     //obs: a variavel $busca está entre aspas simples pois deve ser analisada como valor e não como coluna
-    $sql = "SELECT id,Nome,Cargo,Remuneracao FROM funcionarios_bd WHERE Nome LIKE '%$busca%' or Cargo LIKE '%$busca%' or id LIKE '%$busca' or Remuneracao LIKE '%$busca%'";
+    $sql = "SELECT id,Nome,Cargo,TBruto FROM funcionarios_bd WHERE Nome LIKE '%$busca%' or Cargo LIKE '%$busca%' or id LIKE '%$busca' or TBruto LIKE '%$busca%'";
 
     $query =  $conn->query($sql);
     
@@ -24,7 +24,7 @@
             $response = $response.'<td>'.$row["id"].'</td>';
             $response = $response.'<td>'.$row["Nome"].'</td>';
             $response = $response.'<td>'.$row["Cargo"].'</td>';
-            $response = $response.'<td>'.$row["Remuneracao"].'</td>';
+            $response = $response.'<td>'.$row["TBruto"].'</td>';
             $response = $response.'<td><button id="maisinfo" value="'.$row["id"].'"" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">+</button><td>';
             $response = $response.'</tr>';
             echo $response;//retorno

@@ -19,11 +19,11 @@
         while($registro = mysqli_fetch_array($resultado_id, MYSQLI_ASSOC)){
 
             echo'<tr>';
-                echo'<th scope="row">'.$registro['id'].'</th>';
-                echo'<td>'.$registro['nome']'</td>';
-                echo'<td>'.$registro['cargo']'</td>';
-                echo'<td>'.$registro['remuneracao']'</td>';
-            echo'</tr>
+            echo'<th scope="row">'.$registro['id'].'</th>';
+            echo'<td>'.$registro['nome'].'</td>';
+            echo'<td>'.$registro['cargo'].'</td>';
+            echo'<td>'.$registro['remuneracao'].'</td>';
+            echo'</tr>';
 
         }
 
