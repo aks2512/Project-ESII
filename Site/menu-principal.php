@@ -31,44 +31,114 @@
 
             <!-- Visualizaçao Principal (Exibição dos Servidores Públicos)-->
             <div class="col-md-12 text-center " id="funcoes">
-                <form id="formulario-pesquisa" method="post">
+                <div class="row justify-content-center">
+                  <h3 id="title-h3">Servidores Públicos</h3>
+                  <p id="p-text" class="col-md-10 text-left">
+                    Gastos com servidores públicos, dentro dos limites estabelecidos pela Lei de Responsabilidade
+                    Fiscal, podem ser verificados e acompanhados periodicamente.
+                  </p>
+                </div>
 
-                    <p1>Mostrar:</p1>
-                    <select id="controlalinhas" name="qtdeLinhas" type="number" title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
-                        <option value=10>10</option>
-                        <option value=25>25</option>
-                        <option value=50>50</option>
-                        <option value=100>100</option>
-                    </select>
+                <!-- Barra Pesquisa -->
+                <form id="formulario-pesquisa" method="post" class="col-md-10">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="row justify-content-center align-end">
+                        <p class="p-form col-md-3 mr-2">Mostrar</p>
+                        <select class="col-md-3" id="controlalinhas" name="qtdeLinhas" type="number" title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
+                          <option value=10>10</option>
+                          <option value=25>25</option>
+                          <option value=50>50</option>
+                          <option value=100>100</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="row justify-content-center align-center">
+                        <p class="p-form mr-2 col-md-1">Buscar</p>
+                        <input class="col-md-9" id="busca" type="text">
+                      </div>
+                    </div>
 
-                    <p1>Buscar</p1>
-                    <input id="busca" type="text">
-
+                  </div>
                 </form>
 
-                <!-- Mostrar Gráfico -->
-
-                <!-- Navegação Páginas da Tabela -->
+                <!-- Mostrar Gráfico e Paginas-->
+                <div class="row justify-content-center mt-5">
+                  <div class="col-md-6 text-right"><!-- Mostrar Gráfico -->
+                    <a id="btn-grafico" class="btn btn-default" href="">Mostrar Gráfico</a>
+                  </div><!-- Navegação Páginas da Tabela -->
+                  <div class="col-md-6">
+                    <nav aria-label="...">
+                      <ul class="pagination">
+                        <li class="page-item disabled">
+                          <span class="page-link">Anterior</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active" aria-current="page">
+                          <span class="page-link">
+                            2
+                            <span class="sr-only">(current)</span>
+                          </span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">Proximo</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
 
                 <!-- Tabela -->
-                <table class="table striped" id="tabela-principal">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Funcionário</th>
-                            <th scope="col">Cargo</th>
-                            <th scope="col">Remuneração</th>
-                            <th scope="col">*</th>
-                            <th scope="col"> </th>
-                        </tr>
-                    </thead>
-                    <tbody id="conteudo-tabela">
-                    </tbody>
-                </table>
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <table class="table striped col-md-10" id="tabela-principal">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Funcionário</th>
+                                <th scope="col">Cargo</th>
+                                <th scope="col">Remuneração</th>
+                                <th scope="col">*</th>
+                                <th scope="col"> </th>
+                            </tr>
+                        </thead>
+                        <tbody id="conteudo-tabela">
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- nº Registros e Paginação -->
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <p>1 até 10 de 5,691 registros</p>
+                  </div>
+                  <div class="col-md-6">
+                    <nav aria-label="...">
+                      <ul class="pagination">
+                        <li class="page-item disabled">
+                          <span class="page-link">Anterior</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active" aria-current="page">
+                          <span class="page-link">
+                            2
+                            <span class="sr-only">(current)</span>
+                          </span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">Proximo</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
             </div>
-        </div>
-
+          </div>
     </div>
+
 
     <footer id="footer">
         <div class="container">
