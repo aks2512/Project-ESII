@@ -3,7 +3,7 @@
     header('Content-Type: application/json');
     include("conexao.php");
 
-    if(isset($_SERVER["HTTP_REFEREER"])&& $_SERVER["HTTP_REFEREER"] != "http://localhost/projeto-ESII/Site/login.php")
+    if(isset($_SERVER["HTTP_REFEREER"])&& $_SERVER["HTTP_REFEREER"] != "http://localhost/project-ESII/Site/login.php")
         {
             $erro = utf8_encode("Endereço do referente inválido!");
             $contexto = array('mensagem'=>$erro,'codigo'=>0);
@@ -45,12 +45,16 @@
             $erro = "";
             $contexto = array('mensagem'=>$erro,'codigo'=>1);
             echo (json_encode($contexto));
-            header("Location: ../BD.php");  
+            header("Location: ../BD.php");
+            return;  
         }
     }
     else
     {
         $erro = utf8_encode("Usuario e ou senha nao existem!");
-        return json_encode(array("mensagem"=>$erro,"codigo"=>0));
+        $contexto = array('mensagem'=>$erro,'codigo'=>0);
+        echo json_encode($contexto);
+        header("Location: ../Login.php");
+        return;
     }
 ?>

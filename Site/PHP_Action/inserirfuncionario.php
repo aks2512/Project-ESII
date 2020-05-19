@@ -59,7 +59,7 @@
     }
 
     $sql = "SELECT * FROM Funcionarios_BD ORDER BY id DESC LIMIT 1";
-    $query =  $conn->query($sql) or die($conn->errno .' - '. $conn->error);;
+    $query =  $conn->query($sql) or die($conn->errno .' - '. $conn->error);
     $row = $query->fetch_assoc();
     $id = $row["id"];
 
