@@ -2,7 +2,23 @@ body{
     background-color: #D8D8D8!important;
 }
 
+#title-h3{
+    color: #000000;
+    font-weight: bold;
+    font-size: 36px;
+    margin: 15px 0px;
+}
 
+#p-text{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.p-form{
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 20px;
+}
 
 #transparencia h1{
     font-weight: bold;
@@ -76,9 +92,6 @@ body{
     color: white;
     font-size: 15px;
     font-weight: bold;
-    width: 100%;
-    position: relative!important;
-    bottom: 0;
 }
 
 #footer img{
@@ -95,4 +108,11 @@ body{
 
 #tabela-principal{
     margin-top:20px;
+}
+
+#btn-grafico{
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
 }

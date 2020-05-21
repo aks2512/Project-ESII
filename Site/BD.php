@@ -58,15 +58,6 @@
                         <input class="form-control" placeholder="Digite Quantas categorias são" id="reqtde"></br>
                         <div id="reinput"></div>
                     </div>
-                    <div class="form-group">
-                        <label>Total Bruto</label>
-                        <input id="inputbox" class="form-control" name="TBruto">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Total Liquído</label>
-                        <input id="inputbox" class="form-control" name="Tliquido">
-                    </div>
 
                     <div class="form-group">
                         <label>Descontos Obrigatórios</label>
@@ -132,7 +123,7 @@
 </div>
 
 
-    <script src="extensaobd.js"></script>
+    <script src="scriptJS/extensaobd.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
 </body>

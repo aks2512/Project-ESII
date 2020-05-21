@@ -3,10 +3,7 @@
     $busca = $_POST['busca'];
 
     //conexão com banco de dados
-    $conn = new mysqli("localhost", "root", "", "transparenciamc");
-    if( $conn ->connect_error) {
-    exit('Erro na conexao');
-    }
+    include "conexao.php";
     
 
     //obs: a variavel $busca está entre aspas simples pois deve ser analisada como valor e não como coluna
