@@ -41,7 +41,8 @@
                             <button type="submit" name="btn-login" id="botaoentrar" class="btn btn-success">Entrar</button>
                         </div>
                     </form>
-                    <div class="alert alert-danger"id="errmsg"></div>
+                    <div id="okmsg"></div>
+                    <div id="errmsg"></div>
                 </div>
             </div>
         </div>
