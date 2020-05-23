@@ -12,6 +12,16 @@
   overflow: hidden;
 }
 
+#errmsg {
+  display: none;
+  margin-top: 25px;
+}
+
+#okmsg {
+  display: none;
+  margin-top: 25px;
+}
+
 #footer {
   margin-top: -70px;
   text-align: center;

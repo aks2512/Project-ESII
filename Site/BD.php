@@ -3,7 +3,7 @@
 
     if(!isset($_SESSION["nome_usuario"])||!isset($_SESSION["id_admin"]))
     {
-        header("location: login.php?q=1");
+        header("location: login.php");
     }
 ?>
 
@@ -26,8 +26,13 @@
                 </button>
                 <a href="PHP_Action/logoff.php" id="sair" class="btn-lg btn-danger">Sair</a>
                 </div>
+        <div>
+            
         <div id="bodyBD" class="container">
             <div class="col-md-12">
+                <div class="col-md-12 controls margin-top-md" id="navegacaoadmin">
+                    <a class="btn-lg btn-success" href="pesquisaadmin.php">Procurar funcionario</a>
+                </div>
                 <form action="PHP_Action/inserirfuncionario.php" id="formulario-funcionarios" class="" method="POST">
 
                     <div id="titulo">
@@ -79,6 +84,7 @@
             </div>
         </div>
      </div>
+    </div>
     </div>
 
     <footer id="footer" class="footer-fixed-bottom">

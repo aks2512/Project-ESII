@@ -3,6 +3,11 @@
     require_once('../classesphp/class.funcionario.php');
     include "conexao.php";
 
+    if(!isset($_POST['Nome'])||!isset($_POST['Cargo'])||!isset($_POST['ModificadoEm'])||!isset($_POST['Regime'])||!isset($_POST['VD'])||!isset($_POST['VR']))
+    {
+        echo "Preencha todos os campos!";
+    }
+
     $Nome = $_POST['Nome'];
     $Cargo = $_POST['Cargo'];
     $Modificado = $_POST['ModificadoEm'];
@@ -23,4 +28,6 @@
     $Funcionario = new Funcionario($VR,$VD,$TR,$TD,$Nome,$Cargo,$Modificado,$OutrosDescontos,$Regime);
 
     $Funcionario->inserir_funcionario($i,$j);
+
+    header("location: ../BD.php");
 ?>
