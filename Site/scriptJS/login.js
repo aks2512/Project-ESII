@@ -1,5 +1,9 @@
 $(document).ready(function () {
-  $("#formulariologin").submit(function () {
+  $("input").keyup(function () {
+    document.getElementById("botaoentrar").innerText = "Entrar";
+    document.getElementById("errmsg").style.display = "none";
+  });
+  $("#formulariologin").on("submit", function (e) {
     var dados = $(this).serialize;
     $.ajax({
       method: "POST",
@@ -7,11 +11,23 @@ $(document).ready(function () {
       url: "./PHP_Action/checarlogin.php",
       dataType: "json",
       success: function (data) {
-        document.getElementById("errmsg").innerText = data.mensagem;
+        alert(data.codigo);
+        if (data.codigo == 1) {
+          e.preventDefault();
+          document.getElementById("errmsg").style.display = "inline-block";
+          document.getElementById("botaoentrar").innerText = "Entrar";
+          document.getElementById("errmsg").innerText = data.mensagem;
+        } else {
+          $(this).submit();
+        }
       },
-      erro: function (data) {
-        document.getElementById("errmsg").innerText = data.mensagem;
+      beforeSend: function () {
+        document.getElementById("botaoentrar").innerText = "Entrando...";
       },
     });
+  });
+  $("#botaoentrar").click(function () {
+    document.getElementById("botaoentrar").style.backgroundColor = "green";
+    document.getElementById("botaoentrar").innerText = "Entrando...";
   });
 });

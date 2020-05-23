@@ -29,12 +29,12 @@
 
                         <div class="form-group" id="formalinhado">
                             <label for="Usuario">Usuário:</label>
-                            <input name="Usuario" type="text" class="form-control" id="inputbox" placeholder="usuario" maxlength="32">
+                            <input name="Usuario" type="text" class="form-control" id="inputbox" placeholder="usuario" maxlength="32" required="required">
                         </div>
 
                         <div class="form-group">
                             <label for="Senha">Senha:</label>
-                            <input name="Senha" type="password" class="form-control" id="inputbox" placeholder="senha" maxlength="22">
+                            <input name="Senha" type="password" class="form-control" id="inputbox" placeholder="senha" maxlength="22" >
                         </div>
                         
                         <div class="form-group">
@@ -42,7 +42,7 @@
                         </div>
                     </form>
                     <div id="okmsg"></div>
-                    <div id="errmsg"></div>
+                    <div class="alert alert-danger"id="errmsg"></div>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
 
     <scrip src="node_modules/@popperjs\core/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="login.js"></script>
+    <script src="scriptJS/login.js"></script>
 </body>
 
 </html>

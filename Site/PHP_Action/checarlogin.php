@@ -6,34 +6,28 @@
     if(isset($_SERVER["HTTP_REFEREER"])&& $_SERVER["HTTP_REFEREER"] != "http://localhost/project-ESII/Site/login.php")
         {
             $erro = utf8_encode("Endereço do referente inválido!");
-            $contexto = array('mensagem'=>$erro,'codigo'=>0);
+            $contexto = array('mensagem'=>$erro,'codigo'=>1);
             echo (json_encode($contexto));
+            exit();
         }
     
     $login = isset($_POST['Usuario']) ? addslashes(trim($_POST['Usuario'])) : FALSE; 
     // Recupera a senha, a criptografando em MD5 
     $senha = isset($_POST['Senha']) ? md5(trim($_POST['Senha'])) : FALSE; 
 
-    if(!$login||!$senha)
-    {
-        $erro = "Preencha todos os campos!";
-        $contexto = array('mensagem'=>$erro,'codigo'=>0);
-        echo (json_encode($contexto));
-    }
-
     $sql = "SELECT * FROM administradores WHERE Senha = '$senha' and Usuario = '$login' ";
 
     if (mysqli_query($conn, $sql)) {
     } else {
-        $erro = $sql."<br>".mysqli_error($conn);
-        $contexto = array('mensagem'=>$erro,'codigo'=>0);
+        $contexto = array('mensagem'=>$sql."<br>".mysqli_error($conn),'codigo'=>1);
         echo (json_encode($contexto));//Ajax coleta echo como retorno
+        exit();
     }
      
     $query = mysqli_query($conn,$sql);
     $total = mysqli_num_rows($query);
 
-    if($total)
+    if($total>0)
     {
 
         $dados = mysqli_fetch_array($query);
@@ -43,18 +37,18 @@
             $_SESSION["id_admin"]=$dados["id_admin"];
             $_SESSION["nome_usuario"] = stripslashes($dados["Usuario"]);
             $erro = "";
-            $contexto = array('mensagem'=>$erro,'codigo'=>1);
+            $contexto = array('mensagem'=>$erro,'codigo'=>0);
             echo (json_encode($contexto));
             header("Location: ../BD.php");
-            return;  
+            exit();
         }
     }
     else
     {
-        $erro = utf8_encode("Usuario e ou senha nao existem!");
-        $contexto = array('mensagem'=>$erro,'codigo'=>0);
+        $erro = "Usuario e ou senha nao existem";
+        $contexto = array('mensagem'=>$erro,'codigo'=>1);
         echo json_encode($contexto);
-        header("Location: ../Login.php");
-        return;
+        exit();
     }
+    
 ?>
