@@ -40,7 +40,7 @@
         if($query->num_rows > 0){
             while($row = $query->fetch_assoc()) {
                 $response = '<tr>';
-                $response = $response.'<td><input value="'.$row["id"].'" type="checkbox" id="checkbox"></td>';
+                $response = $response.'<td><input value="'.$row["id"].'" type="checkbox" name="funcionario"></td>';
                 $response = $response.'<td>'.$row["id"].'</td>';
                 $response = $response.'<td>'.$row["Nome"].'</td>';
                 $response = $response.'<td>'.$row["Cargo"].'</td>';

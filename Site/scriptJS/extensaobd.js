@@ -1,38 +1,4 @@
 $(document).ready(function () {
-  //todos os "listeners" relacionados a atualização de tabela do menu-principal
-  $("#busca").keyup(function () {
-    escrevertabela();
-  });
-  $("#qtdeLinhas").change(function () {
-    escrevertabela();
-  });
-  $(document).ready(function () {
-    escrevertabela();
-  });
-});
-
-function escrevertabela() {
-  var busca = document.getElementById("busca").value;
-  var tabela = 1;
-  $.ajax({
-    type: "POST",
-    url: "./PHP_Action/processartabela.php",
-    data: {
-      busca: busca,
-      tabela: tabela,
-    },
-    success: function (dados) {
-      document.getElementById("conteudo-tabela").innerHTML = dados;
-    },
-    error: function (request, status, erro) {
-      alert("Problema ocorrido: " + status + "\nDescrição: " + erro);
-
-      alert("Informações da requisição: \n" + request.getAllResponseHeaders());
-    },
-  });
-}
-
-$(document).ready(function () {
   $("#formcadastro").submit(function () {
     //Carrega dados sobre cadastro do funcionário
     var dados = $(this).serialize();
