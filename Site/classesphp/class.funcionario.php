@@ -97,10 +97,10 @@
             return '<div class="alert alert-success">Funcionário Inserido com sucesso!</div>';
         }
 
-        private function deletar_funcionario($id){//Deleta todas as informações do funcionario
+        public function excluir_funcionario($id){//Deleta todas as informações do funcionario
             include "conexao.php";
             
-            $sql = "DELETE * FROM detalhes WHERE '$this->id' = id";
+            $sql = "DELETE * FROM detalhes WHERE '$id' = id";
 
             if (mysqli_query($conn, $sql)) {
             } else {
@@ -108,7 +108,7 @@
                 return;
             }
 
-            $sql = "DELETE * FROM funcionarios_BD WHERE '$this->id' = id";
+            $sql = "DELETE * FROM funcionarios_BD WHERE '$id' = id";
 
             if (mysqli_query($conn, $sql)) {
             } else {

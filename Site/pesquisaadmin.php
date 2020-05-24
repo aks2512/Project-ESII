@@ -80,11 +80,11 @@
         <!-- Mostrar Gráfico e Paginas-->
         <div class="row justify-content-center mt-5">
           <div class="col-md-6 text-right"><!-- Mostrar Gráfico -->
-            <a id="btn-grafico" class="btn btn-default" href="">Inserir</a>
-            <button id="btn-grafico" class="btn btn-default" href="">Atualizar</button>
-            <button id="btn-grafico" class="btn btn-default" href="">Excluir</button>
-            <button id="btn-grafico" class="btn btn-default" href="">Histórico</button>
-            <button id="btn-grafico" class="btn btn-default" href="">Mostrar Gráfico</a>
+            <button id="btn-inserir" class="btn btn-primary" data-toggle="modal" data-target="#OptIncluir" href="">Inserir</button>
+            <button id="btn-atualizar" class="btn btn-primary" onclick="atualizar()" href="">Atualizar</button>
+            <button id="btn-excluir" class="btn btn-primary" onclick="excluir()" href="">Excluir</button>
+            <button id="btn-historico" class="btn btn-primary" href="">Histórico</button>
+            <button id="btn-grafico" class="btn btn-primary"  href="">Mostrar Gráfico</a>
           </div><!-- Navegação Páginas da Tabela -->
           <div class="col-md-6">
             <nav aria-label="...">
@@ -206,6 +206,16 @@
     <div class="modal-content" id="detalhes">
       
         
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="OptIncluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="incluir">
+   
+
       </div>
     </div>
   </div>

@@ -56,7 +56,7 @@
                     <p>Remuneração</p>
                     <hr>';
 
-        $sql = "SELECT id,categoria,subcategoria,valor FROM detalhes WHERE '$id' = id and categoria = 'remuneracao' ";
+        $sql = "SELECT id,categoria,subcategoria,valor FROM detalhes WHERE '$id' = id and categoria = 'remuneracao' ORDER BY valor DESC ";
 
         $query =  $conn->query($sql);
 
@@ -84,7 +84,7 @@
                 <hr>';
         }
 
-        $sql = "SELECT * FROM detalhes WHERE '$id' = id and categoria = 'desconto' ";
+        $sql = "SELECT * FROM detalhes WHERE '$id' = id and categoria = 'desconto' ORDER BY valor DESC ";
 
         $query =  $conn->query($sql);
 

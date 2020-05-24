@@ -39,7 +39,7 @@
             $erro = "";
             $contexto = array('mensagem'=>$erro,'codigo'=>0);
             echo (json_encode($contexto));
-            header("Location: ../BD.php");
+            header("Location: ../pesquisaadmin.php");
             exit();
         }
     }

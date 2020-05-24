@@ -29,5 +29,5 @@
 
     $Funcionario->inserir_funcionario($i,$j);
 
-    header("location: ../BD.php");
+    header("location: ../pesquisaadmin.php");
 ?>
