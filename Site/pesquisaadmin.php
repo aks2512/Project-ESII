@@ -81,7 +81,7 @@
         <div class="row justify-content-center mt-5">
           <div class="col-md-6 text-right"><!-- Mostrar Gráfico -->
             <button id="btn-inserir" class="btn btn-primary" data-toggle="modal" data-target="#OptIncluir" href="">Inserir</button>
-            <button id="btn-atualizar" class="btn btn-primary" onclick="atualizar()" href="">Atualizar</button>
+            <button id="btn-atualizar" class="btn btn-primary" onclick="atualizar(0)" href="">Atualizar</button>
             <button id="btn-excluir" class="btn btn-primary" onclick="excluir()" href="">Excluir</button>
             <button id="btn-historico" class="btn btn-primary" href="">Histórico</button>
             <button id="btn-grafico" class="btn btn-primary"  href="">Mostrar Gráfico</a>
@@ -216,6 +216,16 @@
     <div class="modal-content" id="incluir">
    
 
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="OptAtualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="Atualizar">
+      
+        
       </div>
     </div>
   </div>

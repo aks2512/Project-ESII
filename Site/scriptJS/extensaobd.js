@@ -22,13 +22,12 @@ $(document).ready(function () {
         document.getElementById("cadastrar").innerText = "Verificando...";
       },
     });
+    //Listeners para incrementar quantidade de campos input conforme requisitado
   });
-  //Listeners para incrementar quantidade de campos input conforme requisitado
-  $("#reqtde").keyup(function () {
-    //obs: name="nome[]" indica array, onde elementos que o forman devem ter o mesmo nome
+  $(document).on("keyup", "#reqtde", function () {
     var i = this.value;
     var inputspace =
-      '<td><input id="inputbox"  id="Rtipo" class="col-md-6" name="TR[]" placeholder="TIPO"><input id="inputbox"  id="Rval" class="col-md-6" name="VR[]" placeholder="Valor"></td>'; //Armazena Dupla de input onde deve ser colocado o tipo e valor do item de remuneração ex:salario - 300
+      '<td><input id="inputbox"  id="Rtipo" class="col-md-6" name="TR[]" placeholder="TIPO"><input id="inputbox"  id="Rval" class="col-md-6" name="VR[]" placeholder="Valor"></td>'; //
     if (i > 20) {
       alert("Não pode haver mais de 20 tipos!");
       i = 20;
@@ -44,7 +43,7 @@ $(document).ready(function () {
     }
     document.getElementById("reinput").innerHTML = inputspace;
   });
-  $("#deqtde").keyup(function () {
+  $(document).on("keyup", "#deqtde", function () {
     var i = this.value;
     var inputspace =
       '<td><input id="inputbox"  id="Dtipo" class="col-md-6" name="TD[]" placeholder="TIPO"><input id="inputbox"  id="Dval" class="col-md-6" name="VD[]" placeholder="Valor"></td>';

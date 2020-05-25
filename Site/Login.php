@@ -3,7 +3,7 @@
 
     if(isset($_SESSION["nome_usuario"])||isset($_SESSION["id_admin"]))
     {
-        header("location: BD.php");
+        header("location: pesquisaadmin.php");
     }
 ?>
 <!DOCTYPE html>
