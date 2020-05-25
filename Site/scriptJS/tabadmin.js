@@ -9,7 +9,9 @@ $(document).ready(function () {
   $(document).ready(function () {
     escrevertabela();
   });
-
+  $("input").keyup(function () {
+    alert("ok");
+  });
   $(document).on("click", "#btn-inserir", function () {
     //Escreve conteudo do modal incluir
     $.ajax({
@@ -18,6 +20,20 @@ $(document).ready(function () {
         document.getElementById("incluir").innerHTML = html;
       },
     });
+  });
+  $(document).on("click", "#continuar", function () {
+    var j = document.getElementById("continuar").value;
+    j = parseInt(j) || 0;
+    atualizar(j + 1);
+    var funcionarios = selecionados();
+    if (j == funcionarios.length) {
+      alert(funcionarios.length);
+      document.getElementById("continuar").innerText = "Sair";
+      document.getElementById("continuar").id = "Sair";
+    }
+  });
+  $(document).on("click", "#Sair", function () {
+    $("#exampleModal").modal("close");
   });
 });
 
@@ -56,7 +72,34 @@ $(document).ready(function () {
     });
   });
 });
-function atualizar() {}
+
+function selecionados() {
+  var funcionarios = document.querySelectorAll("[name=funcionario]:checked"); //apanhar todos
+  return funcionarios;
+}
+
+function atualizar(i) {
+  var funcionarios = selecionados();
+  if (funcionarios.length == 0) {
+    alert("Selecione um ou mais funcionários para atualizar");
+    return false;
+  } else {
+    id = funcionarios[i].value;
+    pos = i;
+    $.ajax({
+      type: "POST",
+      url: "./PHP_Action/carregaratualizar.php",
+      data: { id: id, pos: pos },
+      success: function (retorno) {
+        document.getElementById("Atualizar").innerHTML = retorno;
+        $("#OptAtualizar").modal("show");
+      },
+      done: function () {
+        alert("Pronto");
+      },
+    });
+  }
+}
 
 function excluir() {
   var funcionarios = document.querySelectorAll("[name=funcionario]:checked"); //apanhar todos
@@ -74,7 +117,6 @@ function excluir() {
       return false;
     } else {
       for (var i = 0; i < funcionarios.length; i++) {
-        // utilize o valor aqui, adicionei ao array para exemplo
         id.push(funcionarios[i].value);
       }
       $.ajax({
