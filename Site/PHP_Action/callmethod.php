@@ -1,6 +1,5 @@
 <?php
         include "conexao.php";
-        echo $_POST['Acao'];
 
             $id = $_POST['id'];
 

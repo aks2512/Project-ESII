@@ -25,7 +25,7 @@
                 $response = $response.'<td>'.$row["Nome"].'</td>';
                 $response = $response.'<td>'.$row["Cargo"].'</td>';
                 $response = $response.'<td>'.$row["TBruto"].'</td>';
-                $response = $response.'<td><button id="'.$row["id"].'" value="'.$row["id"].'" data-toggle="modal"  class="btn btn-primary view-data">+</button><td>';
+                $response = $response.'<td><button value="'.$row["id"].'" data-toggle="modal"  class="btn btn-primary view-data">+</button><td>';
                 $response = $response.'</tr>';
                 echo $response;//retorno
             }
@@ -45,7 +45,7 @@
                 $response = $response.'<td>'.$row["Nome"].'</td>';
                 $response = $response.'<td>'.$row["Cargo"].'</td>';
                 $response = $response.'<td>'.$row["TBruto"].'</td>';
-                $response = $response.'<td><button id="'.$row["id"].'" value="'.$row["id"].'" data-toggle="modal" class="btn btn-primary view-data">+</button><td>';
+                $response = $response.'<td><button value="'.$row["id"].'" data-toggle="modal" class="btn btn-primary view-data">+</button><td>';
                 $response = $response.'</tr>';
                 echo $response;//retorno
             }

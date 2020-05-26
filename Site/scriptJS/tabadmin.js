@@ -9,9 +9,6 @@ $(document).ready(function () {
   $(document).ready(function () {
     escrevertabela();
   });
-  $("input").keyup(function () {
-    alert("ok");
-  });
   $(document).on("click", "#btn-inserir", function () {
     //Escreve conteudo do modal incluir
     $.ajax({
@@ -25,15 +22,25 @@ $(document).ready(function () {
     var j = document.getElementById("continuar").value;
     j = parseInt(j) || 0;
     atualizar(j + 1);
-    var funcionarios = selecionados();
-    if (j == funcionarios.length) {
-      alert(funcionarios.length);
-      document.getElementById("continuar").innerText = "Sair";
-      document.getElementById("continuar").id = "Sair";
-    }
   });
-  $(document).on("click", "#Sair", function () {
-    $("#exampleModal").modal("close");
+  $(document).on("click", "#rmDetalhe", function () {
+    var id = this.value;
+    document.getElementById(id).innerHTML =
+      '<div class="col-md-9 deletado" value="' + id + '">Deletado...</div>';
+  });
+  $(document).on("click", "#confirmar", function () {
+    if (confirm("Deseja confirmar as alterações?")) {
+      $.each($(".deletado"), function () {
+        var id = $(this).attr("value");
+        id = parseInt(id);
+        alert(typeof id);
+        $.ajax({
+          type: "POST",
+          url: "./PHP_Action/deletar_item.php",
+          data: { id: id },
+        });
+      });
+    }
   });
 });
 
@@ -60,7 +67,7 @@ function escrevertabela() {
 
 $(document).ready(function () {
   $(document).on("click", ".view-data", function () {
-    var id = $(this).attr("id");
+    var id = this.value;
     var dados = { id: id };
     $.ajax({
       type: "POST",
