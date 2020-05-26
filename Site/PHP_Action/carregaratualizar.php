@@ -33,7 +33,7 @@
             <div class="col-md-12 text-left">
             
               <p class="bold">Cargo:<br>
-              <input name="atributos" id="Cargo" type="checkbox">'.$row['Cargo'].'</p>
+              <div class="Cargo">'.$row['Cargo'].'</div></p>
             </div>
             <div class="col-md-12 text-left">
               <p class="bold">Referência:<br>
@@ -55,7 +55,7 @@
           <div>
             <div id="detalhes" class="row">
                 <div class="col-md-12 text-left">
-                    <p>Remuneração</p>
+                    <p>Remuneração:<button id="addRemuneracao" class="btn btn-success">+</button></p>
                     <hr>';
 
         $sql = "SELECT id,id_item,categoria,subcategoria,valor FROM detalhes WHERE '$id' = id and categoria = 'remuneracao' ORDER BY valor DESC ";
@@ -68,12 +68,15 @@
                 $response = $response.
                 
                 '
-                <div class="row">
+                <div class="row" id="'.$row['id_item'].'">
                   <div class="col-md-6 text-left">   
-                    <p><input name="atributos" id="'.$row['id_item'].'" type="checkbox">'.$row['subcategoria'].'</p>
+                    <p>'.$row['subcategoria'].'</p>
                   </div>
-                  <div class="col-md-6 text-left">
+                  <div class="col-md-4 text-left">
                     <p>'.$row['valor'].'</p>
+                  </div>
+                  <div class="col-md-2 text-left">
+                    <button id="rmDetalhe" value="'.$row['id_item'].'" class="btn btn-danger">-</button>
                   </div>
                 </div>';
               
@@ -82,7 +85,7 @@
             $response = $response.
             '</div>
             <div class="col-md-12 text-left">
-                <p>Descontos Obrigatorios:</p>
+                <p>Descontos Obrigatorios:<button id="addDesconto" class="btn btn-success">+</button></p>
                 <hr>';
         }
 
@@ -95,12 +98,15 @@
             while($row = $query->fetch_assoc())
             {
                 $response = $response.
-                '<div class="row">
+                '<div class="row" id="'.$row['id_item'].'"">
                 <div class="col-md-6 text-left">
-                  <p><input name="atributos" id="'.$row['id_item'].'" type="checkbox">'.$row['subcategoria'].'</p>
+                  <p>'.$row['subcategoria'].'</p>
                 </div>
-                <div class="col-md-6 text-left">
+                <div class="col-md-4 text-left">
                   <p>'.$row['valor'].'</p>
+                </div>
+                <div class="col-md-2 text-left">
+                    <button id="rmDetalhe" value="'.$row['id_item'].'" class="btn btn-danger">-</button>
                 </div>
                 </div>';
             }
@@ -111,7 +117,7 @@
               <hr>
               <div class="row">
                 <div class="col-md-6 text-left">
-                  <p><input name="atributos" id="OutrosDescontos" type="checkbox">Outros</p>
+                  <p><div class="OutrosDescontos">Outros</div></p>
                 </div>
                 <div class="col-md-6 text-left">
                   <p>'.$outrosval.'</p>
@@ -120,7 +126,7 @@
             </div>
           </div>
         </div>
-        <button id="continuar" class="btn btn-warning" value="'.$pos.'">Próximo</button>
+        <button id="continuar" class="btn btn-primary" value="'.$pos.'">Próximo</button>
         <button id="confirmar" class="btn btn-success"value="'.$pos.'">Confirmar</button>';
         }
         else

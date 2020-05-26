@@ -97,6 +97,11 @@
             return '<div class="alert alert-success">Funcionário Inserido com sucesso!</div>';
         }
 
+        public function calcula_total()
+        {
+            
+        }
+
         public function excluir_funcionario($id){//Deleta todas as informações do funcionario
             include "conexao.php";
             
@@ -119,7 +124,7 @@
             return '<div class="alert alert-success">Funcionário Deletado com sucesso!</div>';
         }
 
-        private function atualizar_funcionario($del,$att){//$del guarda os id's dos itens a serem deletados e $att dos itens a serem atualizados
+        private function deletar_detalhe($id_item){//Deleta um item especifico da tabela detalhe de um funcionario
             //Salva informação anterior na tabela histórico da repectiva tabela de principal (detalhes/funcionario_bd)
             //Chama função de inserção mantendo valores não modificados e substituindo novos pelo atributo da classe
             //Atualiza Detalhes Selecionados
