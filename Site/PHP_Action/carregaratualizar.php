@@ -33,7 +33,7 @@
             <div class="col-md-12 text-left">
             
               <p class="bold">Cargo:<br>
-              <input id="Cargo" type="checkbox">'.$row['Cargo'].'</p>
+              <input name="atributos" id="Cargo" type="checkbox">'.$row['Cargo'].'</p>
             </div>
             <div class="col-md-12 text-left">
               <p class="bold">Referência:<br>
@@ -70,7 +70,7 @@
                 '
                 <div class="row">
                   <div class="col-md-6 text-left">   
-                    <p><input id="'.$row['id_item'].'" type="checkbox">'.$row['subcategoria'].'</p>
+                    <p><input name="atributos" id="'.$row['id_item'].'" type="checkbox">'.$row['subcategoria'].'</p>
                   </div>
                   <div class="col-md-6 text-left">
                     <p>'.$row['valor'].'</p>
@@ -97,7 +97,7 @@
                 $response = $response.
                 '<div class="row">
                 <div class="col-md-6 text-left">
-                  <p><input id="'.$row['id_item'].'" type="checkbox">'.$row['subcategoria'].'</p>
+                  <p><input name="atributos" id="'.$row['id_item'].'" type="checkbox">'.$row['subcategoria'].'</p>
                 </div>
                 <div class="col-md-6 text-left">
                   <p>'.$row['valor'].'</p>
@@ -111,7 +111,7 @@
               <hr>
               <div class="row">
                 <div class="col-md-6 text-left">
-                  <p><input id="OutrosDescontos" type="checkbox">Outros</p>
+                  <p><input name="atributos" id="OutrosDescontos" type="checkbox">Outros</p>
                 </div>
                 <div class="col-md-6 text-left">
                   <p>'.$outrosval.'</p>
