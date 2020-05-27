@@ -28,6 +28,20 @@ $(document).ready(function () {
     document.getElementById(id).innerHTML =
       '<div class="col-md-9 deletado" value="' + id + '">Deletado...</div>';
   });
+  $(document).on("click", "#editCargo", function () {
+    var campo = this.value;
+    document.getElementById(campo).innerHTML =
+      '<div class="col-md-9 editado" value="' +
+      id +
+      '"><input id="inputbox"  id="Dval" class="col-md-6" name="Cargo" placeholder="Cargo"></div>';
+  });
+  $(document).on("click", "#editDetalhe", function () {
+    var id = this.value;
+    document.getElementById(id).innerHTML =
+      '<div class="col-md-9 editado" value="' +
+      id +
+      '"><input id="inputbox"  id="Dval" class="col-md-6" name="Valordetalhe[]" placeholder="Valor"></div>';
+  });
   $(document).on("click", "#confirmar", function () {
     if (confirm("Deseja confirmar as alterações?")) {
       $.each($(".deletado"), function () {
@@ -140,4 +154,12 @@ function excluir() {
       });
     }
   }
+}
+
+function addItemDescontos() {
+  var qtde = document.getElementById("").value;
+}
+
+function addItemRemuneracao() {
+  var qtde = document.getElementsByClassName("remuneracao").value;
 }

@@ -30,10 +30,13 @@
 
         <div class="modal-body">
         <div class="row">
-            <div class="col-md-12 text-left">
-            
+            <div class="col-md-10 text-left">
               <p class="bold">Cargo:<br>
-              <div class="Cargo">'.$row['Cargo'].'</div></p>
+              <div id="Cargo">'.$row['Cargo'].'<div class="col-md-2 text-left">
+              </div></div></p>
+            </div>
+            <div class="col-md-2 text-left">
+            <button value="Cargo" id="editCargo" class="btn btn-primary"><i class="fas fa-edit"></i></button>
             </div>
             <div class="col-md-12 text-left">
               <p class="bold">Referência:<br>
@@ -55,8 +58,9 @@
           <div>
             <div id="detalhes" class="row">
                 <div class="col-md-12 text-left">
-                    <p>Remuneração:<button id="addRemuneracao" class="btn btn-success">+</button></p>
-                    <hr>';
+                    <p><button onclick="addItemRemuneracao()" value="0" class="btn btn-success remuneracao">+</button>Remuneração:</p>
+                    <hr>
+                    <div id="additems-remuneracao"></div>';
 
         $sql = "SELECT id,id_item,categoria,subcategoria,valor FROM detalhes WHERE '$id' = id and categoria = 'remuneracao' ORDER BY valor DESC ";
 
@@ -68,15 +72,16 @@
                 $response = $response.
                 
                 '
-                <div class="row" id="'.$row['id_item'].'">
-                  <div class="col-md-6 text-left">   
+                <div class="row">
+                  <div class="col-md-4 text-left">   
                     <p>'.$row['subcategoria'].'</p>
                   </div>
-                  <div class="col-md-4 text-left">
+                  <div class="col-md-5 text-left" value="'.$row['valor'].'" id="'.$row['id_item'].'">
                     <p>'.$row['valor'].'</p>
                   </div>
-                  <div class="col-md-2 text-left">
-                    <button id="rmDetalhe" value="'.$row['id_item'].'" class="btn btn-danger">-</button>
+                  <div class="col-md-3 text-left '.$row['id_item'].'">
+                    <button id="editDetalhe" value="'.$row['id_item'].'" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                    <button id="rmDetalhe" value="'.$row['id_item'].'" class="btn btn-danger"><i class="fas fa-minus-square"></i></button>
                   </div>
                 </div>';
               
@@ -85,8 +90,9 @@
             $response = $response.
             '</div>
             <div class="col-md-12 text-left">
-                <p>Descontos Obrigatorios:<button id="addDesconto" class="btn btn-success">+</button></p>
-                <hr>';
+                <p><button onclick="addItemDescontos()" value="0" class="btn btn-success">+</button>Descontos Obrigatorios:</p>
+                <hr">
+                <div id="items-descontos"></div>';
         }
 
         $sql = "SELECT * FROM detalhes WHERE '$id' = id and categoria = 'desconto' ORDER BY valor DESC ";
@@ -98,15 +104,16 @@
             while($row = $query->fetch_assoc())
             {
                 $response = $response.
-                '<div class="row" id="'.$row['id_item'].'"">
-                <div class="col-md-6 text-left">
+                '<div class="row">
+                <div class="col-md-4 text-left">
                   <p>'.$row['subcategoria'].'</p>
                 </div>
-                <div class="col-md-4 text-left">
+                <div class="col-md-5 text-left" value="'.$row['valor'].'" id="'.$row['id_item'].'">
                   <p>'.$row['valor'].'</p>
                 </div>
-                <div class="col-md-2 text-left">
-                    <button id="rmDetalhe" value="'.$row['id_item'].'" class="btn btn-danger">-</button>
+                <div class="col-md-3 text-left '.$row['id_item'].'">
+                    <button id="editDetalhe" value="'.$row['id_item'].'" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                    <button id="rmDetalhe" value="'.$row['id_item'].'" class="btn btn-danger"><i class="fas fa-minus-square"></i></button>
                 </div>
                 </div>';
             }
@@ -116,16 +123,21 @@
               <p>Outros Descontos:</p>
               <hr>
               <div class="row">
-                <div class="col-md-6 text-left">
+                <div class="col-md-4 text-left">
                   <p><div class="OutrosDescontos">Outros</div></p>
                 </div>
-                <div class="col-md-6 text-left">
+                <div class="col-md-5 text-left" id="outrosval">
                   <p>'.$outrosval.'</p>
+                </div>
+                <div class="col-md-3 text-left">
+                <button value="outrosval" id="editDetalhe" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button id="rmDetalhe" value="outrosval" class="btn btn-danger"><i class="fas fa-minus-square"></i></button>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div id="memoriaedicao"></div>
         <button id="continuar" class="btn btn-primary" value="'.$pos.'">Próximo</button>
         <button id="confirmar" class="btn btn-success"value="'.$pos.'">Confirmar</button>';
         }

@@ -43,9 +43,16 @@
         $TotalDescontos = $TotalDescontos - $valor;
         $DescontosObrigatorios = $DescontosObrigatorios - $valor;
         $Tliquido = $Tliquido + $valor;
-        $DescontosObrigatorios = $DescontosObrigatorios + $valor;
+        $TBruto = $TBruto + $valor;
     }
 
+    $sql = "UPDATE funcionarios_bd SET TDescontos='$TotalDescontos' DescontosObgr='$DescontosObrigatorios' Tliquido='$Tliquido' TBruto='$TBruto' ";
+
+        if (mysqli_query($conn, $sql)) {
+        } else {
+            echo utf8_encode("Erro: " . $sql . "<br>" . mysqli_error($conn));
+            return;
+        }
       
     $sql = "DELETE FROM detalhes WHERE '$id' = id_item";
 
