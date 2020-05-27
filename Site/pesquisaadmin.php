@@ -16,6 +16,7 @@
     <link type="text/css" href="css/estilo-menu.css" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://kit.fontawesome.com/cabb383e5b.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 

@@ -97,9 +97,13 @@
             return '<div class="alert alert-success">Funcionário Inserido com sucesso!</div>';
         }
 
-        public function calcula_total()
+        public function calcula_total($i)
         {
-            
+            for($j=$i;$j>=0;$j--)//Soma os valores relacionados a remuneração total
+            {
+                $this->VR[$j] = floatval(str_replace(',','.',$this->VR[$j]));
+                $this->Tbruto = $this->Tbruto + $this->VR[$j] ;
+            }
         }
 
         public function excluir_funcionario($id){//Deleta todas as informações do funcionario
