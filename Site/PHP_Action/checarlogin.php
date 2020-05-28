@@ -1,4 +1,6 @@
 <?php
+    // verifica se o usuario é um usuario valido no sistema
+
     session_start();	
     header('Content-Type: application/json');
     include("conexao.php");

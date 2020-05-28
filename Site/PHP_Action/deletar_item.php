@@ -1,5 +1,5 @@
 <?php
-
+    //deleta o funcionario do banco de dados
     include "conexao.php";
 
     $id = $_POST['id'];

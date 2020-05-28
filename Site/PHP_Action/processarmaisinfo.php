@@ -1,10 +1,6 @@
 <?php
    $id_recebido = $_POST['busca'];
-   //conexão com banco de dados
-   $conn = new mysqli("localhost", "root", "", "transparenciamc");
-   if( $conn ->connect_error) {
-    exit('Erro na conexao');
-    }
+   include("conexao.php");
 
    $sql = "SELECT * FROM funcionarios_bd WHERE id = '$id_recebido'";
 

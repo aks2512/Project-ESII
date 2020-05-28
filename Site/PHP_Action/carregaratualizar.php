@@ -1,4 +1,6 @@
 <?php
+//carrega o modal de editar o funcionario na parte do administrador
+
     include "conexao.php";
 
     $id = $_POST['id'];
