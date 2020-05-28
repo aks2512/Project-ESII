@@ -5,8 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link type="text/css" href="css/estilo-menu.css" rel="stylesheet">
+  <link type="text/css" href="css/estilo-administracao.css" rel="stylesheet">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="https://kit.fontawesome.com/cabb383e5b.js" crossorigin="anonymous"></script>
   
   <title>Document</title>
 
@@ -31,8 +32,9 @@
     </div>
 
     <div class="btn-group" role="group">
-      <button id="menu-funcionario" type="button" class="btn btn-primary btn-opcoes">Servidores Públicos</button>
-      <button id="menu-projetos" type="button" class="btn btn-primary btn-opcoes">Projetos</button>
+      <button id="administracao-funcionarios" type="button" class="btn btn-primary btn-opcoes">Servidores Públicos</button>
+      <button id="administracao-projetos" type="button" class="btn btn-primary btn-opcoes">Projetos</button>
+      <button id="administracao-interesses" type="button" class="btn btn-primary btn-opcoes">Pesquisa de Interesses</button>
     </div>
 
     <!-- Funções-->
@@ -56,7 +58,7 @@
 
     $(document).ready(function (){
                     $.ajax({
-                            url: 'menu-funcionario.html',
+                            url: 'administracao-funcionarios.html',
     
                             success: function(data){
                                 $('#funcoes').html(data);
