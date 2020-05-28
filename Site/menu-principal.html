@@ -31,7 +31,7 @@
     </div>
 
     <div class="btn-group" role="group">
-      <button id="menu-funcionario" type="button" class="btn btn-primary btn-opcoes">Servidores Públicos</button>
+      <button id="menu-funcionarios" type="button" class="btn btn-primary btn-opcoes">Servidores Públicos</button>
       <button id="menu-projetos" type="button" class="btn btn-primary btn-opcoes">Projetos</button>
     </div>
 
@@ -56,7 +56,7 @@
 
     $(document).ready(function (){
                     $.ajax({
-                            url: 'menu-funcionario.html',
+                            url: 'menu-funcionarios.html',
     
                             success: function(data){
                                 $('#funcoes').html(data);
