@@ -25,23 +25,77 @@ $(document).ready(function () {
   });
   $(document).on("click", "#rmDetalhe", function () {
     var id = this.value;
-    document.getElementById(id).innerHTML =
-      '<div class="col-md-9 deletado" value="' + id + '">Deletado...</div>';
-  });
-  $(document).on("click", "#editCargo", function () {
-    var campo = this.value;
-    document.getElementById(campo).innerHTML =
-      '<div class="col-md-9 editado" value="' +
-      id +
-      '"><input id="inputbox"  id="Dval" class="col-md-6" name="Cargo" placeholder="Cargo"></div>';
+    var valorant = document.getElementById(id).innerHTML;
+    if (valorant > 0) {
+      document.getElementById(id).innerHTML = "";
+      document.getElementById(id).innerHTML =
+        '<div class="col-md-9 deletado' +
+        id +
+        '" value="' +
+        id +
+        '" id="' +
+        valorant +
+        '">Deletado...</div>';
+    } else {
+      var valorant = $(".deletado" + id).attr("id");
+      if (valorant === undefined) {
+        var valorant = $(".editado" + id).attr("id");
+        document.getElementById(id).innerHTML =
+          '<div class="col-md-9 deletado' +
+          id +
+          '" value="' +
+          id +
+          '" id="' +
+          valorant +
+          '">Deletado...</div>';
+      } else {
+        document.getElementById(id).innerHTML = valorant;
+      }
+    }
   });
   $(document).on("click", "#editDetalhe", function () {
     var id = this.value;
-    document.getElementById(id).innerHTML =
+    var valorant = document.getElementById(id).innerHTML;
+    if (valorant > 0) {
+      document.getElementById(id).innerHTML =
+        '<div class="col-md-9 editado' +
+        id +
+        '" id="' +
+        valorant +
+        '" value="' +
+        id +
+        '"><input id="Dval" class="col-md-6" name="Valordetalhe[]" placeholder="' +
+        valorant +
+        '"></div>';
+    } else {
+      var valorant = $(".editado" + id).attr("id");
+      if (valorant === undefined) {
+        var valorant = $(".deletado" + id).attr("id");
+        document.getElementById(id).innerHTML =
+          '<div class="col-md-9 editado' +
+          id +
+          '" id="' +
+          valorant +
+          '" value="' +
+          id +
+          '"><input id="Dval" class="col-md-6" name="Valordetalhe[]" placeholder="' +
+          valorant +
+          '"></div>';
+      } else {
+        document.getElementById(id).innerHTML = valorant;
+      }
+    }
+  });
+
+  $(document).on("click", "#editCargo", function () {
+    var campo = this.value;
+
+    document.getElementById(campo).innerHTML =
       '<div class="col-md-9 editado" value="' +
       id +
-      '"><input id="inputbox"  id="Dval" class="col-md-6" name="Valordetalhe[]" placeholder="Valor"></div>';
+      '"><input id="Dval" class="col-md-6" name="Cargo" placeholder="Cargo"></div>';
   });
+
   $(document).on("click", "#confirmar", function () {
     if (confirm("Deseja confirmar as alterações?")) {
       $.each($(".deletado"), function () {
@@ -79,20 +133,7 @@ function escrevertabela() {
   });
 }
 
-$(document).ready(function () {
-  $(document).on("click", ".view-data", function () {
-    var id = this.value;
-    var dados = { id: id };
-    $.ajax({
-      type: "POST",
-      url: "./PHP_Action/carregarmodal.php",
-      data: dados,
-    }).done(function (dados) {
-      document.getElementById("detalhes").innerHTML = dados;
-      $("#exampleModal").modal("show");
-    });
-  });
-});
+$(document).ready(function () {});
 
 function selecionados() {
   var funcionarios = document.querySelectorAll("[name=funcionario]:checked"); //apanhar todos
@@ -157,9 +198,11 @@ function excluir() {
 }
 
 function addItemDescontos() {
-  var qtde = document.getElementById("").value;
+  var qtde = document.getElementById("descontos").value || 0;
+  alert(qtde);
 }
 
 function addItemRemuneracao() {
-  var qtde = document.getElementsByClassName("remuneracao").value;
+  var qtde = document.getElementsByClassName("remuneracao").value || 0;
+  alert(qtde);
 }
