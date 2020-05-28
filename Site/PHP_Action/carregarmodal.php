@@ -1,4 +1,6 @@
 <?php
+//é responsavel por carregar o modal do funcionario selecionado
+
     include "conexao.php";
 
     $id = $_POST['id'];
@@ -18,9 +20,10 @@
             $response = 
             
           ' 
-        <div class="modal-header bg-color">
-          <div class="row" >
-            <h5 class="modal-title col-md-9" id="exampleModalLabel">'.$row['Nome'].'</h5>  
+        <div id="bg-modal" class="modal-header">
+          <div class="row align-items-center" >
+            <img src="./Imagens/usuario.png" class="col-md-4" >
+            <h5 id="modal-title" class="col-md-8" id="exampleModalLabel">'.$row['Nome'].'</h5>  
           </div>
           <button type="button" class="close col-md-1" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -30,30 +33,30 @@
         <div class="modal-body">
         <div class="row">
             <div class="col-md-12 text-left">
-              <p class="bold">Cargo:<br>
-                '.$row['Cargo'].'</p>
+              <p><span class="bold">Cargo:</span><br>
+               '.$row['Cargo'].'</p>
             </div>
             <div class="col-md-12 text-left">
-              <p class="bold">Referência:<br>
+            <p><span class="bold">Referência:</span><br>
                 '.$row['Modificado'].'</p>
             </div>
             <div class="col-md-12 text-left">
-              <p class="bold">Total Bruto:<br>
+            <p><span class="bold">Total Bruto:</span><br>
                 '.$row['TBruto'].'</p>
             </div>
             <div class="col-md-12 text-left">
-              <p class="bold">Total Liquido:<br>
+            <p><span class="bold">Total Liquido:</span><br>
                 '.$row['Tliquido'].'</p>
             </div>
             <div class="col-md-12 text-left">
-              <p class="bold">Total de Descontos:<br>
+            <p><span class="bold">Total Descontos:</span><br>
                 '.$row['TDescontos'].'</p>
             </div>
           </div>
           <div>
             <div id="detalhes" class="row">
                 <div class="col-md-12 text-left">
-                    <p>Remuneração</p>
+                    <p class="bold">Remuneração</p>
                     <hr>';
 
         $sql = "SELECT id,categoria,subcategoria,valor FROM detalhes WHERE '$id' = id and categoria = 'remuneracao' ORDER BY valor DESC ";
@@ -80,7 +83,7 @@
             $response = $response.
             '</div>
             <div class="col-md-12 text-left">
-                <p>Descontos Obrigatorios:</p>
+                <p class="bold">Descontos Obrigatorios:</p>
                 <hr>';
         }
 
@@ -105,7 +108,7 @@
             $response = $response.
             '</div>
             <div class="col-md-12 text-left">
-              <p>Outros Descontos:</p>
+              <p class="bold">Outros Descontos:</p>
               <hr>
               <div class="row">
                 <div class="col-md-6 text-left">

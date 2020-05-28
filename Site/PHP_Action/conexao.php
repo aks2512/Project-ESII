@@ -1,4 +1,5 @@
 <?php 
+    //cria coneção com o banco de dados
 
     // Create connection
     $conn = mysqli_connect("localhost", "root", "", "transparenciamc");

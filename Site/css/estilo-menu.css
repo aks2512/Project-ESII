@@ -125,3 +125,16 @@ body {
   font-size: 25px!important;
   font-weight: bold!important;
 }
+
+#bg-modal{
+ background-color: #45A59C!important;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+#modal-title{
+  color: white;
+  font-weight: bold;
+}
