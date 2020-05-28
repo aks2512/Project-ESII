@@ -80,8 +80,7 @@ body {
   margin-bottom: 40px;
   color: #919191;
   background-color: white;
-  border: 1px solid black;
-  border-radius: 20px;
+  border-radius: 0px 0px 20px 20px;
   padding: 0px;
 }
 
@@ -119,4 +118,23 @@ body {
   color: white;
   font-weight: bold;
   font-size: 15px;
+}
+
+.btn-opcoes {
+  margin-right: 2px;
+  font-size: 25px!important;
+  font-weight: bold!important;
+}
+
+#bg-modal{
+ background-color: #45A59C!important;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+#modal-title{
+  color: white;
+  font-weight: bold;
 }

@@ -1,4 +1,5 @@
 <?php
+//inseri o usuario no banco de dados
 
 session_start();
 // Essa inserção é apenas para teste

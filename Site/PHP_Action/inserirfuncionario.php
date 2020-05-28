@@ -1,4 +1,6 @@
 <?php
+    //inseri o funcionario no banco de dados
+
     //Esse arquivo vai coletar formulario e instanciar a classe funcionário
     require_once('../classesphp/class.funcionario.php');
     include "conexao.php";
