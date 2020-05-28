@@ -76,8 +76,7 @@
                   <div class="col-md-4 text-left">   
                     <p>'.$row['subcategoria'].'</p>
                   </div>
-                  <div class="col-md-5 text-left" value="'.$row['valor'].'" id="'.$row['id_item'].'">
-                    <p>'.$row['valor'].'</p>
+                  <div class="col-md-5 text-left" id="'.$row['id_item'].'">'.$row['valor'].'
                   </div>
                   <div class="col-md-3 text-left '.$row['id_item'].'">
                     <button id="editDetalhe" value="'.$row['id_item'].'" class="btn btn-primary"><i class="fas fa-edit"></i></button>
@@ -108,8 +107,7 @@
                 <div class="col-md-4 text-left">
                   <p>'.$row['subcategoria'].'</p>
                 </div>
-                <div class="col-md-5 text-left" value="'.$row['valor'].'" id="'.$row['id_item'].'">
-                  <p>'.$row['valor'].'</p>
+                <div class="col-md-5 text-left" id="'.$row['id_item'].'">'.$row['valor'].'
                 </div>
                 <div class="col-md-3 text-left '.$row['id_item'].'">
                     <button id="editDetalhe" value="'.$row['id_item'].'" class="btn btn-primary"><i class="fas fa-edit"></i></button>
