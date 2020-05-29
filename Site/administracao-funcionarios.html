@@ -1,0 +1,179 @@
+<!-- Visualizaçao Principal (Exibição dos Servidores Públicos)-->
+<div class="row justify-content-center">
+  <h3 id="title-h3">Servidores Públicos</h3>
+  <p id="p-text" class="col-md-10 text-left">
+    Gastos com servidores públicos, dentro dos limites estabelecidos pela Lei de Responsabilidade
+    Fiscal, podem ser verificados e acompanhados periodicamente.
+  </p>
+</div>
+
+<!-- Barra Pesquisa -->
+<form id="formulario-pesquisa" method="post" class="col-md-10">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row justify-content-center align-items-center">
+        <p class="p-form col-md-4 m-0">Mostrar</p>
+        <select class="col-md-4" id="controlalinhas" name="qtdeLinhas" type="number"
+          title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
+          <option value=10>10</option>
+          <option value=25>25</option>
+          <option value=50>50</option>
+          <option value=100>100</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row justify-content-center align-items-center">
+        <p class="p-form m-0 col-md-2">Buscar</p>
+        <input class="col-md-9" id="busca" type="text">
+      </div>
+    </div>
+
+  </div>
+</form>
+
+<!-- Mostrar Gráfico e Paginas-->
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6 text-center">
+    <!-- Botões -->
+    <button id="btn-inserir" class="btn btn-primary" data-toggle="modal" data-target="#OptIncluir" href="">Inserir</button>
+    <button id="btn-atualizar" class="btn btn-primary" onclick="atualizar(0)" href="">Atualizar</button>
+    <button id="btn-excluir" class="btn btn-primary" onclick="excluir()" href="">Excluir</button>
+    <button id="btn-historico" class="btn btn-primary" href="">Histórico</button>
+  </div><!-- Navegação Páginas da Tabela -->
+  <div class="col-md-6">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <span class="page-link">Anterior</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            2
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Proximo</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Tabela -->
+<div class="container">
+  <div class="row justify-content-center">
+    <table class="table striped col-md-10" id="tabela-principal">
+      <thead>
+        <tr>
+          <th scope="col">Add</th>
+          <th scope="col">#</th>
+          <th scope="col">Funcionário</th>
+          <th scope="col">Cargo</th>
+          <th scope="col">Remuneração</th>
+          <th scope="col">*</th>
+          <th scope="col"> </th>
+        </tr>
+      </thead>
+      <tbody id="conteudo-tabela">
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- nº Registros e Paginação -->
+<div class="row">
+  <div class="col-md-6 text-center">
+    <p>1 até 10 de 5,691 registros</p>
+  </div>
+  <div class="col-md-6">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <span class="page-link">Anterior</span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            2
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Proximo</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script src="scriptJS/tabadmin.js"></script>
+<script src="scriptJS/extensaobd.js"></script>
+
+<div class="modal fade" id="adminmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cadastrar Administrador</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="formcadastro" method="POST" action="PHP_Action/inserirusuario.php">
+
+          <div class="form-group" id="formalinhado">
+            <label for="Usuario">Usuário:</label>
+            <input name="Usuariocadastro" type="text" class="form-control" id="inputbox2" placeholder="usuario"
+              maxlength="32">
+          </div>
+
+          <div class="form-group">
+            <label for="Senha">Senha:</label>
+            <input name="Senhacadastro" type="password" class="form-control" id="inputbox2" placeholder="senha"
+              maxlength="22">
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="submit" id="cadastrar" class="btn btn-success">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="detalhes">
+
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="OptIncluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="incluir">
+
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="OptAtualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="Atualizar">
+
+
+    </div>
+  </div>
+</div>
