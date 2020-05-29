@@ -6,7 +6,7 @@
     $id = $_POST['id'];
     $pos = $_POST['pos'];
 
-    $sql = "SELECT Nome,Cargo,Modificado,TBruto,Tliquido,TDescontos,OutrosDescontos FROM funcionarios_bd WHERE '$id' = id";
+    $sql = "SELECT id,Nome,Cargo,Modificado,TBruto,Tliquido,TDescontos,OutrosDescontos FROM funcionarios_bd WHERE '$id' = id";
 
     $query =  $conn->query($sql);
 
@@ -23,7 +23,7 @@
           ' 
         <div class="modal-header bg-color">
           <div class="row" >
-            <h5 class="modal-title col-md-9" id="exampleModalLabel">'.$row['Nome'].'</h5>  
+            <h5 class="modal-title col-md-9" id="identificador-principal" value="'.$row['id'].'">'.$row['Nome'].'</h5>  
           </div>
           <button type="button" class="close col-md-1" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -60,7 +60,7 @@
           <div>
             <div id="detalhes" class="row">
                 <div class="col-md-12 text-left">
-                    <p><button onclick="addItemRemuneracao()" value="0" class="btn btn-success remuneracao">+</button>Remuneração:</p>
+                    <p><button onclick="addItemRemuneracao()" id="remuneracaoadd" value="0" class="btn btn-success remuneracao">+</button><button onclick="rmItemRemuneracao()" value="0" id="remuneracaoadd" class="btn btn-danger">-</button>Remuneração:</p>
                     <hr>
                     <div id="additems-remuneracao"></div>';
 
@@ -91,7 +91,7 @@
             $response = $response.
             '</div>
             <div class="col-md-12 text-left">
-                <p><button onclick="addItemDescontos()" value="0" class="btn btn-success">+</button>Descontos Obrigatorios:</p>
+                <p><button onclick="addItemDescontos()" value="0" id="descontosadd" class="btn btn-success">+</button><button onclick="rmItemDescontos()" value="0" id="descontosadd" class="btn btn-danger">-</button>Descontos Obrigatorios:</p>
                 <hr">
                 <div id="items-descontos"></div>';
         }
@@ -126,8 +126,7 @@
                 <div class="col-md-4 text-left">
                   <p><div class="OutrosDescontos">Outros</div></p>
                 </div>
-                <div class="col-md-5 text-left" id="outrosval">
-                  <p>'.$outrosval.'</p>
+                <div class="col-md-5 text-left" id="outrosval">'.$outrosval.'
                 </div>
                 <div class="col-md-3 text-left">
                 <button value="outrosval" id="editDetalhe" class="btn btn-primary"><i class="fas fa-edit"></i></button>

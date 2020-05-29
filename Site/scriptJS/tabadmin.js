@@ -29,7 +29,7 @@ $(document).ready(function () {
     if (valorant > 0) {
       document.getElementById(id).innerHTML = "";
       document.getElementById(id).innerHTML =
-        '<div class="col-md-9 deletado' +
+        '<div class="col-md-9 deletado deletado' +
         id +
         '" value="' +
         id +
@@ -41,7 +41,7 @@ $(document).ready(function () {
       if (valorant === undefined) {
         var valorant = $(".editado" + id).attr("id");
         document.getElementById(id).innerHTML =
-          '<div class="col-md-9 deletado' +
+          '<div class="col-md-9 deletado deletado' +
           id +
           '" value="' +
           id +
@@ -58,13 +58,15 @@ $(document).ready(function () {
     var valorant = document.getElementById(id).innerHTML;
     if (valorant > 0) {
       document.getElementById(id).innerHTML =
-        '<div class="col-md-9 editado' +
+        '<div class="col-md-9 editado editado' +
         id +
         '" id="' +
         valorant +
         '" value="' +
         id +
-        '"><input id="Dval" class="col-md-6" name="Valordetalhe[]" placeholder="' +
+        '"><input id="Dval' +
+        id +
+        '" class="col-md-6" name="Valordetalhe[]" placeholder="' +
         valorant +
         '"></div>';
     } else {
@@ -72,13 +74,15 @@ $(document).ready(function () {
       if (valorant === undefined) {
         var valorant = $(".deletado" + id).attr("id");
         document.getElementById(id).innerHTML =
-          '<div class="col-md-9 editado' +
+          '<div class="col-md-9 editado editado' +
           id +
           '" id="' +
           valorant +
           '" value="' +
           id +
-          '"><input id="Dval" class="col-md-6" name="Valordetalhe[]" placeholder="' +
+          '"><input id="Dval' +
+          id +
+          '" class="col-md-6" name="Valordetalhe[]" placeholder="' +
           valorant +
           '"></div>';
       } else {
@@ -89,24 +93,32 @@ $(document).ready(function () {
 
   $(document).on("click", "#editCargo", function () {
     var campo = this.value;
+    var valorant = document.getElementById(campo).innerText;
 
-    document.getElementById(campo).innerHTML =
-      '<div class="col-md-9 editado" value="' +
-      id +
-      '"><input id="Dval" class="col-md-6" name="Cargo" placeholder="Cargo"></div>';
+    if ($(".editado" + campo).attr("value") != undefined) {
+      valorant = $(".editado" + campo).attr("id");
+      document.getElementById(campo).innerHTML = valorant;
+    } else {
+      document.getElementById(campo).innerHTML =
+        '<div class="col-md-9 editado editado' +
+        campo +
+        '" id="' +
+        valorant +
+        '" value="' +
+        campo +
+        '"><input id="Dval' +
+        campo +
+        '" class="col-md-6" placeholder="Cargo"></div>';
+    }
   });
 
   $(document).on("click", "#confirmar", function () {
     if (confirm("Deseja confirmar as alterações?")) {
-      $.each($(".deletado"), function () {
+      $.each($(".editado"), function () {
         var id = $(this).attr("value");
-        id = parseInt(id);
-        alert(typeof id);
-        $.ajax({
-          type: "POST",
-          url: "./PHP_Action/deletar_item.php",
-          data: { id: id },
-        });
+        var valor = document.getElementById("Dval" + id).value;
+        var id_funcionario = $("#identificador-principal").attr("value");
+        alert(valor);
       });
     }
   });
@@ -143,7 +155,7 @@ function selecionados() {
 function atualizar(i) {
   var funcionarios = selecionados();
   if (funcionarios.length == 0) {
-    alert("Selecione um ou mais funcionários para atualizar");
+    alert("Selecione um ou mais funcionários para editar");
     return false;
   } else {
     id = funcionarios[i].value;
@@ -198,11 +210,55 @@ function excluir() {
 }
 
 function addItemDescontos() {
-  var qtde = document.getElementById("descontos").value || 0;
-  alert(qtde);
+  var qtde = parseInt(document.getElementById("descontosadd").value) || 0;
+  document.getElementById("descontosadd").value = qtde + 1;
+  var resposta = "";
+  for (var i = 0; i <= qtde; i++) {
+    var resposta =
+      resposta +
+      '<div class="row"><input id="inputbox"  id="Dtipo" class="col-md-6" name="TD[]" placeholder="TIPO"><input id="inputbox"  id="Dval" class="col-md-6" name="VD[]" placeholder="Valor"></div>';
+  }
+  document.getElementById("items-descontos").innerHTML = resposta;
+}
+function addItemRemuneracao() {
+  var qtde = parseInt(document.getElementById("remuneracaoadd").value) || 0;
+  document.getElementById("remuneracaoadd").value = qtde + 1;
+  var resposta = "";
+  for (var i = 0; i <= qtde; i++) {
+    resposta =
+      resposta +
+      '<div class="row"><input id="inputbox"  id="Rtipo" class="col-md-6" name="TR[]" placeholder="TIPO"><input id="inputbox"  id="Rval" class="col-md-6" name="VR[]" placeholder="Valor"></div>';
+  }
+  document.getElementById("additems-remuneracao").innerHTML = resposta;
 }
 
-function addItemRemuneracao() {
-  var qtde = document.getElementsByClassName("remuneracao").value || 0;
-  alert(qtde);
+function rmItemRemuneracao() {
+  var qtde = parseInt(document.getElementById("remuneracaoadd").value) || 0;
+  if (qtde < 0) {
+    document.getElementById("additems-remuneracao").innerHTML = "";
+    return;
+  }
+  document.getElementById("remuneracaoadd").value = qtde - 1;
+  var resposta = "";
+  for (var i = 0; i < qtde - 1; i++) {
+    resposta =
+      resposta +
+      '<div class="row"><input id="inputbox"  id="Rtipo" class="col-md-6" name="TR[]" placeholder="TIPO"><input id="inputbox"  id="Rval" class="col-md-6" name="VR[]" placeholder="Valor"></div>';
+  }
+  document.getElementById("additems-remuneracao").innerHTML = resposta;
+}
+function rmItemDescontos() {
+  var qtde = parseInt(document.getElementById("descontosadd").value) || 0;
+  if (qtde < 0) {
+    document.getElementById("items-descontos").innerHTML = "";
+    return;
+  }
+  document.getElementById("descontosadd").value = qtde - 1;
+  var resposta = "";
+  for (var i = 0; i < qtde - 1; i++) {
+    var resposta =
+      resposta +
+      '<div class="row"><input id="inputbox"  id="Dtipo" class="col-md-6" name="TD[]" placeholder="TIPO"><input id="inputbox"  id="Dval" class="col-md-6" name="VD[]" placeholder="Valor"></div>';
+  }
+  document.getElementById("items-descontos").innerHTML = resposta;
 }
