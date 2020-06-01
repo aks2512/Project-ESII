@@ -232,6 +232,7 @@
   </div>
 
 
+    <script src="scriptJS/main.js"></script>
     <script src="scriptJS/tabadmin.js"></script>
     <script src="scriptJS/extensaobd.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
