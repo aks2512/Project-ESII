@@ -119,6 +119,28 @@ $(document).ready(function () {
         var valor = document.getElementById("Dval" + id).value;
         var id_funcionario = $("#identificador-principal").attr("value");
         alert(valor);
+        if (valor >= 0) {
+          $.ajax({
+            method: "POST",
+            data: { valor: valor, id: id },
+            url: "./PHP_Action/Atualizar_Item.php",
+          });
+        } else {
+          $.ajax({
+            method: "POST",
+            data: { valor: valor, id_funcionario: id_funcionario },
+            url: "./PHP_Action/Atualizar_Principal.php",
+          });
+        }
+      });
+      $.each($(".deletado"), function () {
+        id = $(this).attr("value");
+        alert(id);
+        $.ajax({
+          method: "POST",
+          data: { id: id },
+          url: "./PHP_Action/deletar_item.php",
+        });
       });
     }
   });
@@ -137,15 +159,8 @@ function escrevertabela() {
     success: function (dados) {
       document.getElementById("conteudo-tabela").innerHTML = dados;
     },
-    error: function (request, status, erro) {
-      alert("Problema ocorrido: " + status + "\nDescrição: " + erro);
-
-      alert("Informações da requisição: \n" + request.getAllResponseHeaders());
-    },
   });
 }
-
-$(document).ready(function () {});
 
 function selecionados() {
   var funcionarios = document.querySelectorAll("[name=funcionario]:checked"); //apanhar todos
