@@ -29,7 +29,7 @@
         }
 
         public function inserir_funcionario($i,$j){//VD - Valor dos detalhes; TD - tipo dos detalhes ; Coluna 0 são detalhes da remuneração ; Coluna 1 são dos descontos obrigatórios
-            include "conexao.php";
+            include "../PHP_Action/conexao.php";
 
             for($cont=$i;$cont>=0;$cont--)//Soma os valores relacionados a remuneração total
             {

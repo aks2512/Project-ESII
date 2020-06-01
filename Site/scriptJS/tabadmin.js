@@ -9,6 +9,20 @@ $(document).ready(function () {
   $(document).ready(function () {
     escrevertabela();
   });
+  //carrega Modal funcionarios
+  $(document).on("click", ".view-data", function () {
+    var id = this.value;
+    var dados = { id: id };
+    $.ajax({
+      type: "POST",
+      url: "./PHP_Action/carregarmodal.php",
+      data: dados,
+    }).done(function (dados) {
+      document.getElementById("detalhes").innerHTML = dados;
+      $("#exampleModal").modal("show");
+    });
+  });
+
   $(document).on("click", "#btn-inserir", function () {
     //Escreve conteudo do modal incluir
     $.ajax({
