@@ -32,11 +32,13 @@ $(document).ready(function () {
       },
     });
   });
+
   $(document).on("click", "#continuar", function () {
     var j = document.getElementById("continuar").value;
     j = parseInt(j) || 0;
     atualizar(j + 1);
   });
+
   $(document).on("click", "#rmDetalhe", function () {
     var id = this.value;
     var valorant = document.getElementById(id).innerHTML;
@@ -67,6 +69,7 @@ $(document).ready(function () {
       }
     }
   });
+
   $(document).on("click", "#editDetalhe", function () {
     var id = this.value;
     var valorant = document.getElementById(id).innerHTML;

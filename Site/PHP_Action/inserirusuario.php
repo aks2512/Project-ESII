@@ -16,6 +16,7 @@ $senha = md5($_POST['Senhacadastro']);
 //);
 
 //$resultado = array_search($servidores,$ip);
+
 $sql = "SELECT Usuario FROM administradores WHERE '$nome' = Usuario LIMIT 1";
 
 $query =  $conn->query($sql);
