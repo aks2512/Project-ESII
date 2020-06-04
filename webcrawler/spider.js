@@ -8,7 +8,7 @@ axios
 
     Object.keys(estrutura).forEach(function (chave) {
       var json = estrutura["servidores"];
-      for (var i = 0; i < 150; i++) {
+      for (var i = 0; i < 5; i++) {
         var rgf = json[i].rgf;
         axios
           .get(
@@ -18,16 +18,9 @@ axios
           .then((res2) => {
             var detalhes = res2.data;
 
-            console.log(rgf);
-
             console.log("Nome   :" + detalhes.nome);
             console.log("Cargo  :" + detalhes.cargo);
             console.log("Regime :" + detalhes.regime);
-
-            console.log("*Total Bruto:     " + detalhes.totais[0].valor + "*");
-            console.log(
-              "\n*Total Liquido:   " + detalhes.totais[2].valor + "*"
-            );
 
             if (detalhes.totais[2].valor === undefined) {
               fs.appendFile(
@@ -37,31 +30,54 @@ axios
             }
 
             rgf = 0;
-
+            var totalbruto = 0.0;
+            var totaliquido = 0.0;
+            var descontos = 0.0;
             var valores;
             var nomes;
             var cont = detalhes.rendimentos.length;
 
+            console.log("\nRemuneracoes");
             for (j = 0; j < cont; j++) {
               nomes = detalhes.rendimentos[j].nome;
-              valores = detalhes.rendimentos[j].valor;
+
+              valores = converter_float(detalhes.rendimentos[j].valor);
+
               console.log(nomes + ": " + valores);
-            }
-            var cont = detalhes.rendimentos.length;
-            console.log(
-              "\n*Total Descontos: " + detalhes.totais[1].valor + "*"
-            );
-            for (j = 0; j < cont; j++) {
-              nomes = detalhes.rendimentos[j].nome;
-              valores = detalhes.rendimentos[j].valor;
-              console.log(nomes + ": " + valores);
+              totalbruto = totalbruto + valores;
             }
 
-            console.log(
-              "\n*Outros Descontos:" + detalhes.outros[0].valor + "*"
-            );
+            var cont = detalhes.descontos.length;
+
+            console.log("\nDescontos");
+            for (j = 0; j < cont; j++) {
+              nomes = detalhes.descontos[j].nome;
+
+              valores = converter_float(detalhes.descontos[j].valor);
+
+              console.log(nomes + ": " + valores);
+              descontos = descontos + valores;
+            }
+
+            outros = converter_float(detalhes.outros[0].valor);
+
+            console.log("\n*Outros Descontos:" + outros + "*");
+
+            descontos = (descontos + outros).toFixed(2);
+
+            totaliquido = (totalbruto - descontos).toFixed(2);
+
+            console.log("\n*Total Bruto    : " + totalbruto + "*");
+            console.log("\n*Total Liquido  : " + totaliquido + "*");
+            console.log("\n*Total Descontos: " + descontos + "*");
             console.log("-------------------------");
           });
       }
     });
   });
+
+function converter_float(numero) {
+  numero = numero.replace(".", "");
+  numero = parseFloat(numero.replace(",", "."));
+  return numero;
+}
