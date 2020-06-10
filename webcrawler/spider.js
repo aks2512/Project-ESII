@@ -105,10 +105,19 @@ async function requisitar_valores(rgf) {
 
         console.log("\nRemuneracoes");
         for (j = 0; j < cont; j++) {
-          nomes = detalhes.rendimentos[j].nome;
+          nomes = detalhes.rendimentos[j].nome || "";
 
           valores = converter_float(detalhes.rendimentos[j].valor) || 0;
 
+          con.query(
+            "INSERT INTO remuneracoes VALUES '" +
+              rgf +
+              ",NULL,'" +
+              nomes +
+              "','" +
+              valores +
+              "'"
+          );
           console.log(nomes + ": " + valores);
           totalbruto = totalbruto + valores;
         }
@@ -122,10 +131,19 @@ async function requisitar_valores(rgf) {
 
         console.log("\nDescontos");
         for (j = 0; j < cont; j++) {
-          nomes = detalhes.descontos[j].nome;
+          nomes = detalhes.descontos[j].nome || "";
 
-          valores = converter_float(detalhes.descontos[j].valor);
+          valores = converter_float(detalhes.descontos[j].valor) || 0;
 
+          con.query(
+            "INSERT INTO descontos VALUES '" +
+              rgf +
+              ",NULL,'" +
+              nomes +
+              "','" +
+              valores +
+              "'"
+          );
           console.log(nomes + ": " + valores);
           descontos = descontos + valores;
         }

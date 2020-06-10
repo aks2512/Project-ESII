@@ -3,7 +3,7 @@ $(document).ready(function () {
   $("#busca").keyup(function () {
     escrevertabela();
   });
-  $("#qtdeLinhas").change(function () {
+  $("#controlalinhas").change(function () {
     escrevertabela();
   });
   $(document).ready(function () {
