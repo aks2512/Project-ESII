@@ -165,11 +165,13 @@ $(document).ready(function () {
 
 function escrevertabela() {
   var busca = document.getElementById("busca").value;
+  var qtde = document.getElementById("controlalinhas").value;
   var tabela = 1;
   $.ajax({
     type: "POST",
     url: "./PHP_Action/processartabela.php",
     data: {
+      qtde: qtde,
       busca: busca,
       tabela: tabela,
     },
