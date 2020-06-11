@@ -4,9 +4,9 @@ var mysql = require("mysql");
 const qs = require("qs");
 
 const con = mysql.createConnection({
-  host: "localhost", // O host do banco. Ex: localhost
-  user: "root", // Um usuário do banco. Ex: user
-  password: "", // A senha do usuário. Ex: user123
+  host: "localhost", // O host do banco.
+  user: "root", // Um usuário do banco.
+  password: "", // A senha do usuário.
   database: "transparenciamc", // A base de dados a qual a aplicação irá se conectar, deve ser a mesma onde foi executado o Código 1. Ex: node_mysql
 });
 
@@ -37,6 +37,12 @@ async function main() {
 }
 
 async function delregistro() {
+  await con.query("DELETE FROM remuneracoes");
+  con.query("ALTER TABLE funcionarios AUTO_INCREMENT = 1 ");
+
+  await con.query("DELETE FROM descontos");
+  con.query("ALTER TABLE funcionarios AUTO_INCREMENT = 1 ");
+
   await con.query("DELETE FROM funcionarios");
   con.query("ALTER TABLE funcionarios AUTO_INCREMENT = 1 ");
 }
@@ -54,17 +60,22 @@ async function iniciar_leitura(j, i, estrutura) {
   }
   return;
 }
+
 async function requisitar_valores(rgf) {
   var create = true;
+  var id;
   await con.query(
-    "SELECT * FROM funcionarios WHERE rgf = " + rgf,
-    (err, rows) => {
+    "SELECT id,LAST_INSERT_ID() FROM funcionarios WHERE rgf = " +
+      rgf +
+      " LIMIT 1",
+    (err, rows, result) => {
       if (err) throw err;
-      var resultado = rows;
-      if (resultado == "") {
+      if (rows == "") {
+        console.log(result);
         console.log("Registro nao existe");
         create = true;
       } else {
+        id = result[0].id;
         console.log("Atualizacao de registro");
         create = false;
         return;
@@ -96,54 +107,26 @@ async function requisitar_valores(rgf) {
         var valores;
         var nomes;
 
-        try {
-          var cont = detalhes.rendimentos.length || 0;
-        } catch (err) {
-          console.log(err);
-          return;
-        }
+        var contre = detalhes.rendimentos.length || 0;
 
         console.log("\nRemuneracoes");
-        for (j = 0; j < cont; j++) {
-          nomes = detalhes.rendimentos[j].nome || "";
+        for (j = 0; j < contre; j++) {
+          nomes = detalhes.rendimentos[j].nome.trim() || "";
 
           valores = converter_float(detalhes.rendimentos[j].valor) || 0;
 
-          con.query(
-            "INSERT INTO remuneracoes VALUES '" +
-              rgf +
-              ",NULL,'" +
-              nomes +
-              "','" +
-              valores +
-              "'"
-          );
           console.log(nomes + ": " + valores);
           totalbruto = totalbruto + valores;
         }
 
-        try {
-          var cont = detalhes.descontos.length || 0;
-        } catch (err) {
-          console.log(err);
-          return;
-        }
+        var contde = detalhes.descontos.length || 0;
 
         console.log("\nDescontos");
-        for (j = 0; j < cont; j++) {
-          nomes = detalhes.descontos[j].nome || "";
+        for (j = 0; j < contde; j++) {
+          nomes = detalhes.descontos[j].nome.trim() || "";
 
           valores = converter_float(detalhes.descontos[j].valor) || 0;
 
-          con.query(
-            "INSERT INTO descontos VALUES '" +
-              rgf +
-              ",NULL,'" +
-              nomes +
-              "','" +
-              valores +
-              "'"
-          );
           console.log(nomes + ": " + valores);
           descontos = descontos + valores;
         }
@@ -183,6 +166,7 @@ async function requisitar_valores(rgf) {
               rgf +
               "')"
           );
+          console.log(id);
           console.log("Sucesso!");
         } else {
           "UPDATE funcionarios SET (NULL ,nome = '" +
@@ -203,6 +187,40 @@ async function requisitar_valores(rgf) {
             rgf +
             "'";
           console.log("Sucesso!");
+        }
+        for (j = 0; j < contre; j++) {
+          nomes = detalhes.rendimentos[j].nome.trim() || "";
+
+          valores = converter_float(detalhes.rendimentos[j].valor) || 0;
+
+          con.query(
+            "INSERT INTO remuneracoes VALUES ('" +
+              rgf +
+              "','" +
+              id +
+              "',NULL,'" +
+              nomes +
+              "','" +
+              valores +
+              "')"
+          );
+        }
+        for (j = 0; j < contde; j++) {
+          nomes = detalhes.descontos[j].nome.trim() || "";
+
+          valores = converter_float(detalhes.descontos[j].valor) || 0;
+
+          con.query(
+            "INSERT INTO descontos VALUES ('" +
+              rgf +
+              "','" +
+              id +
+              "',NULL,'" +
+              nomes +
+              "','" +
+              valores +
+              "')"
+          );
         }
       });
   } catch (err) {
