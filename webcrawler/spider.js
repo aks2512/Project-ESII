@@ -48,34 +48,31 @@ async function delregistro() {
 }
 
 async function iniciar_leitura(j, i, estrutura) {
-  while (j < i) {
+  while (j <= 300) {
+    console.log(i);
     try {
       var rgf = estrutura["servidores"][j].rgf;
-      await requisitar_valores(rgf);
+      await requisitar_valores(rgf, j + 1);
     } catch (err) {
       console.log(err);
-      return;
+      process.exit(0);
     }
     j++;
   }
-  return;
+  process.exit(0);
 }
 
-async function requisitar_valores(rgf) {
+async function requisitar_valores(rgf, k) {
   var create = true;
-  var id;
-  await con.query(
-    "SELECT id,LAST_INSERT_ID() FROM funcionarios WHERE rgf = " +
-      rgf +
-      " LIMIT 1",
+  var id = k;
+  con.query(
+    "SELECT id FROM funcionarios WHERE rgf = " + rgf + " LIMIT 1",
     (err, rows, result) => {
       if (err) throw err;
       if (rows == "") {
-        console.log(result);
         console.log("Registro nao existe");
         create = true;
       } else {
-        id = result[0].id;
         console.log("Atualizacao de registro");
         create = false;
         return;
@@ -92,9 +89,9 @@ async function requisitar_valores(rgf) {
         console.log(rgf);
         var detalhes = res2.data;
 
-        console.log("Nome   :" + detalhes.nome);
-        console.log("Cargo  :" + detalhes.cargo);
-        console.log("Regime :" + detalhes.regime);
+        //console.log("Nome   :" + detalhes.nome);
+        //console.log("Cargo  :" + detalhes.cargo);
+        //console.log("Regime :" + detalhes.regime);
 
         var funcionario = detalhes.nome;
         var cargo = detalhes.cargo;
@@ -109,31 +106,39 @@ async function requisitar_valores(rgf) {
 
         var contre = detalhes.rendimentos.length || 0;
 
-        console.log("\nRemuneracoes");
+        if (contre === undefined) {
+          console.log(detalhes.rendimentos.length);
+          process.exit(0);
+        }
+
+        console.log(id);
+
+        //console.log("\nRemuneracoes");
         for (j = 0; j < contre; j++) {
           nomes = detalhes.rendimentos[j].nome.trim() || "";
 
           valores = converter_float(detalhes.rendimentos[j].valor) || 0;
 
-          console.log(nomes + ": " + valores);
+          //console.log(nomes + ": " + valores);
           totalbruto = totalbruto + valores;
         }
 
-        var contde = detalhes.descontos.length || 0;
+        //console.log("\nDescontos");
+        if (detalhes.descontos) {
+          var contde = detalhes.descontos.length;
+          for (j = 0; j < contde; j++) {
+            nomes = detalhes.descontos[j].nome.trim() || "";
 
-        console.log("\nDescontos");
-        for (j = 0; j < contde; j++) {
-          nomes = detalhes.descontos[j].nome.trim() || "";
+            valores = converter_float(detalhes.descontos[j].valor) || 0;
 
-          valores = converter_float(detalhes.descontos[j].valor) || 0;
-
-          console.log(nomes + ": " + valores);
-          descontos = descontos + valores;
+            //console.log(nomes + ": " + valores);
+            descontos = descontos + valores;
+          }
         }
 
         outros = converter_float(detalhes.outros[0].valor) || 0;
 
-        console.log("\n*Outros Descontos:" + outros + "*");
+        //console.log("\n*Outros Descontos:" + outros + "*");
 
         descontos = (descontos + outros).toFixed(2) || 0;
 
@@ -141,10 +146,10 @@ async function requisitar_valores(rgf) {
 
         totalbruto = totalbruto.toFixed(2);
 
-        console.log("\n*Total Bruto    : " + totalbruto + "*");
-        console.log("\n*Total Liquido  : " + totaliquido + "*");
-        console.log("\n*Total Descontos: " + descontos + "*");
-        console.log("-------------------------");
+        //console.log("\n*Total Bruto    : " + totalbruto + "*");
+        //console.log("\n*Total Liquido  : " + totaliquido + "*");
+        //console.log("\n*Total Descontos: " + descontos + "*");
+        //console.log("-------------------------");
 
         if (create == true) {
           con.query(
@@ -166,7 +171,6 @@ async function requisitar_valores(rgf) {
               rgf +
               "')"
           );
-          console.log(id);
           console.log("Sucesso!");
         } else {
           "UPDATE funcionarios SET (NULL ,nome = '" +
@@ -188,6 +192,7 @@ async function requisitar_valores(rgf) {
             "'";
           console.log("Sucesso!");
         }
+        console.log(id);
         for (j = 0; j < contre; j++) {
           nomes = detalhes.rendimentos[j].nome.trim() || "";
 
