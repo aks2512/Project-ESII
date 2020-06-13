@@ -38,17 +38,17 @@ async function main() {
 
 async function delregistro() {
   await con.query("DELETE FROM remuneracoes");
-  con.query("ALTER TABLE funcionarios AUTO_INCREMENT = 1 ");
+  con.query("ALTER TABLE remuneracoes AUTO_INCREMENT = 1 ");
 
   await con.query("DELETE FROM descontos");
-  con.query("ALTER TABLE funcionarios AUTO_INCREMENT = 1 ");
+  con.query("ALTER TABLE descontos AUTO_INCREMENT = 1 ");
 
   await con.query("DELETE FROM funcionarios");
   con.query("ALTER TABLE funcionarios AUTO_INCREMENT = 1 ");
 }
 
 async function iniciar_leitura(j, i, estrutura) {
-  while (j <= 300) {
+  while (j <= i) {
     console.log(i);
     try {
       var rgf = estrutura["servidores"][j].rgf;
@@ -59,7 +59,6 @@ async function iniciar_leitura(j, i, estrutura) {
     }
     j++;
   }
-  process.exit(0);
 }
 
 async function requisitar_valores(rgf, k) {
@@ -240,5 +239,3 @@ function converter_float(numero) {
   numero = parseFloat(numero.replace(",", "."));
   return numero;
 }
-
-return;
