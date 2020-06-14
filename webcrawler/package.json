@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
+<<<<<<< HEAD
     "crawler-request": "^1.2.2",
     "fs": "0.0.1-security",
     "mysql": "^2.18.1",
@@ -19,5 +20,9 @@
     "pdfreader": "^1.0.7",
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
+=======
+    "fs": "0.0.1-security",
+    "request": "^2.88.2"
+>>>>>>> a69224a839b7e4de301e2dd5e6ee79776c0ef8f8
   }
 }
