@@ -17,7 +17,7 @@
     // Recupera a senha, a criptografando em MD5 
     $senha = isset($_POST['Senha']) ? md5(trim($_POST['Senha'])) : FALSE; 
 
-    $sql = "SELECT * FROM administradores WHERE Senha = '$senha' and Usuario = '$login' ";
+    $sql = "SELECT * FROM administrador WHERE senha = '$senha' and usuario = '$login' ";
 
     if (mysqli_query($conn, $sql)) {
     } else {
@@ -34,14 +34,14 @@
 
         $dados = mysqli_fetch_array($query);
 
-        if(!strcmp($senha,$dados["Senha"]))
+        if(!strcmp($senha,$dados["senha"]))
         {
             $_SESSION["id_admin"]=$dados["id_admin"];
             $_SESSION["nome_usuario"] = stripslashes($dados["Usuario"]);
             $erro = "";
             $contexto = array('mensagem'=>$erro,'codigo'=>0);
             echo (json_encode($contexto));
-            header("Location: ../pesquisaadmin.php");
+            header("Location: ../adminstracao.php");
             exit();
         }
     }

@@ -3,11 +3,7 @@ $(document).ready(function () {
   $("#busca").keyup(function () {
     escrevertabela();
   });
-<<<<<<< HEAD
   $("#controlalinhas").change(function () {
-=======
-  $("#qtdeLinhas").change(function () {
->>>>>>> a69224a839b7e4de301e2dd5e6ee79776c0ef8f8
     escrevertabela();
   });
   $(document).ready(function () {
@@ -169,19 +165,13 @@ $(document).ready(function () {
 
 function escrevertabela() {
   var busca = document.getElementById("busca").value;
-<<<<<<< HEAD
   var qtde = document.getElementById("controlalinhas").value;
-=======
->>>>>>> a69224a839b7e4de301e2dd5e6ee79776c0ef8f8
   var tabela = 1;
   $.ajax({
     type: "POST",
     url: "./PHP_Action/processartabela.php",
     data: {
-<<<<<<< HEAD
       qtde: qtde,
-=======
->>>>>>> a69224a839b7e4de301e2dd5e6ee79776c0ef8f8
       busca: busca,
       tabela: tabela,
     },

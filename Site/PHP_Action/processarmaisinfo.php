@@ -2,7 +2,7 @@
    $id_recebido = $_POST['busca'];
    include("conexao.php");
 
-   $sql = "SELECT * FROM funcionarios_bd WHERE id = '$id_recebido'";
+   $sql = "SELECT * FROM funcionarios WHERE id = '$id_recebido'";
 
    $query = $conn->query($sql);
 
