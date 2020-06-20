@@ -1,5 +1,4 @@
 var mysql = require("mysql");
-const { connect } = require("http2");
 
 const del = mysql.createConnection({
   host: "localhost", // O host do banco.

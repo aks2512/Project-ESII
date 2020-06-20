@@ -24,10 +24,11 @@ async function main() {
 }
 
 async function iniciar_leitura(j, i, estrutura) {
+  var stop = 0;
   while (j <= i) {
     try {
       var rgf = estrutura["servidores"][j].rgf;
-      await requisitar_valores(rgf, j + 1);
+      stop = await requisitar_valores(rgf, j + 1);
     } catch (err) {
       console.log(err);
       process.exit(0);
@@ -60,8 +61,9 @@ async function requisitar_valores(rgf, k) {
         var totalbruto = 0.0;
         var totaliquido = 0.0;
         var descontos = 0.0;
-        var valores;
-        var nomes;
+        var valores = 0.0;
+        var nomes = "";
+        var outros = 0.0;
 
         var contre = detalhes.rendimentos.length || 0;
 
@@ -110,7 +112,9 @@ async function requisitar_valores(rgf, k) {
         //console.log("\n*Total Descontos: " + descontos + "*");
         //console.log("-------------------------");
 
+        console.log(outros);
         con.query(
+          //para evitar erro de sincronia todas as "queries" ficam dentro da query principal
           "SELECT id,modificado FROM funcionarios WHERE rgf = " +
             rgf +
             " LIMIT 1",
@@ -155,42 +159,21 @@ async function requisitar_valores(rgf, k) {
             }
           }
         );
-
         for (j = 0; j < contre; j++) {
           nomes = detalhes.rendimentos[j].nome.trim() || "";
 
           valores = converter_float(detalhes.rendimentos[j].valor) || 0;
 
-          con.query(
-            "SELECT nome FROM remuneracoes WHERE rgf = '" +
-              rgf +
-              "' and nome = '" +
-              nomes +
-              "'",
-            function (err, result) {
-              if (result == "") {
-                var dados = new Array(rgf, id, null, nomes, valores);
-                geral.insere_basico(dados, "remuneracoes");
-              } else {
-                console.log("Att registro");
-                con.query(
-                  "UPDATE remuneraoes SET (valor = '" +
-                    valor +
-                    "') WHERE rgf = '" +
-                    rgf +
-                    "'"
-                );
-              }
-            }
-          );
+          console.log(nomes);
+
+          carrega_detalhes("remuneracoes", rgf, nomes, valores, id);
         }
         for (j = 0; j < contde; j++) {
-          nomes = detalhes.descontos[j].nome.trim() || "";
+          nomes2 = detalhes.descontos[j].nome.trim() || "";
 
-          valores = converter_float(detalhes.descontos[j].valor) || 0;
+          valores2 = converter_float(detalhes.descontos[j].valor) || 0;
 
-          var dados = new Array(rgf, id, null, nomes, valores);
-          geral.insere_basico(dados, "descontos");
+          carrega_detalhes("descontos", rgf, nomes2, valores2, id);
         }
         console.log("Sucesso!");
       });
@@ -198,11 +181,51 @@ async function requisitar_valores(rgf, k) {
     console.log(err);
     return 1;
   }
-  return 0;
+  return;
 }
 
 function converter_float(numero) {
   numero = numero.replace(".", "");
   numero = parseFloat(numero.replace(",", "."));
   return numero;
+}
+
+async function carrega_detalhes(alvo, rgf, nomes, valores, id) {
+  var check = false;
+
+  con.query(
+    "SELECT nome FROM " +
+      alvo +
+      " WHERE rgf = '" +
+      rgf +
+      "' and nome = '" +
+      nomes +
+      "'",
+    function (err, rows) {
+      var result = rows[0];
+      if (result === undefined) {
+        check = false;
+      } else {
+        check = true;
+      }
+      if (check == false) {
+        var dados = new Array(rgf, id, null, nomes, valores);
+        geral.insere_basico(dados, alvo);
+      } else {
+        console.log("Att registro 1");
+        con.query(
+          "UPDATE " +
+            alvo +
+            " SET (valor = '" +
+            valores +
+            "') WHERE rgf = '" +
+            rgf +
+            "' and nome = '" +
+            nomes +
+            "'"
+        );
+      }
+    }
+  );
+  return;
 }

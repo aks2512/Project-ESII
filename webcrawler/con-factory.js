@@ -1,7 +1,7 @@
 var mysql = require("mysql");
 
 const con = mysql.createPool({
-  timeout: 1500,
+  timeout: 2500,
   connectionLimit: 10,
   host: "localhost", // O host do banco.
   user: "root", // Um usuário do banco.
