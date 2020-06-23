@@ -113,13 +113,6 @@ body {
   min-height: 900px;
 }
 
-#btn-grafico {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-}
-
 .btn-opcoes {
   margin-right: 2px;
   font-size: 25px!important;
