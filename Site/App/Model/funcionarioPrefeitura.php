@@ -2,7 +2,7 @@
 
     namespace App\Model;
 
-    class Funcionario{
+    class FuncionarioPrefeitura{
 
         //atributos funcionario
         private $Id;

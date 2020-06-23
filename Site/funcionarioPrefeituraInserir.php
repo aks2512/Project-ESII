@@ -24,7 +24,7 @@ for($i = 0; $i<$desQtd; $i++){
     $descontos->append($desconto);
 }
 
-$funcionario = new \App\Model\Funcionario();
+$funcionario = new \App\Model\FuncionarioPrefeitura();
 $funcionario->setRgf($_POST['Rgf']);
 $funcionario->setNome($_POST['Nome']);
 $funcionario->setCargo($_POST['Cargo']);
@@ -36,7 +36,7 @@ $funcionario->setTBruto();
 $funcionario->setTDescontos();
 $funcionario->setTLiquido();
 
-$funcionarioDao = new \App\Model\FuncionarioDao();
+$funcionarioDao = new \App\Model\FuncionarioPrefeituraDao();
 $funcionarioDao->create($funcionario);
 
 header('Location: administracao.php');

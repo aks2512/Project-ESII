@@ -43,7 +43,7 @@
 
       $valor = @$_GET['p'];
 
-      if($valor == 'funcionarios'|| $valor == NULL){ require_once 'administracao-funcionarios.php';}
+      if($valor == 'funcionarios'|| $valor == NULL){ require_once 'administracao-funcionariosPrefeitura.php';}
       if($valor == 'projetos'){ require_once 'administracao-projetos.php';}
       if($valor == 'pesquisa'){ require_once 'administracao-interesses.php';}
 

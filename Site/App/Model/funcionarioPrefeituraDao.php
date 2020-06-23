@@ -3,7 +3,7 @@
     namespace App\Model;
 
 
-    class FuncionarioDao{
+    class FuncionarioPrefeituraDao{
 
         //CRUD das remunerações e descontos
         static private function inserirValoresMonetarios($Rgf, $Categoria, $ArrayObject){
@@ -37,7 +37,7 @@
             foreach ($ArrayObject as $key => $value) {
                 if($value->getId() != NULL && $value->getDelete() == "true"){                                 // deletar valor monetario
                     $Id_item = $value->getId();
-                    FuncionarioDao::deleteValorMonetario($Rgf,$Id_item,$Categoria);
+                    FuncionarioPrefeituraDao::deleteValorMonetario($Rgf,$Id_item,$Categoria);
                     echo $value->getNome().' deletado<br>';
                 }elseif($value->getId() != NULL && $value->getDelete() == "false"){                           // atualiza valor monetario
                     $sql = 'UPDATE '.$Categoria.' SET nome = ?, valor = ? WHERE rgf = ? and id_item = ?';
@@ -49,7 +49,7 @@
                     $stmt->execute();
                     echo $value->getNome().' atualizado<br>';
                 }elseif($value->getId() == NULL && $value->getDelete() == "false"){                           // inserir valor monetario
-                    FuncionarioDao::inserirValorMonetario($Rgf, $Categoria, $value);
+                    FuncionarioPrefeituraDao::inserirValorMonetario($Rgf, $Categoria, $value);
                     echo $value->getNome().' inserido<br>';
                 }
             }
@@ -115,8 +115,8 @@
 
             $Rgf = $f->getRgf();
 
-            FuncionarioDao::inserirValoresMonetarios($Rgf, 'remuneracoes', $remuneracoes);
-            FuncionarioDao::inserirValoresMonetarios($Rgf, 'descontos', $descontos);
+            FuncionarioPrefeituraDao::inserirValoresMonetarios($Rgf, 'remuneracoes', $remuneracoes);
+            FuncionarioPrefeituraDao::inserirValoresMonetarios($Rgf, 'descontos', $descontos);
             
         }
 
@@ -168,8 +168,8 @@
             $remuneracoes = $f->getRemuneracoes();
             $descontos = $f->getDescontos();
 
-            FuncionarioDao::atualizarValoresMonetarios($Rgf, 'remuneracoes', $remuneracoes);
-            FuncionarioDao::atualizarValoresMonetarios($Rgf, 'descontos', $descontos);
+            FuncionarioPrefeituraDao::atualizarValoresMonetarios($Rgf, 'remuneracoes', $remuneracoes);
+            FuncionarioPrefeituraDao::atualizarValoresMonetarios($Rgf, 'descontos', $descontos);
 
         } 
 
@@ -181,8 +181,8 @@
             $stmt->bindValue(1, $Rgf);
             $stmt->execute();
 
-            FuncionarioDao::deleteValoresMonetarios($Rgf,'remuneracoes');
-            FuncionarioDao::deleteValoresMonetarios($Rgf,'descontos');
+            FuncionarioPrefeituraDao::deleteValoresMonetarios($Rgf,'remuneracoes');
+            FuncionarioPrefeituraDao::deleteValoresMonetarios($Rgf,'descontos');
             
         }
 

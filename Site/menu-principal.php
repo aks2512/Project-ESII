@@ -42,7 +42,7 @@
 
         $valor = @$_GET['p'];
 
-        if($valor == 'funcionarios'|| $valor == NULL){ require_once 'menu-funcionarios.php';}
+        if($valor == 'funcionarios'|| $valor == NULL){ require_once 'menu-funcionariosPrefeitura.php';}
         if($valor == 'projetos'){ require_once 'menu-projetos.php';}
 
       ?>

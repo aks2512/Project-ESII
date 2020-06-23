@@ -8,7 +8,7 @@
         while($i>=0)
         {
             $comp = $id[$i];
-            $funcionarioDao = new \App\Model\FuncionarioDao();
+            $funcionarioDao = new \App\Model\FuncionarioPrefeituraDao();
             $funcionarioDao->delete($comp);
             $i--;
         }

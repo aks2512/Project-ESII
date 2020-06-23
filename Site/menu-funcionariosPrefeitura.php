@@ -64,7 +64,7 @@
 
     <div id="paginacao"></div>
 
-    <script src="scriptJS/carregaTabelaFuncionario.js"></script>
+    <script src="scriptJS/carregaTabelaFuncionarioPrefeitura.js"></script>
 
 <div class="modal fade" id="funcionarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">

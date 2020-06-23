@@ -84,6 +84,6 @@
   </div>
 </div>
 
-<script src="scriptJS/carregaTabelaFuncionarioAdm.js"></script>
-<script src="scriptJS/addInputFuncionario.js"></script>
-<script src="scriptJS/funcionarioCrud.js"></script>
+<script src="scriptJS/carregaTabelaFuncionarioPrefeituraAdm.js"></script>
+<script src="scriptJS/addInputFuncionarioPrefeitura.js"></script>
+<script src="scriptJS/funcionarioPrefeituraCrud.js"></script>

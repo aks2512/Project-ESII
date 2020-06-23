@@ -2,7 +2,7 @@
 function inserir() {
   $(document).on("click", "#btn-inserir", function () {
     $.ajax({
-      url: "./funcionarioFormInserir.php",
+      url: "./funcionarioPrefeituraFormInserir.php",
       success: function (html) {
         document.getElementById("Incluir").innerHTML = html;
       },
@@ -16,7 +16,7 @@ function atualizar(){
     var id = this.id;
     $.ajax({
       type: "POST",
-      url: "./funcionarioFormAtualizar.php",
+      url: "./funcionarioPrefeituraFormAtualizar.php",
       data:{id : id},
     }).done(function (dados) {
       document.getElementById("Atualizar").innerHTML = dados;
@@ -47,7 +47,7 @@ function excluir() {
       }
       $.ajax({
         type: "POST",
-        url: "./funcionarioExcluir.php",
+        url: "./funcionarioPrefeituraExcluir.php",
         data: { id: id },
         success: function (retorno) {
           escrevertabela();

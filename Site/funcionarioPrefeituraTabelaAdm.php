@@ -17,7 +17,7 @@
     //verifica se está sendo passado na url a pagina atual, senão é atribuido a pagina
     $pagina = isset($_POST['pagina']);
 
-    $funcionarioDao = new \App\Model\FuncionarioDao();
+    $funcionarioDao = new \App\Model\FuncionarioPrefeituraDao();
     if($funcionarioDao->read($busca,$inicio,$quantidade_pg) != NULL){
         foreach($funcionarioDao->read($busca,$inicio,$quantidade_pg) as $funcionario):
             echo' <tr>
@@ -27,7 +27,7 @@
                   <td>'.$funcionario['cargo'].'</td>
                   <td>'.$funcionario['tbruto'].'</td>
                   <td>'.$funcionario['rgf'].'</td>
-                  <td><button id="'.$funcionario['rgf'].'" data-toggle="modal"  class="btn btn-primary view-data">+</button><td>
+                  <td><button id="'.$funcionario['rgf'].'" data-toggle="modal"  class="btn btn-primary view-data" onclick="atualizar()">Editar</button><td>
                 </tr>';
             endforeach;
         }else{

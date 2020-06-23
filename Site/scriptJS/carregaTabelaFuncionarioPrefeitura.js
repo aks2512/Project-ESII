@@ -19,7 +19,7 @@ $(document).ready(function () {
       var id = this.id;
       $.ajax({
         type: "POST",
-        url: "./funcionarioModal.php",
+        url: "./funcionarioPrefeituraModal.php",
         data:{id : id},
       }).done(function (dados) {
         document.getElementById("detalhes").innerHTML = dados;
@@ -39,7 +39,7 @@ $(document).ready(function () {
     var mostrar = document.getElementById("controlalinhas").value;
     $.ajax({
       type: "POST",
-      url: "./funcionarioTabela.php",
+      url: "./funcionarioPrefeituraTabela.php",
       data: {
         busca: busca,
         mostrar: mostrar,
@@ -56,7 +56,7 @@ $(document).ready(function () {
     });
     $.ajax({
       type: "POST",
-      url: "./paginacao_funcionario.php",
+      url: "./paginacao_funcionarioPrefeitura.php",
       data: {
         busca: busca,
         mostrar: mostrar,

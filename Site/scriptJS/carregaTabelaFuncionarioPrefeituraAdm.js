@@ -28,7 +28,7 @@ function escrevertabela(pagina) {
   var mostrar = document.getElementById("controlalinhas").value;
   $.ajax({
     type: "POST",
-    url: "./funcionarioTabelaAdm.php",
+    url: "./funcionarioPrefeituraTabelaAdm.php",
     data: {
       busca: busca,
       mostrar: mostrar,
@@ -45,7 +45,7 @@ function escrevertabela(pagina) {
   });
   $.ajax({
     type: "POST",
-    url: "./paginacao_funcionario.php",
+    url: "./paginacao_funcionarioPrefeitura.php",
     data: {
       busca: busca,
       mostrar: mostrar,

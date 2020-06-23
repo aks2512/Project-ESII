@@ -47,7 +47,7 @@
         $descontos->append($desconto);
     }
 
-    $funcionario = new \App\Model\Funcionario();
+    $funcionario = new \App\Model\FuncionarioPrefeitura();
     $funcionario->setCargo($_POST['cargo']);
     $funcionario->setRegime($_POST['regime']);
     $funcionario->setRemuneracoes($remuneracoes);
@@ -58,7 +58,7 @@
     $funcionario->setTLiquido();
     $funcionario->setRgf($_POST['btn-atualizar']);
 
-    $funcionarioDao = new \App\Model\FuncionarioDao();
+    $funcionarioDao = new \App\Model\FuncionarioPrefeituraDao();
     $funcionarioDao->update($funcionario);
 
     header('Location: administracao.php');

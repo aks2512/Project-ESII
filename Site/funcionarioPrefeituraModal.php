@@ -4,9 +4,9 @@
 
   $rgf = $_POST['id'];
 
-  $funcionarioDao = new \App\Model\FuncionarioDao();
-  $remuneracoes = new \App\Model\FuncionarioDao();
-  $descontos = new \App\Model\FuncionarioDao();
+  $funcionarioDao = new \App\Model\FuncionarioPrefeituraDao();
+  $remuneracoes = new \App\Model\FuncionarioPrefeituraDao();
+  $descontos = new \App\Model\FuncionarioPrefeituraDao();
   $funcionarioDao->readRgf($rgf);
 
   foreach($funcionarioDao->readRgf($rgf) as $funcionario):
