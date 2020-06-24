@@ -33,7 +33,7 @@ $funcionario->setRemuneracoes($remuneracoes);
 $funcionario->setDescontos($descontos);
 $funcionario->setOutrosDescontos($_POST['OutrosDescontos']);
 $funcionario->setTBruto();
-$funcionario->setTDescontos();
+$funcionario->setTDesconto();
 $funcionario->setTLiquido();
 
 $funcionarioDao = new \App\Model\FuncionarioPrefeituraDao();

@@ -1,6 +1,6 @@
 <!-- Visualizaçao Principal (Exibição dos Servidores Públicos)-->
 <div class="row justify-content-center">
-  <h3 id="title-h3">Funcionário Prefeitura</h3>
+  <h3 id="title-h3">Funcionário Câmara</h3>
   <p id="p-text" class="col-md-10 text-left">
     Gastos com servidores públicos, dentro dos limites estabelecidos pela Lei de Responsabilidade
     Fiscal, podem ser verificados e acompanhados periodicamente.
@@ -84,6 +84,6 @@
   </div>
 </div>
 
-<script src="scriptJS/carregaTabelaFuncionarioPrefeituraAdm.js"></script>
-<script src="scriptJS/addInputFuncionarioPrefeitura.js"></script>
-<script src="scriptJS/funcionarioPrefeituraCrud.js"></script>
+<script src="scriptJS/carregaTabelaFuncionarioCamaraAdm.js"></script>
+<script src="scriptJS/addInputFuncionarioCamara.js"></script>
+<script src="scriptJS/funcionarioCamaraCrud.js"></script>

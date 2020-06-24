@@ -2,20 +2,21 @@
 
     namespace App\Model;
 
-    class FuncionarioPrefeitura{
+    class FuncionarioCamara{
 
         //atributos funcionario
         private $Id;
         private $Nome;
         private $Cargo;
-        private $Regime;
-        private $Remuneracoes;
-        private $Descontos;
+        private $Vencimento_Base;
+        private $Outros_Vencimentos;
+        private $Previdencia;
         private $OutrosDescontos;
-        private $Tbruto;
-        private $Tliquido;
+        private $TBruto;
+        private $TLiquido;
         private $TDesconto;
         private $rgf;
+        private $IRRF;
 
         public function setId($Id){
             $this->Id = $Id;
@@ -41,28 +42,28 @@
             return $this->Cargo;
         }
 
-        public function setRegime($Regime){
-            $this->Regime = $Regime;
+        public function setVencimento_Base($Vencimento_Base){
+            $this->Vencimento_Base = $Vencimento_Base;
         }
 
-        public function getRegime(){
-            return $this->Regime;
+        public function getVencimento_Base(){
+            return $this->Vencimento_Base;
         }
 
-        public function setRemuneracoes($Remuneracoes){
-            $this->Remuneracoes = $Remuneracoes;
+        public function setOutros_Vencimentos($Outros_Vencimentos){
+            $this->Outros_Vencimentos = $Outros_Vencimentos;
         }
 
-        public function getRemuneracoes(){
-            return $this->Remuneracoes;
+        public function getOutros_Vencimentos(){
+            return $this->Outros_Vencimentos;
         }
 
-        public function setDescontos($Descontos){
-            $this->Descontos = $Descontos;
+        public function setPrevidencia($Previdencia){
+            $this->Previdencia = $Previdencia;
         }
 
-        public function getDescontos(){
-            return $this->Descontos;
+        public function getPrevidencia(){
+            return $this->Previdencia;
         }
 
         public function setOutrosDescontos($OutrosDescontos){
@@ -73,29 +74,16 @@
             return $this->OutrosDescontos;
         }
 
-        public function setTBruto(){
-            $soma = 0;
-            foreach ($this->Remuneracoes as $key => $value) {
-                if($value->getDelete() != "true"){
-                    $soma += $value->getValor();
-                }
-            }    
-            $this->TBruto = $soma;    
+        public function setTBruto($TBruto){
+            $this->TBruto = $TBruto;
         }
 
         public function getTBruto(){
             return $this->TBruto;
         }
 
-        public function setTDesconto(){
-            $soma = 0;
-            foreach ($this->Descontos as $key => $value) {
-                if($value->getDelete() != "true"){
-                    $soma += $value->getValor();
-                }
-            }    
-            $soma = $soma + $this->OutrosDescontos; 
-            $this->TDesconto = $soma;    
+        public function setTDesconto($TDesconto){
+            $this->TDesconto = $TDesconto;
         }
 
         public function getTDesconto(){
@@ -103,7 +91,7 @@
         }
 
         public function setTLiquido(){
-            $this->TLiquido = $this->TBruto - $this->TDescontos;
+            $this->TLiquido = $this->TBruto - $this->TDesconto;
         }
 
         public function getTLiquido(){
@@ -116,6 +104,14 @@
 
         public function getRgf(){
             return $this->rgf;
+        }
+
+        public function setIRRF($IRRF){
+            $this->IRRF = $IRRF;
+        }
+
+        public function getIRRF(){
+            return $this->IRRF;
         }
 
     }

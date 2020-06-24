@@ -21,7 +21,7 @@
     if($funcionarioDao->read($busca,$inicio,$quantidade_pg) != NULL){
         foreach($funcionarioDao->read($busca,$inicio,$quantidade_pg) as $funcionario):
             echo' <tr>
-                  <td><input type="checkbox" value="'.$funcionario['rgf'].'" id="'.$funcionario['rgf'].'" name="funcionario"></td>
+                  <td><input type="checkbox" value="'.$funcionario['rgf'].'" id="'.$funcionario['rgf'].'" name="funcionario_prefeitura"></td>
                   <td>'.$funcionario['id'].'</td>
                   <td>'.$funcionario['nome'].'</td>
                   <td>'.$funcionario['cargo'].'</td>

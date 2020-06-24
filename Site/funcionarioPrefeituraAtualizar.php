@@ -54,7 +54,7 @@
     $funcionario->setDescontos($descontos);
     $funcionario->setOutrosDescontos($_POST['outros_descontos']);
     $funcionario->setTBruto();
-    $funcionario->setTDescontos();
+    $funcionario->setTDesconto();
     $funcionario->setTLiquido();
     $funcionario->setRgf($_POST['btn-atualizar']);
 

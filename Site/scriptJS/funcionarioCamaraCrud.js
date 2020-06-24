@@ -2,7 +2,7 @@
 function inserir() {
   $(document).on("click", "#btn-inserir", function () {
     $.ajax({
-      url: "./funcionarioPrefeituraFormInserir.php",
+      url: "./funcionarioCamaraFormInserir.php",
       success: function (html) {
         document.getElementById("Incluir").innerHTML = html;
       },
@@ -16,7 +16,7 @@ function atualizar(){
     var id = this.id;
     $.ajax({
       type: "POST",
-      url: "./funcionarioPrefeituraFormAtualizar.php",
+      url: "./funcionarioCamaraFormAtualizar.php",
       data:{id : id},
     }).done(function (dados) {
       document.getElementById("Atualizar").innerHTML = dados;
@@ -28,7 +28,7 @@ function atualizar(){
 
 //Exclui os funcionarios selecionados
 function excluir() {
-  var funcionarios = document.querySelectorAll("[name=funcionario_prefeitura]:checked"); //apanhar todos
+  var funcionarios = document.querySelectorAll("[name=funcionario_camara]:checked"); //apanhar todos
   var id = [];
 
   if (funcionarios.length == 0) {
@@ -47,7 +47,7 @@ function excluir() {
       }
       $.ajax({
         type: "POST",
-        url: "./funcionarioPrefeituraExcluir.php",
+        url: "./funcionarioCamaraExcluir.php",
         data: { id: id },
         success: function (retorno) {
           escrevertabela();

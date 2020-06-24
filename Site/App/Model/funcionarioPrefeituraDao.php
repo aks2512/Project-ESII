@@ -95,12 +95,12 @@
         }
 
         //CRUD funcionario
-        public function create(Funcionario $f){
+        public function create(FuncionarioPrefeitura $f){
 
             $remuneracoes = $f->getRemuneracoes();
             $descontos = $f->getDescontos();
 
-            $sql = 'INSERT INTO funcionarios (nome,cargo,regime,outros_descontos,tbruto,tdesconto,tliquido,rgf) VALUES (?,?,?,?,?,?,?,?)';
+            $sql = 'INSERT INTO funcionarios_prefeitura (nome,cargo,regime,outros_descontos,tbruto,tdesconto,tliquido,rgf) VALUES (?,?,?,?,?,?,?,?)';
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $f->getNome());
@@ -108,7 +108,7 @@
             $stmt->bindValue(3, $f->getRegime());
             $stmt->bindValue(4, $f->getOutrosDescontos());
             $stmt->bindValue(5, $f->getTbruto());
-            $stmt->bindValue(6, $f->getTDescontos());
+            $stmt->bindValue(6, $f->getTDesconto());
             $stmt->bindValue(7, $f->getTLiquido());
             $stmt->bindValue(8, $f->getRgf());
             $stmt->execute();
@@ -122,7 +122,7 @@
 
         public function read($busca,$inicio,$quantidade_pg){
 
-            $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios WHERE nome LIKE '%$busca%' OR cargo LIKE '%$busca%' OR tbruto LIKE '%$busca%' LIMIT $quantidade_pg OFFSET $inicio";
+            $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE nome LIKE '%$busca%' OR cargo LIKE '%$busca%' OR tbruto LIKE '%$busca%' LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->execute();
@@ -136,7 +136,7 @@
 
         public function readRgf($rgf){
 
-            $sql = "SELECT * FROM funcionarios WHERE rgf = '$rgf'";
+            $sql = "SELECT * FROM funcionarios_prefeitura WHERE rgf = '$rgf'";
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->execute();
@@ -149,16 +149,16 @@
 
         }
 
-        public function update(Funcionario $f){
+        public function update(FuncionarioPrefeitura $f){
 
-            $sql = 'UPDATE funcionarios SET cargo = ?, regime = ?, outros_descontos = ?, tbruto = ?, tdesconto = ?, tliquido = ? WHERE rgf = ?';
+            $sql = 'UPDATE funcionarios_prefeitura SET cargo = ?, regime = ?, outros_descontos = ?, tbruto = ?, tdesconto = ?, tliquido = ? WHERE rgf = ?';
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $f->getCargo());
             $stmt->bindValue(2, $f->getRegime());
             $stmt->bindValue(3, $f->getOutrosDescontos());
             $stmt->bindValue(4, $f->getTBruto());
-            $stmt->bindValue(5, $f->getTDescontos());
+            $stmt->bindValue(5, $f->getTDesconto());
             $stmt->bindValue(6, $f->getTLiquido());
             $stmt->bindValue(7, $f->getRgf());
             $stmt->execute();
@@ -175,7 +175,7 @@
 
         public function delete($Rgf){
 
-            $sql = 'DELETE FROM funcionarios WHERE rgf = ?';
+            $sql = 'DELETE FROM funcionarios_prefeitura WHERE rgf = ?';
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $Rgf);

@@ -1,4 +1,4 @@
-<form action="./funcionarioInserir.php" id="formulario-funcionarios" method="POST">
+<form action="./funcionarioPrefeituraInserir.php" id="formulario-funcionarios" method="POST">
 
 <div id="titulo" class=" bg-primary text-light text-center py-3">
     <h4 class="text-center">Cadastrar Funcionário</h4>

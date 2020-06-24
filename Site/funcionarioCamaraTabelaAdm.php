@@ -17,17 +17,17 @@
     //verifica se está sendo passado na url a pagina atual, senão é atribuido a pagina
     $pagina = isset($_POST['pagina']);
 
-    $funcionarioDao = new \App\Model\FuncionarioPrefeituraDao();
+    $funcionarioDao = new \App\Model\FuncionarioCamaraDao();
     if($funcionarioDao->read($busca,$inicio,$quantidade_pg) != NULL){
         foreach($funcionarioDao->read($busca,$inicio,$quantidade_pg) as $funcionario):
             echo' <tr>
-                  <td><input type="checkbox" value="'.$funcionario['rgf'].'" id="'.$funcionario['rgf'].'" name="funcionario_prefeitura"></td>
+                  <td><input type="checkbox" value="'.$funcionario['rgf'].'" id="'.$funcionario['rgf'].'" name="funcionario_camara"></td>
                   <td>'.$funcionario['id'].'</td>
                   <td>'.$funcionario['nome'].'</td>
                   <td>'.$funcionario['cargo'].'</td>
                   <td>'.$funcionario['tbruto'].'</td>
                   <td>'.$funcionario['rgf'].'</td>
-                  <td><button id="'.$funcionario['rgf'].'" data-toggle="modal"  class="btn btn-primary view-data">+</button><td>
+                  <td><button id="'.$funcionario['rgf'].'" data-toggle="modal"  class="btn btn-primary view-data" onclick="atualizar()">Editar</button><td>
                 </tr>';
             endforeach;
         }else{

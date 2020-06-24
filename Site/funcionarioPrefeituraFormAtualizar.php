@@ -21,7 +21,7 @@
           </div>
 
           <div class="modal-body">
-            <form id="funcionarioFormAtualizar" action="./funcionarioAtualizar.php" method="post">
+            <form id="funcionarioFormAtualizar" action="./funcionarioPrefeituraAtualizar.php" method="post">
               <div class="row">
                 <div class="col-md-12 text-left">
                     <p><span class="bold">Nome:</span><br>
