@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 22-Jun-2020 às 21:54
+-- Tempo de geração: 25-Jun-2020 às 03:08
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -1624,15 +1625,45 @@ INSERT INTO `descontos` (`rgf`, `id_item`, `nome`, `valor`) VALUES
 (621, 1570, 'b', 1000),
 (621, 1571, 'c', 1000),
 (621, 1572, 'd', 1000),
-(621, 1573, 'e', 1000);
+(621, 1573, 'e', 1000),
+(622, 1574, 'INSS', 1000);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `funcionarios`
+-- Estrutura da tabela `funcionarios_camara`
 --
 
-CREATE TABLE `funcionarios` (
+CREATE TABLE `funcionarios_camara` (
+  `id` int(11) NOT NULL,
+  `rgf` int(11) NOT NULL,
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `nome` varchar(50) NOT NULL,
+  `cargo` varchar(50) NOT NULL,
+  `vencimento_base` float NOT NULL,
+  `outros_vencimentos` float NOT NULL,
+  `previdencia` float NOT NULL,
+  `outros_descontos` float NOT NULL,
+  `tbruto` float NOT NULL,
+  `tliquido` float NOT NULL,
+  `tdesconto` float NOT NULL,
+  `irrf` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `funcionarios_camara`
+--
+
+INSERT INTO `funcionarios_camara` (`id`, `rgf`, `modificado`, `nome`, `cargo`, `vencimento_base`, `outros_vencimentos`, `previdencia`, `outros_descontos`, `tbruto`, `tliquido`, `tdesconto`, `irrf`) VALUES
+(1, 100, '2020-06-24 05:12:25', 'akira', 'analistas', 10000, 10000, 10000, 10000, 600010, 590010, 10000, 10000);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `funcionarios_prefeitura`
+--
+
+CREATE TABLE `funcionarios_prefeitura` (
   `id` int(10) UNSIGNED NOT NULL,
   `nome` varchar(50) NOT NULL,
   `cargo` varchar(50) NOT NULL,
@@ -1646,10 +1677,10 @@ CREATE TABLE `funcionarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `funcionarios`
+-- Extraindo dados da tabela `funcionarios_prefeitura`
 --
 
-INSERT INTO `funcionarios` (`id`, `nome`, `cargo`, `modificado`, `regime`, `outros_descontos`, `tbruto`, `tdesconto`, `tliquido`, `rgf`) VALUES
+INSERT INTO `funcionarios_prefeitura` (`id`, `nome`, `cargo`, `modificado`, `regime`, `outros_descontos`, `tbruto`, `tdesconto`, `tliquido`, `rgf`) VALUES
 (1, 'akira', 'profissional', '2020-06-08 18:31:46', 'dieta ', 500, 60001, 6500, 53501, 100),
 (2, 'akira', 'Analalista', '2020-06-08 19:03:57', 'dieta', 300, 24000, 900, 23100, 101),
 (3, 'akira', 'Analalista', '2020-06-10 21:21:30', 'dieta', 300, 6000, 900, 5100, 102),
@@ -2172,7 +2203,7 @@ INSERT INTO `funcionarios` (`id`, `nome`, `cargo`, `modificado`, `regime`, `outr
 (520, 'leo', 'Analalistacomu', '2020-06-11 23:25:51', 'dieta', 300, 6000, 900, 5100, 619),
 (521, 'akira', 'asdasdsad', '2020-06-17 21:06:25', 'dieta', 1, 200000, 3, 199997, 620),
 (522, 'perluxo', 'perluxo', '2020-06-19 19:41:26', 'perluxo', 1, 50000, 5001, 44999, 621),
-(523, 'perluxo', 'perluxo', '2020-06-22 19:05:58', 'perluxo', 1, 10000.5, 1, 9999.5, 622);
+(524, 'leokira', 'perluxos', '2020-06-24 04:38:58', 'dieta', 1, 10001, 1001, 10001, 622);
 
 -- --------------------------------------------------------
 
@@ -2195,8 +2226,10 @@ CREATE TABLE `projetos` (
 --
 
 INSERT INTO `projetos` (`id`, `link`, `tipo_projeto`, `ano`, `autor`, `assunto`, `anotacao`) VALUES
-('10/10', 'https://www.google.com.br', 'Lei Ordinaria', 2020, 'leo', 'akira', 'aprovado'),
-('20/20', 'https://www.google.com.br', 'Lei de Resolução', 2019, 'perluxo', 'perluxo', 'perluxo');
+('20/20', 'https://www.google.com.br', 'Lei de Resolução', 2019, 'perluxo', 'perluxo', 'perluxo'),
+('30/30', 'https://www.google.com.br', 'Lei Ordinaria', 2019, 'Akira', '', 'em transito'),
+('30/31', 'www', 'Lei Ordinaria', 2019, 'jeff', 'leo', 'aaaa'),
+('30/32', 'www', 'Lei Ordinaria', 2020, 'jeff', 'Código de rastreamento', 'em transito');
 
 -- --------------------------------------------------------
 
@@ -3783,7 +3816,8 @@ INSERT INTO `remuneracoes` (`rgf`, `id_item`, `nome`, `valor`) VALUES
 (621, 1571, 'c', 10000),
 (621, 1572, 'd', 10000),
 (621, 1573, 'e', 10000),
-(622, 1574, 'a', 10000.5);
+(622, 1575, 'sALARIO', 10000),
+(622, 1576, 'a', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -3802,9 +3836,15 @@ ALTER TABLE `descontos`
   ADD PRIMARY KEY (`id_item`);
 
 --
--- Índices para tabela `funcionarios`
+-- Índices para tabela `funcionarios_camara`
 --
-ALTER TABLE `funcionarios`
+ALTER TABLE `funcionarios_camara`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `funcionarios_prefeitura`
+--
+ALTER TABLE `funcionarios_prefeitura`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -3833,19 +3873,25 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de tabela `descontos`
 --
 ALTER TABLE `descontos`
-  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1574;
+  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575;
 
 --
--- AUTO_INCREMENT de tabela `funcionarios`
+-- AUTO_INCREMENT de tabela `funcionarios_camara`
 --
-ALTER TABLE `funcionarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=524;
+ALTER TABLE `funcionarios_camara`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `funcionarios_prefeitura`
+--
+ALTER TABLE `funcionarios_prefeitura`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=525;
 
 --
 -- AUTO_INCREMENT de tabela `remuneracoes`
 --
 ALTER TABLE `remuneracoes`
-  MODIFY `id_item` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575;
+  MODIFY `id_item` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1577;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
