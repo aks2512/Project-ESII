@@ -1,10 +1,13 @@
 <!-- Visualizaçao Principal (Exibição dos Servidores Públicos)-->
     <div class="row justify-content-center">
       <h3 id="title-h3">Funcionários Câmara</h3>
-      <p id="p-text" class="col-md-10 text-left">
-        Gastos com servidores públicos, dentro dos limites estabelecidos pela Lei de Responsabilidade
-        Fiscal, podem ser verificados e acompanhados periodicamente.
-      </p>
+    </div>
+    <div class="my-5">
+      <div class="row align-items-center justify-content-center">
+        <button class="col-md-3 fc_pesquisa_automatica btn btn-outline-primary" value="prefeito" onclick="pesquisaAutomatica();">Pesquisar Vereador</button>
+        <button class="col-md-3 fc_pesquisa_automatica btn btn-outline-success" value="30000" onclick="pesquisaAutomatica();">Pesquisar Salário de 30000</button>
+        <button class="col-md-3 fc_pesquisa_automatica btn btn-outline-danger" value="5000" onclick="pesquisaAutomatica();">Pesquisa Salário de 5000</button>
+      </div>
     </div>
 
     <!-- Barra Pesquisa -->
@@ -14,7 +17,7 @@
           <div class="row justify-content-center align-items-center">
             <p class="p-form col-md-4 m-0">Mostrar</p>
             <select class="col-md-4" id="controlalinhas" name="qtdeLinhas" type="number"
-              title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
+              title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)" onchange="escrevertabela();">
               <option value=10>10</option>
               <option value=25>25</option>
               <option value=50>50</option>
@@ -25,7 +28,7 @@
         <div class="col-md-8">
           <div class="row justify-content-center align-items-center">
             <p class="p-form m-0 col-md-2">Buscar</p>
-            <input class="col-md-9" id="busca" type="text">
+            <input class="col-md-9" id="busca" type="text" onkeyup="escrevertabela();">
           </div>
         </div>
 

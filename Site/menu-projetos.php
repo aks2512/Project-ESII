@@ -2,10 +2,13 @@
 <div class="col-md-12 text-center " id="funcoes">
     <div class="row justify-content-center">
       <h3 id="title-h3" class="col-md-12">Projetos</h3>
-      <p id="p-text" class="col-md-10 text-left">
-        Gastos com servidores públicos, dentro dos limites estabelecidos pela Lei de Responsabilidade
-        Fiscal, podem ser verificados e acompanhados periodicamente.
-      </p>
+    </div>
+    <div class="my-5">
+      <div class="row align-items-center justify-content-center">
+        <button class="col-md-3 p_pesquisa_automatica btn btn-outline-primary" value="Caio Cunha" onclick="pesquisaAutomatica();">Pesquisar Caio Cunha</button>
+        <button class="col-md-3 p_pesquisa_automatica btn btn-outline-success" value="prefeito" onclick="pesquisaAutomatica();">Pesquisar Prefeito</button>
+        <button class="col-md-3 p_pesquisa_automatica btn btn-outline-danger" value="10/10" onclick="pesquisaAutomatica();">Pesquisar 10/10</button>
+      </div>
     </div>
 
     <!-- Barra Pesquisa -->
@@ -16,7 +19,7 @@
           <div class="col-md-3">
             <div class="row justify-content-center align-items-center">
               <p class="p-form col-md-4 m-0">Mostrar</p>
-              <select class="col-md-4" id="controlalinhas" name="qtdeLinhas" type="number" title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
+              <select class="col-md-4" id="controlalinhas" name="qtdeLinhas" type="number" title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)" onchange="escrevertabela();">
                 <option value="10">10</option>
                 <option value="25">25</option>
                 <option value="50">50</option>
@@ -28,7 +31,7 @@
           <div class="col-md-3">
             <div class="row justify-content-center align-items-center">
               <p class="p-form col-md-3 m-0">Ano</p>
-              <select class="col-md-5" id="ano" name="ano" type="number">
+              <select class="col-md-5" id="ano" name="ano" type="number" onchange="escrevertabela();">
                 <option value="2020">2020</option>
                 <option value="2019">2019</option>
                 <option value="2018">2018</option>
@@ -52,14 +55,14 @@
           <div class="col-md-6">
             <div class="row justify-content-center align-items-center">
               <p class="p-form col-md-3 m-0">Buscar</p>
-              <input class="col-md-6" id="busca" type="text">
+              <input class="col-md-6" id="busca" type="text" onkeyup="escrevertabela();">
             </div>
           </div>
 
             <div class="col-md-4 mt-2">
               <div class="row justify-content-center align-items-center">
                 <p class="p-form col-md-3 m-0">Projeto</p>
-                <select class="col-md-6" id="projeto" name="projeto" type="number">
+                <select class="col-md-6" id="projeto" name="projeto" type="number" onchange="escrevertabela();">
                   <option value="Lei Ordinaria">Lei Ordinaria</option>
                   <option value="Lei Complementa">Lei Complementar</option>
                   <option value="Lei de Emenda à Lei Orgânica">Lei de Emenda à Lei Orgânica</option>
