@@ -1,7 +1,32 @@
+<?php
+  session_start();
+
+  if(!isset($_SESSION['usuario'])){
+    header('location: Login.php');
+  }
+
+  echo'
+  <!-- Identificar Adm -->
+  <div class="container">
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-9">
+            <label for="">'.$_SESSION['usuario'].'</label>
+          </div>
+          <div class="col-md-3">
+            <a type="button" href="Login.php?signout=1" class="btn btn-danger align-item-end">Sair</a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">Seja bem vindo <strong class="text-primary">Administrador</strong> </p>
+      </div>
+    </div>
+  </div>';
+?>
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,17 +45,18 @@
 
     <!-- Banner -->
     <div class="row align-items-center">
-      <div class="col-md-5 text-right">
+      <div class="col-md-4 text-right">
         <img class="img" src="imagens/mogi-logo.png" alt="" width="202px" height="202px" class="img-fluid">
       </div>
 
-      <div id="transparencia" class="col-md-7">
+      <div id="transparencia" class="col-md-4">
         <h1>Transparência</h1>
         <p>Deixando Mogi das Cruzes transparente para você</p>
       </div>
 
     </div>
 
+    <!-- Botões -->
     <div class="btn-group" role="group">
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=funcionariosPrefeitura">Funcionários Prefeitura</a>
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=funcionariosCamara">Funcionários Câmara</a>
