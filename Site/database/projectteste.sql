@@ -1,13 +1,25 @@
 -- phpMyAdmin SQL Dump
+<<<<<<< HEAD
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
 -- Tempo de geração: 19-Jun-2020 às 20:18
+=======
+-- version 5.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Tempo de geração: 25-Jun-2020 às 03:08
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+<<<<<<< HEAD
+=======
+SET AUTOCOMMIT = 0;
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -50,7 +62,11 @@ CREATE TABLE `descontos` (
   `rgf` int(10) UNSIGNED NOT NULL,
   `id_item` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
+<<<<<<< HEAD
   `valor` int(10) UNSIGNED NOT NULL
+=======
+  `valor` float UNSIGNED NOT NULL
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1624,32 +1640,87 @@ INSERT INTO `descontos` (`rgf`, `id_item`, `nome`, `valor`) VALUES
 (621, 1570, 'b', 1000),
 (621, 1571, 'c', 1000),
 (621, 1572, 'd', 1000),
+<<<<<<< HEAD
 (621, 1573, 'e', 1000);
+=======
+(621, 1573, 'e', 1000),
+(622, 1574, 'INSS', 1000);
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
 -- Estrutura da tabela `funcionarios`
 --
 
 CREATE TABLE `funcionarios` (
+=======
+-- Estrutura da tabela `funcionarios_camara`
+--
+
+CREATE TABLE `funcionarios_camara` (
+  `id` int(11) NOT NULL,
+  `rgf` int(11) NOT NULL,
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `nome` varchar(50) NOT NULL,
+  `cargo` varchar(50) NOT NULL,
+  `vencimento_base` float NOT NULL,
+  `outros_vencimentos` float NOT NULL,
+  `previdencia` float NOT NULL,
+  `outros_descontos` float NOT NULL,
+  `tbruto` float NOT NULL,
+  `tliquido` float NOT NULL,
+  `tdesconto` float NOT NULL,
+  `irrf` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `funcionarios_camara`
+--
+
+INSERT INTO `funcionarios_camara` (`id`, `rgf`, `modificado`, `nome`, `cargo`, `vencimento_base`, `outros_vencimentos`, `previdencia`, `outros_descontos`, `tbruto`, `tliquido`, `tdesconto`, `irrf`) VALUES
+(1, 100, '2020-06-24 05:12:25', 'akira', 'analistas', 10000, 10000, 10000, 10000, 600010, 590010, 10000, 10000);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `funcionarios_prefeitura`
+--
+
+CREATE TABLE `funcionarios_prefeitura` (
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
   `id` int(10) UNSIGNED NOT NULL,
   `nome` varchar(50) NOT NULL,
   `cargo` varchar(50) NOT NULL,
   `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `regime` varchar(50) NOT NULL,
+<<<<<<< HEAD
   `outros_descontos` int(11) NOT NULL,
   `tbruto` int(11) NOT NULL,
   `tdesconto` int(11) NOT NULL,
   `tliquido` int(11) NOT NULL,
+=======
+  `outros_descontos` float NOT NULL,
+  `tbruto` float NOT NULL,
+  `tdesconto` float NOT NULL,
+  `tliquido` float NOT NULL,
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
   `rgf` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+<<<<<<< HEAD
 -- Extraindo dados da tabela `funcionarios`
 --
 
 INSERT INTO `funcionarios` (`id`, `nome`, `cargo`, `modificado`, `regime`, `outros_descontos`, `tbruto`, `tdesconto`, `tliquido`, `rgf`) VALUES
+=======
+-- Extraindo dados da tabela `funcionarios_prefeitura`
+--
+
+INSERT INTO `funcionarios_prefeitura` (`id`, `nome`, `cargo`, `modificado`, `regime`, `outros_descontos`, `tbruto`, `tdesconto`, `tliquido`, `rgf`) VALUES
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 (1, 'akira', 'profissional', '2020-06-08 18:31:46', 'dieta ', 500, 60001, 6500, 53501, 100),
 (2, 'akira', 'Analalista', '2020-06-08 19:03:57', 'dieta', 300, 24000, 900, 23100, 101),
 (3, 'akira', 'Analalista', '2020-06-10 21:21:30', 'dieta', 300, 6000, 900, 5100, 102),
@@ -2171,7 +2242,38 @@ INSERT INTO `funcionarios` (`id`, `nome`, `cargo`, `modificado`, `regime`, `outr
 (519, 'leo', 'Analalistacomu', '2020-06-11 23:25:51', 'dieta', 300, 6000, 900, 5100, 618),
 (520, 'leo', 'Analalistacomu', '2020-06-11 23:25:51', 'dieta', 300, 6000, 900, 5100, 619),
 (521, 'akira', 'asdasdsad', '2020-06-17 21:06:25', 'dieta', 1, 200000, 3, 199997, 620),
+<<<<<<< HEAD
 (522, 'perluxo', 'perluxo', '2020-06-19 19:41:26', 'perluxo', 1, 50000, 5001, 44999, 621);
+=======
+(522, 'perluxo', 'perluxo', '2020-06-19 19:41:26', 'perluxo', 1, 50000, 5001, 44999, 621),
+(524, 'leokira', 'perluxos', '2020-06-24 04:38:58', 'dieta', 1, 10001, 1001, 10001, 622);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `projetos`
+--
+
+CREATE TABLE `projetos` (
+  `id` varchar(50) NOT NULL,
+  `link` text NOT NULL,
+  `tipo_projeto` text NOT NULL,
+  `ano` int(11) NOT NULL,
+  `autor` text NOT NULL,
+  `assunto` text NOT NULL,
+  `anotacao` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `projetos`
+--
+
+INSERT INTO `projetos` (`id`, `link`, `tipo_projeto`, `ano`, `autor`, `assunto`, `anotacao`) VALUES
+('20/20', 'https://www.google.com.br', 'Lei de Resolução', 2019, 'perluxo', 'perluxo', 'perluxo'),
+('30/30', 'https://www.google.com.br', 'Lei Ordinaria', 2019, 'Akira', '', 'em transito'),
+('30/31', 'www', 'Lei Ordinaria', 2019, 'jeff', 'leo', 'aaaa'),
+('30/32', 'www', 'Lei Ordinaria', 2020, 'jeff', 'Código de rastreamento', 'em transito');
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 
 -- --------------------------------------------------------
 
@@ -2183,7 +2285,11 @@ CREATE TABLE `remuneracoes` (
   `rgf` int(10) UNSIGNED NOT NULL,
   `id_item` int(10) UNSIGNED NOT NULL,
   `nome` varchar(50) NOT NULL,
+<<<<<<< HEAD
   `valor` int(10) UNSIGNED NOT NULL
+=======
+  `valor` float UNSIGNED NOT NULL
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -3757,7 +3863,13 @@ INSERT INTO `remuneracoes` (`rgf`, `id_item`, `nome`, `valor`) VALUES
 (621, 1570, 'b', 10000),
 (621, 1571, 'c', 10000),
 (621, 1572, 'd', 10000),
+<<<<<<< HEAD
 (621, 1573, 'e', 10000);
+=======
+(621, 1573, 'e', 10000),
+(622, 1575, 'sALARIO', 10000),
+(622, 1576, 'a', 1);
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 
 --
 -- Índices para tabelas despejadas
@@ -3776,9 +3888,27 @@ ALTER TABLE `descontos`
   ADD PRIMARY KEY (`id_item`);
 
 --
+<<<<<<< HEAD
 -- Índices para tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
+=======
+-- Índices para tabela `funcionarios_camara`
+--
+ALTER TABLE `funcionarios_camara`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `funcionarios_prefeitura`
+--
+ALTER TABLE `funcionarios_prefeitura`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `projetos`
+--
+ALTER TABLE `projetos`
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
   ADD PRIMARY KEY (`id`);
 
 --
@@ -3801,6 +3931,7 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de tabela `descontos`
 --
 ALTER TABLE `descontos`
+<<<<<<< HEAD
   MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1574;
 
 --
@@ -3808,12 +3939,31 @@ ALTER TABLE `descontos`
 --
 ALTER TABLE `funcionarios`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=523;
+=======
+  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575;
+
+--
+-- AUTO_INCREMENT de tabela `funcionarios_camara`
+--
+ALTER TABLE `funcionarios_camara`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `funcionarios_prefeitura`
+--
+ALTER TABLE `funcionarios_prefeitura`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=525;
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 
 --
 -- AUTO_INCREMENT de tabela `remuneracoes`
 --
 ALTER TABLE `remuneracoes`
+<<<<<<< HEAD
   MODIFY `id_item` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1574;
+=======
+  MODIFY `id_item` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1577;
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

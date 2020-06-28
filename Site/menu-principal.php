@@ -31,7 +31,12 @@
     </div>
 
     <div class="btn-group" role="group">
+<<<<<<< HEAD:Site/menu-principal.php
       <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=funcionarios">Servidores Públicos</a>
+=======
+      <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=funcionariosPrefeitura">Funcionários Prefeitura</a>
+      <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=funcionariosCamara">Funcionários Câmara</a>
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e:Site/menu-principal.html
       <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=projetos">Projetos</a>
     </div>
 
@@ -42,7 +47,12 @@
 
         $valor = @$_GET['p'];
 
+<<<<<<< HEAD:Site/menu-principal.php
         if($valor == 'funcionarios'|| $valor == NULL){ require_once 'menu-funcionarios.php';}
+=======
+        if($valor == 'funcionariosPrefeitura'|| $valor == NULL){ require_once 'menu-funcionariosPrefeitura.php';}
+        if($valor == 'funcionariosCamara'){ require_once 'menu-funcionariosCamara.php';}
+>>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e:Site/menu-principal.html
         if($valor == 'projetos'){ require_once 'menu-projetos.php';}
 
       ?>
