@@ -4,12 +4,12 @@ const del = mysql.createConnection({
   host: "localhost", // O host do banco.
   user: "root", // Um usuário do banco.
   password: "", // A senha do usuário.
-  database: "transparenciamc", // A base de dados a qual a aplicação irá se conectar, deve ser a mesma onde foi executado o Código 1. Ex: node_mysql
+  database: "projectteste", // A base de dados a qual a aplicação irá se conectar, deve ser a mesma onde foi executado o Código 1. Ex: node_mysql
 });
 
 deletar();
 
-async function deletar() {
+function deletar() {
   del.connect((err) => {
     if (err) {
       console.log("Erro connecting to database...", err);

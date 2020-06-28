@@ -6,21 +6,15 @@ module.exports = {
     tamanho_query = dados.length || 0;
 
     if (tamanho_query == 0) {
-      throw "Tamanho do vetor invalido";
+      throw "Erro: Vetor está vazio";
     }
 
-    var valores = "'" + dados[0] + "'";
-    var i = 1;
-
-    while (i < tamanho_query) {
-      valores = valores + ",'" + dados[i] + "'";
-      i++;
-    }
-
-    con.query("INSERT INTO " + alvo + " VALUES (" + valores + ")", function (
-      err
-    ) {
-      if (err) throw err;
+    con.query("INSERT INTO " + alvo + " VALUES (?)", [dados], function (err) {
+      if (err) {
+        //console.log(err);
+        //não está sendo usada interrupção pois erro de duplicação é recorrente e prejudica o uso do script
+        //duplicação de chave primária é automaticamente resolvida pelo phpmyadmin, então pode ser ignorada nessa função no estado de produção
+      }
     });
   },
 };

@@ -23,18 +23,18 @@ async function main() {
     });
 }
 
-async function iniciar_leitura(j, i, estrutura) {
-  var stop = 0;
+function iniciar_leitura(j, i, estrutura) {
   while (j <= i) {
     try {
       var rgf = estrutura["servidores"][j].rgf;
-      stop = await requisitar_valores(rgf, j + 1);
+      requisitar_valores(rgf, j + 1);
     } catch (err) {
       console.log(err);
       process.exit(0);
     }
     j++;
   }
+  geral.insere_basico(0, "funcionarios");
 }
 
 async function requisitar_valores(rgf, k) {
@@ -112,7 +112,7 @@ async function requisitar_valores(rgf, k) {
         //console.log("\n*Total Descontos: " + descontos + "*");
         //console.log("-------------------------");
 
-        console.log(outros);
+        //console.log(outros);
         con.query(
           //para evitar erro de sincronia todas as "queries" ficam dentro da query principal
           "SELECT id,modificado FROM funcionarios WHERE rgf = " +
@@ -126,7 +126,7 @@ async function requisitar_valores(rgf, k) {
                 null,
                 funcionario,
                 cargo,
-                null,
+                undefined,
                 regime,
                 outros,
                 totalbruto,
@@ -136,6 +136,7 @@ async function requisitar_valores(rgf, k) {
               );
               geral.insere_basico(dados, "funcionarios");
             } else {
+              //console.log(rows);
               console.log("Atualizacao de registro");
               con.query(
                 "UPDATE funcionarios SET (NULL ,nome = '" +
@@ -166,14 +167,14 @@ async function requisitar_valores(rgf, k) {
 
           console.log(nomes);
 
-          carrega_detalhes("remuneracoes", rgf, nomes, valores, id);
+          carrega_detalhes("remuneracoes", rgf, nomes, valores);
         }
         for (j = 0; j < contde; j++) {
           nomes2 = detalhes.descontos[j].nome.trim() || "";
 
           valores2 = converter_float(detalhes.descontos[j].valor) || 0;
 
-          carrega_detalhes("descontos", rgf, nomes2, valores2, id);
+          carrega_detalhes("descontos", rgf, nomes2, valores2);
         }
         console.log("Sucesso!");
       });
@@ -190,7 +191,7 @@ function converter_float(numero) {
   return numero;
 }
 
-async function carrega_detalhes(alvo, rgf, nomes, valores, id) {
+async function carrega_detalhes(alvo, rgf, nomes, valores) {
   var check = false;
 
   con.query(
@@ -209,7 +210,7 @@ async function carrega_detalhes(alvo, rgf, nomes, valores, id) {
         check = true;
       }
       if (check == false) {
-        var dados = new Array(rgf, id, null, nomes, valores);
+        var dados = new Array(rgf, null, nomes, valores);
         geral.insere_basico(dados, alvo);
       } else {
         console.log("Att registro 1");
