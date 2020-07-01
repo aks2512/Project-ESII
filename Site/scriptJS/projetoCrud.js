@@ -33,12 +33,12 @@ function excluir() {
   var id = [];
 
   if (projetos.length == 0) {
-    alert("Selecione um ou mais funcionários para deletar");
+    alert("Selecione um ou mais projetos para deletar");
     return false;
   } else {
     if (
       !confirm(
-        "Tem certeza que deseja excluir os dados dos funcionarios selecionados?"
+        "Tem certeza que deseja excluir os dados dos projetos selecionados?"
       )
     ) {
       return false;

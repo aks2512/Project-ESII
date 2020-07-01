@@ -32,7 +32,8 @@
     </div>
 
     <div class="btn-group" role="group">
-      <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=funcionarios">Servidores Públicos</a>
+      <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=funcionariosPrefeitura">Funcionários Prefeitura</a>
+      <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=funcionariosCamara">Funcionários Camara</a>
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=projetos">Projetos</a>
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=pesquisa">Pesquisa de Interesses</a>
     </div>
@@ -43,7 +44,8 @@
 
       $valor = @$_GET['p'];
 
-      if($valor == 'funcionarios'|| $valor == NULL){ require_once 'administracao-funcionarios.php';}
+      if($valor == 'funcionariosPrefeitura'|| $valor == NULL){ require_once 'administracao-funcionariosPrefeitura.php';}
+      if($valor == 'funcionariosCamara'){ require_once 'administracao-funcionariosCamara.php';}
       if($valor == 'projetos'){ require_once 'administracao-projetos.php';}
       if($valor == 'pesquisa'){ require_once 'administracao-interesses.php';}
 

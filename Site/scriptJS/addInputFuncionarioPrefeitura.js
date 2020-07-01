@@ -42,8 +42,8 @@ function add_remuneracao(){
       <button name="'+cont_rem+'" type="button" class="btn btn-danger btn-new-rmvRem" onclick="rmv_new_remuneracao()">-</button>\
     </div>\
   </div>';
-  cont_rem++;
   $("#input-remuneracao").append(inputspace);
+  cont_rem++;
 }
 
 function rmv_remuneracao(){
@@ -72,12 +72,11 @@ function add_desconto(){
   <input name="valoresD[]" type="text">\
   </div>\
   <div class="col-md-2">\
-  <button name="'+cont_des+'" type="button" class="btn btn-danger btn-new-rmvDes" onclick"rmv_new_desconto()">-</button>\
+  <button name="'+cont_des+'" type="button" class="btn btn-danger btn-new-rmvDes" onclick="rmv_new_desconto()">-</button>\
   </div>\
   </div>';
-  cont_des++;
-  alert(cont_des);
   $("#input-desconto").append(inputspace);
+  cont_des++;
 }
 
 function rmv_desconto(){

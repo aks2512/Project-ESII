@@ -12,8 +12,8 @@
         private $Remuneracoes;
         private $Descontos;
         private $OutrosDescontos;
-        private $Tbruto;
-        private $Tliquido;
+        private $TBruto;
+        private $TLiquido;
         private $TDesconto;
         private $rgf;
 

@@ -19,7 +19,7 @@
               <div class="row">
                 <div class="col-md-12">
                     <p><span class="bold">Id:</span><br>
-                    '.$projeto['id'].'</p>
+                    '.$projeto['codigo'].'</p>
                 </div>
                 <div class="col-md-12">
                   <p><span class="bold">Tipo Projeto:</span></p>
@@ -47,7 +47,7 @@
                 </div>
                     <hr class="col-md-12">
                 <div class="col-md-6 text-right my-3">
-                  <button type="submit" id="btn-atualizar" name="btn-atualizar" class="btn btn-primary" value="'.$projeto['id'].'">Atualizar</button>                      
+                  <button type="submit" id="btn-atualizar" name="btn-atualizar" class="btn btn-primary" value="'.$projeto['codigo'].'">Atualizar</button>                      
                 </div>
                 <div class="col-md-6 text-left my-3">
                   <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
