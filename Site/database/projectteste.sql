@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 01-Jul-2020 às 17:42
--- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.5
+-- Host: localhost:3306
+-- Tempo de geração: 01-Jul-2020 às 20:32
+-- Versão do servidor: 5.7.24
+-- versão do PHP: 7.2.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,8 +58,6 @@ CREATE TABLE `descontos` (
 --
 
 INSERT INTO `descontos` (`rgf`, `id_item`, `nome`, `valor`) VALUES
-(19675, 1, 'IPREM', 188.68),
-(17499, 2, 'IPREM', 226.79),
 (11961, 3, 'IMPOSTO DE REND', 398.29),
 (14516, 4, 'I.N.S.S.', 152.57),
 (11961, 5, 'I.N.S.S.', 611.18),
@@ -246,19 +244,41 @@ INSERT INTO `descontos` (`rgf`, `id_item`, `nome`, `valor`) VALUES
 (18809, 186, 'IPREM', 234.66),
 (19900, 187, 'IPREM', 162.86),
 (19548, 188, 'IMPOSTO DE REND', 105.62),
-(19548, 189, 'IPREM', 337.12);
+(19548, 189, 'IPREM', 337.12),
+(19675, 190, 'IPREM', 188.68);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `funcionarios`
+-- Estrutura da tabela `funcionarios_camara`
 --
 
-CREATE TABLE `funcionarios` (
+CREATE TABLE `funcionarios_camara` (
+  `rgf` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `cargo` varchar(50) NOT NULL,
+  `vencimento_base` float NOT NULL,
+  `outros_vencimentos` float NOT NULL,
+  `previdencia` float NOT NULL,
+  `outros_descontos` float NOT NULL,
+  `tbruto` float NOT NULL,
+  `tliquido` float NOT NULL,
+  `tdesconto` float NOT NULL,
+  `irrf` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `funcionarios_prefeitura`
+--
+
+CREATE TABLE `funcionarios_prefeitura` (
   `id` int(10) UNSIGNED NOT NULL,
   `nome` varchar(50) NOT NULL,
   `cargo` varchar(50) NOT NULL,
-  `modificado` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `regime` varchar(50) NOT NULL,
   `outros_descontos` float NOT NULL,
   `tbruto` float NOT NULL,
@@ -268,13 +288,12 @@ CREATE TABLE `funcionarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `funcionarios`
+-- Extraindo dados da tabela `funcionarios_prefeitura`
 --
 
-INSERT INTO `funcionarios` (`id`, `nome`, `cargo`, `modificado`, `regime`, `outros_descontos`, `tbruto`, `tdesconto`, `tliquido`, `rgf`) VALUES
-(1, 'ABENONIAS DA CONCEICAO SILVA', 'GUARDA MUNICIPAL 1a. CLASSE', '2020-06-29 21:33:35', 'CLT Concursados', 1353.21, 5208.62, 2362.68, 2845.94, 11961),
-(2, ' LUCIANA DA SILVA', 'AUXILIAR DE SERVICOS GERAIS', '2020-06-29 21:33:35', 'Estatutário Efetivo com RPPS - IPREM', 0, 1715.26, 188.68, 1526.58, 19675),
-(3, 'AARON ANDERSON  A.FONTELES', 'AGENTE ESCOLAR', '2020-06-29 21:33:35', 'Estatutário Efetivo com RPPS - IPREM', 742.04, 2061.72, 968.83, 1092.89, 17499),
+INSERT INTO `funcionarios_prefeitura` (`id`, `nome`, `cargo`, `modificado`, `regime`, `outros_descontos`, `tbruto`, `tdesconto`, `tliquido`, `rgf`) VALUES
+(1, 'ABENONIAS DA CONCEICAO SILVA', 'GUARDA MUNICIPAL 1a. CLASSE', '2020-07-01 20:02:16', 'CLT Concursados', 1353.21, 5208.62, 2362.68, 5208.62, 11961),
+(2, ' LUCIANA DA SILVA', 'AUXILIAR DE SERVICOS GERAIS', '2020-07-01 20:03:47', 'Estatutário Efetivo com RPPS - IPREM', 0, 1715.26, 188.68, 1715.26, 19675),
 (4, 'ABILIO BENEDITO DA CRUZ', 'AUXILIAR DE SERVIÇOS GERAIS', '2020-06-29 21:33:36', 'CLT Concursados', 814.82, 1869.46, 967.39, 902.07, 14516),
 (5, 'ABRAAO BETIM HERMENEGILDO', 'ASSESSOR DE GABINETE', '2020-06-29 21:33:36', 'Comissionados com RGPS - INSS', 264.11, 4900.01, 1110.15, 3789.86, 19943),
 (6, 'ACACIO ALVES FILHO', 'AUXILIAR DE APOIO ADMINISTRATIVO', '2020-06-29 21:33:36', 'Estatutário Efetivo com RPPS - IPREM', 223.71, 6214.45, 1234.68, 4979.77, 16407),
@@ -397,7 +416,7 @@ CREATE TABLE `historicofuncionarios` (
   `id` int(10) UNSIGNED NOT NULL,
   `nome` varchar(50) NOT NULL,
   `cargo` varchar(50) NOT NULL,
-  `modificado` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `regime` varchar(50) NOT NULL,
   `outros_descontos` float NOT NULL,
   `tbruto` float NOT NULL,
@@ -416,19 +435,19 @@ CREATE TABLE `projetos` (
   `tipo_projeto` varchar(32) NOT NULL,
   `codigo` varchar(10) NOT NULL,
   `autor` varchar(72) NOT NULL,
-  `Assunto` varchar(255) NOT NULL,
+  `assunto` varchar(255) NOT NULL,
   `anotacao` varchar(32) NOT NULL,
   `link` varchar(100) NOT NULL,
   `ano` int(11) NOT NULL,
   `numero` int(11) NOT NULL,
-  `modificado` timestamp NOT NULL DEFAULT current_timestamp()
+  `modificado` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `projetos`
 --
 
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('decreto legislativo', 'pdl:1/05', '', 'Outorga de T�tulo Honor�fico de CIDAD�O MOGIANO ao Excelent�ssimo Sr. GERALDO JOS� RODRIGUES ALCKMIN FILHO, Governador do Estado de S�o Paulo.', 'Decreto Legislativo n.� 001/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_001_05.pdf', 2005, 1, '2020-06-28 22:33:05'),
 ('decreto legislativo', 'pdl:1/06', 'AUSTELINO FERREIRA MATTOS', 'Outorga de T�tulo Honor�fico de CIDAD�O MOGIANO ao Dr. MARCUS ANTONIO DE PAIVA ALBANO.', 'Decreto Legislativo n.� 022/06', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_001_06.pdf', 2006, 1, '2020-06-28 22:33:06'),
 ('decreto legislativo', 'pdl:1/07', 'AUSTELINO FERREIRA MATTOS', 'Outorga de T�tulo Honor�fico de HONRA AO M�RITO a Casa de Sa�de e Maternidade Santana S/A - Hospital Santana.', 'Decreto Legislativo n.� 043/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_001_07.pdf', 2007, 1, '2020-06-28 22:33:06'),
@@ -588,7 +607,7 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('decreto legislativo', 'pdl:19/16', 'CLODOALDO APARECIDO DE MORAES', ' Outorga de t�tulo Honor�fico de HONRA AO M�RITO ao Col�gio Adventista de Mogi das Cruzes, pelos oitenta e um anos de sua funda��o e pelos relevantes servi�os prestados.', 'Decreto Legislativo n.� 093/16', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_019_16.pdf', 2016, 19, '2020-06-28 22:33:23'),
 ('decreto legislativo', 'pdl:19/17', 'EDSON DOS SANTOS E JOSE ANTONIO CUCO PEREIRA', ' Outorga de T�tulo Honor�fico de HONRA AO M�RITO � Funda��o Instituto Pr�+Vida S�o Sebasti�o.', 'Decreto Legislativo n� 14/17', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_019_17.pdf', 2017, 19, '2020-06-28 22:33:26'),
 ('decreto legislativo', 'pdl:19/18', 'EDSON DOS SANTOS E PEDRO HIDEKI KOMURA', ' Outorga de T�tulo Honor�fico de HONRA AO M�RITO ao Instituto Anna de Moura � Funda��o.', 'Decreto Legislativo n.� 054/18', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_019_18.pdf', 2018, 19, '2020-06-28 22:33:27');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('decreto legislativo', 'pdl:19/19', 'P�RICLES RAMALHO BAUAB , RINALDO SADAO SAKAI , JOS� FRANCIM�RIO VIEIRA D', ' Outorga de T�tulo Honor�fico de HONRA AO M�RITO � Associa��o de Refugiados \"Ref�gio Brasil\".', 'Decreto Legislativo n.� 089/19', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_019_19.pdf', 2019, 19, '2020-06-28 22:33:28'),
 ('decreto legislativo', 'pdl:2/05', 'PEDRO HIDEKI KOMURA', 'Outorga de T�tulo Honor�fico de HONRA AO M�RITO ao Excelent�ssimo Sr. DARIO RAIS LOPES, Secret�rio de Estado dos Transportes.', 'Decreto Legislativo n.� 002/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_002_05.pdf', 2005, 2, '2020-06-28 22:33:05'),
 ('decreto legislativo', 'pdl:2/06', 'MARNEY EDUARDO VICCO', 'Outorga de T�tulo Honor�fico de CIDAD�O MOGIANO ao Sr. OLAVO APARECIDO ARRUDA D?C�MARA.', 'Decreto Legislativo n.� 024/06', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_002_06.pdf', 2006, 2, '2020-06-28 22:33:06'),
@@ -752,7 +771,7 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('decreto legislativo', 'pdl:4/06', '', 'Outorga de T�tulo Honor�fico de CIDAD� MOGIANA � Prof.� HELENICE MASSARO DUQUE.', 'Decreto Legislativo n.� 026/06', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_004_06.pdf', 2006, 4, '2020-06-28 22:33:06'),
 ('decreto legislativo', 'pdl:4/07', 'ODETE RODRIGUES ALVES SOUSA', 'Outorga de T�tulo Honor�fico de HONRA AO M�RITO � Colunista Social Silene da Cunha Pinto.', 'Decreto Legislativo n.� 047/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_004_07.pdf', 2007, 4, '2020-06-28 22:33:06'),
 ('decreto legislativo', 'pdl:4/08', 'PEDRO HIDEKI KOMURA', 'Cria��o da \"Medalha JAP�O - BRASIL\", alusiva a Imigra��o Japonesa no munic�pio.', 'Decreto Legislativo n.� 069/08', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_004_08.PDF', 2008, 4, '2020-06-28 22:33:07');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('decreto legislativo', 'pdl:4/09', 'FRANCISCO MOACIR BEZERRA DE MELO FILHO', 'Outorga de T�tulo Honor�fico de CIDAD�O MOGIANO ao Sr. Carlos Roberto da Silva.', 'Decreto Legislativo n.� 005/09', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_004_09.PDF', 2009, 4, '2020-06-28 22:33:08'),
 ('decreto legislativo', 'pdl:4/10', 'PEDRO HIDEKI KOMURA', 'Outorga de T�tulo Honor�fico de CIDAD�O MOGIANO ao Jornalista Paulo Pires de Campos.', 'Decreto Legislativo n.� 030/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_004_10.pdf', 2010, 4, '2020-06-28 22:33:20'),
 ('decreto legislativo', 'pdl:4/11', 'JOLINDO RENN� COSTA', 'Outorga de T�tulo Honor�fico de HONRA AO M�RITO ao Professor e Pianista Carlos Eduardo Zappili Albertini.', 'Decreto Legislativo n.� 058/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PDL_004_11.pdf', 2011, 4, '2020-06-28 22:33:21'),
@@ -910,7 +929,7 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leicomplementar', 'plc:2/05', 'PREFEITO', 'Institui��o do REGIME PR�PRIO DE PREVID�NCIA SOCIAL e cria��o do INSTITUTO DE PREVID�NCIA MUNICIPAL - IPREM.', 'Lei Complementar n.� 035/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PLC_002_05.pdf', 2005, 2, '2020-06-28 21:35:34'),
 ('leicomplementar', 'plc:2/06', 'PREFEITO', 'Altera��o da Lei Complementar n.� 030/04 (Ref.: ESTATUTO DO MAGIST�RIO P�BLICO).', 'Lei Complementar n.� 044/06', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PLC_002_06.pdf', 2006, 2, '2020-06-28 21:35:34'),
 ('leicomplementar', 'plc:2/07', 'PREFEITO', 'D� nova reda��o ao artigo 28 da Lei n.� 1961/70 - C�digo Tribut�rio Municipal, bem como ao artigo 50 da Lei Complementar n.� 026/03, que disp�e sobre o Imposto sobre Servi�os de Qualquer Natureza - ISSQN( Ref. fixa��o de percentuais para cobran�a de multa', 'Lei Complementar n.� 050/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PLC_002_07.pdf', 2007, 2, '2020-06-28 21:35:35');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leicomplementar', 'plc:2/08', 'PREFEITO', 'Corre��o monet�ria da Planta Gen�rica de Valores para efeito de lan�amento do Imposto sobre a Propriedade Predial e Territorial Urbana, para o exerc�cio de 2009.', 'Lei Complementar n.� 057/08', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PLC_002_08.PDF', 2008, 2, '2020-06-28 21:35:35'),
 ('leicomplementar', 'plc:2/09', 'PREFEITO', 'Concede isen��o do Imposto sobre a Propriedade Predial e Territorial Urbana - IPTU, incidentes sobre im�veis utilizados como templo de qualquer culto.', 'Lei Complementar n� 059/09', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PLC_002_09.PDF', 2009, 2, '2020-06-28 21:35:35'),
 ('leicomplementar', 'plc:2/10', 'PREFEITO', 'Disp�e sobre o Estatuto da Guarda Municipal, integrante da estrutura b�sica da Secretaria Municipal de Seguran�a.', 'Lei Complementar n.� 069/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PLC_002_10.pdf', 2010, 2, '2020-06-28 21:35:36'),
@@ -1059,7 +1078,7 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:101/06', 'PREFEITO', 'Autoriza a DOA��O DE �REA DE TERRENO MUNICIPAL � empresa M. M. BAJO & CIA. LTDA. ME.', 'Lei n.� 5961/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_101_06.pdf', 2006, 101, '2020-06-28 21:33:49'),
 ('leiordinaria', 'plo:101/07', 'PEDRO HIDEKI KOMURA', 'Altera dispositivos da Lei n.� 3957/92, que determina normas para placas e pain�is de an�ncios de venda de im�veis.', 'Retirado em 05.12.07 - Requerime', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_101_07.pdf', 2007, 101, '2020-06-28 21:33:54'),
 ('leiordinaria', 'plo:101/08', '', 'Denomina��o de via p�blica (Rua Professor Ricardo Gomes Amorim). Obs.: Veto Total Mantido - Processo n.� 151/08.', 'Vetado', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_101_08.PDF', 2008, 101, '2020-06-28 21:34:00');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:101/09', 'EXPEDITO UBIRATAN TOBIAS', 'Institu� o Dia do Cliente, a ser comemorado no dia 15 de setembro.', 'Lei n.� 6317/09', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_101_09.PDF', 2009, 101, '2020-06-28 21:34:05'),
 ('leiordinaria', 'plo:101/10', 'PREFEITO', 'Extin��o de escolas rurais que se encontram desativadas.', 'Lei n.� 6440/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_101_10.pdf', 2010, 101, '2020-06-28 21:34:09'),
 ('leiordinaria', 'plo:101/11', 'PREFEITO', 'Autoriza��o ao Poder Executivo, para receber recursos financeiros, a fundo perdido, por interm�dio do Minist�rio das Cidades, representado pela Caixa Econ�mica Federal, destinados � amplia��o do Sistema de Abastecimento de �gua da Vila Moraes - Rede, Adu�', 'Lei n.� 6602/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_101_11.pdf', 2011, 101, '2020-06-28 21:34:16'),
@@ -1221,7 +1240,7 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:110/16', 'PREFEITO', 'Disp�e sobre o ressarcimento e antecipa��o, pelo SEMAE ao Munic�pio de Mogi das Cruzes, dos valores investidos por esta a t�tulo de contrapartida nos contratos celebrados com a Caixa Econ�mica Federal, oriundos do Programa de Acelera��o do Crescimento � P', 'Retirado em 30.06.16 (artigo 153', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_110_16.pdf', 2016, 110, '2020-06-28 21:34:53'),
 ('leiordinaria', 'plo:110/17', 'CAIO CESAR MACHADO DA CUNHA', ' Obrigatoriedade da afixa��o de cartaz, nos Cart�rios de Registro Civil, informando sobre a gratuidade do registro de nascimento e �bito.', 'Lei n� 7.379/18', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/Pl_110_17.pdf', 2017, 110, '2020-06-28 21:35:01'),
 ('leiordinaria', 'plo:110/18', 'CAIO CESAR MACHADO DA CUNHA', ' CASSA��O DE ALVAR� de estabelecimentos que forem flagrados comercializando, adquirindo, transportando, estocando ou revendendo produtos oriundos de il�cito.', 'Em tr�mite', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_110_18.pdf', 2018, 110, '2020-06-28 21:35:10');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:110/19', 'ANTONIO LINO DA SILVA', ' ALTERA��O da Lei n� 7.201/16 ( Ref.: parcelamento do solo urbano ).\n', 'Lei n� 7.508/19', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_110_19.pdf', 2019, 110, '2020-06-28 21:35:18'),
 ('leiordinaria', 'plo:111/05', 'PREFEITO', 'DOA��O DE IM�VEL MUNICIPAL � empresa ALLA BRASIL Ltda..', 'Lei n.� 5827/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_111_05.pdf', 2005, 111, '2020-06-28 21:26:11'),
 ('leiordinaria', 'plo:111/06', 'PREFEITO', 'Disp�e sobre a JORNADA DE TRABALHO de M�DICOS da Secretaria Municipal de Sa�de.', 'Lei n.� 5949/06', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_111_06.pdf', 2006, 111, '2020-06-28 21:33:49'),
@@ -1385,7 +1404,7 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:121/10', 'PREFEITO', 'Altera dispositivos da Lei n.� 6256/09, que institui o Programa de Concess�o de Est�gios de Estudantes, no �mbito da Prefeitura Municipal de Mogi das Cruzes.', 'Lei n.� 6451/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_121_10.pdf', 2010, 121, '2020-06-28 21:34:09'),
 ('leiordinaria', 'plo:121/11', 'PREFEITO', 'Cria��o e denomina��o do \"Centro de Educa��o Infantil Municipal - CEIM Professor C�cio Costa Neves\" - Jardim Santos Dumont, Distrito de Braz Cubas.', 'Lei n.� 6614/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_121_11.pdf', 2011, 121, '2020-06-28 21:34:15'),
 ('leiordinaria', 'plo:121/13', 'CARLOS LUCAREFSKI', ' Disp�e sobre a utiliza��o de lacre inviol�vel nas embalagens de alimentos entregues em domic�lio.', 'Retirado em 12.11.13 - Requerime', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_121_13.pdf', 2013, 121, '2020-06-28 21:34:24');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:121/14', 'PREFEITO', ' Cria��o dos elementos de despesa 3.3.90.30.00 � Material de Consumo e 4.4.90.52.00 � Equipamentos e Material Permanente, na unidade or�ament�ria �Secretaria Municipal de Assist�ncia Social�, para cobrir despesas com a implanta��o da Cozinha Comunit�ria (', 'Lei n.� 6985/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_121_14.pdf', 2014, 121, '2020-06-28 21:34:32'),
 ('leiordinaria', 'plo:121/15', 'FRANCISCO MOACIR BEZERRA DE MELO FILHO', ' Denomina��o de via p�blica (Rua Doutor Giglio Pecoraro � atual Rua O � c�digo de logradouro n.� 22.489-0).', 'Lei n.� 7117/16', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_121_15.pdf', 2015, 121, '2020-06-28 21:34:40'),
 ('leiordinaria', 'plo:121/16', 'IDUIGUES FERREIRA MARTINS', ' Denomina��o de via p�blica (Rua Expedicion�rio Oscar Alves de Mello FEB � atual Rua Tabajara � logradouro n � 22.257-4).', 'Lei n.� 7218/16', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_121_16.pdf', 2016, 121, '2020-06-28 21:34:51'),
@@ -1546,7 +1565,7 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:132/11', 'MAURO LUIS CLAUDINO DE ARAUJO', 'Denomina��o de via p�blica (Rua Dorothy Mae Stang - Irm� Doroty - atual Rua K - c�digo de logradouro n.� 020.486-9).', 'Lei n.� 6630/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_132_11.pdf', 2011, 132, '2020-06-28 21:34:14'),
 ('leiordinaria', 'plo:132/13', 'MAURO LUIS CLAUDINO DE ARAUJO E JOS� FRANCIM�RIO VIEIRA DE MACEDO', ' Inser��o de evento no Calend�rio Tur�stico das Festividades, criado pela Lei n.� 2890/85 (Encontro Cristo Vive � Igreja Evang�lica Assembleia de Deus Nipo Brasileira).', 'Lei n.� 6872/13', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_132_13.pdf', 2013, 132, '2020-06-28 21:34:24'),
 ('leiordinaria', 'plo:132/14', 'PREFEITO', ' Aprova��o do Termo de Compromisso n.� 0424.475-02/2014-SP, celebrado com o Minist�rio das Cidades, objetivando a transfer�ncia de recursos financeiros destinados � a��o integrante do Programa de Acelera��o do Crescimento (PAC): elabora��o de projetos de ', 'Lei n.� 6993/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_132_14.pdf', 2014, 132, '2020-06-28 21:34:30');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:132/15', 'IDUIGUES FERREIRA MARTINS', ' Obrigatoriedade de manuten��o de uma unidade de combate a inc�ndio e primeiros socorros, composta por Bombeiro Profissional Civil, nas edifica��es, estabelecimentos e eventos de grande concentra��o p�blica.', 'Arquivado (Artigo 154 - RI)', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_132_15.pdf', 2015, 132, '2020-06-28 21:34:39'),
 ('leiordinaria', 'plo:132/16', 'PROT�SSIO RIBEIRO NOGUEIRA', ' Disp�e sobre a Aplica��o de Multas para os Praticantes de Trotes Contra o SAMU � Servi�o de Assist�ncia M�dica de Urg�ncias.', 'Arquivado (Artigo 154 - RI)', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_132_16.pdf', 2016, 132, '2020-06-28 21:34:51'),
 ('leiordinaria', 'plo:132/17', 'CAIO CESAR MACHADO DA CUNHA', ' Obrigatoriedade da obten��o de Licen�a Ambiental de Opera��o e Laudo de Vistoria do Corpo de Bombeiros para o funcionamento de postos de combust�veis no munic�pio e outras provid�ncias.', 'Retirado pelo autor', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_132_17.pdf', 2017, 132, '2020-06-28 21:35:00'),
@@ -1710,7 +1729,7 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:144/14', 'PREFEITO', ' Organiza��o e funcionamento do Mercado Municipal de Mogi das Cruzes.', 'Retirado em 17.12.14 - Mensagem ', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_144_14.pdf', 2014, 144, '2020-06-28 21:34:30'),
 ('leiordinaria', 'plo:144/16', 'VERA LUCIA NOGUEIRA RAINHO PRADO', ' MONITORAMENTO por C�MERAS em estabelecimentos de ensino na forma que espec�fica.', 'Arquivado (Artigo 154 - RI)', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_144_16.pdf', 2016, 144, '2020-06-28 21:34:49'),
 ('leiordinaria', 'plo:144/17', 'FERNANDA MORENO DA SILVA', ' Obrigatoriedade, aos estabelecimentos que comercializam e entregam alimentos para pronto-consumo, da informa��o sobre uso de ingredientes de origem animal e gl�ten.', 'Retirado pelo autor', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_144_17.pdf', 2017, 144, '2020-06-28 21:34:59');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:144/18', 'PREFEITO', ' Autoriza��o ao Executivo para abertura de CR�DITO ADICIONAL no or�amento, em favor do Servi�o Municipal de �guas e Esgotos � SEMAE.', 'Lei n� 7.425/18', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_144_18.pdf', 2018, 144, '2020-06-28 21:35:08'),
 ('leiordinaria', 'plo:144/19', 'PREFEITO', ' Cria��o e DENOMINA��O  do Centro de Educa��o Infantil Municipal - CEIM Comandante Otto Carlos Brasil de Rezende.\n', 'Lei n� 7.529/19', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_144_19.pdf', 2019, 144, '2020-06-28 21:35:16'),
 ('leiordinaria', 'plo:145/05', 'CARLOS EVARISTO DA SILVA', 'Regulamenta��o do USO DE APARELHOS DE TELEFONIA CELULAR e cong�neres no interior dos locais que especifica.', 'Retirado - Requerimento Verbal', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_145_05.pdf', 2005, 145, '2020-06-28 21:26:10'),
@@ -1875,7 +1894,7 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:159/07', 'PREFEITO', 'Doa��o de im�vel municipal � Augusta Resp. Loja Simb. Acampamento dos Aprendizes (Loja Ma��nica).', 'Lei n.� 6092/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_159_07.PDF', 2007, 159, '2020-06-28 21:33:54'),
 ('leiordinaria', 'plo:159/09', 'MESA DIRETIVA', 'Revoga��o de diversas leis municipais, que tratam de cr�ditos especiais, cr�ditos adicionais, suplementa��o or�ament�ria, cr�ditos para pagamentos espec�ficos e assuntos afins - per�odo de 1947 a 1983 (Ref. Consolida��o da Legisla��o Municipal).', 'Em Tr�mite', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_159_09.PDF', 2009, 159, '2020-06-28 21:34:02'),
 ('leiordinaria', 'plo:159/10', 'PREFEITO', 'Autoriza��o ao Poder Executivo, para celebrar conv�nio com as Secretarias da Habita��o e de Assist�ncia e Desenvolvimento Social, em parceria com a CDHU, objetivando a implementa��o do Programa Vila Dignidade.', 'Lei n.� 6477/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_159_10.pdf', 2010, 159, '2020-06-28 21:34:07');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:159/11', 'MESA DIRETIVA', 'Abertura de cr�dito adicional suplementar no valor de R$ 1.328.232,19 em favor da C�mara Municipal de Mogi das Cruzes.', 'Lei n.� 6633/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_159_11.pdf', 2011, 159, '2020-06-28 21:34:12'),
 ('leiordinaria', 'plo:159/13', 'ANA KARINA RODRIGUES PIRILLO', ' Disp�e sobre a proibi��o da realiza��o de rodeios, touradas, vaquejadas, farras de boi ou eventos similares.', 'Retirado em 23.02.16 (artigo 153', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_159_13.pdf', 2013, 159, '2020-06-28 21:34:23'),
 ('leiordinaria', 'plo:159/14', 'PREFEITO', ' Cria��o e denomina��o do Centro de Educa��o Infantil Municipal � CEIM Professora Nyssia Aparecida Freitas Meira, na Vila Brasileira.', 'Lei n.� 7012/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_159_14.pdf', 2014, 159, '2020-06-28 21:34:29'),
@@ -1984,7 +2003,6 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:17/17', 'BENEDITO FAUSTINO TAUBAT� GUIMAR�ES', ' Disp�e sobre o respeito dos servi�os p�blicos municipais � dignidade especial de crian�as e adolescentes.', 'Retirado em 06.03.17 (artigo 153', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_017_17.pdf', 2017, 17, '2020-06-28 21:35:07'),
 ('leiordinaria', 'plo:17/18', 'MAURO LUIS CLAUDINO DE ARAUJO', ' Celebra��o de TERMOS DE COOPERA��O com a iniciativa privada, visando � execu��o de reformas e manuten��o de bens e pr�prios p�blicos.', 'Lei n� 7.372/18', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_017_18.pdf', 2018, 17, '2020-06-28 21:35:16'),
 ('leiordinaria', 'plo:17/19', 'PREFEITO', ' Cria��o do CONSELHO de Gest�o de Programa, �rg�o deliberativo do programa +Mogi Ecotiet� ( Ref.: art. 5� Lei n.� 7423/18 ).\n', 'Lei n� 7.454/19', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_017_19.pdf', 2019, 17, '2020-06-28 21:35:23'),
-('leiordinaria', 'plo:17/20', 'JORGE RODRIGO VALVERDE SANTANA', ' Uso e aplica��o de AGROT�XICOS dentro do per�metro urbano do munic�pio.\n', 'Em tr�mite', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_017_20.pdf', 2020, 17, '2020-06-28 21:35:26'),
 ('leiordinaria', 'plo:170/05', 'PREFEITO', 'Autoriza a celebra��o de CONV�NIO com o DEPARTAMENTO DE ESTRADAS DE RODAGEM - DER, objetivando a IMPLANTA��O DE ROTAT�RIAS de Ordenamento do Sistema Vi�rio, na Rodovia Dom Paulo Rolim Loureiro - SP 98.', 'Lei n.� 5847/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_170_05.pdf', 2005, 170, '2020-06-28 21:26:08'),
 ('leiordinaria', 'plo:170/10', 'PREFEITO', 'Autoriza��o ao Poder Executivo, para contratar financiamento com a Caixa Econ�mica Federal (ref. Programa de Pavimenta��o e Qualifica��o de Vias Urbanas - drenagem de �guas pluviais, pavimenta��o e cal�adas no Bairro Jardim Santos Dumont III).', 'Lei n.� 6480/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_170_10.pdf', 2010, 170, '2020-06-28 21:34:06'),
 ('leiordinaria', 'plo:170/11', 'PREFEITO', 'Altera a legisla��o referente ao Conselho Municipal dos Diretos da Mulher - COMMULHER (Obs.: Revoga��o da Lei n.� 5766/05).', 'Lei n.� 6652/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_170_11.pdf', 2011, 170, '2020-06-28 21:34:12'),
@@ -2033,9 +2051,9 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:18/15', 'BENEDITO FAUSTINO TAUBAT� GUIMAR�ES', ' Denomina��o do Centro de Educa��o Infantil Comunit�rio � CEIC Mundo Vivo �Wilma Mara Simas Gon�alves�, com sede � Rua Elias Pinheiro Nobre, n.� 91, Jardim das Ac�cias, Vila Mogi Moderno.', 'Lei n.� 7043/15', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_018_15.pdf', 2015, 18, '2020-06-28 21:34:46'),
 ('leiordinaria', 'plo:18/16', 'PREFEITO', ' Cria��o e denomina��o do Centro de Educa��o Infantil Municipal � CEIM Jos� Maria Batalha, no Parque Morumbi.', 'Lei  n.�  7.124/16', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_018_16.pdf', 2016, 18, '2020-06-28 21:34:58'),
 ('leiordinaria', 'plo:18/17', 'PREFEITO', ' Aprova��o do Plano Municipal de Educa��o � PME, elaborado pelo Conselho Municipal de Educa��o, para o bi�nio 2017/2018.', 'Lei  n.� 7279/17', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_018_17.pdf', 2017, 18, '2020-06-28 21:35:07'),
-('leiordinaria', 'plo:18/18', 'MAURO DE ASSIS MARGARIDO', 'Autoriza��o para o funcionamento dos SEM�FOROS em sistema de alerta (luz amarela piscante) entre 00h00 e 05h00.', 'Lei n� 7.378/18', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_018_18.pdf', 2018, 18, '2020-06-28 21:35:15');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
-('leiordinaria', 'plo:18/19', 'PREFEITO', ' Ratifica��o do CONTRATO de Repasse celebrado com o Minist�rio do Esporte, representado pela Caixa Econ�mica Federal, para implanta��o de campo de grama sint�tica.', 'Lei n� 7.451/19', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_018_19.pdf', 2019, 18, '2020-06-28 21:35:23'),
+('leiordinaria', 'plo:18/18', 'MAURO DE ASSIS MARGARIDO', 'Autoriza��o para o funcionamento dos SEM�FOROS em sistema de alerta (luz amarela piscante) entre 00h00 e 05h00.', 'Lei n� 7.378/18', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_018_18.pdf', 2018, 18, '2020-06-28 21:35:15'),
+('leiordinaria', 'plo:18/19', 'PREFEITO', ' Ratifica��o do CONTRATO de Repasse celebrado com o Minist�rio do Esporte, representado pela Caixa Econ�mica Federal, para implanta��o de campo de grama sint�tica.', 'Lei n� 7.451/19', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_018_19.pdf', 2019, 18, '2020-06-28 21:35:23');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:18/20', 'PREFEITO', ' ALTERA��O  da Lei n� 3.197/88 (Ref.: Utilidade P�blica da Associa��o Beneficente Vila Nova Uni�o).\n', 'Aprovado', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_018_20.pdf', 2020, 18, '2020-06-28 21:35:26'),
 ('leiordinaria', 'plo:180/05', 'PREFEITO', 'SUBSTITU� ANEXOS E TABELAS aprovados pelas Leis n.�s 5.781/05 (LEI DE DIRETRIZES OR�AMENT�RIAS - LDO) e 5.825/05 (LEI PLURIANUAL - PPA).', 'Lei n.� 5864/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_180_05.pdf', 2005, 180, '2020-06-28 21:26:08'),
 ('leiordinaria', 'plo:180/10', 'RUBENS BENEDITO FERNANDES', 'Altera denomina��o de vias p�blicas e revoga a Lei n.� 5441/02 (Rua Geraldo Fonseca Mattos - atual Rua Dezenove - c�digo de logradouro n.� 22.293-8; Rua Oiapoque - atual Rua Geraldo Fonseca Mattos - c�digo de logradouro n.� 009811-5).', 'Lei n.� 6510/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_180_10.pdf', 2010, 180, '2020-06-28 21:34:06'),
@@ -2194,9 +2212,9 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:26/14', 'MESA DIRETIVA', ' Disp�e sobre o �ndice de revis�o geral das remunera��es dos servidores p�blicos da C�mara Municipal, e dos subs�dios dos Vereadores para o exerc�cio de 2014.', 'Lei n.� 6891/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_026_14.pdf', 2014, 26, '2020-06-28 21:34:37'),
 ('leiordinaria', 'plo:26/15', 'PREFEITO', ' Cria��o do Espa�o Esportivo e Recreativo para Basquete de Rua � Atleta �Rafael Luiz Vieira � Parafa�.', 'Lei n.� 7028/15', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_026_15.pdf', 2015, 26, '2020-06-28 21:34:46'),
 ('leiordinaria', 'plo:26/16', 'PROT�SSIO RIBEIRO NOGUEIRA', ' Denomina��o da �Quadra Poliesportiva Guilherme Matias de Faria�, localizada no Centro Esportivo e Recreativo Felix Chalub Nagib, no Distrito de Saba�na.', 'Lei  n.�  7.125/16', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_026_16.pdf', 2016, 26, '2020-06-28 21:34:58'),
-('leiordinaria', 'plo:26/17', 'IDUIGUES FERREIRA MARTINS', ' Obrigatoriedade de manuten��o de uma unidade de combate a inc�ndio e primeiros socorros, composta por Bombeiros Profissionais Civis, na forma que especifica. ', 'Veto Total', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_026_17.pdf', 2017, 26, '2020-06-28 21:35:06');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
-('leiordinaria', 'plo:26/18', 'FERNANDA MORENO DA SILVA', ' Institui��o do PROGRAMA \" Mulher - sua Sa�de, seus Direitos \".', 'Retirado pelo autor', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_026_18.pdf', 2018, 26, '2020-06-28 21:35:15'),
+('leiordinaria', 'plo:26/17', 'IDUIGUES FERREIRA MARTINS', ' Obrigatoriedade de manuten��o de uma unidade de combate a inc�ndio e primeiros socorros, composta por Bombeiros Profissionais Civis, na forma que especifica. ', 'Veto Total', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_026_17.pdf', 2017, 26, '2020-06-28 21:35:06'),
+('leiordinaria', 'plo:26/18', 'FERNANDA MORENO DA SILVA', ' Institui��o do PROGRAMA \" Mulher - sua Sa�de, seus Direitos \".', 'Retirado pelo autor', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_026_18.pdf', 2018, 26, '2020-06-28 21:35:15');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:26/19', 'CAIO CESAR MACHADO DA CUNHA', ' ALTERA��O da Lei Municipal 4630/97 ( Ref.: art. 49 - obrigatoriedade de repara��o das vias p�blicas quando danificadas ).', 'Em tr�mite', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_026_19.pdf', 2019, 26, '2020-06-28 21:35:23'),
 ('leiordinaria', 'plo:26/20', 'PREFEITO', ' Fixa��o do �ndice para revis�o da REMUNERA��O dos SERVIDORES p�blicos municipais.\n', 'Lei n� 7.565/20', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_026_20.pdf', 2020, 26, '2020-06-28 21:35:26'),
 ('leiordinaria', 'plo:27/05', 'JOLINDO RENN� COSTA', 'DENOMINA��O DE VIA P�BLICA (Rua Alcides da Silva).', 'Lei n.� 5779/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_027_05.pdf', 2005, 27, '2020-06-28 21:26:15'),
@@ -2357,9 +2375,9 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:35/16', 'EMERSON RONG', 'Obrigatoriedade de fixa��o da frase �DESRESPEITAR, NEGLIGENCIAR OU PREJUDICAR IDOSO � CRIME�, no interior de: ve�culos do transporte coletivo, hospitais e cl�nicas particulares e ag�ncias banc�rias em local vis�vel.', 'Retirado em 08.04.16 (artigo 153', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_035_16.pdf', 2016, 35, '2020-06-28 21:34:58'),
 ('leiordinaria', 'plo:35/17', 'MARCOS PAULO TAVARES FURLAN', ' Declara��o de utilidade p�blica da Associa��o dos Amigos do Bairro da Vila Natal.', 'Lei  n.� 7278/17', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_035_17.pdf', 2017, 35, '2020-06-28 21:35:05'),
 ('leiordinaria', 'plo:35/18', 'MAURO LUIS CLAUDINO DE ARAUJO', ' Declara��o de UTILIDADE P�BLICA da Associa��o Beneficente Fluir das �guas.', 'Lei n� 7.380/18', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_035_18.pdf', 2018, 35, '2020-06-28 21:35:14'),
-('leiordinaria', 'plo:35/19', 'JORGE RODRIGO VALVERDE SANTANA', ' Obrigatoriedade da apresenta��o de m�sicos locais na abertura SHOWS P�BLICOS de grande porte.', 'Em tr�mite', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_035_19.pdf', 2019, 35, '2020-06-28 21:35:23');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
-('leiordinaria', 'plo:35/20', 'MAURO LUIS CLAUDINO DE ARAUJO E RINALDO SADAO SAKAI', ' Obrigatoriedade do uso de M�SCARA de prote��o no enfrentamento � COVID-19, na forma que espec�fica, e outras provid�ncias.\n', 'Lei n� 7.569/20', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/Pl_035_20.pdf', 2020, 35, '2020-06-28 21:35:26'),
+('leiordinaria', 'plo:35/19', 'JORGE RODRIGO VALVERDE SANTANA', ' Obrigatoriedade da apresenta��o de m�sicos locais na abertura SHOWS P�BLICOS de grande porte.', 'Em tr�mite', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_035_19.pdf', 2019, 35, '2020-06-28 21:35:23'),
+('leiordinaria', 'plo:35/20', 'MAURO LUIS CLAUDINO DE ARAUJO E RINALDO SADAO SAKAI', ' Obrigatoriedade do uso de M�SCARA de prote��o no enfrentamento � COVID-19, na forma que espec�fica, e outras provid�ncias.\n', 'Lei n� 7.569/20', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/Pl_035_20.pdf', 2020, 35, '2020-06-28 21:35:26');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:36/05', 'PREFEITO', 'Concess�o administrativa de USO DE IM�VEL MUNICIPAL � ASSOCIA��O DE MORADORES DO JARDIM MARGARIDA.', 'Lei n.� 5775/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_036_05.pdf', 2005, 36, '2020-06-28 21:26:15'),
 ('leiordinaria', 'plo:36/06', 'CARLOS EVARISTO DA SILVA', 'Obrigatoriedade da reda��o de RECEITAS M�DICAS em LETRA LEG�VEL.', 'Retirado em 13.06.06 - Requerime', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_036_06.pdf', 2006, 36, '2020-06-28 21:33:50'),
 ('leiordinaria', 'plo:36/07', 'JOLINDO RENN� COSTA', 'Denomina��o de pr�prio p�blico (Posto de Sa�de Dr. Alberto Tanus Bichara).', 'Lei n.� 6004/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_036_07.pdf', 2007, 36, '2020-06-28 21:33:58'),
@@ -2521,9 +2539,9 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:44/19', 'PREFEITO', ' Inser��o do EVENTO \"Celebra��o de Cora��o do Rei do Congo\" no Calend�rio Tur�stico das Festividades do Munic�pio.\n', 'Lei n� 7.495/19', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_044_19.pdf', 2019, 44, '2020-06-28 21:35:23'),
 ('leiordinaria', 'plo:44/20', 'CAIO CESAR MACHADO DA CUNHA', ' Institui��o de medidas de incremento da transpar�ncia das informa��es relativas � pandemia da COVID-19, e outras provid�ncias.\n', 'Em tr�mite', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_044_20.pdf', 2020, 44, '2020-06-28 21:35:26'),
 ('leiordinaria', 'plo:45/05', 'JOLINDO RENN� COSTA', 'REVOGA��O DE ALVAR� DE FUNCIONAMENTO de estabelecimentos onde ocorra a comercializa��o de pe�as automotivas, e outros produtos e MATERIAIS ORIUNDOS DE ATO IL�CITO.', 'Retirado em 29.11.05 - Requerime', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_045_05.pdf', 2005, 45, '2020-06-28 21:26:15'),
-('leiordinaria', 'plo:45/06', 'PREFEITO', 'EXTIN��O DE CONCESS�O PERP�TUA DE SEPULTURA ( Lei n.� 2240/76 - Casa S�o Vicente de Paulo - Abrigo para Idosos - Cemit�rio S�o Salvador.', 'Lei n.� 5911/06', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_045_06.pdf', 2006, 45, '2020-06-28 21:33:50');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
-('leiordinaria', 'plo:45/07', 'PREFEITO', 'Cria��o de fun��es de confian�a (Vice Diretor de Escola e Coordenador Pedag�gico).', 'Lei n.� 6014/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_045_07.pdf', 2007, 45, '2020-06-28 21:33:58'),
+('leiordinaria', 'plo:45/06', 'PREFEITO', 'EXTIN��O DE CONCESS�O PERP�TUA DE SEPULTURA ( Lei n.� 2240/76 - Casa S�o Vicente de Paulo - Abrigo para Idosos - Cemit�rio S�o Salvador.', 'Lei n.� 5911/06', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_045_06.pdf', 2006, 45, '2020-06-28 21:33:50'),
+('leiordinaria', 'plo:45/07', 'PREFEITO', 'Cria��o de fun��es de confian�a (Vice Diretor de Escola e Coordenador Pedag�gico).', 'Lei n.� 6014/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_045_07.pdf', 2007, 45, '2020-06-28 21:33:58');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:45/08', 'PREFEITO', 'Institui autoriza��o de uso de parte de �rea do Parque Centen�rio da Imigra��o Japonesa, criado pela Lei n.� 6131/08, � empresa KAMPAI Com�rcio e Lanchonete Ltda.-ME, para explora��o comercial.', 'Retirado em 28.05.08 - Mensagem ', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_045_08.PDF', 2008, 45, '2020-06-28 21:34:02'),
 ('leiordinaria', 'plo:45/09', 'CARLOS EVARISTO DA SILVA', 'Altera��o da denomina��o de vias p�blicas (\"Rua Raimundo Glic�rio Augusto\" - atual Rua 8 - c�digo de logradouro n.� 016.311-9; \"Rua Santa Virg�lia\" - atual Rua Raimundo Glic�rio Augusto - c�digo de logradouro n.� 011.951-9), e revoga��o da Lei n.� 6033/07', 'Lei n.� 6266/09', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_045_09.PDF', 2009, 45, '2020-06-28 21:34:06'),
 ('leiordinaria', 'plo:45/10', 'PREFEITO', 'Acrescenta artigo � Lei n.� 6299/09, que autorizou a contrata��o de financiamento junto ao BNDES, por interm�dio do Banco do Brasil S.A., para aquisi��o de oito �nibus de transporte escolar - Ref. Programa Caminho da Escola.', 'Lei n.� 6380/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_045_10.pdf', 2010, 45, '2020-06-28 21:34:10'),
@@ -2682,9 +2700,9 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:53/20', 'RINALDO SADAO SAKAI', ' Proibi��o de acesso � cargos, empregos ou fun��es p�blicas municipais por agressores de mulheres e indiv�duos considerados vulner�veis.\n', 'Em tr�mite', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_053_20.pdf', 2020, 53, '2020-06-28 21:35:26'),
 ('leiordinaria', 'plo:54/05', 'JOLINDO RENN� COSTA', 'DENOMINA��O DE VIA P�BLICA (Rua Hugo Pierucetti).', 'Lei n.� 5798/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_054_05.pdf', 2005, 54, '2020-06-28 21:26:14'),
 ('leiordinaria', 'plo:54/06', 'CARLOS EVARISTO DA SILVA', 'Declara��o de UTILIDADE P�BLICA da SOCIEDADE AMIGOS DE BAIRRO DA VILA NOVA APARECIDA.', 'Lei n.� 5923/06', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_054_06.pdf', 2006, 54, '2020-06-28 21:33:50'),
-('leiordinaria', 'plo:54/07', 'MAURO LUIS CLAUDINO DE ARAUJO', 'Denomina��o de via p�blica (Rua Prof.� Maria Luziene Farias dos Santos).', 'Lei n.� 6007/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_054_07.pdf', 2007, 54, '2020-06-28 21:33:57');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
-('leiordinaria', 'plo:54/08', 'PROT�SSIO RIBEIRO NOGUEIRA', 'Denomina��o de via p�blica (Rua Tenente Jos� Adolfo de Moura Salles).', 'Lei n.� 6146/08', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_054_08.PDF', 2008, 54, '2020-06-28 21:34:02'),
+('leiordinaria', 'plo:54/07', 'MAURO LUIS CLAUDINO DE ARAUJO', 'Denomina��o de via p�blica (Rua Prof.� Maria Luziene Farias dos Santos).', 'Lei n.� 6007/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_054_07.pdf', 2007, 54, '2020-06-28 21:33:57'),
+('leiordinaria', 'plo:54/08', 'PROT�SSIO RIBEIRO NOGUEIRA', 'Denomina��o de via p�blica (Rua Tenente Jos� Adolfo de Moura Salles).', 'Lei n.� 6146/08', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_054_08.PDF', 2008, 54, '2020-06-28 21:34:02');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:54/09', 'PREFEITO', 'Autoriza a celebra��o de Conv�nio com a empresa Bandeirante Energia S.A., para execu��o de servi�os de eficientiza��o e moderniza��o dos sistemas de sinaliza��o semaf�rica, por meio de implanta��o de l�mpadas desenvolvidas com tecnologia de diodo emissor ', 'Lei n.� 6260/09', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_054_09.PDF', 2009, 54, '2020-06-28 21:34:05'),
 ('leiordinaria', 'plo:54/10', 'JEAN CARLOS SOARES LOPES', 'Denomina��o de via p�blica (Rua Joaquim Valeriano Dias - atual Rua Bicudo - c�digo de logradouro n.� 1.751-6).', 'Lei n.� 6386/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_054_10.pdf', 2010, 54, '2020-06-28 21:34:10'),
 ('leiordinaria', 'plo:54/11', 'JEAN CARLOS SOARES LOPES', 'Reconhecimento de utilidade p�blica da Associa��o Projeto Todos os Cantos.', 'Lei n.� 6559/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_054_11.pdf', 2011, 54, '2020-06-28 21:34:17'),
@@ -2849,9 +2867,9 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:63/11', 'NABIL NAHI SAFITI', 'Denomina��o de via p�blica (Rua Mario Lazzurri - atual Rua Um - c�digo de logradouro n.� 022.339-6).', 'Lei n.� 6557/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_11.pdf', 2011, 63, '2020-06-28 21:34:17'),
 ('leiordinaria', 'plo:63/12', 'JOLINDO RENN� COSTA', 'Reconhecimento de utilidade p�blica da Associa��o de Moradores Unidos do Jardim Juliana, Vila Paulic�ia e Vila Nova Suissa.', 'Lei n.� 6724/12', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_12.pdf', 2012, 63, '2020-06-28 21:34:21'),
 ('leiordinaria', 'plo:63/13', 'EMERSON RONG', ' Disp�e sobre a cria��o de estacionamento de bicicletas em locais abertos � frequ�ncia de p�blico.', 'Retirado em 10.12.13 (artigo 153', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_13.pdf', 2013, 63, '2020-06-28 21:34:28'),
-('leiordinaria', 'plo:63/14', 'PREFEITO', ' Autoriza��o para celebrar Conv�nio com a Secretaria de Estado da Sa�de (Proc. N.� 001.0201.000.962/2014), objetivando a transfer�ncia de recursos financeiros, para aquisi��o de material de consumo e presta��o de servi�os para o Hospital Municipal Prefeit', 'Lei n.� 6917/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_14.pdf', 2014, 63, '2020-06-28 21:34:36');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
-('leiordinaria', 'plo:63/15', 'OLIMPIO OSAMU TOMIYAMA E PROT�SSIO RIBEIRO NOGUEIRA', ' Altera��o de dispositivos da Lei n.� 2543/80, alterada pela Lei n.� 6254/09, que disp�e sobre a constru��o, reconstru��o, reforma ou recomposi��o das cal�adas e passeios.', 'Lei n.� 7119/16', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_15.pdf', 2015, 63, '2020-06-28 21:34:43'),
+('leiordinaria', 'plo:63/14', 'PREFEITO', ' Autoriza��o para celebrar Conv�nio com a Secretaria de Estado da Sa�de (Proc. N.� 001.0201.000.962/2014), objetivando a transfer�ncia de recursos financeiros, para aquisi��o de material de consumo e presta��o de servi�os para o Hospital Municipal Prefeit', 'Lei n.� 6917/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_14.pdf', 2014, 63, '2020-06-28 21:34:36'),
+('leiordinaria', 'plo:63/15', 'OLIMPIO OSAMU TOMIYAMA E PROT�SSIO RIBEIRO NOGUEIRA', ' Altera��o de dispositivos da Lei n.� 2543/80, alterada pela Lei n.� 6254/09, que disp�e sobre a constru��o, reconstru��o, reforma ou recomposi��o das cal�adas e passeios.', 'Lei n.� 7119/16', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_15.pdf', 2015, 63, '2020-06-28 21:34:43');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:63/16', 'RUBENS BENEDITO FERNANDES', ' Denomina��o de via p�blica (Estrada Alfredo Moura da Silva � MCZ 161).', 'Arquivado (Artigo 154 - RI)', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_16.pdf', 2016, 63, '2020-06-28 21:34:55'),
 ('leiordinaria', 'plo:63/17', 'MARCOS PAULO TAVARES FURLAN', ' Altera��o da Lei n� 5503/03, que disp�e sobre eventos religiosos comemorados na comunidade Santo Alberto, Par�quia S�o Bento do Parate�.', 'Lei  n.� 7288/17', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_17.pdf', 2017, 63, '2020-06-28 21:35:04'),
 ('leiordinaria', 'plo:63/18', 'PROT�SSIO RIBEIRO NOGUEIRA', ' DENOMINA��O de via p�blica (Rua Ciro da Silva � Atual Rua Augusta� c�digo de logradouro n� 1.261-0).', 'Lei n� 7.383/18', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_063_18.pdf', 2018, 63, '2020-06-28 21:35:10'),
@@ -3013,10 +3031,10 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:73/09', 'PREFEITO', 'Autoriza a celebra��o de conv�nio com o Minist�rio dos Transportes, por interm�dio do Departamento Nacional de Infra-Estrutura de Transportes - DNIT, objetivando a elabora��o de estudo de viabilidade t�cnica, econ�mico e ambiental - EVTEA e projeto execut', 'Lei n.� 6277/09', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_09.PDF', 2009, 73, '2020-06-28 21:34:05'),
 ('leiordinaria', 'plo:73/10', 'PREFEITO', 'Cria��o e denomina��o do \"Centro de Educa��o Infantil Municipal Apol�nia Pessoa de Oliveira\" - Parque das Varinhas, Distrito de Jundiapeba.', 'Lei n.� 6412/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_10.pdf', 2010, 73, '2020-06-28 21:34:09'),
 ('leiordinaria', 'plo:73/11', 'PREFEITO', 'Autoriza��o ao Poder Executivo, para abertura de cr�dito adicional especial em favor do Cons�rcio Regional de Sa�de de Servi�o de Atendimento M�vel de Urg�ncia - CRESAMU.', 'Lei n.� 6568/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_11.pdf', 2011, 73, '2020-06-28 21:34:17'),
-('leiordinaria', 'plo:73/12', 'RUBENS BENEDITO FERNANDES', 'Denomina��o de via p�blica (Rua Paulo Siqueira Toledo - atual Rua Dez - c�digo de logradouro n.� 22.393-0).', 'Lei n.� 6729/12', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_12.pdf', 2012, 73, '2020-06-28 21:34:21');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+('leiordinaria', 'plo:73/12', 'RUBENS BENEDITO FERNANDES', 'Denomina��o de via p�blica (Rua Paulo Siqueira Toledo - atual Rua Dez - c�digo de logradouro n.� 22.393-0).', 'Lei n.� 6729/12', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_12.pdf', 2012, 73, '2020-06-28 21:34:21'),
 ('leiordinaria', 'plo:73/13', 'PEDRO HIDEKI KOMURA', ' Disp�e sobre a obrigatoriedade de restaurantes e estabelecimentos similares oferecerem descontos a pessoas que realizaram cirurgias bari�tricas ou qualquer outra gastroplastia.', 'Retirado em 26.06.13 - Requerime', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_13.pdf', 2013, 73, '2020-06-28 21:34:28'),
-('leiordinaria', 'plo:73/14', 'PREFEITO', ' Confere interpreta��o aut�ntica ao artigo 5� da Lei n.� 4821/98, alterado pela Lei n.� 4887/99.', 'Lei n.� 6931/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_14.pdf', 2014, 73, '2020-06-28 21:34:35'),
+('leiordinaria', 'plo:73/14', 'PREFEITO', ' Confere interpreta��o aut�ntica ao artigo 5� da Lei n.� 4821/98, alterado pela Lei n.� 4887/99.', 'Lei n.� 6931/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_14.pdf', 2014, 73, '2020-06-28 21:34:35');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:73/15', 'ANTONIO LINO DA SILVA', ' Institui��o do Dia das Filhas de J�, a ser comemorado anualmente no dia 09 de mar�o.', 'Retirado em 21.07.15 (artigo 153', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_15.pdf', 2015, 73, '2020-06-28 21:34:43'),
 ('leiordinaria', 'plo:73/16', 'MARCOS PAULO TAVARES FURLAN', ' Disp�e sobre a proibi��o da distribui��o, comercializa��o e uso de buzina a g�s.', 'Retirado em 10.08.16 (artigo 153', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_16.pdf', 2016, 73, '2020-06-28 21:34:54'),
 ('leiordinaria', 'plo:73/17', 'JOSE ANTONIO CUCO PEREIRA', ' Inser��o de conte�do municipal extracurricular (Educa��o Moral e C�vica).', 'Lei n� 7.304/17', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_073_17.pdf', 2017, 73, '2020-06-28 21:35:04'),
@@ -3179,9 +3197,9 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:83/08', 'PREFEITO', 'Institui o Fundo Municipal de Cultura - FUMUC.', 'Lei n.� 6183/08', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_08.PDF', 2008, 83, '2020-06-28 21:34:01'),
 ('leiordinaria', 'plo:83/09', 'JEAN CARLOS SOARES LOPES', 'Veda��o � pr�tica do \"Ass�dio Moral\" nas depend�ncias da Administra��o P�blica Municipal direta e indireta.', 'Retirado em 16/09/09 - Requerime', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_09.PDF', 2009, 83, '2020-06-28 21:34:05'),
 ('leiordinaria', 'plo:83/10', 'PREFEITO', 'Cria a Coordenadoria da Habita��o e suas subunidades administrativas, inseridas � estrutura organizacional b�sica do Gabinete do Prefeito (Ref. Lei n.� 6227/09 - Estrutura Administrativa).', 'Lei n.� 6424/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_10.pdf', 2010, 83, '2020-06-28 21:34:09'),
-('leiordinaria', 'plo:83/11', 'MAURO LUIS CLAUDINO DE ARAUJO', 'Denomina��o de via p�blica (Rua Doutor Takeshi Harada - atual Rua Vinte e Oito - c�digo de logradouro n.� 22.424-8).', 'Lei n.� 6584/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_11.pdf', 2011, 83, '2020-06-28 21:34:16');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
-('leiordinaria', 'plo:83/12', 'PREFEITO', ' Aprova o Conv�nio celebrado com a Secretaria de Planejamento e Desenvolvimento Regional, objetivando a coopera��o t�cnica, material e operacional, com vista � manuten��o e funcionamento da unidade descentralizada do Departamento Estadual de Tr�nsito � DE', 'Lei n.� 6746/12', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_12.pdf', 2012, 83, '2020-06-28 21:34:21'),
+('leiordinaria', 'plo:83/11', 'MAURO LUIS CLAUDINO DE ARAUJO', 'Denomina��o de via p�blica (Rua Doutor Takeshi Harada - atual Rua Vinte e Oito - c�digo de logradouro n.� 22.424-8).', 'Lei n.� 6584/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_11.pdf', 2011, 83, '2020-06-28 21:34:16'),
+('leiordinaria', 'plo:83/12', 'PREFEITO', ' Aprova o Conv�nio celebrado com a Secretaria de Planejamento e Desenvolvimento Regional, objetivando a coopera��o t�cnica, material e operacional, com vista � manuten��o e funcionamento da unidade descentralizada do Departamento Estadual de Tr�nsito � DE', 'Lei n.� 6746/12', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_12.pdf', 2012, 83, '2020-06-28 21:34:21');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:83/13', 'PREFEITO', ' Revoga��o das Leis n.�s 6496/10 e 6563/11 (ref. autoriza��o para celebrar Conv�nio de Parceria e Coopera��o M�tua com a Associa��o Esportiva Juventude, objetivando a implanta��o de um Centro de Forma��o de Atletas).', 'Lei n.� 6821/13', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_13.pdf', 2013, 83, '2020-06-28 21:34:27'),
 ('leiordinaria', 'plo:83/14', 'PREFEITO', ' Autoriza��o ao Poder Executivo para alienar, por venda, mediante licita��o na modalidade concorr�ncia, o im�vel municipal (Lote 3 - Quadra �A�), integrante do N�cleo Industrial Vereador Alcides Celestino Filho, situado na Av. Alcides da Silva, Distrito d', 'Lei n.� 6958/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_14.pdf', 2014, 83, '2020-06-28 21:34:34'),
 ('leiordinaria', 'plo:83/15', 'CARLOS LUCAREFSKI', ' Oficializa��o do �Casamento Comunit�rio�, a ser realizado anualmente no terceiro domingo do m�s de maio.', 'Arquivado (Artigo 154 - RI)', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_083_15.pdf', 2015, 83, '2020-06-28 21:34:42'),
@@ -3342,10 +3360,10 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('leiordinaria', 'plo:92/19', 'CAIO CESAR MACHADO DA CUNHA', ' ALTERA��O DA LEI n� 4.834 (Ref.: desembarque fora dos pontos de parada de �nibus preestabelecidos �s pessoas com mobilidade reduzida).', 'Em tr�mite', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_092_19.pdf', 2019, 92, '2020-06-28 21:35:20'),
 ('leiordinaria', 'plo:93/05', 'RUBENS BENEDITO FERNANDES', 'Publica��o de RELA��O DE MEDICAMENTOS DISPON�VEIS, em site oficial do munic�pio e em todas as Unidades B�sicas de Sa�de.', 'Lei n.� 5819/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_05.pdf', 2005, 93, '2020-06-28 21:26:12'),
 ('leiordinaria', 'plo:93/06', 'PREFEITO', 'APROVA O PLANO MUNICIPAL DE EDUCA��O para o bi�nio de 2007/2008.', 'Lei n.� 5954/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_06.pdf', 2006, 93, '2020-06-28 21:33:50'),
-('leiordinaria', 'plo:93/07', 'PREFEITO', 'Altera a descri��o de lotes, constante do artigo 1� da Lei n.� 4472/96, que disp�e sobre aliena��o de �reas de terrenos municipais.', 'Lei n.� 6036/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_07.pdf', 2007, 93, '2020-06-28 21:33:55');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+('leiordinaria', 'plo:93/07', 'PREFEITO', 'Altera a descri��o de lotes, constante do artigo 1� da Lei n.� 4472/96, que disp�e sobre aliena��o de �reas de terrenos municipais.', 'Lei n.� 6036/07', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_07.pdf', 2007, 93, '2020-06-28 21:33:55'),
 ('leiordinaria', 'plo:93/08', 'CARLOS EVARISTO DA SILVA', 'Declara de Utilidade P�blica o Lar Batista de Crian�as.', 'Retirado em 30.09.08 - Requerime', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_08.PDF', 2008, 93, '2020-06-28 21:34:01'),
-('leiordinaria', 'plo:93/09', 'PREFEITO', 'Altera a legisla��o referente ao Conselho Municipal de Assist�ncia Social - COMAS (ref. Leis n.�s 4480/96 e 4577/96).', 'Lei n.� 6285/09', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_09.PDF', 2009, 93, '2020-06-28 21:34:05'),
+('leiordinaria', 'plo:93/09', 'PREFEITO', 'Altera a legisla��o referente ao Conselho Municipal de Assist�ncia Social - COMAS (ref. Leis n.�s 4480/96 e 4577/96).', 'Lei n.� 6285/09', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_09.PDF', 2009, 93, '2020-06-28 21:34:05');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('leiordinaria', 'plo:93/10', 'PREFEITO', 'Revoga��o da Lei n.� 6190/08, que disp�e sobre doa��o de im�vel municipal � empresa Mac Ind�stria Mec�nica Ltda.', 'Lei n.� 6425/10', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_10.pdf', 2010, 93, '2020-06-28 21:34:09'),
 ('leiordinaria', 'plo:93/11', 'PREFEITO', 'Oficializa��o e denomina��o de via p�blica (Rua Celso Cezar Amici - c�digo de logradouro n.� 022.532-1).', 'Lei n.� 6582/11', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_11.pdf', 2011, 93, '2020-06-28 21:34:16'),
 ('leiordinaria', 'plo:93/12', 'NABIL NAHI SAFITI', ' Reconhecimento de utilidade p�blica da Associa��o dos Amigos do Bairro da Vila Lav�nia.', 'Lei n.� 6768/13', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PL_093_12.pdf', 2012, 93, '2020-06-28 21:34:20'),
@@ -3494,10 +3512,10 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('resolução', 'pr:12/18', 'JEAN CARLOS SOARES LOPES', ' Constitui��o de Comiss�o Especial de Vereadores � CEV , na busca e promo��o de solu��es para possibilitar a regulariza��o fundi�ria de �reas urbanas e rurais em todo o territ�rio mogiano.', 'Resol. n� 28/19 - Ato da Pres. n', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_012_18.pdf', 2018, 12, '2020-06-28 22:33:37'),
 ('resolução', 'pr:12/19', 'MAURO LUIS CLAUDINO DE ARAUJO , CARLOS EVARISTO DA SILVA E CAIO CESAR MA', ' Comiss�o de Vereadores - CEV, para acompanhar, junto ao Poder Executivo, a apura��o das den�ncias de desvio de verbas na folha de pagamento de servidores municipais\n', 'Resol. n� 36/19 - Ato da Pres. n', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_012_19.pdf', 2019, 12, '2020-06-28 22:33:38'),
 ('resolução', 'pr:13/05', 'MAURO LUIS CLAUDINO DE ARAUJO', 'PRORROGA��O DE PRAZO de funcionamento da Comiss�o Especial de Vereadores - CEV, constitu�da pela Resolu��o n.� 004/05, para apurar poss�vel EVAS�O OU SONEGA��O DO Imposto Sobre Servi�os de Qualquer Natureza - ISSQN.', 'Resolu��o n.� 011/05', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_013_05.PDF', 2005, 13, '2020-06-28 22:33:32'),
-('resolução', 'pr:13/07', '', 'Constitui��o de COMISS�O ESPECIAL DE VEREADORES - CEV, para diligenciar junto aos Governos Estadual e Federal, visando � capta��o de recursos e/ou libera��o de verbas para recupera��o da Estrada Mogi - Sales�polis - Pitas.', 'Resolu��o n.� 032/07 - Ato da Pr', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_013_07.PDF', 2007, 13, '2020-06-28 22:33:33');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+('resolução', 'pr:13/07', '', 'Constitui��o de COMISS�O ESPECIAL DE VEREADORES - CEV, para diligenciar junto aos Governos Estadual e Federal, visando � capta��o de recursos e/ou libera��o de verbas para recupera��o da Estrada Mogi - Sales�polis - Pitas.', 'Resolu��o n.� 032/07 - Ato da Pr', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_013_07.PDF', 2007, 13, '2020-06-28 22:33:33'),
 ('resolução', 'pr:13/09', 'MESA DIRETIVA', 'Altera��o do � 3� do artigo 6� da Resolu��o n.� 004/01, que regulamenta a outorga de t�tulos honor�ficos.', 'Resolu��o n� 013/09', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_013_09.PDF', 2009, 13, '2020-06-28 22:33:33'),
-('resolução', 'pr:13/10', 'CARLOS EVARISTO DA SILVA', 'Constitui��o de Comiss�o Especial de Vereadores - CEV, para apurar assuntos relativos a todo tipo de entulho, inclusive res�duos inertes da constru��o civil.', 'Resolu��o n� 029/10 - Ato da Pre', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_013_10.pdf', 2010, 13, '2020-06-28 22:33:33'),
+('resolução', 'pr:13/10', 'CARLOS EVARISTO DA SILVA', 'Constitui��o de Comiss�o Especial de Vereadores - CEV, para apurar assuntos relativos a todo tipo de entulho, inclusive res�duos inertes da constru��o civil.', 'Resolu��o n� 029/10 - Ato da Pre', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_013_10.pdf', 2010, 13, '2020-06-28 22:33:33');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('resolução', 'pr:13/13', 'PEDRO HIDEKI KOMURA', ' Constitui��o de Comiss�o Especial de Vereadores � CEV, para proceder a estudos, realizar semin�rios, palestras, debates, diligenciar junto a �rg�os p�blicos pertinentes, visando � redu��o da carga tribut�ria sobre os medicamentos.', 'Resolu��o n� 011/13 - Ato da Pre', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_013_13.pdf', 2013, 13, '2020-06-28 22:33:35'),
 ('resolução', 'pr:13/15', 'JULIANO JUN ABE , CLAUDIO YUKIO MIYAKE E MARCOS PAULO TAVARES FURLAN', ' Prorroga��o do prazo de funcionamento da Comiss�o Especial de Vereadores � CEV, constitu�da pela Resolu��o n.� 028/15 e nomeada pelo Ato da Presid�ncia n.� 035/15 (estudos a fim de contribuir para reverter o quadro de car�ncia em arboriza��o e �reas verd', 'Resolu��o n.� 032/15', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_013_15.pdf', 2015, 13, '2020-06-28 22:33:36'),
 ('resolução', 'pr:13/17', 'MAURO LUIS CLAUDINO DE ARAUJO', ' Constitui��o de Comiss�o Especial de Vereadores � CEV, com finalidade de apurar den�ncias relativas aos p�tios de recolhimento, dos servi�os p�blicos de remo��o e guarda ve�culos infratores �s disposi��es da legisla��o de tr�nsito.', 'Resolu��o n� 10/17 - Ato da Pres', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_013_17.pdf', 2017, 13, '2020-06-28 22:33:37'),
@@ -3625,10 +3643,10 @@ INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`
 ('resolução', 'pr:8/20', 'RINALDO SADAO SAKAI , PROT�SSIO RIBEIRO NOGUEIRA , EDSON DOS SANTOS , DI', ' Disp�e sobre fixa��o dos subs�dios dos Vereadores para a legislatura a ser iniciada em 1� de janeiro de 2021 e d� outras provid�ncias.\n', 'Resol. n� 043/20', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_008_20.pdf', 2020, 8, '2020-06-28 22:33:38'),
 ('resolução', 'pr:9/05', 'ODETE RODRIGUES ALVES SOUSA', 'Constitui��o de COMISS�O ESPECIAL DE VEREADORES - CEV, para diligenciar junto aos �rg�os respons�veis nas esferas Municipal, Estadual e Federal, com a finalidade de proceder estudos em torno dos LOTEAMENTOS CLANDESTINOS, discutir o desenvolvimento de a��e', 'Resolu��o n.� 008/05 - Ato da Pr', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_05.pdf', 2005, 9, '2020-06-28 22:33:32'),
 ('resolução', 'pr:9/06', 'RUBENS BENEDITO FERNANDES', 'Constitui��o de COMISS�O ESPECIAL DE VEREADORES - CEV, para acompanhar as negocia��es, bem como manter gest�es para a efetiva instala��o de uma unidade montadora da Toyota, no munic�pio.', 'Resolu��o n.� 020/06 - Ato da Pr', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_06.pdf', 2006, 9, '2020-06-28 22:33:33'),
-('resolução', 'pr:9/07', 'CARLOS EVARISTO DA SILVA', 'Constitui��o de COMISS�O ESPECIAL DE VEREADORES - CEV, para diligenciar junto �s autoridades e �rg�os competentes, visando apurar eventuais irregularidades e buscar solu��es para os problemas relacionados � transposi��o de passagem de n�vel da malha ferro', 'Resolu��o n.� 029/07 -  Ato da P', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_07.pdf', 2007, 9, '2020-06-28 22:33:33');
-INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `Assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
+('resolução', 'pr:9/07', 'CARLOS EVARISTO DA SILVA', 'Constitui��o de COMISS�O ESPECIAL DE VEREADORES - CEV, para diligenciar junto �s autoridades e �rg�os competentes, visando apurar eventuais irregularidades e buscar solu��es para os problemas relacionados � transposi��o de passagem de n�vel da malha ferro', 'Resolu��o n.� 029/07 -  Ato da P', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_07.pdf', 2007, 9, '2020-06-28 22:33:33'),
 ('resolução', 'pr:9/09', 'JOLINDO RENN� COSTA', 'Constitui��o de COMISS�O ESPECIAL DE VEREADORES - CEV, para promo��o de ampla discuss�o junto �s autoridades do Governo do Estado, quanto ao projeto de implanta��o de um Centro de Progress�o Penitenci�ria - CPP, em territ�rio mogiano.', 'Resolu��o n� 06/09 - Ato da Pres', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_09.PDF', 2009, 9, '2020-06-28 22:33:33'),
-('resolução', 'pr:9/10', 'JOLINDO RENN� COSTA', 'Constitui��o de Comiss�o Especial de Vereadores - CEV, para analisar os processos de doa��o de �reas do munic�pio, destinados a instala��o de novas ind�strias.', 'Resolu��o n� 025/10 - Ato da Pre', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_10.pdf', 2010, 9, '2020-06-28 22:33:34'),
+('resolução', 'pr:9/10', 'JOLINDO RENN� COSTA', 'Constitui��o de Comiss�o Especial de Vereadores - CEV, para analisar os processos de doa��o de �reas do munic�pio, destinados a instala��o de novas ind�strias.', 'Resolu��o n� 025/10 - Ato da Pre', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_10.pdf', 2010, 9, '2020-06-28 22:33:34');
+INSERT INTO `projetos` (`tipo_projeto`, `codigo`, `autor`, `assunto`, `anotacao`, `link`, `ano`, `numero`, `modificado`) VALUES
 ('resolução', 'pr:9/13', 'MAURO LUIS CLAUDINO DE ARAUJO', ' Constitui��o de Comiss�o Especial de Vereadores � CEV, para proceder a estudos, diligenciar junto aos �rg�os p�blicos pertinentes, bem como, solicitar a contrata��o de t�cnicos especializados, para an�lise e discuss�o dos projetos de lei a serem remetido', 'Resolu��o n� 007/13 - Ato da Pre', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_13.pdf', 2013, 9, '2020-06-28 22:33:35'),
 ('resolução', 'pr:9/14', 'ANTONIO LINO DA SILVA , OLIMPIO OSAMU TOMIYAMA , BENEDITO FAUSTINO TAUBA', ' Prorroga��o do prazo de funcionamento da Comiss�o Especial de Vereadores � CEV, constitu�da pela Resolu��o n.� 016/13 e nomeada pelo Ato da Presid�ncia n.� 040/13 (estudos relacionados � formula��o de parcerias p�blico-privadas).', 'Resolu��o n.� 020/14', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_14.pdf', 2014, 9, '2020-06-28 22:33:35'),
 ('resolução', 'pr:9/15', 'BENEDITO FAUSTINO TAUBAT� GUIMAR�ES', ' Disp�e sobre a outorga de t�tulos honor�ficos de Cidad�o Mogiano e Honra ao M�rito, de que trata o artigo 53 da LOM (Obs.: Revoga��o da Resolu��o n.� 004/01).', 'Arquivado', 'http://www.cmmc.com.br/siteadmin/projetos/anexos/PR_009_15.pdf', 2015, 9, '2020-06-28 22:33:37'),
@@ -3657,8 +3675,6 @@ CREATE TABLE `remuneracoes` (
 INSERT INTO `remuneracoes` (`rgf`, `id_item`, `nome`, `valor`) VALUES
 (11961, 1, 'SALARIO', 3078.53),
 (19675, 2, 'VENCIMENTO', 1715.26),
-(17499, 3, 'QUINQUENIO', 98.18),
-(17499, 4, 'VENCIMENTO', 1963.54),
 (11961, 5, 'PLANO CARREIRA', 197.33),
 (11961, 6, 'ART.77B - LC 10', 163.79),
 (11961, 7, 'Art.16-LC 123', 786.21),
@@ -4119,9 +4135,15 @@ ALTER TABLE `descontos`
   ADD PRIMARY KEY (`id_item`);
 
 --
--- Índices para tabela `funcionarios`
+-- Índices para tabela `funcionarios_camara`
 --
-ALTER TABLE `funcionarios`
+ALTER TABLE `funcionarios_camara`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `funcionarios_prefeitura`
+--
+ALTER TABLE `funcionarios_prefeitura`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -4156,13 +4178,19 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de tabela `descontos`
 --
 ALTER TABLE `descontos`
-  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=190;
+  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=192;
 
 --
--- AUTO_INCREMENT de tabela `funcionarios`
+-- AUTO_INCREMENT de tabela `funcionarios_camara`
 --
-ALTER TABLE `funcionarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+ALTER TABLE `funcionarios_camara`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `funcionarios_prefeitura`
+--
+ALTER TABLE `funcionarios_prefeitura`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT de tabela `historicofuncionarios`
@@ -4174,7 +4202,7 @@ ALTER TABLE `historicofuncionarios`
 -- AUTO_INCREMENT de tabela `remuneracoes`
 --
 ALTER TABLE `remuneracoes`
-  MODIFY `id_item` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=447;
+  MODIFY `id_item` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=448;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
