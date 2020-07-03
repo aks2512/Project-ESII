@@ -1,3 +1,12 @@
+<?php
+
+  session_start();
+
+  if($_SESSION['usuario'] == NULL){
+    header("location: Login.php");
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +26,24 @@
 
 <body>
   <div class="container">
+
+  <!-- Static navbar -->
+  <nav class="navbar navbar-light navbar-static-top">
+	        <div class="navbar-header">
+            <label class="text-dark strong btn btn-light">
+              Administrador-Menu
+              <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i class="fas fa-angle-down"></i></span>
+              </button>
+            </label>
+	        </div>
+	        
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-right ">
+	            <li class="nav-item"><a class=" nav-link" href="Login.php?signout=1"><strong>Sair</strong></a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	    </nav>
 
     <!-- Banner -->
     <div class="row align-items-center">

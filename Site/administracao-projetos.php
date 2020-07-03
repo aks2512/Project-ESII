@@ -83,6 +83,7 @@
         <table class="table striped col-md-10" id="tabela-principal">
           <thead>
             <tr>
+              <th scope="col"></th>
               <th scope="col">#</th>
               <th scope="col">Autor</th>
               <th scope="col">Assunto</th>

@@ -32,9 +32,9 @@
 <div class="row justify-content-center mt-5">
   <div class="col-md-10 text-left">
     <!-- Botões -->
-    <button id="btn-inserir" class="btn btn-primary" onclick="inserir()" data-toggle="modal" data-target="#OptIncluir" href="">Inserir</button>
+    <button id="btn-inserir" class="btn btn-primary" onclick="inserir()" data-toggle="modal" data-target="#OptIncluir">Inserir</button>
     <button id="btn-excluir" class="btn btn-danger" onclick="excluir()" href="">Excluir</button>
-    <button id="btn-grafico" class="btn btn-success" onclick="" href="">Gráfico</button>
+    <button id="btn-grafico" class="btn btn-success" onclick="pegarDados()">Gráfico</button>
     <button id="btn-historico" class="btn btn-secondary" href="">Histórico</button>
   </div>
 </div>
@@ -80,6 +80,17 @@
   </div>
 </div>
 
+<div class="modal" id="OptGrafico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-content modal-xl container" role="document">
+    <div id="Grafico" style="width: 100%; height: 500px;"></div>
+  </div>
+</div>
+
+<div id="scriptGrafico">
+  <?php require('./funcionarioPrefeituraGrafico.php');?>
+</div>
 <script src="scriptJS/carregaTabelaFuncionarioPrefeituraAdm.js"></script>
 <script src="scriptJS/addInputFuncionarioPrefeitura.js"></script>
 <script src="scriptJS/funcionarioPrefeituraCrud.js"></script>
+<script src="scriptJS/funcionarioPrefeituraGrafico.js"></script>

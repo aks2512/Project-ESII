@@ -60,18 +60,6 @@
             </div>
         </div>
     </div>
-    
-    
-    <footer id="footer" class="footer-fixed-bottom">
-        <div class="container">
-            <div class="row align-items-end justify-content-center">
-                <img id="fatec" class="img-fluid" src="./Imagens/fatec.png" alt="">
-                <p>Desenvolvido pelos alunos da Fatec Mogi das Cruzes, orientados pelo professor Leandro Luque</p>
-            </div>
-        </div>
-    </footer>
-
-
 
     <scrip src="node_modules/@popperjs\core/dist/umd/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
