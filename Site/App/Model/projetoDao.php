@@ -8,7 +8,7 @@
         //CRUD projeto
         public function create(Projeto $p){
 
-            $sql = 'INSERT INTO projetos (tipo_projeto,ano,id,autor,link,assunto,anotacao) VALUES (?,?,?,?,?,?,?)';
+            $sql = 'INSERT INTO projetos (tipo_projeto,ano,codigo,autor,link,assunto,anotacao) VALUES (?,?,?,?,?,?,?)';
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $p->getTipo_Projeto());
@@ -25,7 +25,7 @@
 
             $sql = "SELECT * ";
             $sql.= "FROM projetos "; 
-            $sql.= "WHERE tipo_projeto = '$projeto' and ano = '$ano' and (id LIKE '%$busca%' OR autor LIKE '%$busca%' OR assunto LIKE '%$busca%') ";
+            $sql.= "WHERE tipo_projeto = '$projeto' and ano = '$ano' and (codigo LIKE '%$busca%' OR autor LIKE '%$busca%' OR assunto LIKE '%$busca%' OR anotacao LIKE '%$busca%') ";
             $sql.= "LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
@@ -41,7 +41,7 @@
         public function readId($Id){
 
             $sql = "SELECT * ";
-            $sql.= "FROM projetos WHERE id = ?";
+            $sql.= "FROM projetos WHERE codigo = ?";
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $Id);
@@ -56,7 +56,7 @@
 
         public function update(Projeto $p){
 
-            $sql = 'UPDATE projetos SET tipo_projeto = ?, ano = ?, autor = ?, link = ?, assunto = ?, anotacao = ? WHERE id = ?';
+            $sql = 'UPDATE projetos SET tipo_projeto = ?, ano = ?, autor = ?, link = ?, assunto = ?, anotacao = ? WHERE codigo = ?';
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $p->getTipo_Projeto());
@@ -72,7 +72,7 @@
 
         public function delete($Id){
 
-            $sql = 'DELETE FROM projetos WHERE id = ?';
+            $sql = 'DELETE FROM projetos WHERE codigo = ?';
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $Id);

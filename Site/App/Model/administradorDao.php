@@ -13,8 +13,6 @@
             $stmt->execute();
         }
 
-<<<<<<< HEAD
-=======
         public function verificaAdm($usuario,$senha){
             $sql = "SELECT * FROM administradores WHERE usuario = ? and senha = ? ";
 
@@ -29,7 +27,6 @@
             endif;
         }
 
->>>>>>> 01d1e1d0880203c5f92f1e6b02a47820c7cc162e
         public function update(Administrador $a){
             $sql = 'UPDATE administradores SET usuario = ?, senha = ? WHERE id = ?';
 

@@ -107,7 +107,7 @@
             $stmt->bindValue(2, $f->getCargo());
             $stmt->bindValue(3, $f->getRegime());
             $stmt->bindValue(4, $f->getOutrosDescontos());
-            $stmt->bindValue(5, $f->getTbruto());
+            $stmt->bindValue(5, $f->getTBruto());
             $stmt->bindValue(6, $f->getTDesconto());
             $stmt->bindValue(7, $f->getTLiquido());
             $stmt->bindValue(8, $f->getRgf());
@@ -122,7 +122,7 @@
 
         public function read($busca,$inicio,$quantidade_pg){
 
-            $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE nome LIKE '%$busca%' OR cargo LIKE '%$busca%' OR tbruto LIKE '%$busca%' LIMIT $quantidade_pg OFFSET $inicio";
+            $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE nome LIKE '%$busca%' OR cargo LIKE '%$busca%' OR tbruto <= '$busca' LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->execute();

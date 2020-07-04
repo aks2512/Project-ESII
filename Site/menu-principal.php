@@ -31,9 +31,12 @@
     </div>
 
     <div class="btn-group" role="group">
+<<<<<<< HEAD
 
       <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=funcionarios">Servidores Públicos</a>
 
+=======
+>>>>>>> 4060dca1d6a91f5279d423048afa04fc7f5593ad
       <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=funcionariosPrefeitura">Funcionários Prefeitura</a>
       <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=funcionariosCamara">Funcionários Câmara</a>
       <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=projetos">Projetos</a>

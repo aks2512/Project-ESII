@@ -24,7 +24,7 @@
                 $stmt->bindValue(10, $f->getTDesconto());
                 $stmt->bindValue(11, $f->getIRRF());
                 $stmt->execute();
-            }catch(Exception $e){
+            }catch(\Exception $e){
                 $e->getMessage();
             }
             
@@ -32,7 +32,7 @@
 
         public function read($busca,$inicio,$quantidade_pg){
 
-            $sql = "SELECT * FROM funcionarios_camara WHERE nome LIKE '%$busca%' OR cargo LIKE '%$busca%' OR tbruto LIKE '%$busca%' LIMIT $quantidade_pg OFFSET $inicio";
+            $sql = "SELECT * FROM funcionarios_camara WHERE nome LIKE '%$busca%' OR cargo LIKE '%$busca%' OR tbruto <= '$busca' LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->execute();

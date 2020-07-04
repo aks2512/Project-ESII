@@ -113,7 +113,7 @@
                               <input name="valoresD[]" type="text" value="'.$desconto['valor'].'">
                             </div>
                             <div class="col-md-2">
-                              <button name="'.$desconto['id_item'].'" type="button" class="btn btn-danger btn-rmvDes" onclick="rmv_deconto()">-</button>
+                              <button name="'.$desconto['id_item'].'" type="button" class="btn btn-danger btn-rmvDes" onclick="rmv_desconto()">-</button>
                             </div>
                           </div>';
                       endforeach;

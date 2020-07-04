@@ -6,7 +6,7 @@
     $busca = isset($_POST['busca']) ? $_POST['busca'] : '';
 
     //filtro projeto
-    $projeto = isset($_POST['projeto']) ? $_POST['projeto'] : 'Lei Ordinaria';
+    $projeto = isset($_POST['projeto']) ? $_POST['projeto'] : 'leiordinaria';
     
     //filtro ano
     $ano = isset($_POST['ano']) ? $_POST['ano'] : 2020;
@@ -17,7 +17,7 @@
     //seleciona todos os funcionarios
     $sql = "SELECT * ";
     $sql.= "FROM projetos "; 
-    $sql.= "WHERE tipo_projeto = '$projeto' and ano = '$ano' and (id LIKE '%$busca%' OR autor LIKE '%$busca%' OR assunto LIKE '%$busca%')";
+    $sql.= "WHERE tipo_projeto = '$projeto' and ano = '$ano' and (codigo LIKE '%$busca%' OR autor LIKE '%$busca%' OR assunto LIKE '%$busca%' OR anotacao LIKE '%$busca%')";
 
     $stmt = \App\Model\DB::getCon()->prepare($sql);
     $stmt->execute();

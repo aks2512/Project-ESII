@@ -27,7 +27,7 @@
     if($projetoDao->read($busca,$projeto,$ano,$inicio,$quantidade_pg) != NULL){
         foreach($projetoDao->read($busca,$projeto,$ano,$inicio,$quantidade_pg) as $projeto):
             echo' <tr>
-                    <td><a href="'.$projeto['link'].'">'.$projeto['id'].'</a></td>
+                    <td><a href="'.$projeto['link'].'">'.$projeto['codigo'].'</a></td>
                     <td><a href="'.$projeto['link'].'">'.$projeto['autor'].'</a></td>
                     <td><a href="'.$projeto['link'].'">'.$projeto['assunto'].'</a></td>
                     <td><a href="'.$projeto['link'].'">'.$projeto['anotacao'].'</a></td>           

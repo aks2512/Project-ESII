@@ -27,12 +27,12 @@
     if($projetoDao->read($busca,$projeto,$ano,$inicio,$quantidade_pg) != NULL){
         foreach($projetoDao->read($busca,$projeto,$ano,$inicio,$quantidade_pg) as $projeto):
             echo' <tr>
-                    <td><input type="checkbox" value="'.$projeto['id'].'" id="'.$projeto['id'].'" name="projeto"></td>
-                    <td><a href="'.$projeto['link'].'">'.$projeto['id'].'</a></td>
+                    <td><input type="checkbox" value="'.$projeto['codigo'].'" id="'.$projeto['codigo'].'" name="projeto"></td>
+                    <td><a href="'.$projeto['link'].'">'.$projeto['codigo'].'</a></td>
                     <td><a href="'.$projeto['link'].'">'.$projeto['autor'].'</a></td>
                     <td><a href="'.$projeto['link'].'">'.$projeto['assunto'].'</a></td>
                     <td><a href="'.$projeto['link'].'">'.$projeto['anotacao'].'</a></td>  
-                    <td><button id="'.$projeto['id'].'" data-toggle="modal"  class="btn btn-primary view-data" onclick="atualizar()">Editar</button><td>         
+                    <td><button id="'.$projeto['codigo'].'" data-toggle="modal"  class="btn btn-primary view-data" onclick="atualizar()">Editar</button><td>         
                 </tr>';
             endforeach;
         }else{

@@ -4,9 +4,9 @@
     </div>
     <div class="my-5">
       <div class="row align-items-center justify-content-center">
-        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-primary" value="prefeito" onclick="pesquisaAutomatica();">Pesquisar Prefeito</button>
-        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-success" value="30000" onclick="pesquisaAutomatica();">Pesquisar Salário de 30000</button>
-        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-danger" value="5000" onclick="pesquisaAutomatica();">Pesquisa Salário de 5000</button>
+        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-primary" value="AGENTE ESCOLAR" onclick="pesquisaAutomatica();">Pesquisar Agente Escolar</button>
+        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-success" value="ENFERMEIRO" onclick="pesquisaAutomatica();">Pesquisar Enfermeiro</button>
+        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-danger" value="5000" onclick="pesquisaAutomatica();">Pesquisa Salário de até 5000</button>
       </div>
     </div>
 
@@ -39,7 +39,7 @@
     <div class="row justify-content-center mt-5">
       <div class="col-md-10 text-left">
         <!-- Mostrar Gráfico -->
-        <a id="btn-grafico" class="btn btn-default" href="">Gráfico</a>
+        <button id="btn-grafico" class=" btn " onclick="pegarDados()">Gráfico</button>
       </div><!-- Navegação Páginas da Tabela -->
     </div>
 
@@ -67,8 +67,6 @@
 
     <div id="paginacao"></div>
 
-    <script src="scriptJS/carregaTabelaFuncionarioPrefeitura.js"></script>
-
 <div class="modal fade" id="funcionarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -79,4 +77,16 @@
     </div>
   </div>
 
+  <div class="modal" id="OptGrafico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+  <div class="modal-content modal-xl container" role="document">
+    <div id="Grafico" style="width: 100%; height: 500px;"></div>
+  </div>
+</div>
   
+<div id="scriptGrafico">
+  <?php require('./funcionarioPrefeituraGrafico.php');?>
+</div>
+<script src="scriptJS/carregaTabelaFuncionarioPrefeitura.js"></script>
+<script src="scriptJS/funcionarioPrefeituraGrafico.js"></script>
+
