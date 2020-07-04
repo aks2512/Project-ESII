@@ -1,0 +1,13 @@
+0
+RGF  :1438
+Nome :RENATO MARQUES MENDES
+Cargo:JORNALISTA
+Vencimento Base   :6120.45
+Outros Vencimentos:0
+Total Bruto       :-673.25
+Previdencia       :-745.57
+IRRF              :6120.45
+Outros Descontos  :4125.15
+Total Descontos   :-1995.3
+Total Liquido     :-576.48
+----------------------------------------------------------------

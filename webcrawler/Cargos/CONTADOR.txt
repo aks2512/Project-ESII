@@ -1,0 +1,13 @@
+0
+RGF  :1441
+Nome :BRUNA BRITTO DE SANTANA
+Cargo:CONTADOR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-717.08
+Previdencia       :-9.27
+IRRF              :6518.87
+Outros Descontos  :5066.39
+Total Descontos   :-1452.48
+Total Liquido     :-726.13
+----------------------------------------------------------------

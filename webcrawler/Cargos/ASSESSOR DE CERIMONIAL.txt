@@ -1,0 +1,13 @@
+0
+RGF  :1442
+Nome :ANDERSON BARBOSA TEIXEIRA
+Cargo:ASSESSOR DE CERIMONIAL
+Vencimento Base   :4285.17
+Outros Vencimentos:857.03
+Total Bruto       :-471.37
+Previdencia       :-1008.4
+IRRF              :5142.2
+Outros Descontos  :3290.28
+Total Descontos   :-1851.92
+Total Liquido     :-372.15
+----------------------------------------------------------------

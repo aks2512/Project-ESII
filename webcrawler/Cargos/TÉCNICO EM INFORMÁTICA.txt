@@ -1,0 +1,13 @@
+0
+RGF  :1475
+Nome :CASSIO VALENTIN RODRIGUES DA SILVA
+Cargo:TÉCNICO EM INFORMÁTICA
+Vencimento Base   :3927.21
+Outros Vencimentos:196.36
+Total Bruto       :-453.59
+Previdencia       :-210.45
+IRRF              :4123.57
+Outros Descontos  :3263.83
+Total Descontos   :-859.74
+Total Liquido     :-195.7
+----------------------------------------------------------------

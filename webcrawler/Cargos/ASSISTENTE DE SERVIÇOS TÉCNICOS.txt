@@ -1,0 +1,25 @@
+0
+RGF  :1528
+Nome :VICTOR ALLEGRETTI CORDEIRO
+Cargo:ASSISTENTE DE SERVIÇOS TÉCNICOS
+Vencimento Base   :2449.92
+Outros Vencimentos:0
+Total Bruto       :-269.49
+Previdencia       :-201.18
+IRRF              :2449.92
+Outros Descontos  :1958.52
+Total Descontos   :-491.4
+Total Liquido     :-20.73
+----------------------------------------------------------------
+RGF  :1544
+Nome :HELDER INCAU
+Cargo:ASSISTENTE DE SERVIÇOS TÉCNICOS
+Vencimento Base   :2449.92
+Outros Vencimentos:0
+Total Bruto       :-269.49
+Previdencia       :0
+IRRF              :2449.92
+Outros Descontos  :2159.7
+Total Descontos   :-290.22
+Total Liquido     :-20.73
+----------------------------------------------------------------

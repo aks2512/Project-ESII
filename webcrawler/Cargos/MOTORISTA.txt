@@ -1,0 +1,289 @@
+0
+RGF  :148
+Nome :JOSE ROBERTO RIBEIRO
+Cargo:MOTORISTA
+Vencimento Base   :3384.97
+Outros Vencimentos:1184.74
+Total Bruto       :-502.67
+Previdencia       :-538.35
+IRRF              :4569.71
+Outros Descontos  :3292.39
+Total Descontos   :-1277.32
+Total Liquido     :-236.3
+----------------------------------------------------------------
+RGF  :151
+Nome :DONISETI OVIDIO DE FARIA
+Cargo:MOTORISTA
+Vencimento Base   :3554.21
+Outros Vencimentos:1777.1
+Total Bruto       :-586.44
+Previdencia       :-216.5
+IRRF              :5331.31
+Outros Descontos  :4139.56
+Total Descontos   :-1191.75
+Total Liquido     :-388.81
+----------------------------------------------------------------
+RGF  :152
+Nome :CESAR DE OLIVEIRA LOPES
+Cargo:MOTORISTA
+Vencimento Base   :3554.22
+Outros Vencimentos:2019.98
+Total Bruto       :-613.16
+Previdencia       :-225.77
+IRRF              :5574.2
+Outros Descontos  :4340.48
+Total Descontos   :-1233.72
+Total Liquido     :-394.79
+----------------------------------------------------------------
+RGF  :153
+Nome :REINALDO DO ESPIRITO SANTO
+Cargo:MOTORISTA
+Vencimento Base   :3554.22
+Outros Vencimentos:1599.4
+Total Bruto       :-566.9
+Previdencia       :-2919.88
+IRRF              :5153.62
+Outros Descontos  :1547.71
+Total Descontos   :-3605.91
+Total Liquido     :-119.13
+----------------------------------------------------------------
+RGF  :154
+Nome :EDSON RODRIGUES
+Cargo:MOTORISTA
+Vencimento Base   :3554.22
+Outros Vencimentos:1954.83
+Total Bruto       :-606
+Previdencia       :-266.11
+IRRF              :5509.05
+Outros Descontos  :4210.1
+Total Descontos   :-1298.95
+Total Liquido     :-426.84
+----------------------------------------------------------------
+RGF  :327
+Nome :ALAERCIO APARECIDO FRANCO
+Cargo:MOTORISTA
+Vencimento Base   :3510.33
+Outros Vencimentos:1228.62
+Total Bruto       :-521.28
+Previdencia       :-523.03
+IRRF              :4738.95
+Outros Descontos  :3467.11
+Total Descontos   :-1271.84
+Total Liquido     :-227.53
+----------------------------------------------------------------
+RGF  :348
+Nome :MAURICIO ALEXANDRE GASPAR DE OLIVEIRA  
+Cargo:MOTORISTA
+Vencimento Base   :3343.16
+Outros Vencimentos:1353.65
+Total Bruto       :-516.65
+Previdencia       :-564.35
+IRRF              :4696.81
+Outros Descontos  :3311.4
+Total Descontos   :-1385.41
+Total Liquido     :-304.41
+----------------------------------------------------------------
+RGF  :362
+Nome :FABIO LUIZ SANTANA FREITAS
+Cargo:MOTORISTA
+Vencimento Base   :3510.34
+Outros Vencimentos:1228.62
+Total Bruto       :-521.29
+Previdencia       :-596.01
+IRRF              :4738.96
+Outros Descontos  :3394.13
+Total Descontos   :-1344.83
+Total Liquido     :-227.53
+----------------------------------------------------------------
+RGF  :366
+Nome :CARLOS EDUARDO SILVA
+Cargo:MOTORISTA
+Vencimento Base   :3510.34
+Outros Vencimentos:1930.68
+Total Bruto       :-598.51
+Previdencia       :-615.01
+IRRF              :5441.02
+Outros Descontos  :3816.72
+Total Descontos   :-1624.3
+Total Liquido     :-410.78
+----------------------------------------------------------------
+RGF  :662
+Nome :FAUSTO JUNQUEIRA TOMAZ
+Cargo:MOTORISTA
+Vencimento Base   :3424.19
+Outros Vencimentos:3718.26
+Total Bruto       :-433.16
+Previdencia       :-1706.3
+IRRF              :7142.45
+Outros Descontos  :4941.15
+Total Descontos   :-2201.3
+Total Liquido     :-61.84
+----------------------------------------------------------------
+RGF  :700
+Nome :EDVALDO DA ROSA LIMA
+Cargo:MOTORISTA
+Vencimento Base   :3261.14
+Outros Vencimentos:489.17
+Total Bruto       :-412.53
+Previdencia       :-853.31
+IRRF              :3750.31
+Outros Descontos  :2367.04
+Total Descontos   :-1383.27
+Total Liquido     :-117.43
+----------------------------------------------------------------
+RGF  :1437
+Nome :ALEX LUIZ LAURO
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-201.18
+IRRF              :3064.74
+Outros Descontos  :2493.11
+Total Descontos   :-571.63
+Total Liquido     :-33.33
+----------------------------------------------------------------
+RGF  :1455
+Nome :GILMAR GONCALVES DOS SANTOS
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-201.18
+IRRF              :3064.74
+Outros Descontos  :2464.67
+Total Descontos   :-600.07
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1456
+Nome :CARLOS ANDRE OLIVEIRA DE ALMEIDA
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-216.5
+IRRF              :3064.74
+Outros Descontos  :2463.57
+Total Descontos   :-601.17
+Total Liquido     :-47.55
+----------------------------------------------------------------
+RGF  :1471
+Nome :JORGE HIROSHI ANIYA
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-9.27
+IRRF              :3064.74
+Outros Descontos  :2670.8
+Total Descontos   :-393.94
+Total Liquido     :-47.55
+----------------------------------------------------------------
+RGF  :1476
+Nome :RAFAEL ALVES DE OLIVEIRA
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-584.97
+IRRF              :3064.74
+Outros Descontos  :2123.54
+Total Descontos   :-941.2
+Total Liquido     :-19.11
+----------------------------------------------------------------
+RGF  :1496
+Nome :JUNIOR MIURA
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-201.18
+IRRF              :3064.74
+Outros Descontos  :2464.67
+Total Descontos   :-600.07
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1510
+Nome :ELTON MASSAO TAMAOKI
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-225.77
+IRRF              :3064.74
+Outros Descontos  :2454.3
+Total Descontos   :-610.44
+Total Liquido     :-47.55
+----------------------------------------------------------------
+RGF  :1539
+Nome :RICARDO MARINHO DE MATOS
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-225.77
+IRRF              :3064.74
+Outros Descontos  :2454.3
+Total Descontos   :-610.44
+Total Liquido     :-47.55
+----------------------------------------------------------------
+RGF  :1543
+Nome :RALPH FELIPE ALVES BENITES
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-783.45
+IRRF              :3064.74
+Outros Descontos  :1896.62
+Total Descontos   :-1168.12
+Total Liquido     :-47.55
+----------------------------------------------------------------
+RGF  :1555
+Nome :RUBENS RAFAEL ROCHA JUNIOR
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-225.77
+IRRF              :3064.74
+Outros Descontos  :2440.08
+Total Descontos   :-624.66
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1605
+Nome :MOISES MESSIAS DOS SANTOS JUNIOR
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-210.45
+IRRF              :3064.74
+Outros Descontos  :2455.4
+Total Descontos   :-609.34
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1632
+Nome :JORGE LUIS SOARES RODRIGUES
+Cargo:MOTORISTA
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-225.77
+IRRF              :3064.74
+Outros Descontos  :2482.74
+Total Descontos   :-582
+Total Liquido     :-19.11
+----------------------------------------------------------------
+RGF  :1643
+Nome :WAGNER REGINALDO DE SÁ
+Cargo:MOTORISTA
+Vencimento Base   :1225.9
+Outros Vencimentos:0
+Total Bruto       :-134.85
+Previdencia       :0
+IRRF              :1225.9
+Outros Descontos  :1091.05
+Total Descontos   :-134.85
+Total Liquido     :0
+----------------------------------------------------------------

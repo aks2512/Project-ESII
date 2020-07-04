@@ -1,0 +1,13 @@
+0
+RGF  :876
+Nome :MARIA VALERIA ANDARI SABINO
+Cargo:TESOUREIRO
+Vencimento Base   :10374.23
+Outros Vencimentos:2074.85
+Total Bruto       :-713.1
+Previdencia       :-1039.45
+IRRF              :12449.08
+Outros Descontos  :8494.91
+Total Descontos   :-3954.17
+Total Liquido     :-2201.62
+----------------------------------------------------------------

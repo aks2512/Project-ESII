@@ -24,8 +24,11 @@ function deletar() {
   del.query("DELETE FROM descontos");
   del.query("ALTER TABLE descontos AUTO_INCREMENT = 1 ");
 
-  del.query("DELETE FROM funcionarios");
-  del.query("ALTER TABLE funcionarios AUTO_INCREMENT = 1 ");
+  del.query("DELETE FROM funcionarios_prefeitura");
+  del.query("ALTER TABLE funcionarios_prefeitura AUTO_INCREMENT = 1 ");
+
+  del.query("DELETE FROM funcionarios_camara");
+  del.query("ALTER TABLE funcionarios_camara AUTO_INCREMENT = 1 ");
 
   del.query("DELETE FROM projetos");
   del.query("ALTER TABLE projetos AUTO_INCREMENT = 1 ");

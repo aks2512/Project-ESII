@@ -1,0 +1,49 @@
+0
+RGF  :389
+Nome :BENEDITO SEBASTIAO PINTO DE MORAES
+Cargo:ENCARREGADO DE SETOR
+Vencimento Base   :2826.3
+Outros Vencimentos:6198.1
+Total Bruto       :-689.69
+Previdencia       :-286.35
+IRRF              :9024.4
+Outros Descontos  :6677.81
+Total Descontos   :-2346.59
+Total Liquido     :-1370.55
+----------------------------------------------------------------
+RGF  :392
+Nome :ALOIZIO GUIMARAES MEDEIROS
+Cargo:ENCARREGADO DE SETOR
+Vencimento Base   :2826.3
+Outros Vencimentos:4269.57
+Total Bruto       :-512.97
+Previdencia       :-919.72
+IRRF              :7095.87
+Outros Descontos  :4774.38
+Total Descontos   :-2321.49
+Total Liquido     :-888.8
+----------------------------------------------------------------
+RGF  :646
+Nome :ANGELICA MATIKO NAGAHASHI
+Cargo:ENCARREGADO DE SETOR
+Vencimento Base   :4787.75
+Outros Vencimentos:2290.55
+Total Bruto       :-619.18
+Previdencia       :-21.43
+IRRF              :7078.3
+Outros Descontos  :5530.79
+Total Descontos   :-1547.51
+Total Liquido     :-906.9
+----------------------------------------------------------------
+RGF  :664
+Nome :LEONARDO DOMINGOS DE SOUZA
+Cargo:ENCARREGADO DE SETOR
+Vencimento Base   :3424.19
+Outros Vencimentos:2348.91
+Total Bruto       :-433.16
+Previdencia       :-1068.15
+IRRF              :5773.1
+Outros Descontos  :3724.8
+Total Descontos   :-2048.3
+Total Liquido     :-546.99
+----------------------------------------------------------------

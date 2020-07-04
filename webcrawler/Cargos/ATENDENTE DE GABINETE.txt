@@ -1,0 +1,85 @@
+0
+RGF  :588
+Nome :JOSEANE MARIA DE LIMA
+Cargo:ATENDENTE DE GABINETE
+Vencimento Base   :2771.48
+Outros Vencimentos:970.02
+Total Bruto       :-350.59
+Previdencia       :-198.97
+IRRF              :3741.5
+Outros Descontos  :3038.1
+Total Descontos   :-703.4
+Total Liquido     :-153.84
+----------------------------------------------------------------
+RGF  :591
+Nome :LEONILDA ALVES BARBOSA
+Cargo:ATENDENTE DE GABINETE
+Vencimento Base   :2771.48
+Outros Vencimentos:970.02
+Total Bruto       :-350.59
+Previdencia       :-269.38
+IRRF              :3741.5
+Outros Descontos  :3081.11
+Total Descontos   :-660.39
+Total Liquido     :-40.42
+----------------------------------------------------------------
+RGF  :665
+Nome :DEUSLEIDE CAVALCANTE DE SOUSA
+Cargo:ATENDENTE DE GABINETE
+Vencimento Base   :2737.27
+Outros Vencimentos:958.04
+Total Bruto       :-346.26
+Previdencia       :-528.43
+IRRF              :3695.31
+Outros Descontos  :2729.94
+Total Descontos   :-965.37
+Total Liquido     :-90.68
+----------------------------------------------------------------
+RGF  :671
+Nome :ALEXANDRE APARECIDO FERNANDES GONCALVES
+Cargo:ATENDENTE DE GABINETE
+Vencimento Base   :2703.46
+Outros Vencimentos:946.21
+Total Bruto       :-341.99
+Previdencia       :-490.81
+IRRF              :3649.67
+Outros Descontos  :2703.96
+Total Descontos   :-945.71
+Total Liquido     :-112.91
+----------------------------------------------------------------
+RGF  :1443
+Nome :DIRCE AQUEMI MIZUTA
+Cargo:ATENDENTE DE GABINETE
+Vencimento Base   :2449.92
+Outros Vencimentos:0
+Total Bruto       :-269.49
+Previdencia       :-210.45
+IRRF              :2449.92
+Outros Descontos  :1969.98
+Total Descontos   :-479.94
+Total Liquido     :0
+----------------------------------------------------------------
+RGF  :1478
+Nome :FATIMA APARECIDA FERNANDES
+Cargo:ATENDENTE DE GABINETE
+Vencimento Base   :2008.93
+Outros Vencimentos:0
+Total Bruto       :-220.98
+Previdencia       :-213.43
+IRRF              :2008.93
+Outros Descontos  :1574.52
+Total Descontos   :-434.41
+Total Liquido     :0
+----------------------------------------------------------------
+RGF  :1498
+Nome :PAULA FERNANDA NERI ANDRADE
+Cargo:ATENDENTE DE GABINETE
+Vencimento Base   :2449.92
+Outros Vencimentos:0
+Total Bruto       :-269.49
+Previdencia       :0
+IRRF              :2449.92
+Outros Descontos  :2180.43
+Total Descontos   :-269.49
+Total Liquido     :0
+----------------------------------------------------------------

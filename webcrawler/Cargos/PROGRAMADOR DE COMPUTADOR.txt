@@ -1,0 +1,13 @@
+0
+RGF  :582
+Nome :NEUSA HARUMI TAIRA ANDRE
+Cargo:PROGRAMADOR DE COMPUTADOR
+Vencimento Base   :7739.25
+Outros Vencimentos:2708.74
+Total Bruto       :-979.02
+Previdencia       :-210.45
+IRRF              :10447.99
+Outros Descontos  :7523.91
+Total Descontos   :-2924.08
+Total Liquido     :-1734.61
+----------------------------------------------------------------

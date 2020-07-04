@@ -1,5 +1,9 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const con = require("./con-factory");
+const {
+  resolve,
+  reject
+} = require("bluebird");
 
 module.exports = {
   insere_basico(dados, alvo) {
@@ -9,12 +13,15 @@ module.exports = {
       throw "Erro: Vetor está vazio";
     }
 
-    con.query("INSERT INTO " + alvo + " VALUES (?)", [dados], function (err) {
+    con.query("INSERT INTO " + alvo + " VALUES (?)", [dados], function(err) {
       if (err) {
-        //console.log(err);
+        console.log(err)
+        //rej(err);
+        //throw err;
         //não está sendo usada interrupção pois erro de duplicação é recorrente e prejudica o uso do script
         //duplicação de chave primária é automaticamente resolvida pelo phpmyadmin, então pode ser ignorada nessa função no estado de produção
       }
-    });
-  },
-};
+      console.log("Insert Concluido");
+    })
+  }
+}

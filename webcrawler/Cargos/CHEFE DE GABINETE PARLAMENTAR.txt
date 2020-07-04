@@ -1,0 +1,289 @@
+0
+RGF  :926
+Nome :ADRIANA MESQUITA TAVARES
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-201.18
+IRRF              :6518.87
+Outros Descontos  :4981.64
+Total Descontos   :-1537.23
+Total Liquido     :-622.95
+----------------------------------------------------------------
+RGF  :1016
+Nome :PAULO SERGIO UNELLO PEREIRA
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-1127.52
+IRRF              :6518.87
+Outros Descontos  :4055.3
+Total Descontos   :-2463.57
+Total Liquido     :-622.95
+----------------------------------------------------------------
+RGF  :1036
+Nome :BENEDITO FERNANDES DE MORAES
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-523.03
+IRRF              :6518.87
+Outros Descontos  :4555.51
+Total Descontos   :-1963.36
+Total Liquido     :-727.23
+----------------------------------------------------------------
+RGF  :1083
+Nome :NEICY REGINA FRANCO E SOUSA
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-9.27
+IRRF              :6518.87
+Outros Descontos  :5173.55
+Total Descontos   :-1345.32
+Total Liquido     :-622.95
+----------------------------------------------------------------
+RGF  :1225
+Nome :WILSON GUIMARAES JUNIOR
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-210.45
+IRRF              :6518.87
+Outros Descontos  :4920.23
+Total Descontos   :-1598.64
+Total Liquido     :-675.09
+----------------------------------------------------------------
+RGF  :1244
+Nome :AGOSTINHO BELGO MILITAO
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:1303.77
+Total Bruto       :-713.1
+Previdencia       :-920.35
+IRRF              :7822.64
+Outros Descontos  :5103.43
+Total Descontos   :-2719.21
+Total Liquido     :-1085.76
+----------------------------------------------------------------
+RGF  :1273
+Nome :MARCIO ROBERTO ALVES CARDOSO
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-233.77
+IRRF              :6518.87
+Outros Descontos  :4896.91
+Total Descontos   :-1621.96
+Total Liquido     :-675.09
+----------------------------------------------------------------
+RGF  :1345
+Nome :ANDRE ALVIM DE MATOS SILVA
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-523.03
+IRRF              :6518.87
+Outros Descontos  :4607.65
+Total Descontos   :-1911.22
+Total Liquido     :-675.09
+----------------------------------------------------------------
+RGF  :1347
+Nome :IRANI DA COSTA NEVES PINHEIRO
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:1303.77
+Total Bruto       :-713.1
+Previdencia       :-201.18
+IRRF              :7822.64
+Outros Descontos  :5822.6
+Total Descontos   :-2000.04
+Total Liquido     :-1085.76
+----------------------------------------------------------------
+RGF  :1353
+Nome :REGINA MARIA MARCATO SECOMANDI
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :6518.87
+Outros Descontos  :5078.54
+Total Descontos   :-1440.33
+Total Liquido     :-727.23
+----------------------------------------------------------------
+RGF  :1354
+Nome :ALEXANDRE GEROLAMO DE ALMEIDA
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-532.3
+IRRF              :6518.87
+Outros Descontos  :4546.24
+Total Descontos   :-1972.63
+Total Liquido     :-727.23
+----------------------------------------------------------------
+RGF  :1360
+Nome :PAULINO EMILIANO DA ROCHA
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-1107.42
+IRRF              :6518.87
+Outros Descontos  :4266.7
+Total Descontos   :-2252.17
+Total Liquido     :-431.65
+----------------------------------------------------------------
+RGF  :1371
+Nome :VALTER TARGINO MARTINS JUNIOR
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-233.77
+IRRF              :6518.87
+Outros Descontos  :4949.05
+Total Descontos   :-1569.82
+Total Liquido     :-622.95
+----------------------------------------------------------------
+RGF  :1373
+Nome :EDSON CHOITIRO KUBO
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:1303.77
+Total Bruto       :-713.1
+Previdencia       :-598.28
+IRRF              :7822.64
+Outros Descontos  :5425.5
+Total Descontos   :-2397.14
+Total Liquido     :-1085.76
+----------------------------------------------------------------
+RGF  :1378
+Nome :VIVIANE ELEOTERO SOUZA DE PAULA
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :6518.87
+Outros Descontos  :5078.54
+Total Descontos   :-1440.33
+Total Liquido     :-727.23
+----------------------------------------------------------------
+RGF  :1409
+Nome :ANDRE LUIZ FERREIRA DOS SANTOS
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-276.43
+IRRF              :6518.87
+Outros Descontos  :4906.39
+Total Descontos   :-1612.48
+Total Liquido     :-622.95
+----------------------------------------------------------------
+RGF  :1495
+Nome :ANDREA APARECIDA DAVID MACHADO
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-210.45
+IRRF              :6518.87
+Outros Descontos  :4972.37
+Total Descontos   :-1546.5
+Total Liquido     :-622.95
+----------------------------------------------------------------
+RGF  :1556
+Nome :JACQUELINE SOUZA JACQUES
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-728.5
+IRRF              :6518.87
+Outros Descontos  :4402.18
+Total Descontos   :-2116.69
+Total Liquido     :-675.09
+----------------------------------------------------------------
+RGF  :1570
+Nome :GILSON LUIZ DA SILVA ALMEIDA
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:1955.66
+Total Bruto       :-713.1
+Previdencia       :-201.18
+IRRF              :8474.53
+Outros Descontos  :6347.35
+Total Descontos   :-2127.18
+Total Liquido     :-1212.9
+----------------------------------------------------------------
+RGF  :1584
+Nome :GABRIEL CARDOSO DE OLIVEIRA
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-201.18
+IRRF              :6518.87
+Outros Descontos  :4929.5
+Total Descontos   :-1589.37
+Total Liquido     :-675.09
+----------------------------------------------------------------
+RGF  :1616
+Nome :EDUARDO CESAR VAZ SORAGGI
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-201.18
+IRRF              :6518.87
+Outros Descontos  :4877.36
+Total Descontos   :-1641.51
+Total Liquido     :-727.23
+----------------------------------------------------------------
+RGF  :1617
+Nome :STANLEY MARCOS DOS SANTOS
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:1303.77
+Total Bruto       :-713.1
+Previdencia       :-233.77
+IRRF              :7822.64
+Outros Descontos  :5946.42
+Total Descontos   :-1876.22
+Total Liquido     :-929.35
+----------------------------------------------------------------
+RGF  :1621
+Nome :LUCAS NOBREGA PORTO
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :6518.87
+Outros Descontos  :5078.54
+Total Descontos   :-1440.33
+Total Liquido     :-727.23
+----------------------------------------------------------------
+RGF  :1634
+Nome :MARIA JOSE GAMA DE ALMEIDA
+Cargo:CHEFE DE GABINETE PARLAMENTAR
+Vencimento Base   :6518.87
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :6518.87
+Outros Descontos  :5078.54
+Total Descontos   :-1440.33
+Total Liquido     :-727.23
+----------------------------------------------------------------

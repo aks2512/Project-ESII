@@ -1,0 +1,13 @@
+0
+RGF  :585
+Nome :NICELY DOS SANTOS CAMPOLINO
+Cargo:CHEFE DA ASSESSORIA LEGISLATIVA
+Vencimento Base   :8572.17
+Outros Vencimentos:8272.14
+Total Bruto       :-1414.41
+Previdencia       :-731.18
+IRRF              :16844.31
+Outros Descontos  :11765.96
+Total Descontos   :-5078.35
+Total Liquido     :-2932.76
+----------------------------------------------------------------

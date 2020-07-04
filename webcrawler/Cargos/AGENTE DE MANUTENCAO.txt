@@ -1,0 +1,25 @@
+0
+RGF  :674
+Nome :ARISTIDES ALVARO RIBEIRO DO NASCIMENTO  
+Cargo:AGENTE DE MANUTENCAO
+Vencimento Base   :2703.47
+Outros Vencimentos:946.21
+Total Bruto       :-341.99
+Previdencia       :-902.65
+IRRF              :3649.68
+Outros Descontos  :2342.42
+Total Descontos   :-1307.26
+Total Liquido     :-62.62
+----------------------------------------------------------------
+RGF  :1444
+Nome :ROMULO DA SILVA VALENCA CAVALCANTI
+Cargo:AGENTE DE MANUTENCAO
+Vencimento Base   :2449.92
+Outros Vencimentos:0
+Total Bruto       :-269.49
+Previdencia       :-222.7
+IRRF              :2449.92
+Outros Descontos  :1937
+Total Descontos   :-512.92
+Total Liquido     :-20.73
+----------------------------------------------------------------

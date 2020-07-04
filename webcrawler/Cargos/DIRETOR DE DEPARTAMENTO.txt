@@ -1,0 +1,37 @@
+0
+RGF  :583
+Nome :MARCELO IWAO UMETA ROMEIRO TAVARES   
+Cargo:DIRETOR DE DEPARTAMENTO
+Vencimento Base   :8572.17
+Outros Vencimentos:5778.41
+Total Bruto       :-1137.57
+Previdencia       :-523.03
+IRRF              :14350.58
+Outros Descontos  :9977.9
+Total Descontos   :-4372.68
+Total Liquido     :-2712.08
+----------------------------------------------------------------
+RGF  :805
+Nome :ALEX ALBERT MORAIS DE SOUZA
+Cargo:DIRETOR DE DEPARTAMENTO
+Vencimento Base   :8779.91
+Outros Vencimentos:6847.01
+Total Bruto       :-1163.85
+Previdencia       :-523.03
+IRRF              :15626.92
+Outros Descontos  :10936.33
+Total Descontos   :-4690.59
+Total Liquido     :-3003.71
+----------------------------------------------------------------
+RGF  :1419
+Nome :ROSANGELA APARECIDA CAVALCANTE
+Cargo:DIRETOR DE DEPARTAMENTO
+Vencimento Base   :10374.23
+Outros Vencimentos:2074.85
+Total Bruto       :-713.1
+Previdencia       :-549.03
+IRRF              :12449.08
+Outros Descontos  :8881.05
+Total Descontos   :-3568.03
+Total Liquido     :-2305.9
+----------------------------------------------------------------

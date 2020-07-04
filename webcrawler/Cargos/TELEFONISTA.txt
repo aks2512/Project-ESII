@@ -1,0 +1,61 @@
+0
+RGF  :580
+Nome :MERCIA REGINA DOS SANTOS SILVA
+Cargo:TELEFONISTA
+Vencimento Base   :4847.61
+Outros Vencimentos:1696.66
+Total Bruto       :-613.22
+Previdencia       :-210.45
+IRRF              :6544.27
+Outros Descontos  :5011.06
+Total Descontos   :-1533.21
+Total Liquido     :-709.54
+----------------------------------------------------------------
+RGF  :590
+Nome :ADRIANA LOPES SANTANA OLIVEIRA
+Cargo:TELEFONISTA
+Vencimento Base   :4616.78
+Outros Vencimentos:1615.88
+Total Bruto       :-584.02
+Previdencia       :-28.57
+IRRF              :6232.66
+Outros Descontos  :5196.74
+Total Descontos   :-1035.92
+Total Liquido     :-423.33
+----------------------------------------------------------------
+RGF  :593
+Nome :JOAO DOS SANTOS ESMAEL
+Cargo:TELEFONISTA
+Vencimento Base   :4847.61
+Outros Vencimentos:3040.44
+Total Bruto       :-761.04
+Previdencia       :-1105.09
+IRRF              :7888.05
+Outros Descontos  :5227.4
+Total Descontos   :-2660.65
+Total Liquido     :-794.52
+----------------------------------------------------------------
+RGF  :1501
+Nome :JOICE OECKSLER
+Cargo:TELEFONISTA
+Vencimento Base   :4285.17
+Outros Vencimentos:0
+Total Bruto       :-471.37
+Previdencia       :-540.42
+IRRF              :4285.17
+Outros Descontos  :3112.99
+Total Descontos   :-1172.18
+Total Liquido     :-160.39
+----------------------------------------------------------------
+RGF  :1554
+Nome :PAULA FERNANDA CAVALCANTI
+Cargo:TELEFONISTA
+Vencimento Base   :4285.17
+Outros Vencimentos:0
+Total Bruto       :-471.37
+Previdencia       :-28.57
+IRRF              :4285.17
+Outros Descontos  :3563.26
+Total Descontos   :-721.91
+Total Liquido     :-221.97
+----------------------------------------------------------------

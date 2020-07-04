@@ -1,0 +1,13 @@
+0
+RGF  :1571
+Nome :ROSIMEIRE LIMA RIBEIRO PINHEIRO
+Cargo:ASSESSOR PARLAMENTAR DE GABINETE DA PRESIDENCIA
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :5020.23
+Outros Descontos  :4091.42
+Total Descontos   :-928.81
+Total Liquido     :-367.02
+----------------------------------------------------------------

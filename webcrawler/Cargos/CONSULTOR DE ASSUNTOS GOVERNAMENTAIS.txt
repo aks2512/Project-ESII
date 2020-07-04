@@ -1,0 +1,37 @@
+0
+RGF  :1314
+Nome :WILLIAM CASANOVA
+Cargo:CONSULTOR DE ASSUNTOS GOVERNAMENTAIS
+Vencimento Base   :10374.23
+Outros Vencimentos:2074.85
+Total Bruto       :-713.1
+Previdencia       :-1069.53
+IRRF              :12449.08
+Outros Descontos  :8464.83
+Total Descontos   :-3984.25
+Total Liquido     :-2201.62
+----------------------------------------------------------------
+RGF  :1369
+Nome :JULIANA CALDEIRA COSTA BATISTA
+Cargo:CONSULTOR DE ASSUNTOS GOVERNAMENTAIS
+Vencimento Base   :10374.23
+Outros Vencimentos:2074.85
+Total Bruto       :-713.1
+Previdencia       :-532.3
+IRRF              :12449.08
+Outros Descontos  :8949.92
+Total Descontos   :-3499.16
+Total Liquido     :-2253.76
+----------------------------------------------------------------
+RGF  :1392
+Nome :ADEMIR APARECIDO FALQUE DOS SANTOS
+Cargo:CONSULTOR DE ASSUNTOS GOVERNAMENTAIS
+Vencimento Base   :10374.23
+Outros Vencimentos:2074.85
+Total Bruto       :-713.1
+Previdencia       :-2444.33
+IRRF              :12449.08
+Outros Descontos  :7755.07
+Total Descontos   :-4694.01
+Total Liquido     :-1536.58
+----------------------------------------------------------------

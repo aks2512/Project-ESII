@@ -1,0 +1,577 @@
+0
+RGF  :1091
+Nome :JOSE HERMANO ALVES DE SOUSA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-226.28
+IRRF              :5020.23
+Outros Descontos  :3865.14
+Total Descontos   :-1155.09
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1110
+Nome :MARISA DOS SANTOS ALVES
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-397.17
+IRRF              :5020.23
+Outros Descontos  :3694.25
+Total Descontos   :-1325.98
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1134
+Nome :CARLOS JOSE DE MORAES
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-881.27
+IRRF              :5020.23
+Outros Descontos  :3210.15
+Total Descontos   :-1810.08
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1150
+Nome :JOSE APARECIDO DA SILVA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-1473.67
+IRRF              :5020.23
+Outros Descontos  :2917.93
+Total Descontos   :-2102.3
+Total Liquido     :-66.84
+----------------------------------------------------------------
+RGF  :1211
+Nome :SONIA MARIA MONTEIRO DE MOURA MAGI
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :5020.23
+Outros Descontos  :4134.08
+Total Descontos   :-886.15
+Total Liquido     :-324.36
+----------------------------------------------------------------
+RGF  :1306
+Nome :ALEXSANDRO SERGIO DE BRITO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-226.28
+IRRF              :5020.23
+Outros Descontos  :3993.11
+Total Descontos   :-1027.12
+Total Liquido     :-239.05
+----------------------------------------------------------------
+RGF  :1316
+Nome :ANA LUCIA DA SILVA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :5020.23
+Outros Descontos  :4091.42
+Total Descontos   :-928.81
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1346
+Nome :DEYSE BRUNA DE SOUZA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-235.55
+IRRF              :5020.23
+Outros Descontos  :3855.87
+Total Descontos   :-1164.36
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1348
+Nome :JULIO PEREIRA DOS SANTOS
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-25.1
+IRRF              :5020.23
+Outros Descontos  :4151.64
+Total Descontos   :-868.59
+Total Liquido     :-281.7
+----------------------------------------------------------------
+RGF  :1350
+Nome :ELENA SATIKO NAKAGAWA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-210.45
+IRRF              :5020.23
+Outros Descontos  :3880.97
+Total Descontos   :-1139.26
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1357
+Nome :JOANA D ARC MOREIRA SANVIDO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-590.49
+IRRF              :5020.23
+Outros Descontos  :3500.93
+Total Descontos   :-1519.3
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1359
+Nome :JOAQUIM CASADO CASTANO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-26
+IRRF              :5020.23
+Outros Descontos  :4065.42
+Total Descontos   :-954.81
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1362
+Nome :LUCIANO VACCARELLI
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-548.13
+IRRF              :5020.23
+Outros Descontos  :3628.61
+Total Descontos   :-1391.62
+Total Liquido     :-281.7
+----------------------------------------------------------------
+RGF  :1364
+Nome :CELIO DA SILVA PUPO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-535.63
+IRRF              :5020.23
+Outros Descontos  :3555.79
+Total Descontos   :-1464.44
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1386
+Nome :DONIZETI JOSE BRUNO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-226.28
+IRRF              :5020.23
+Outros Descontos  :3865.14
+Total Descontos   :-1155.09
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1388
+Nome :SERGINO JORGE DE PINHO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:1004.05
+Total Bruto       :-702.35
+Previdencia       :-658.91
+IRRF              :6024.28
+Outros Descontos  :4068.85
+Total Descontos   :-1955.43
+Total Liquido     :-594.17
+----------------------------------------------------------------
+RGF  :1415
+Nome :ALESSANDRA CHRISTINA PAULINO NAJAR
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-558.71
+IRRF              :5020.23
+Outros Descontos  :3575.37
+Total Descontos   :-1444.86
+Total Liquido     :-324.36
+----------------------------------------------------------------
+RGF  :1420
+Nome :ALINE FRANCISCA ALVES DO NASCIMENTO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-201.18
+IRRF              :5020.23
+Outros Descontos  :3890.24
+Total Descontos   :-1129.99
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1447
+Nome :MARIA ALICE DE JESUS CONTENTE
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:2510.12
+Total Bruto       :-713.1
+Previdencia       :-201.18
+IRRF              :7530.35
+Outros Descontos  :5662.82
+Total Descontos   :-1867.53
+Total Liquido     :-953.25
+----------------------------------------------------------------
+RGF  :1453
+Nome :RENATA INIESTA PICCOLOMINI
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-627.52
+IRRF              :5020.23
+Outros Descontos  :3463.9
+Total Descontos   :-1556.33
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1463
+Nome :VASTI PEREIRA DA SILVA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-261.55
+IRRF              :5020.23
+Outros Descontos  :3872.53
+Total Descontos   :-1147.7
+Total Liquido     :-324.36
+----------------------------------------------------------------
+RGF  :1479
+Nome :SIDNEY APARECIDO KAWANA LEMES
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-257.5
+IRRF              :5020.23
+Outros Descontos  :3876.58
+Total Descontos   :-1143.65
+Total Liquido     :-324.36
+----------------------------------------------------------------
+RGF  :1480
+Nome :GABRIELA LIPARI DE PAULA PONTES
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-210.45
+IRRF              :5020.23
+Outros Descontos  :3880.97
+Total Descontos   :-1139.26
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1482
+Nome :NOEMIA ALVES CORREIA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-551
+IRRF              :5020.23
+Outros Descontos  :3668.39
+Total Descontos   :-1351.84
+Total Liquido     :-239.05
+----------------------------------------------------------------
+RGF  :1489
+Nome :CLEIA DE FATIMA BENTO SANTOS
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-654.68
+IRRF              :5020.23
+Outros Descontos  :3603.55
+Total Descontos   :-1416.68
+Total Liquido     :-200.21
+----------------------------------------------------------------
+RGF  :1494
+Nome :BENEDITA APARECIDA BARBOZA CONCEICAO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-201.18
+IRRF              :5020.23
+Outros Descontos  :3890.24
+Total Descontos   :-1129.99
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1512
+Nome :ROGERIO PARENTE
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-654.89
+IRRF              :5020.23
+Outros Descontos  :3436.53
+Total Descontos   :-1583.7
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1525
+Nome :BRUNO DA MOTA MARANGONI
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-9.27
+IRRF              :5020.23
+Outros Descontos  :4082.15
+Total Descontos   :-938.08
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1550
+Nome :CLEIDELANE SOUZA BARROSO DA SILVA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-34.37
+IRRF              :5020.23
+Outros Descontos  :4057.05
+Total Descontos   :-963.18
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1565
+Nome :CLAUDIA BEATRIZ SOARES
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-269.38
+IRRF              :5020.23
+Outros Descontos  :3822.04
+Total Descontos   :-1198.19
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1566
+Nome :THIAGO NASCIMENTO DA SILVA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-268.94
+IRRF              :5020.23
+Outros Descontos  :3907.8
+Total Descontos   :-1112.43
+Total Liquido     :-281.7
+----------------------------------------------------------------
+RGF  :1576
+Nome :RENATO FERREIRA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-150
+IRRF              :5020.23
+Outros Descontos  :3941.42
+Total Descontos   :-1078.81
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1583
+Nome :RONALDO GALLO JUNIOR
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :5020.23
+Outros Descontos  :4176.74
+Total Descontos   :-843.49
+Total Liquido     :-281.7
+----------------------------------------------------------------
+RGF  :1587
+Nome :MILTON CIMATTI JUNIOR
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-269.38
+IRRF              :5020.23
+Outros Descontos  :3822.04
+Total Descontos   :-1198.19
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1588
+Nome :GILZA RABELO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:3346.82
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :8367.05
+Outros Descontos  :7438.24
+Total Descontos   :-928.81
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1591
+Nome :JOSE RUIZ NETTO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-549.03
+IRRF              :5020.23
+Outros Descontos  :3542.39
+Total Descontos   :-1477.84
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1597
+Nome :HUMBERTO LIBERATO DE SOUZA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-9.27
+IRRF              :5020.23
+Outros Descontos  :4082.15
+Total Descontos   :-938.08
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1606
+Nome :LAYS EURENIDIO FARIAS
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-210.45
+IRRF              :5020.23
+Outros Descontos  :4008.94
+Total Descontos   :-1011.29
+Total Liquido     :-239.05
+----------------------------------------------------------------
+RGF  :1608
+Nome :JULIANA APARECIDA JACQUES DE ALMEIDA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :5020.23
+Outros Descontos  :4091.42
+Total Descontos   :-928.81
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1615
+Nome :CLAUDIA ROBERTA IRENTE YOSCIMOTO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-523.03
+IRRF              :5020.23
+Outros Descontos  :3611.05
+Total Descontos   :-1409.18
+Total Liquido     :-324.36
+----------------------------------------------------------------
+RGF  :1618
+Nome :RUBENS PEDRO DE OLIVEIRA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :5020.23
+Outros Descontos  :4091.42
+Total Descontos   :-928.81
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1620
+Nome :DIANA HIROMI OKUHAMA WATANABE
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-201.18
+IRRF              :5020.23
+Outros Descontos  :4018.21
+Total Descontos   :-1002.02
+Total Liquido     :-239.05
+----------------------------------------------------------------
+RGF  :1625
+Nome :MARCIO ROGERIO DE ALMEIDA RAMOS
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-201.18
+IRRF              :5020.23
+Outros Descontos  :3890.24
+Total Descontos   :-1129.99
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1633
+Nome :LUIZ FERNANDO LOBO PEREIRA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :5020.23
+Outros Descontos  :4176.74
+Total Descontos   :-843.49
+Total Liquido     :-281.7
+----------------------------------------------------------------
+RGF  :1635
+Nome :JULIANA EMY NAKAGAWA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-210.45
+IRRF              :5020.23
+Outros Descontos  :3923.63
+Total Descontos   :-1096.6
+Total Liquido     :-324.36
+----------------------------------------------------------------
+RGF  :1639
+Nome :RAPHAEL GOMIERO FERREIRA
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :5020.23
+Outros Descontos  :4091.42
+Total Descontos   :-928.81
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1640
+Nome :ERISON LUIZ DO NASCIMENTO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :-210.45
+IRRF              :5020.23
+Outros Descontos  :3880.97
+Total Descontos   :-1139.26
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1644
+Nome :GISELA DE SOUSA MELLO
+Cargo:ASSESSOR PARA ASSUNTOS POLITICO-LEGISLATIVOS
+Vencimento Base   :2677.46
+Outros Vencimentos:0
+Total Bruto       :-242.93
+Previdencia       :-25.1
+IRRF              :2677.46
+Outros Descontos  :2369.64
+Total Descontos   :-307.82
+Total Liquido     :-39.79
+----------------------------------------------------------------

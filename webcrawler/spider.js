@@ -1,6 +1,6 @@
 var axios = require("axios");
 var cheerio = require("cheerio");
-var mysql = require("mysql");
+const mysql = require('mysql2');
 
 const con = require("./con-factory");
 
@@ -23,30 +23,29 @@ async function main() {
     });
 }
 
-function iniciar_leitura(j, i, estrutura) {
+async function iniciar_leitura(j, i, estrutura) {
+  ;
   while (j <= i) {
     try {
       var rgf = estrutura["servidores"][j].rgf;
-      requisitar_valores(rgf, j + 1);
+      await requisitar_valores(rgf, j + 1);
     } catch (err) {
       console.log(err);
       process.exit(0);
     }
     j++;
   }
-  geral.insere_basico(0, "funcionarios");
 }
 
 async function requisitar_valores(rgf, k) {
   var id = k;
-
   try {
     await axios
       .get(
         "http://www.licitacao.pmmc.com.br/Transparencia/detalhamento?rgf=" + rgf
       )
       .then((res2) => {
-        console.log(rgf);
+        //console.log(rgf);
         var detalhes = res2.data;
 
         //console.log("Nome   :" + detalhes.nome);
@@ -115,13 +114,13 @@ async function requisitar_valores(rgf, k) {
         //console.log(outros);
         con.query(
           //para evitar erro de sincronia todas as "queries" ficam dentro da query principal
-          "SELECT id,modificado FROM funcionarios WHERE rgf = " +
-            rgf +
-            " LIMIT 1",
+          "SELECT * FROM funcionarios_prefeitura WHERE rgf = " +
+          rgf +
+          " LIMIT 1",
           (err, rows, result) => {
             if (err) throw err;
             if (rows == "") {
-              console.log("Registro nao existe");
+              //console.log("Registro nao existe");
               var dados = new Array(
                 null,
                 funcionario,
@@ -134,12 +133,22 @@ async function requisitar_valores(rgf, k) {
                 totaliquido,
                 rgf
               );
-              geral.insere_basico(dados, "funcionarios");
+
+              geral.insere_basico(
+                dados,
+                "funcionarios_prefeitura"
+              );
+
             } else {
-              //console.log(rows);
-              console.log("Atualizacao de registro");
-              con.query(
-                "UPDATE funcionarios SET (NULL ,nome = '" +
+              //console.log("Atualizacao de registro");
+              console.log(rows);
+              if (
+                cargo != rows[0].cargo ||
+                descontos != rows[0].tdescontos ||
+                totalbruto != rows[0].tbruto
+              ) {
+                con.query(
+                  "UPDATE funcionarios_prefeitura SET (NULL ,nome = '" +
                   funcionario +
                   "', cargo = '" +
                   cargo +
@@ -156,7 +165,8 @@ async function requisitar_valores(rgf, k) {
                   "') WHERE rgf = '" +
                   rgf +
                   "'"
-              );
+                );
+              }
             }
           }
         );
@@ -165,7 +175,7 @@ async function requisitar_valores(rgf, k) {
 
           valores = converter_float(detalhes.rendimentos[j].valor) || 0;
 
-          console.log(nomes);
+          //console.log(nomes);
 
           carrega_detalhes("remuneracoes", rgf, nomes, valores);
         }
@@ -180,9 +190,7 @@ async function requisitar_valores(rgf, k) {
       });
   } catch (err) {
     console.log(err);
-    return 1;
   }
-  return;
 }
 
 function converter_float(numero) {
@@ -196,13 +204,13 @@ async function carrega_detalhes(alvo, rgf, nomes, valores) {
 
   con.query(
     "SELECT nome FROM " +
-      alvo +
-      " WHERE rgf = '" +
-      rgf +
-      "' and nome = '" +
-      nomes +
-      "'",
-    function (err, rows) {
+    alvo +
+    " WHERE rgf = '" +
+    rgf +
+    "' and nome = '" +
+    nomes +
+    "'",
+    function(err, rows) {
       var result = rows[0];
       if (result === undefined) {
         check = false;
@@ -211,19 +219,24 @@ async function carrega_detalhes(alvo, rgf, nomes, valores) {
       }
       if (check == false) {
         var dados = new Array(rgf, null, nomes, valores);
-        geral.insere_basico(dados, alvo);
+
+        geral.insere_basico(
+          dados,
+          alvo
+        );
+
       } else {
         console.log("Att registro 1");
         con.query(
           "UPDATE " +
-            alvo +
-            " SET (valor = '" +
-            valores +
-            "') WHERE rgf = '" +
-            rgf +
-            "' and nome = '" +
-            nomes +
-            "'"
+          alvo +
+          " SET (valor = '" +
+          valores +
+          "') WHERE rgf = '" +
+          rgf +
+          "' and nome = '" +
+          nomes +
+          "'"
         );
       }
     }

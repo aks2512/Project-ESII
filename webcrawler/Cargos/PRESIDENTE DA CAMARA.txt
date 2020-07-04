@@ -1,0 +1,13 @@
+0
+RGF  :1092
+Nome :RINALDO SADAO SAKAI
+Cargo:PRESIDENTE DA CAMARA
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :12163.65
+Outros Descontos  :9275.28
+Total Descontos   :-2888.37
+Total Liquido     :-2175.27
+----------------------------------------------------------------

@@ -1,11 +1,10 @@
 var request = require("request-promise");
 var cheerio = require("cheerio");
-var mysql = require("mysql");
-const fs = require("fs");
+var mysql = require("mysql2");
 const con = require("./con-factory");
-
 const geral = require("./geral");
 const { insere_basico } = require("./geral");
+const charset_encodings = require("mysql2/lib/constants/charset_encodings");
 
 async function principal() {
   var tipodelei = new Array(
@@ -14,8 +13,8 @@ async function principal() {
     "pelo",
     "decreto legislativo",
     "resolução"
-  );
-  var tipourl = new Array("plo", "plc", "pelo", "pdl", "pr");
+  ); //essa variavel serve para mostrar qual tipo de projeto está sendo gravado
+  var tipourl = new Array("plo", "plc", "pelo", "pdl", "pr"); //Esse vetor é responsavel por passar pelos links daonde existe cada ano e páginas dos respectivos projetos
   var projetos = new Array();
 
   var insert = new Array(0, 0, 0, 0, 0, 0, 0);
@@ -62,16 +61,19 @@ async function principal() {
             $('tbody tr[title="Clique para abrir o anexo."] a').each(
               function () {
                 //imprimeporcoluna(insert[colunas], colunas, link);//codigo para exibir dados via texto
-                insert[colunas] = $(this).text();
+                insert[colunas] = encodeURIComponent($(this).text());
+                console.log(insert[colunas]);
                 link = $(this).attr("href") || link;
 
                 colunas++;
                 if (colunas == 4) {
                   colunas = 0;
+                  process.exit(0);
                   insert[4] = link;
                   insert[5] = ano;
                   insert[6] =
                     parseInt(insert[0].replace("/", "") - (ano - 2001)) / 100;
+
                   projetos[cont][linhas] = new Array(
                     tipodelei[tipo],
                     tipourl[tipo] + ":" + insert[0],
@@ -83,6 +85,7 @@ async function principal() {
                     insert[6],
                     null
                   );
+
                   linhas++;
                 }
               }
@@ -100,6 +103,7 @@ async function principal() {
     console.log(projetos.length);
     console.log(projetos);
     while (j <= cont) {
+      //wuando todos os projetos forem gravados eles serão inseridos no BD
       var linhas = 0;
       while (linhas < projetos[j].length) {
         insere(projetos[j][linhas]);

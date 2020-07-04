@@ -1,0 +1,265 @@
+0
+RGF  :91
+Nome :PEDRO HIDEKI KOMURA
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :12163.65
+Outros Descontos  :9379.56
+Total Descontos   :-2784.09
+Total Liquido     :-2070.99
+----------------------------------------------------------------
+RGF  :715
+Nome :CARLOS EVARISTO DA SILVA
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-523.03
+IRRF              :12163.65
+Outros Descontos  :8804.39
+Total Descontos   :-3359.26
+Total Liquido     :-2123.13
+----------------------------------------------------------------
+RGF  :718
+Nome :MAURO LUIS CLAUDINO DE ARAUJO
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-3416.58
+IRRF              :12163.65
+Outros Descontos  :6798.26
+Total Descontos   :-5365.39
+Total Liquido     :-1235.71
+----------------------------------------------------------------
+RGF  :719
+Nome :PROTASSIO RIBEIRO NOGUEIRA
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :12163.65
+Outros Descontos  :9275.28
+Total Descontos   :-2888.37
+Total Liquido     :-2175.27
+----------------------------------------------------------------
+RGF  :869
+Nome :JEAN CARLOS SOARES LOPES
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-2879.22
+IRRF              :12163.65
+Outros Descontos  :6500.34
+Total Descontos   :-5663.31
+Total Liquido     :-2070.99
+----------------------------------------------------------------
+RGF  :872
+Nome :FRANCISCO MOACIR BEZERRA DE MELO FILHO 
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :12163.65
+Outros Descontos  :9171.01
+Total Descontos   :-2992.64
+Total Liquido     :-2279.54
+----------------------------------------------------------------
+RGF  :1076
+Nome :MARCOS PAULO TAVARES FURLAN
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-5096.11
+IRRF              :12163.65
+Outros Descontos  :4694.13
+Total Descontos   :-7469.52
+Total Liquido     :-1660.31
+----------------------------------------------------------------
+RGF  :1077
+Nome :CAIO CESAR MACHADO DA CUNHA
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-523.03
+IRRF              :12163.65
+Outros Descontos  :8752.25
+Total Descontos   :-3411.4
+Total Liquido     :-2175.27
+----------------------------------------------------------------
+RGF  :1086
+Nome :CLODOALDO APARECIDO DE MORAES
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-201.18
+IRRF              :12163.65
+Outros Descontos  :9074.1
+Total Descontos   :-3089.55
+Total Liquido     :-2175.27
+----------------------------------------------------------------
+RGF  :1087
+Nome :BENEDITO FAUSTINO TAUBATE GUIMARAES   
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-523.03
+IRRF              :12163.65
+Outros Descontos  :8647.98
+Total Descontos   :-3515.67
+Total Liquido     :-2279.54
+----------------------------------------------------------------
+RGF  :1095
+Nome :ANTONIO LINO DA SILVA
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-988.55
+IRRF              :12163.65
+Outros Descontos  :8234.6
+Total Descontos   :-3929.05
+Total Liquido     :-2227.4
+----------------------------------------------------------------
+RGF  :1096
+Nome :CLAUDIO YUKIO MIYAKE
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-2782.33
+IRRF              :12163.65
+Outros Descontos  :6440.82
+Total Descontos   :-5722.83
+Total Liquido     :-2227.4
+----------------------------------------------------------------
+RGF  :1101
+Nome :IDUIGUES FERREIRA MARTINS
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :12163.65
+Outros Descontos  :9171.01
+Total Descontos   :-2992.64
+Total Liquido     :-2279.54
+----------------------------------------------------------------
+RGF  :1331
+Nome :JORGE RODRIGO VALVERDE SANTANA
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-201.18
+IRRF              :12163.65
+Outros Descontos  :9126.24
+Total Descontos   :-3037.41
+Total Liquido     :-2123.13
+----------------------------------------------------------------
+RGF  :1332
+Nome :JOSE ANTONIO CUCO PEREIRA
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :12163.65
+Outros Descontos  :9223.15
+Total Descontos   :-2940.5
+Total Liquido     :-2227.4
+----------------------------------------------------------------
+RGF  :1333
+Nome :MAURO DE ASSIS MARGARIDO
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-523.03
+IRRF              :12163.65
+Outros Descontos  :8700.12
+Total Descontos   :-3463.53
+Total Liquido     :-2227.4
+----------------------------------------------------------------
+RGF  :1334
+Nome :JOSE FRANCIMARIO VIEIRA DE MACEDO
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-2770.41
+IRRF              :12163.65
+Outros Descontos  :6400.6
+Total Descontos   :-5763.05
+Total Liquido     :-2279.54
+----------------------------------------------------------------
+RGF  :1335
+Nome :EDSON DOS SANTOS
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :12163.65
+Outros Descontos  :9171.01
+Total Descontos   :-2992.64
+Total Liquido     :-2279.54
+----------------------------------------------------------------
+RGF  :1336
+Nome :FERNANDA MORENO DA SILVA
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-1421.8
+IRRF              :12163.65
+Outros Descontos  :7749.21
+Total Descontos   :-4414.44
+Total Liquido     :-2279.54
+----------------------------------------------------------------
+RGF  :1337
+Nome :DIEGO DE AMORIM MARTINS
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-532.3
+IRRF              :12163.65
+Outros Descontos  :8795.12
+Total Descontos   :-3368.53
+Total Liquido     :-2123.13
+----------------------------------------------------------------
+RGF  :1338
+Nome :PERICLES RAMALHO BAUAB
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :0
+IRRF              :12163.65
+Outros Descontos  :9171.01
+Total Descontos   :-2992.64
+Total Liquido     :-2279.54
+----------------------------------------------------------------
+RGF  :1339
+Nome :OTTO FABIO FLORES DE REZENDE
+Cargo:VEREADOR
+Vencimento Base   :12163.65
+Outros Vencimentos:0
+Total Bruto       :-713.1
+Previdencia       :-523.03
+IRRF              :12163.65
+Outros Descontos  :8804.39
+Total Descontos   :-3359.26
+Total Liquido     :-2123.13
+----------------------------------------------------------------

@@ -1,0 +1,157 @@
+0
+RGF  :1470
+Nome :RENATO BROGIA FERREIRA
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :0
+IRRF              :3064.74
+Outros Descontos  :2665.85
+Total Descontos   :-398.89
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1499
+Nome :FABIO HENRIQUE BARBOSA DOS SANTOS
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:612.95
+Total Bruto       :-337.12
+Previdencia       :-15.32
+IRRF              :3677.69
+Outros Descontos  :3178.96
+Total Descontos   :-498.73
+Total Liquido     :-146.29
+----------------------------------------------------------------
+RGF  :1500
+Nome :DIEGO CONRADO FERREIRA DA SILVA
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-650.27
+IRRF              :3064.74
+Outros Descontos  :2044.02
+Total Descontos   :-1020.72
+Total Liquido     :-33.33
+----------------------------------------------------------------
+RGF  :1509
+Nome :FELIPE DE ALMEIDA SHIMAZU
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :0
+IRRF              :3064.74
+Outros Descontos  :2665.85
+Total Descontos   :-398.89
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1536
+Nome :BASILIO SERGIO BERNARDO JUNIOR
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:612.95
+Total Bruto       :-337.12
+Previdencia       :0
+IRRF              :3677.69
+Outros Descontos  :3194.28
+Total Descontos   :-483.41
+Total Liquido     :-146.29
+----------------------------------------------------------------
+RGF  :1577
+Nome :ANA CAROLINA DE SOUZA MOURA
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-9.27
+IRRF              :3064.74
+Outros Descontos  :2656.58
+Total Descontos   :-408.16
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1578
+Nome :ANA CLARA RIZATO DO PRADO NOVAES
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-737.07
+IRRF              :3064.74
+Outros Descontos  :1971.44
+Total Descontos   :-1093.3
+Total Liquido     :-19.11
+----------------------------------------------------------------
+RGF  :1589
+Nome :THAIS LESSA
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-421.43
+IRRF              :3064.74
+Outros Descontos  :2244.42
+Total Descontos   :-820.32
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1596
+Nome :PAULO MORITUGUI
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-201.18
+IRRF              :3064.74
+Outros Descontos  :2478.89
+Total Descontos   :-585.85
+Total Liquido     :-47.55
+----------------------------------------------------------------
+RGF  :1624
+Nome :ALEX BALDESSIN MORI
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :0
+IRRF              :3064.74
+Outros Descontos  :2665.85
+Total Descontos   :-398.89
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1629
+Nome :DANILLO DOS SANTOS FERREIRA
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :0
+IRRF              :3064.74
+Outros Descontos  :2665.85
+Total Descontos   :-398.89
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1630
+Nome :FERNANDO TERUO SATO
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :3064.74
+Outros Vencimentos:0
+Total Bruto       :-337.12
+Previdencia       :-201.18
+IRRF              :3064.74
+Outros Descontos  :2464.67
+Total Descontos   :-600.07
+Total Liquido     :-61.77
+----------------------------------------------------------------
+RGF  :1642
+Nome :CAROLINE SOBRINHO MOLINA
+Cargo:AUXILIAR DE APOIO ADMINISTRATIVO
+Vencimento Base   :1123.74
+Outros Vencimentos:0
+Total Bruto       :-123.61
+Previdencia       :0
+IRRF              :1123.74
+Outros Descontos  :1000.13
+Total Descontos   :-123.61
+Total Liquido     :0
+----------------------------------------------------------------

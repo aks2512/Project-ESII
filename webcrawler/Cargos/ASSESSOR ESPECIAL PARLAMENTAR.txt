@@ -1,0 +1,49 @@
+0
+RGF  :799
+Nome :ARNALDO NOGUEIRA FILHO
+Cargo:ASSESSOR ESPECIAL PARLAMENTAR
+Vencimento Base   :4285.17
+Outros Vencimentos:857.03
+Total Bruto       :-578.86
+Previdencia       :-1008.83
+IRRF              :5142.2
+Outros Descontos  :3291.86
+Total Descontos   :-1850.34
+Total Liquido     :-262.65
+----------------------------------------------------------------
+RGF  :1391
+Nome :MARCIUS ROBERTO ALVARENGA
+Cargo:ASSESSOR ESPECIAL PARLAMENTAR
+Vencimento Base   :4285.17
+Outros Vencimentos:0
+Total Bruto       :-458.88
+Previdencia       :-422.08
+IRRF              :4285.17
+Outros Descontos  :3179.42
+Total Descontos   :-1105.75
+Total Liquido     :-224.79
+----------------------------------------------------------------
+RGF  :1448
+Nome :CELIO PEREIRA
+Cargo:ASSESSOR ESPECIAL PARLAMENTAR
+Vencimento Base   :4285.17
+Outros Vencimentos:857.03
+Total Bruto       :-578.86
+Previdencia       :-910.71
+IRRF              :5142.2
+Outros Descontos  :3262.01
+Total Descontos   :-1880.19
+Total Liquido     :-390.62
+----------------------------------------------------------------
+RGF  :1450
+Nome :ALEXANDRE DE OLIVEIRA
+Cargo:ASSESSOR ESPECIAL PARLAMENTAR
+Vencimento Base   :4285.17
+Outros Vencimentos:857.03
+Total Bruto       :-578.86
+Previdencia       :-231.88
+IRRF              :5142.2
+Outros Descontos  :4026.15
+Total Descontos   :-1116.05
+Total Liquido     :-305.31
+----------------------------------------------------------------

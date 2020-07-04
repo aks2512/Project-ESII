@@ -1,0 +1,49 @@
+0
+RGF  :28
+Nome :RAIMUNDO ANTONIO LUIZ
+Cargo:CHEFE DE DIVISÃO
+Vencimento Base   :6455.06
+Outros Vencimentos:9300.28
+Total Bruto       :-1254.59
+Previdencia       :-2748.1
+IRRF              :15755.34
+Outros Descontos  :9031.45
+Total Descontos   :-6723.89
+Total Liquido     :-2721.2
+----------------------------------------------------------------
+RGF  :579
+Nome :EMERSON FRANCISCO DE CAMARGO
+Cargo:CHEFE DE DIVISÃO
+Vencimento Base   :4127.29
+Outros Vencimentos:12379.11
+Total Bruto       :-635.56
+Previdencia       :-201.18
+IRRF              :16506.4
+Outros Descontos  :14094.52
+Total Descontos   :-2411.88
+Total Liquido     :-1575.14
+----------------------------------------------------------------
+RGF  :584
+Nome :ALEX ALEIXO
+Cargo:CHEFE DE DIVISÃO
+Vencimento Base   :9000.78
+Outros Vencimentos:3150.28
+Total Bruto       :-1138.6
+Previdencia       :0
+IRRF              :12151.06
+Outros Descontos  :8957.67
+Total Descontos   :-3193.39
+Total Liquido     :-2054.79
+----------------------------------------------------------------
+RGF  :632
+Nome :FERNANDO DA SILVA KOMURA
+Cargo:CHEFE DE DIVISÃO
+Vencimento Base   :7965.29
+Outros Vencimentos:3903.02
+Total Bruto       :-1032.14
+Previdencia       :-532.3
+IRRF              :11868.31
+Outros Descontos  :8193.28
+Total Descontos   :-3675.03
+Total Liquido     :-2110.59
+----------------------------------------------------------------

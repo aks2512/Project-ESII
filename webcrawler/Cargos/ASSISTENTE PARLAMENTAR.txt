@@ -1,0 +1,541 @@
+0
+RGF  :808
+Nome :VERA LUCIA KATSUKO UMEDA TANIWAKI
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4526.19
+Total Descontos   :-1174.8
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :868
+Nome :FRANCISCO DE ASSIS DA SILVA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4526.19
+Total Descontos   :-1174.8
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :923
+Nome :NEUSA GAVAZZI FEITAL
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-551.53
+IRRF              :5700.99
+Outros Descontos  :3974.66
+Total Descontos   :-1726.33
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1032
+Nome :KOICHI MAURICIO KINOSHITA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4526.19
+Total Descontos   :-1174.8
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1042
+Nome :ONESTO KADO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-201.18
+IRRF              :5700.99
+Outros Descontos  :4471.95
+Total Descontos   :-1229.04
+Total Liquido     :-370.77
+----------------------------------------------------------------
+RGF  :1049
+Nome :NELSON CARLOS DE LIMA PINTO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4526.19
+Total Descontos   :-1174.8
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1098
+Nome :JAIR ARAUJO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-523.03
+IRRF              :5700.99
+Outros Descontos  :4055.29
+Total Descontos   :-1645.7
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1206
+Nome :ANTONIO JOSE DA SILVA NETO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-229.68
+IRRF              :5700.99
+Outros Descontos  :4400.78
+Total Descontos   :-1300.21
+Total Liquido     :-413.44
+----------------------------------------------------------------
+RGF  :1238
+Nome :JAMILE CAROLINA DE SIQUEIRA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-9.27
+IRRF              :5700.99
+Outros Descontos  :4516.92
+Total Descontos   :-1184.07
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1290
+Nome :LIGIA REGINA FERREIRA SANCHES
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-238.95
+IRRF              :5700.99
+Outros Descontos  :4391.51
+Total Descontos   :-1309.48
+Total Liquido     :-413.44
+----------------------------------------------------------------
+RGF  :1343
+Nome :MARIA CRISTINA GOMES ELEGANCIA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-210.45
+IRRF              :5700.99
+Outros Descontos  :4315.74
+Total Descontos   :-1385.25
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1351
+Nome :MARCIO HOSOI
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-238.95
+IRRF              :5700.99
+Outros Descontos  :4339.37
+Total Descontos   :-1361.62
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1361
+Nome :ELSON FRANCISCO WERMELINGER
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-523.03
+IRRF              :5700.99
+Outros Descontos  :4107.43
+Total Descontos   :-1593.56
+Total Liquido     :-413.44
+----------------------------------------------------------------
+RGF  :1363
+Nome :MIGUEL EDUARDO DE FARIA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-184.32
+IRRF              :5700.99
+Outros Descontos  :4341.87
+Total Descontos   :-1359.12
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1366
+Nome :PATRICIA CAMPOS PALMEIRA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-269.38
+IRRF              :5700.99
+Outros Descontos  :4308.94
+Total Descontos   :-1392.05
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1394
+Nome :KAREN NEDER NISTICO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4526.19
+Total Descontos   :-1174.8
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1429
+Nome :SIDNEI ANTONIO DOS SANTOS
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-229.68
+IRRF              :5700.99
+Outros Descontos  :4348.64
+Total Descontos   :-1352.35
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1451
+Nome :ALEX VIEIRA DE ARAUJO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-208.4
+IRRF              :5700.99
+Outros Descontos  :4507.38
+Total Descontos   :-1193.61
+Total Liquido     :-328.12
+----------------------------------------------------------------
+RGF  :1481
+Nome :WELLINGTON DE BARROS SANTOS
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-272.34
+IRRF              :5700.99
+Outros Descontos  :4400.79
+Total Descontos   :-1300.2
+Total Liquido     :-370.77
+----------------------------------------------------------------
+RGF  :1488
+Nome :MANOEL BENEDITO DE LIMA FILHO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-210.45
+IRRF              :5700.99
+Outros Descontos  :4420.01
+Total Descontos   :-1280.98
+Total Liquido     :-413.44
+----------------------------------------------------------------
+RGF  :1529
+Nome :MARCOS TAVARES DA SILVA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4578.32
+Total Descontos   :-1122.67
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1532
+Nome :DANIELA CARLA APARECIDA DOMINICE
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4526.19
+Total Descontos   :-1174.8
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1541
+Nome :MICHELLE RENATA DA SILVA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4578.32
+Total Descontos   :-1122.67
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1549
+Nome :BENEDITA AMALIA DE SOUZA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-201.18
+IRRF              :5700.99
+Outros Descontos  :4325.01
+Total Descontos   :-1375.98
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1559
+Nome :FERNANDA APARECIDA DOS SANTOS BONIFACIO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-599.56
+IRRF              :5700.99
+Outros Descontos  :3926.63
+Total Descontos   :-1774.36
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1564
+Nome :VALERIO ROBSON DA SILVA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-229.68
+IRRF              :5700.99
+Outros Descontos  :4400.78
+Total Descontos   :-1300.21
+Total Liquido     :-413.44
+----------------------------------------------------------------
+RGF  :1568
+Nome :ELEZIO FRANCISCO DE OLIVEIRA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-201.18
+IRRF              :5700.99
+Outros Descontos  :4325.01
+Total Descontos   :-1375.98
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1575
+Nome :JEAN PAULO GOMES CARVALHAES
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-436.95
+IRRF              :5700.99
+Outros Descontos  :4236.18
+Total Descontos   :-1464.81
+Total Liquido     :-370.77
+----------------------------------------------------------------
+RGF  :1579
+Nome :EDSON ARMANDO FERNANDES CAMILLO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-532.3
+IRRF              :5700.99
+Outros Descontos  :4046.02
+Total Descontos   :-1654.97
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1585
+Nome :BRUNA CAROLINE TOLEDO GUEDES
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-238.95
+IRRF              :5700.99
+Outros Descontos  :4287.24
+Total Descontos   :-1413.75
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1586
+Nome :ROBERTO DONIZETI OLIVEIRA DE FARIA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-523.03
+IRRF              :5700.99
+Outros Descontos  :4107.43
+Total Descontos   :-1593.56
+Total Liquido     :-413.44
+----------------------------------------------------------------
+RGF  :1593
+Nome :EDIVALDO DOS SANTOS
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-523.03
+IRRF              :5700.99
+Outros Descontos  :4003.16
+Total Descontos   :-1697.83
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1595
+Nome :FABIO EMILIO DOS SANTOS MALTA MOREIRA   
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4578.32
+Total Descontos   :-1122.67
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1607
+Nome :SERGIO DE OLIVEIRA FILHO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4526.19
+Total Descontos   :-1174.8
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1609
+Nome :LETICIA OHARA DE CAMARGO CUNHA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4526.19
+Total Descontos   :-1174.8
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1613
+Nome :OSMAR VICTOR RIBEIRO BOCCHI
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-272.34
+IRRF              :5700.99
+Outros Descontos  :4305.98
+Total Descontos   :-1395.01
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1619
+Nome :ERIC WELSON DE ANDRADE
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-9.27
+IRRF              :5700.99
+Outros Descontos  :4516.92
+Total Descontos   :-1184.07
+Total Liquido     :-517.71
+----------------------------------------------------------------
+RGF  :1623
+Nome :GERSON LINO DA SILVA JUNIOR
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-238.95
+IRRF              :5700.99
+Outros Descontos  :4391.51
+Total Descontos   :-1309.48
+Total Liquido     :-413.44
+----------------------------------------------------------------
+RGF  :1628
+Nome :FERNANDO IVO ANTUNES
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4630.46
+Total Descontos   :-1070.53
+Total Liquido     :-413.44
+----------------------------------------------------------------
+RGF  :1631
+Nome :WENDERSON SANTOS MOURA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-210.45
+IRRF              :5700.99
+Outros Descontos  :4420.01
+Total Descontos   :-1280.98
+Total Liquido     :-413.44
+----------------------------------------------------------------
+RGF  :1636
+Nome :ELLOAH VIOLANTE NUDI
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5020.23
+Outros Vencimentos:0
+Total Bruto       :-561.79
+Previdencia       :0
+IRRF              :5020.23
+Outros Descontos  :4091.42
+Total Descontos   :-928.81
+Total Liquido     :-367.02
+----------------------------------------------------------------
+RGF  :1637
+Nome :CIBELE ALINE DE SIQUEIRA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4673.13
+Total Descontos   :-1027.86
+Total Liquido     :-370.77
+----------------------------------------------------------------
+RGF  :1638
+Nome :WANDER ALMEIDA DOS ANJOS
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :-201.18
+IRRF              :5700.99
+Outros Descontos  :4471.95
+Total Descontos   :-1229.04
+Total Liquido     :-370.77
+----------------------------------------------------------------
+RGF  :1641
+Nome :FABIO DONIZETI DA SILVA
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :5700.99
+Outros Vencimentos:0
+Total Bruto       :-657.09
+Previdencia       :0
+IRRF              :5700.99
+Outros Descontos  :4578.32
+Total Descontos   :-1122.67
+Total Liquido     :-465.58
+----------------------------------------------------------------
+RGF  :1645
+Nome :RENATA FALQUE DE MELLO
+Cargo:ASSISTENTE PARLAMENTAR
+Vencimento Base   :2090.36
+Outros Vencimentos:0
+Total Bruto       :-172.48
+Previdencia       :0
+IRRF              :2090.36
+Outros Descontos  :1917.88
+Total Descontos   :-172.48
+Total Liquido     :0
+----------------------------------------------------------------

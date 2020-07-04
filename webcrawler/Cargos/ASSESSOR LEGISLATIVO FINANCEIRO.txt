@@ -1,0 +1,13 @@
+0
+RGF  :1508
+Nome :POLIANA DE LIMA NORONHA
+Cargo:ASSESSOR LEGISLATIVO FINANCEIRO
+Vencimento Base   :4285.17
+Outros Vencimentos:0
+Total Bruto       :-471.37
+Previdencia       :-9.27
+IRRF              :4285.17
+Outros Descontos  :3582.56
+Total Descontos   :-702.61
+Total Liquido     :-221.97
+----------------------------------------------------------------

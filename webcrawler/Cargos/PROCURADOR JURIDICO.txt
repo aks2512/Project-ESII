@@ -1,0 +1,37 @@
+0
+RGF  :806
+Nome :DEBORAH MORAES DE SA
+Cargo:PROCURADOR JURIDICO
+Vencimento Base   :8258.58
+Outros Vencimentos:2477.58
+Total Bruto       :-999.29
+Previdencia       :0
+IRRF              :10736.16
+Outros Descontos  :7928.59
+Total Descontos   :-2807.57
+Total Liquido     :-1808.28
+----------------------------------------------------------------
+RGF  :823
+Nome :ANDRE DE CAMARGO ALMEIDA
+Cargo:PROCURADOR JURIDICO CHEFE
+Vencimento Base   :8361.81
+Outros Vencimentos:4926.3
+Total Bruto       :-1064.97
+Previdencia       :-426.52
+IRRF              :13288.11
+Outros Descontos  :9304.62
+Total Descontos   :-3983.49
+Total Liquido     :-2492
+----------------------------------------------------------------
+RGF  :1446
+Nome :FELIPE ROCHA MAGALHAES
+Cargo:PROCURADOR JURIDICO
+Vencimento Base   :7956.47
+Outros Vencimentos:0
+Total Bruto       :-875.21
+Previdencia       :-39.78
+IRRF              :7956.47
+Outros Descontos  :5963.49
+Total Descontos   :-1992.98
+Total Liquido     :-1077.99
+----------------------------------------------------------------

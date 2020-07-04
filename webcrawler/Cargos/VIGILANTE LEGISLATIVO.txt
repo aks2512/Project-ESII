@@ -1,0 +1,241 @@
+0
+RGF  :377
+Nome :FILADELFO DOS SANTOS
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2826.32
+Outros Vencimentos:2396.72
+Total Bruto       :-512.98
+Previdencia       :-225.42
+IRRF              :5223.04
+Outros Descontos  :4058.73
+Total Descontos   :-1164.31
+Total Liquido     :-425.91
+----------------------------------------------------------------
+RGF  :378
+Nome :RALPH GUILHERME DA SILVA CUNHA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2826.3
+Outros Vencimentos:1837.1
+Total Bruto       :-512.97
+Previdencia       :-1131.77
+IRRF              :4663.4
+Outros Descontos  :2836.21
+Total Descontos   :-1827.19
+Total Liquido     :-182.45
+----------------------------------------------------------------
+RGF  :379
+Nome :NIVALDO ALVES BARBOSA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2826.3
+Outros Vencimentos:2396.71
+Total Bruto       :-512.97
+Previdencia       :-470.21
+IRRF              :5223.01
+Outros Descontos  :3858.86
+Total Descontos   :-1364.15
+Total Liquido     :-380.97
+----------------------------------------------------------------
+RGF  :380
+Nome :DONIZETI DE ALMEIDA SILVA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2826.3
+Outros Vencimentos:2261.05
+Total Bruto       :-559.61
+Previdencia       :-1269.61
+IRRF              :5087.35
+Outros Descontos  :3084.66
+Total Descontos   :-2002.69
+Total Liquido     :-173.47
+----------------------------------------------------------------
+RGF  :381
+Nome :PEDRO OLEJNIK
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2826.3
+Outros Vencimentos:1837.1
+Total Bruto       :-512.97
+Previdencia       :-222.79
+IRRF              :4663.4
+Outros Descontos  :3672.58
+Total Descontos   :-990.82
+Total Liquido     :-255.06
+----------------------------------------------------------------
+RGF  :382
+Nome :WASHINGTON CARLOS DE MELO
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2826.3
+Outros Vencimentos:2261.05
+Total Bruto       :-559.61
+Previdencia       :-729.78
+IRRF              :5087.35
+Outros Descontos  :3415.35
+Total Descontos   :-1672
+Total Liquido     :-382.61
+----------------------------------------------------------------
+RGF  :384
+Nome :JOSE CARLOS DE OLIVEIRA CARDONI
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2826.3
+Outros Vencimentos:2396.71
+Total Bruto       :-512.97
+Previdencia       :-213.52
+IRRF              :5223.01
+Outros Descontos  :4158.21
+Total Descontos   :-1064.8
+Total Liquido     :-338.31
+----------------------------------------------------------------
+RGF  :386
+Nome :MARCIO DE OLIVEIRA LOPES
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2826.3
+Outros Vencimentos:3171.68
+Total Bruto       :-589.09
+Previdencia       :-753.48
+IRRF              :5997.98
+Outros Descontos  :4089.46
+Total Descontos   :-1908.52
+Total Liquido     :-565.95
+----------------------------------------------------------------
+RGF  :388
+Nome :ANTONIO CARLOS LEME DA SILVA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2826.3
+Outros Vencimentos:1837.1
+Total Bruto       :-512.97
+Previdencia       :0
+IRRF              :4663.4
+Outros Descontos  :3895.37
+Total Descontos   :-768.03
+Total Liquido     :-255.06
+----------------------------------------------------------------
+RGF  :663
+Nome :MARIO NUNES DA SILVA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2756.97
+Outros Vencimentos:1240.64
+Total Bruto       :-439.74
+Previdencia       :-835.27
+IRRF              :3997.61
+Outros Descontos  :2600.6
+Total Descontos   :-1397.01
+Total Liquido     :-122
+----------------------------------------------------------------
+RGF  :697
+Nome :HENRIQUE APARECIDO DA SILVA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2756.96
+Outros Vencimentos:1240.63
+Total Bruto       :-439.73
+Previdencia       :-905.2
+IRRF              :3997.59
+Outros Descontos  :2473.78
+Total Descontos   :-1523.81
+Total Liquido     :-178.88
+----------------------------------------------------------------
+RGF  :1458
+Nome :EDGAR GEOVANINI LOPES DA SILVA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2467.55
+Outros Vencimentos:740.27
+Total Bruto       :-352.86
+Previdencia       :-239.52
+IRRF              :3207.82
+Outros Descontos  :2542
+Total Descontos   :-665.82
+Total Liquido     :-73.44
+----------------------------------------------------------------
+RGF  :1469
+Nome :DAVID JUNIOR ROSA ZAMBOTI
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2467.55
+Outros Vencimentos:1125.21
+Total Bruto       :-352.86
+Previdencia       :-9.27
+IRRF              :3592.76
+Outros Descontos  :3099.45
+Total Descontos   :-493.31
+Total Liquido     :-131.18
+----------------------------------------------------------------
+RGF  :1472
+Nome :ANDRE PEREIRA DE OLIVEIRA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2467.55
+Outros Vencimentos:740.27
+Total Bruto       :-352.86
+Previdencia       :-585.37
+IRRF              :3207.82
+Outros Descontos  :2240.93
+Total Descontos   :-966.89
+Total Liquido     :-28.66
+----------------------------------------------------------------
+RGF  :1474
+Nome :JONAS BARBOSA DE ANDRADE LIMA LISBOA   
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2467.55
+Outros Vencimentos:1125.21
+Total Bruto       :-281.71
+Previdencia       :-210.45
+IRRF              :3592.76
+Outros Descontos  :3057.8
+Total Descontos   :-534.96
+Total Liquido     :-42.8
+----------------------------------------------------------------
+RGF  :1484
+Nome :ANTONIO KLECIO MARQUES DIAS
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2467.55
+Outros Vencimentos:1125.21
+Total Bruto       :-352.86
+Previdencia       :-12.34
+IRRF              :3592.76
+Outros Descontos  :3096.38
+Total Descontos   :-496.38
+Total Liquido     :-131.18
+----------------------------------------------------------------
+RGF  :1485
+Nome :FELIPE SALES NOGUEIRA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2467.55
+Outros Vencimentos:740.27
+Total Bruto       :-352.86
+Previdencia       :-311.12
+IRRF              :3207.82
+Outros Descontos  :2500.96
+Total Descontos   :-706.86
+Total Liquido     :-42.88
+----------------------------------------------------------------
+RGF  :1567
+Nome :BOANERGES ANTONIO MELO LISBOA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2467.55
+Outros Vencimentos:740.27
+Total Bruto       :-352.86
+Previdencia       :-541.34
+IRRF              :3207.82
+Outros Descontos  :2240.18
+Total Descontos   :-967.64
+Total Liquido     :-73.44
+----------------------------------------------------------------
+RGF  :1604
+Nome :MARCOS ANDRE CARVALHO SILVA
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2467.55
+Outros Vencimentos:740.27
+Total Bruto       :-352.86
+Previdencia       :-311.12
+IRRF              :3207.82
+Outros Descontos  :2500.96
+Total Descontos   :-706.86
+Total Liquido     :-42.88
+----------------------------------------------------------------
+RGF  :1626
+Nome :SILVANO DE PAULA SANTOS
+Cargo:VIGILANTE LEGISLATIVO
+Vencimento Base   :2467.55
+Outros Vencimentos:1125.21
+Total Bruto       :-232.89
+Previdencia       :-1487.12
+IRRF              :3592.76
+Outros Descontos  :1845.36
+Total Descontos   :-1747.4
+Total Liquido     :-27.39
+----------------------------------------------------------------

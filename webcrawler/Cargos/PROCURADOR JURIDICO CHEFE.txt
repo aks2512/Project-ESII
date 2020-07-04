@@ -1,0 +1,13 @@
+0
+RGF  :823
+Nome :ANDRE DE CAMARGO ALMEIDA
+Cargo:PROCURADOR JURIDICO CHEFE
+Vencimento Base   :8361.81
+Outros Vencimentos:4926.3
+Total Bruto       :-1064.97
+Previdencia       :-426.52
+IRRF              :13288.11
+Outros Descontos  :9304.62
+Total Descontos   :-3983.49
+Total Liquido     :-2492
+----------------------------------------------------------------
