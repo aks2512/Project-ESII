@@ -7,9 +7,17 @@ app.get("/API", function(req, res) {
     });
 })
 
+app.get("/API/ligar_webcrawler", function(req, res) {
+    var funcionarios = require("../../webcrawler/spider");
+    funcionarios.todos_os_funcionarios(true, true) //com contagem automatica + funcionarios camara +prefeitura
+    res.json({
+        aviso: "ok!"
+    });
+})
+
 app.get("/API/carregar_funcionarios_geral", function(req, res) {
     var funcionarios = require("../../webcrawler/spider");
-    funcionarios.todos_os_funcionarios(false, true)
+    funcionarios.todos_os_funcionarios(false, true) //funcionarios camara + prefeitura
     res.json({
         aviso: "ok!"
     });
@@ -17,6 +25,7 @@ app.get("/API/carregar_funcionarios_geral", function(req, res) {
 
 app.get("/API/carregar_funcionarios_prefeitura", function(req, res) {
     var funcionarios = require("../../webcrawler/spider")
+    funcionarios.todos_os_funcionarios(false, true)
 })
 
 app.get("/API/carregar_funcionarios_camara", function(req, res) {
@@ -28,6 +37,7 @@ app.get("/API/carregar_funcionarios_camara", function(req, res) {
 })
 
 app.get("/API/projetos", function(req, res) {
+    var projetos
     res.json({
         aviso: "ok!"
     });
