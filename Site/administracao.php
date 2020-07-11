@@ -1,10 +1,10 @@
 <?php
 
-  session_start();
+session_start();
 
-  if($_SESSION['usuario'] == NULL){
-    header("location: Login.php");
-  }
+if ($_SESSION['usuario'] == NULL) {
+  header("location: Login.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
   <link type="text/css" href="css/estilo-administracao.css" rel="stylesheet">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <script src="https://kit.fontawesome.com/cabb383e5b.js" crossorigin="anonymous"></script>
-  
+
   <title>Document</title>
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -27,23 +27,27 @@
 <body>
   <div class="container">
 
-  <!-- Static navbar -->
-  <nav class="navbar navbar-light navbar-static-top">
-	        <div class="navbar-header">
-            <label class="text-dark strong btn btn-light">
-              Administrador-Menu
-              <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span><i class="fas fa-angle-down"></i></span>
-              </button>
-            </label>
-	        </div>
-	        
-	        <div id="navbar" class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav navbar-right ">
-	            <li class="nav-item"><a class=" nav-link" href="Login.php?signout=1"><strong>Sair</strong></a></li>
-	          </ul>
-	        </div><!--/.nav-collapse -->
-	    </nav>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-light navbar-static-top">
+      <div class="navbar-header">
+        <label class="text-dark strong btn btn-light">
+          Administrador-Menu
+          <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fas fa-angle-down"></i></span>
+          </button>
+        </label>
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right ">
+          <li class="nav-item"><button id="btn-carregar_funcionarios" onclick="WebCrawler_funcionarios()" class="btn btn-info">Carregar Funcionarios</button></li>
+          <li class="nav-item"><a class=" nav-link" href="Login.php?signout=1"><strong class="btn btn-danger">Sair</strong></a></li>
+
+
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </nav>
 
     <!-- Banner -->
     <div class="row align-items-center">
@@ -63,20 +67,29 @@
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=funcionariosCamara">Funcionários Camara</a>
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=projetos">Projetos</a>
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=pesquisa">Pesquisa de Interesses</a>
+      <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=pesquisa">Pesquisa de Interesses</a>
     </div>
 
     <!-- Funções-->
     <div class="col-md-12 text-center " id="funcoes">
-    <?php
+      <?php
 
       $valor = @$_GET['p'];
 
-      if($valor == 'funcionariosPrefeitura'|| $valor == NULL){ require_once 'administracao-funcionariosPrefeitura.php';}
-      if($valor == 'funcionariosCamara'){ require_once 'administracao-funcionariosCamara.php';}
-      if($valor == 'projetos'){ require_once 'administracao-projetos.php';}
-      if($valor == 'pesquisa'){ require_once 'administracao-interesses.php';}
+      if ($valor == 'funcionariosPrefeitura' || $valor == NULL) {
+        require_once 'administracao-funcionariosPrefeitura.php';
+      }
+      if ($valor == 'funcionariosCamara') {
+        require_once 'administracao-funcionariosCamara.php';
+      }
+      if ($valor == 'projetos') {
+        require_once 'administracao-projetos.php';
+      }
+      if ($valor == 'pesquisa') {
+        require_once 'administracao-interesses.php';
+      }
 
-    ?>
+      ?>
     </div>
   </div>
   </div>
@@ -90,11 +103,13 @@
       </div>
     </div>
   </footer>
-    
+
   <!-- Javascript -->
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <scrip src="node_modules/@popperjs\core/dist/umd/popper.js"></scrip>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="scriptJS/AcoesWebcrawler.js"></script>
+  <script src="../webcrawler/spider.js"></script>
 
 
 </body>

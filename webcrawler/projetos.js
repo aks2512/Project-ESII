@@ -3,10 +3,22 @@ var cheerio = require("cheerio");
 var mysql = require("mysql2");
 const con = require("./con-factory");
 const geral = require("./geral");
-const { insere_basico } = require("./geral");
-const charset_encodings = require("mysql2/lib/constants/charset_encodings");
+const {
+  insere_basico
+} = require("./geral");
+var iconv = require("iconv-lite");
+const fs = require("fs");
+
+var requisicoes = 0;
+var finalizacoes = 0;
+
+principal();
 
 async function principal() {
+  var data = new Date();
+  var AnoAtual = data.getFullYear(); //Coleta o ano atual
+  var items = 0;
+
   var tipodelei = new Array(
     "leiordinaria",
     "leicomplementar",
@@ -23,57 +35,54 @@ async function principal() {
   while (tipo < tipourl.length) {
     var ano = 2005;
     console.log(tipodelei[tipo]);
-    while (ano <= 2020) {
+    while (ano <= AnoAtual) {
       var paginas = 0;
       projetos[cont] = new Array();
       var k = 0;
       await request(
         //Esse request mapeia a quantidade de paginas das tabelas de cada ano
         "http://www.cmmc.com.br/projetos/" +
-          tipourl[tipo] +
-          ".php?pg=0&textfield_num=&textfield_assunto=&textfield_autor=&ano=" +
-          ano,
-        async function (err, response, html) {
+        tipourl[tipo] +
+        ".php?pg=0&textfield_num=&textfield_assunto=&textfield_autor=&ano=" +
+        ano,
+        async function(err, response, html) {
           var $ = await cheerio.load(html);
-
-          $(".pg").each(function () {
+          $(".pg").each(function() {
             paginas++;
           });
         }
       );
       var linhas = 0;
       while (k <= paginas) {
-        await request(
-          //Esse request chama as paginas do site usando as "paginas da tabela" como referencia
-          "http://www.cmmc.com.br/projetos/" +
-            tipourl[tipo] +
-            ".php?pg=" +
-            k +
-            "&textfield_num=&textfield_assunto=&textfield_autor=&ano=" +
-            ano,
-          function (err, response, html) {
+        await request.get({
+            uri: "http://www.cmmc.com.br/projetos/" +
+              tipourl[tipo] +
+              ".php?pg=" +
+              k +
+              "&textfield_num=&textfield_assunto=&textfield_autor=&ano=" +
+              ano,
+            encoding: null,
+          },
+          function(err, response, html) {
             if (err) console.log("Erro:" + err);
+            html = iconv.decode(html, "ISO-8859-1");
             var $ = cheerio.load(html);
             var link;
 
             var colunas = 0;
 
             $('tbody tr[title="Clique para abrir o anexo."] a').each(
-              function () {
-                //imprimeporcoluna(insert[colunas], colunas, link);//codigo para exibir dados via texto
-                insert[colunas] = encodeURIComponent($(this).text());
-                console.log(insert[colunas]);
+              function() {
+                insert[colunas] = $(this).text().trim().replace("'", "");
                 link = $(this).attr("href") || link;
 
                 colunas++;
                 if (colunas == 4) {
                   colunas = 0;
-                  process.exit(0);
                   insert[4] = link;
                   insert[5] = ano;
                   insert[6] =
                     parseInt(insert[0].replace("/", "") - (ano - 2001)) / 100;
-
                   projetos[cont][linhas] = new Array(
                     tipodelei[tipo],
                     tipourl[tipo] + ":" + insert[0],
@@ -85,8 +94,9 @@ async function principal() {
                     insert[6],
                     null
                   );
-
+                  console.log(insert);
                   linhas++;
+                  items++;
                 }
               }
             );
@@ -100,10 +110,8 @@ async function principal() {
     }
     cont--; //correção do ultimo incremento de cont
     var j = 0;
-    console.log(projetos.length);
-    console.log(projetos);
     while (j <= cont) {
-      //wuando todos os projetos forem gravados eles serão inseridos no BD
+      //quando todos os projetos forem gravados eles serão inseridos no BD
       var linhas = 0;
       while (linhas < projetos[j].length) {
         insere(projetos[j][linhas]);
@@ -131,34 +139,90 @@ function imprimeporcoluna(celula, i, link) {
   }
 }
 
-principal();
-
 function insere(insert) {
-  //if deve ficar no começo do .each, caso contrário apenas o ultimo valor é carregado
   con.query(
-    "SELECT * FROM projetos WHERE Codigo = '" + insert[0] + "' LIMIT 1",
-    (err, rows, result) => {
+    "SELECT * FROM projetos WHERE codigo = '" + insert[1] + "'",
+    function(err, rows, result) {
       if (err) throw err;
-      var resposta = rows;
-      if (resposta[0] === undefined) {
-        geral.insere_basico(insert, "projetos");
+      var resposta = rows || undefined;
+      if (resposta === undefined || resposta[0] == "") {
+        geral.insere_basico(insert, "funcionarios_camara");
       } else {
+        console.log("Att registro");
+        console.log(resposta[0]);
         con.query(
-          "UPDATE projetos SET Autor = '" +
-            insert[1] +
-            "', Assunto = '" +
-            insert[2] +
-            "', Anotacao = '" +
-            insert[3] +
-            "', LinkDocumento = '" +
-            insert[4] +
-            "', Ano = '" +
-            insert[5] +
-            "' WHERE Codigo = '" +
-            insert[0] +
-            "'"
+          "UPDATE projetos SET autor = '" +
+          insert[2] +
+          "', assunto = '" +
+          insert[3] +
+          "', anotacao = '" +
+          insert[4] +
+          "', link = '" +
+          insert[5] +
+          "', ano = '" +
+          insert[6] +
+          "', modificado = NULL WHERE codigo = '" +
+          insert[1] +
+          "'",
+          function(err, results) {
+            if (err) throw err;
+          }
         );
       }
     }
   );
 }
+
+var seg = 59;
+var min = 59;
+var hora = 23;
+var dia = 6;
+
+con_main.on("acquire", function() {
+  requisicoes++;
+});
+con_main.on("release", function() {
+  setTimeout(function() {
+    finalizacoes++;
+    console.log(finalizacoes + ":" + requisicoes);
+    if (finalizacoes == requisicoes) {
+      //quando todas as requisições estiverem acabadas
+
+
+
+      var int = setInterval(function() {
+        console.clear();
+        seg--;
+
+        if (seg == -1) {
+          seg = 59;
+          min--;
+        }
+        if (min == -1) {
+          min = 59;
+          hora--;
+        }
+        if (hora == -1) {
+          hora = 23;
+          dia--;
+        }
+        if (dia <= -1) {
+          dia = 29;
+          principal();
+          clearInterval(int);
+        }
+        console.log(
+          "Próxima execução em: " +
+          dia +
+          " dia(s) " +
+          hora +
+          "h " +
+          min +
+          " min " +
+          seg +
+          " s"
+        );
+      }, 1);
+    }
+  }, 10000); //atraso para que o programa conssiga gerar todas as requisicoes
+});

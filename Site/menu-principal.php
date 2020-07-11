@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" href="./css/estilo-menu.css" rel="stylesheet">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-  
+
   <title>Document</title>
 
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -31,12 +31,6 @@
     </div>
 
     <div class="btn-group" role="group">
-<<<<<<< HEAD
-
-      <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=funcionarios">Servidores Públicos</a>
-
-=======
->>>>>>> 4060dca1d6a91f5279d423048afa04fc7f5593ad
       <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=funcionariosPrefeitura">Funcionários Prefeitura</a>
       <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=funcionariosCamara">Funcionários Câmara</a>
       <a class="btn btn-primary btn-opcoes" href="./menu-principal.php?p=projetos">Projetos</a>
@@ -47,11 +41,17 @@
       <?php
 
 
-        $valor = @$_GET['p'];
+      $valor = @$_GET['p'];
 
-        if($valor == 'funcionariosPrefeitura'|| $valor == NULL){ require_once 'menu-funcionariosPrefeitura.php';}
-        if($valor == 'funcionariosCamara'){ require_once 'menu-funcionariosCamara.php';}
-        if($valor == 'projetos'){ require_once 'menu-projetos.php';}
+      if ($valor == 'funcionariosPrefeitura' || $valor == NULL) {
+        require_once 'menu-funcionariosPrefeitura.php';
+      }
+      if ($valor == 'funcionariosCamara') {
+        require_once 'menu-funcionariosCamara.php';
+      }
+      if ($valor == 'projetos') {
+        require_once 'menu-projetos.php';
+      }
 
       ?>
     </div>
@@ -67,7 +67,7 @@
       </div>
     </div>
   </footer>
-    
+
   <!-- Javascript -->
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <scrip src="node_modules/@popperjs\core/dist/umd/popper.js"></scrip>

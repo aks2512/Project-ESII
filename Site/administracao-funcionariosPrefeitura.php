@@ -9,8 +9,7 @@
     <div class="col-md-4">
       <div class="row justify-content-center align-items-center">
         <p class="p-form col-md-4 m-0">Mostrar</p>
-        <select class="col-md-4" id="controlalinhas" name="qtdeLinhas" type="number"
-          title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
+        <select class="col-md-4" id="controlalinhas" name="qtdeLinhas" type="number" title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
           <option value=10>10</option>
           <option value=25>25</option>
           <option value=50>50</option>
@@ -59,36 +58,33 @@
     </table>
   </div>
 </div>
- 
+
 <hr>
 
 <div id="paginacao">
 
 </div>
 
-<div class="modal fade" id="OptIncluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal fade" id="OptIncluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content" id="Incluir"> </div>
   </div>
 </div>
 
-<div class="modal fade" id="OptAtualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal fade" id="OptAtualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content" id="Atualizar"></div>
   </div>
 </div>
 
-<div class="modal" id="OptGrafico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal" id="OptGrafico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-content modal-xl container" role="document">
     <div id="Grafico" style="width: 100%; height: 500px;"></div>
   </div>
 </div>
 
 <div id="scriptGrafico">
-  <?php require('./funcionarioPrefeituraGrafico.php');?>
+  <?php require('./funcionarioPrefeituraGrafico.php'); ?>
 </div>
 <script src="scriptJS/carregaTabelaFuncionarioPrefeituraAdm.js"></script>
 <script src="scriptJS/addInputFuncionarioPrefeitura.js"></script>

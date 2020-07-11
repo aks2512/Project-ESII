@@ -1,30 +1,92 @@
 var axios = require("axios");
 var cheerio = require("cheerio");
-const mysql = require('mysql2');
-
-const con = require("./con-factory");
+const mysql = require("mysql2");
+const con_main = require("./con-factory");
+var carregar_pdf = require("./prepara_pdf");
 
 var geral = require("./geral");
+var requisicoes = 0;
+var finalizacoes = 0;
 
-main();
+module.exports = {
+  async todos_os_funcionarios(acc_manual, geral) {
+    var prepara_pdf = require("./prepara_pdf");
 
-async function main() {
-  axios
-    .get("http://www.licitacao.pmmc.com.br/Transparencia/vencimentos2")
-    .then((res) => {
-      var estrutura = res.data;
+    if (geral) {
+      await prepara_pdf.pegar_cargos();
+    }
 
-      var i = estrutura["servidores"].length - 1;
-      var j = 0;
-      iniciar_leitura(j, i, estrutura);
-    })
-    .catch((err) => {
-      throw new Error(err);
+    axios
+      .get("http://www.licitacao.pmmc.com.br/Transparencia/vencimentos2")
+      .then((res) => {
+        var estrutura = res.data;
+
+        var i = estrutura["servidores"].length - 1;
+        var j = 0;
+        iniciar_leitura(j, i, estrutura);
+      })
+      .catch((err) => {
+        throw new Error(err);
+      });
+
+    var seg = 59;
+    var min = 59;
+    var hora = 23;
+    var dia = 29;
+
+    con_main.on("acquire", function() {
+      requisicoes++;
     });
+    con_main.on("release", function() {
+      setTimeout(function() {
+        finalizacoes++;
+        console.log(finalizacoes + ":" + requisicoes);
+        if (finalizacoes == requisicoes && acc_manual == false) {
+          //quando todas as requisições estiverem acabadas
+
+
+
+          var int = setInterval(function() {
+            console.clear();
+            seg--;
+
+            if (seg == -1) {
+              seg = 59;
+              min--;
+            }
+            if (min == -1) {
+              min = 59;
+              hora--;
+            }
+            if (hora == -1) {
+              hora = 23;
+              dia--;
+            }
+            if (dia <= -1) {
+              dia = 29;
+              todos_os_funcionarios();
+              clearInterval(int);
+            }
+            console.log(
+              "Próxima execução em: " +
+              dia +
+              " dia(s) " +
+              hora +
+              "h " +
+              min +
+              " min " +
+              seg +
+              " s"
+            );
+          }, 1);
+        }
+      }, 10000); //atraso para que o programa conssiga gerar todas as requisicoes
+    });
+  }
 }
 
+
 async function iniciar_leitura(j, i, estrutura) {
-  ;
   while (j <= i) {
     try {
       var rgf = estrutura["servidores"][j].rgf;
@@ -112,14 +174,14 @@ async function requisitar_valores(rgf, k) {
         //console.log("-------------------------");
 
         //console.log(outros);
-        con.query(
+        con_main.query(
           //para evitar erro de sincronia todas as "queries" ficam dentro da query principal
           "SELECT * FROM funcionarios_prefeitura WHERE rgf = " +
           rgf +
           " LIMIT 1",
           (err, rows, result) => {
             if (err) throw err;
-            if (rows == "") {
+            if (rows == "" || rows[0] === undefined) {
               //console.log("Registro nao existe");
               var dados = new Array(
                 null,
@@ -134,39 +196,31 @@ async function requisitar_valores(rgf, k) {
                 rgf
               );
 
-              geral.insere_basico(
-                dados,
-                "funcionarios_prefeitura"
-              );
-
+              geral.insere_basico(dados, "funcionarios_prefeitura");
             } else {
               //console.log("Atualizacao de registro");
               console.log(rows);
-              if (
-                cargo != rows[0].cargo ||
-                descontos != rows[0].tdescontos ||
-                totalbruto != rows[0].tbruto
-              ) {
-                con.query(
-                  "UPDATE funcionarios_prefeitura SET (NULL ,nome = '" +
-                  funcionario +
-                  "', cargo = '" +
-                  cargo +
-                  "',modificado = NULL, regime = '" +
-                  regime +
-                  "', outros_descontos = '" +
-                  outros +
-                  "', tbruto = '" +
-                  totalbruto +
-                  "', tdescontos = '" +
-                  descontos +
-                  "', tliquido = '" +
-                  totaliquido +
-                  "') WHERE rgf = '" +
-                  rgf +
-                  "'"
-                );
-              }
+              con_main.query(
+                "UPDATE funcionarios_prefeitura SET nome = '" +
+                funcionario +
+                "', cargo = '" +
+                cargo +
+                "',modificado = NULL, regime = '" +
+                regime +
+                "', outros_descontos = '" +
+                outros +
+                "', tbruto = '" +
+                totalbruto +
+                "', tdesconto = '" +
+                descontos +
+                "', tliquido = '" +
+                totaliquido +
+                "' WHERE rgf = '" +
+                rgf +
+                "'",
+                function(err) {
+                  if (err) throw err;
+                });
             }
           }
         );
@@ -202,7 +256,7 @@ function converter_float(numero) {
 async function carrega_detalhes(alvo, rgf, nomes, valores) {
   var check = false;
 
-  con.query(
+  con_main.query(
     "SELECT nome FROM " +
     alvo +
     " WHERE rgf = '" +
@@ -220,24 +274,22 @@ async function carrega_detalhes(alvo, rgf, nomes, valores) {
       if (check == false) {
         var dados = new Array(rgf, null, nomes, valores);
 
-        geral.insere_basico(
-          dados,
-          alvo
-        );
-
+        geral.insere_basico(dados, alvo);
       } else {
         console.log("Att registro 1");
-        con.query(
+        con_main.query(
           "UPDATE " +
           alvo +
-          " SET (valor = '" +
+          " SET valor = '" +
           valores +
-          "') WHERE rgf = '" +
+          "' WHERE rgf = '" +
           rgf +
           "' and nome = '" +
           nomes +
-          "'"
-        );
+          "'",
+          function(err) {
+            if (err) throw err;
+          });
       }
     }
   );
