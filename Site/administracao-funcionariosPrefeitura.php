@@ -35,6 +35,7 @@
     <button id="btn-excluir" class="btn btn-danger" onclick="excluir()" href="">Excluir</button>
     <button id="btn-grafico" class="btn btn-success" onclick="pegarDados()">Gráfico</button>
     <button id="btn-historico" class="btn btn-secondary" href="">Histórico</button>
+    <a href="http://localhost:3000/API/selecionar_funcionarios_prefeitura"><strong class="btn btn-info">JSON</strong></a>
   </div>
 </div>
 

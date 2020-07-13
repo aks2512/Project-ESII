@@ -40,7 +40,9 @@ if ($_SESSION['usuario'] == NULL) {
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right ">
-          <li class="nav-item"><button id="btn-carregar_funcionarios" onclick="WebCrawler_funcionarios()" class="btn btn-info">Carregar Funcionarios</button></li>
+
+          <li class="nav-item"><button id="btn-carregar_funcionarios" onclick="manual_func_att()" class="btn btn-info">Carregar Funcionarios</button></li>
+          <li class="nav-item"><button id="btn-carregar_projetos" onclick="manual_projeto_att()" class="btn btn-info">Carregar Projetos</button></li>
           <li class="nav-item"><a class=" nav-link" href="Login.php?signout=1"><strong class="btn btn-danger">Sair</strong></a></li>
 
 
@@ -66,7 +68,6 @@ if ($_SESSION['usuario'] == NULL) {
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=funcionariosPrefeitura">Funcionários Prefeitura</a>
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=funcionariosCamara">Funcionários Camara</a>
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=projetos">Projetos</a>
-      <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=pesquisa">Pesquisa de Interesses</a>
       <a class="btn btn-primary btn-opcoes" href="./administracao.php?p=pesquisa">Pesquisa de Interesses</a>
     </div>
 
@@ -108,9 +109,7 @@ if ($_SESSION['usuario'] == NULL) {
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <scrip src="node_modules/@popperjs\core/dist/umd/popper.js"></scrip>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="scriptJS/AcoesWebcrawler.js"></script>
-  <script src="../webcrawler/spider.js"></script>
-
+  <script src="API/receiver.js"></script>
 
 </body>
 

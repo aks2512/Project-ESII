@@ -3,13 +3,16 @@ var cheerio = require("cheerio");
 const mysql = require("mysql2");
 const con_main = require("./con-factory");
 var carregar_pdf = require("./prepara_pdf");
-
+var segundos_exec = 0;
 var geral = require("./geral");
 var requisicoes = 0;
 var finalizacoes = 0;
 
 module.exports = {
-  async todos_os_funcionarios(acc_manual, geral) {
+  async todos_os_funcionarios(ac_automatico, geral) {
+    var segundos = setInterval(function() {
+      segundos_exec++;
+    }, 1000)
     var prepara_pdf = require("./prepara_pdf");
 
     if (geral) {
@@ -32,7 +35,7 @@ module.exports = {
     var seg = 59;
     var min = 59;
     var hora = 23;
-    var dia = 29;
+    var dia = 1;
 
     con_main.on("acquire", function() {
       requisicoes++;
@@ -40,45 +43,50 @@ module.exports = {
     con_main.on("release", function() {
       setTimeout(function() {
         finalizacoes++;
-        console.log(finalizacoes + ":" + requisicoes);
-        if (finalizacoes == requisicoes && acc_manual == false) {
+        //console.log(finalizacoes + ":" + requisicoes);
+        if (finalizacoes == requisicoes) {
           //quando todas as requisições estiverem acabadas
 
 
+          if (ac_automatico == true) {
+            var int = setInterval(function() {
+              console.clear();
+              seg--;
 
-          var int = setInterval(function() {
-            console.clear();
-            seg--;
-
-            if (seg == -1) {
-              seg = 59;
-              min--;
-            }
-            if (min == -1) {
-              min = 59;
-              hora--;
-            }
-            if (hora == -1) {
-              hora = 23;
-              dia--;
-            }
-            if (dia <= -1) {
-              dia = 29;
-              todos_os_funcionarios();
-              clearInterval(int);
-            }
-            console.log(
-              "Próxima execução em: " +
-              dia +
-              " dia(s) " +
-              hora +
-              "h " +
-              min +
-              " min " +
-              seg +
-              " s"
-            );
-          }, 1);
+              if (seg == -1) {
+                seg = 59;
+                min--;
+              }
+              if (min == -1) {
+                min = 59;
+                hora--;
+              }
+              if (hora == -1) {
+                hora = 23;
+                dia--;
+              }
+              if (dia <= -1) {
+                dia = 29;
+                todos_os_funcionarios();
+                clearInterval(int);
+              }
+              console.log(
+                "Próxima execução em: " +
+                dia +
+                " dia(s) " +
+                hora +
+                "h " +
+                min +
+                " min " +
+                seg +
+                " s"
+              );
+            }, 1000);
+          } else {
+            console.log("Programa finalizado, tempo de execução:" + segundos + "s");
+            clearInterval(int);
+            clearInterval(segundos);
+          }
         }
       }, 10000); //atraso para que o programa conssiga gerar todas as requisicoes
     });
@@ -129,11 +137,11 @@ async function requisitar_valores(rgf, k) {
         var contre = detalhes.rendimentos.length || 0;
 
         if (contre === undefined) {
-          console.log(detalhes.rendimentos.length);
+          //console.log(detalhes.rendimentos.length);
           process.exit(0);
         }
 
-        console.log(id);
+        //console.log(id);
 
         //console.log("\nRemuneracoes");
         for (j = 0; j < contre; j++) {
@@ -198,14 +206,13 @@ async function requisitar_valores(rgf, k) {
 
               geral.insere_basico(dados, "funcionarios_prefeitura");
             } else {
-              //console.log("Atualizacao de registro");
               console.log(rows);
               con_main.query(
                 "UPDATE funcionarios_prefeitura SET nome = '" +
                 funcionario +
                 "', cargo = '" +
                 cargo +
-                "',modificado = NULL, regime = '" +
+                "', modificado = NULL, regime = '" +
                 regime +
                 "', outros_descontos = '" +
                 outros +
@@ -240,11 +247,11 @@ async function requisitar_valores(rgf, k) {
 
           carrega_detalhes("descontos", rgf, nomes2, valores2);
         }
-        console.log("Sucesso!");
       });
   } catch (err) {
     console.log(err);
   }
+  return;
 }
 
 function converter_float(numero) {
@@ -276,7 +283,6 @@ async function carrega_detalhes(alvo, rgf, nomes, valores) {
 
         geral.insere_basico(dados, alvo);
       } else {
-        console.log("Att registro 1");
         con_main.query(
           "UPDATE " +
           alvo +

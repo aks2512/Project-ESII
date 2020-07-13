@@ -13,58 +13,65 @@ var requisicoes = 0;
 var finalizacoes = 0;
 
 module.exports = {
-  async principal(acc_manual) {
+  async principal(ac_automatico) {
 
     var seg = 59;
     var min = 59;
     var hora = 23;
     var dia = 6;
 
-    con_main.on("acquire", function() {
+
+    con.on("acquire", function() {
       requisicoes++;
     });
-    con_main.on("release", function() {
+    con.on("release", function() {
       setTimeout(function() {
         finalizacoes++;
         console.log(finalizacoes + ":" + requisicoes);
-        if (finalizacoes == requisicoes && acc_manual == true) {
+        if (finalizacoes == requisicoes) {
           //quando todas as requisições estiverem acabadas
 
 
 
-          var int = setInterval(function() {
-            console.clear();
-            seg--;
+          if (ac_automatico == true) {
+            var int = setInterval(function() {
+              console.clear();
+              seg--;
 
-            if (seg == -1) {
-              seg = 59;
-              min--;
-            }
-            if (min == -1) {
-              min = 59;
-              hora--;
-            }
-            if (hora == -1) {
-              hora = 23;
-              dia--;
-            }
-            if (dia <= -1) {
-              dia = 29;
-              principal(true);
-              clearInterval(int);
-            }
-            console.log(
-              "Próxima execução em: " +
-              dia +
-              " dia(s) " +
-              hora +
-              "h " +
-              min +
-              " min " +
-              seg +
-              " s"
-            );
-          }, 1);
+              if (seg == -1) {
+                seg = 59;
+                min--;
+              }
+              if (min == -1) {
+                min = 59;
+                hora--;
+              }
+              if (hora == -1) {
+                hora = 23;
+                dia--;
+              }
+              if (dia <= -1) {
+                dia = 6;
+                principal(true);
+                clearInterval(int);
+              }
+              console.log(
+                "Próxima execução em: " +
+                dia +
+                " dia(s) " +
+                hora +
+                "h " +
+                min +
+                " min " +
+                seg +
+                " s"
+              );
+            }, 1);
+          } else {
+            console.log("Programa finalizado...");
+            clearInterval(int);
+          }
+
         }
       }, 10000); //atraso para que o programa conssiga gerar todas as requisicoes
     });
@@ -200,11 +207,10 @@ function insere(insert) {
     function(err, rows, result) {
       if (err) throw err;
       var resposta = rows || undefined;
-      if (resposta === undefined || resposta[0] == "") {
-        geral.insere_basico(insert, "funcionarios_camara");
+      if (resposta === undefined || resposta[0] == "" || resposta[0] == undefined) {
+        geral.insere_basico(insert, "projetos");
       } else {
-        console.log("Att registro");
-        console.log(resposta[0]);
+        console.log("Atualizado:" + resposta[0]);
         con.query(
           "UPDATE projetos SET autor = '" +
           insert[2] +

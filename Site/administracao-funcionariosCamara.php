@@ -9,8 +9,7 @@
     <div class="col-md-4">
       <div class="row justify-content-center align-items-center">
         <p class="p-form col-md-4 m-0">Mostrar</p>
-        <select class="col-md-4" id="controlalinhas" name="qtdeLinhas" type="number"
-          title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
+        <select class="col-md-4" id="controlalinhas" name="qtdeLinhas" type="number" title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)">
           <option value=10>10</option>
           <option value=25>25</option>
           <option value=50>50</option>
@@ -36,6 +35,7 @@
     <button id="btn-excluir" class="btn btn-danger" onclick="excluir()" href="">Excluir</button>
     <button id="btn-grafico" class="btn btn-success" onclick="" href="">Gráfico</button>
     <button id="btn-historico" class="btn btn-secondary" href="">Histórico</button>
+    <a href="http://localhost:3000/API/selecionar_funcionarios_camara"><strong class="btn btn-info">JSON</strong></a>
   </div>
 </div>
 
@@ -59,22 +59,20 @@
     </table>
   </div>
 </div>
- 
+
 <hr>
 
 <div id="paginacao">
 
 </div>
 
-<div class="modal fade" id="OptIncluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal fade" id="OptIncluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content" id="Incluir"> </div>
   </div>
 </div>
 
-<div class="modal fade" id="OptAtualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal fade" id="OptAtualizar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content" id="Atualizar"></div>
   </div>

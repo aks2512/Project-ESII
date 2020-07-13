@@ -9,7 +9,7 @@ module.exports = {
       throw "Erro: Vetor está vazio";
     }
 
-    con.query("INSERT INTO " + alvo + " VALUES (?)", [dados], function(err) {
+    con.query("INSERT INTO " + alvo + " VALUES (?)", [dados], function(err, results, fields) {
       if (err) {
         console.log(err)
         //rej(err);
@@ -18,7 +18,7 @@ module.exports = {
         //duplicação de chave primária é automaticamente resolvida pelo phpmyadmin, então pode ser ignorada nessa função no estado de produção
 
       }
-      console.log("Insert Concluido");
+      console.log("Insert Concluido!, dados:" + fields);
 
     })
   }
