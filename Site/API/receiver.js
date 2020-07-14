@@ -1,15 +1,15 @@
 function manual_func_att() {
     console.log("ok");
-    axios.get("http://localhost:3000/API/carregar_funcionarios_geral").then(response => alert(response.data)).catch(response => alert(erro))
+    axios.get("http://localhost:3000/API/carregar_funcionarios_geral").then(response => alert(response.data)).catch(erro => alert(erro))
 } //atualização manual dos funcionários
 
 function acionar_webcrawler() {
     console.log("ok");
-    axios.get("http://localhost:9000/API/ligar_webcrawler").then(response => alert(response.data)).catch(response => alert(erro))
+    axios.get("http://localhost:9000/API/ligar_webcrawler").then(response => alert(response.data)).catch(erro => alert(erro))
 } //atualização manual dos funcionários
 
 function manual_projeto_att() {
-    axios.get("http://localhost:3000/API/carregar_projetos").then(response => alert(response.data)).catch(response => alert(erro))
+    axios.get("http://localhost:3000/API/carregar_projetos").then(response => alert(response.data)).catch(erro => alert(erro))
 } //atualização manual dos funcionários
 
 function json_prefeitura() {

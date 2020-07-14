@@ -92,7 +92,7 @@ async function main(ac_automatico, geral, callback) {
           console.log("Script finalizado, tempo de execução:" + segundos_exec + "s");
           clearInterval(int);
           clearInterval(segundos);
-          callback(1);
+          callback("Funcionarios -> Finalizado com Sucesso!");
         }
       }
     }, 10000); //atraso para que o programa conssiga gerar todas as requisicoes

@@ -58,7 +58,7 @@ async function main(ac_automatico, callback) {
             }
             if (dia <= -1) {
               dia = 6;
-              self.principal(true);
+              main(true);
               clearInterval(int);
               console.clear();
             }
@@ -78,7 +78,7 @@ async function main(ac_automatico, callback) {
           console.log("Script finalizado, tempo de execução:" + segundos_exec + "s");
           clearInterval(int);
           clearInterval(segundos);
-          callback(1);
+          callback("Projetos -> Finalizado com sucesso");
         }
 
       }
