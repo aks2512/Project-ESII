@@ -149,6 +149,20 @@
 
         }
 
+        public function readFiltro($busca, $filtro,$inicio,$quantidade_pg){
+
+            $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE $filtro LIKE '%$busca%' LIMIT $quantidade_pg OFFSET $inicio";
+
+            $stmt = DB::getCon()->prepare($sql);
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0):
+                $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                return $resultado;
+            endif;
+
+        }
+
         public function update(FuncionarioPrefeitura $f){
 
             $sql = 'UPDATE funcionarios_prefeitura SET cargo = ?, regime = ?, outros_descontos = ?, tbruto = ?, tdesconto = ?, tliquido = ? WHERE rgf = ?';

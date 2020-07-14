@@ -2,8 +2,11 @@
 
     require_once 'vendor/autoload.php';
 
-    //filtro de pesquisa
+    //filtro de busca
     $busca = $_POST['busca'];
+
+    //filtro de pesquisa
+    $filtro = $_POST['filtro'];
 
     //verifica se está sendo passado na url a pagina atual, senão é atribuido a pagina
     $pagina = isset($_POST['pagina']) ? $_POST['pagina'] : 1;
@@ -18,8 +21,8 @@
     $pagina = isset($_POST['pagina']);
 
     $funcionarioDao = new \App\Model\FuncionarioPrefeituraDao();
-    if($funcionarioDao->read($busca,$inicio,$quantidade_pg) != NULL){
-        foreach($funcionarioDao->read($busca,$inicio,$quantidade_pg) as $funcionario):
+    if($funcionarioDao->readFiltro($busca,$filtro,$inicio,$quantidade_pg) != NULL){
+        foreach($funcionarioDao->readFiltro($busca,$filtro,$inicio,$quantidade_pg) as $funcionario):
             echo' <tr>
                   <td><input type="checkbox" value="'.$funcionario['rgf'].'" id="'.$funcionario['rgf'].'" name="funcionario_prefeitura"></td>
                   <td>'.$funcionario['id'].'</td>

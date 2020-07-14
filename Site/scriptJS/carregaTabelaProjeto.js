@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     //todos os "listeners" relacionados a atualização de tabela do menu-principal
     $(document).ready(function (){
-      escrevertabela();
+      registrarPesquisa();
     });
 
     $(document).on("click", ".page-link", function (event) {
@@ -67,3 +67,16 @@ function escrevertabela(pagina) {
   });
 }
   
+function registrarPesquisa(){
+  var projeto = document.getElementById("projeto").value;
+  var tabela = "Projetos";
+  escrevertabela();
+  $.ajax({
+    type: "POST",
+    url: "./projetoInteresse.php",
+    data: {
+      projeto: projeto,
+      tabela: tabela,
+    },
+  });
+}

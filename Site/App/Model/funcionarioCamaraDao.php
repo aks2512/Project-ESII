@@ -44,6 +44,20 @@
 
         }
 
+        public function readFiltro($busca, $filtro,$inicio,$quantidade_pg){
+
+            $sql = "SELECT * FROM funcionarios_camara WHERE $filtro LIKE '%$busca%' LIMIT $quantidade_pg OFFSET $inicio";
+
+            $stmt = DB::getCon()->prepare($sql);
+            $stmt->execute();
+
+            if($stmt->rowCount() > 0):
+                $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+                return $resultado;
+            endif;
+
+        }
+
         public function readRgf($rgf){
 
             $sql = "SELECT * FROM funcionarios_camara WHERE rgf = '$rgf'";
@@ -89,3 +103,5 @@
         }
 
     }
+
+?>
