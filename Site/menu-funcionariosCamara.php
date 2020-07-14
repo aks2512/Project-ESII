@@ -39,7 +39,7 @@
     <div class="row justify-content-center mt-5">
       <div class="col-md-10 text-left">
         <!-- Mostrar Gráfico -->
-        <a id="btn-grafico" class="btn btn-default" href="">Gráfico</a>
+        <button id="btn-grafico" class="btn btn-primary" onclick="pegarDados()">Gráfico</button>
       </div><!-- Navegação Páginas da Tabela -->
     </div>
 
@@ -67,8 +67,6 @@
 
     <div id="paginacao"></div>
 
-    <script src="scriptJS/carregaTabelaFuncionarioCamara.js"></script>
-
 <div class="modal fade" id="funcionarioModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -78,5 +76,18 @@
       </div>
     </div>
   </div>
+
+  <div class="modal" id="OptGrafico" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+  <div class="modal-content modal-xl container" role="document">
+    <div id="Grafico" style="width: 100%; height: 500px;"></div>
+  </div>
+</div>
+  
+<div id="scriptGrafico">
+  <?php require('./funcionarioCamaraGrafico.php');?>
+</div>
+<script src="scriptJS/carregaTabelaFuncionarioCamara.js"></script>
+<script src="scriptJS/funcionarioCamaraGrafico.js"></script>
 
   
