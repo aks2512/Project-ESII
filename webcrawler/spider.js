@@ -7,92 +7,97 @@ var segundos_exec = 0;
 var geral = require("./geral");
 var requisicoes = 0;
 var finalizacoes = 0;
+var self = require("./spider");
 
 module.exports = {
-  async todos_os_funcionarios(ac_automatico, geral) {
-    var segundos = setInterval(function() {
-      segundos_exec++;
-    }, 1000)
-    var prepara_pdf = require("./prepara_pdf");
-
-    if (geral) {
-      await prepara_pdf.pegar_cargos();
-    }
-
-    axios
-      .get("http://www.licitacao.pmmc.com.br/Transparencia/vencimentos2")
-      .then((res) => {
-        var estrutura = res.data;
-
-        var i = estrutura["servidores"].length - 1;
-        var j = 0;
-        iniciar_leitura(j, i, estrutura);
-      })
-      .catch((err) => {
-        throw new Error(err);
-      });
-
-    var seg = 59;
-    var min = 59;
-    var hora = 23;
-    var dia = 1;
-
-    con_main.on("acquire", function() {
-      requisicoes++;
-    });
-    con_main.on("release", function() {
-      setTimeout(function() {
-        finalizacoes++;
-        //console.log(finalizacoes + ":" + requisicoes);
-        if (finalizacoes == requisicoes) {
-          //quando todas as requisições estiverem acabadas
-
-
-          if (ac_automatico == true) {
-            var int = setInterval(function() {
-              console.clear();
-              seg--;
-
-              if (seg == -1) {
-                seg = 59;
-                min--;
-              }
-              if (min == -1) {
-                min = 59;
-                hora--;
-              }
-              if (hora == -1) {
-                hora = 23;
-                dia--;
-              }
-              if (dia <= -1) {
-                dia = 29;
-                todos_os_funcionarios();
-                clearInterval(int);
-              }
-              console.log(
-                "Próxima execução em: " +
-                dia +
-                " dia(s) " +
-                hora +
-                "h " +
-                min +
-                " min " +
-                seg +
-                " s"
-              );
-            }, 1000);
-          } else {
-            console.log("Programa finalizado, tempo de execução:" + segundos + "s");
-            clearInterval(int);
-            clearInterval(segundos);
-          }
-        }
-      }, 10000); //atraso para que o programa conssiga gerar todas as requisicoes
-    });
+  async todos_os_funcionarios(ac_automatico, geral, callback) {
+    return main(ac_automatico, geral, callback);
   }
 }
 
+async function main(ac_automatico, geral, callback) {
+  var segundos = setInterval(function() {
+    segundos_exec++;
+  }, 1000)
+  var prepara_pdf = require("./prepara_pdf");
+
+  if (geral) {
+    await prepara_pdf.pegar_cargos();
+  }
+
+  axios
+    .get("http://www.licitacao.pmmc.com.br/Transparencia/vencimentos2")
+    .then((res) => {
+      var estrutura = res.data;
+
+      var i = estrutura["servidores"].length - 1;
+      var j = 0;
+      iniciar_leitura(j, i, estrutura);
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
+
+  var seg = 59;
+  var min = 59;
+  var hora = 23;
+  var dia = 1;
+
+  con_main.on("acquire", function() {
+    requisicoes++;
+  });
+  con_main.on("release", function() {
+    setTimeout(function() {
+      finalizacoes++;
+      //console.log(finalizacoes + ":" + requisicoes);
+      if (finalizacoes == requisicoes) {
+        //quando todas as requisições estiverem acabadas
+
+
+        if (ac_automatico == true) {
+          var int = setInterval(function() {
+            seg--;
+
+            if (seg == -1) {
+              seg = 59;
+              min--;
+            }
+            if (min == -1) {
+              min = 59;
+              hora--;
+            }
+            if (hora == -1) {
+              hora = 23;
+              dia--;
+            }
+            if (dia <= -1) {
+              dia = 29;
+              self.todos_os_funcionarios(true, true);
+              clearInterval(int);
+            }
+            console.clear();
+            console.log(
+              "Funcionarios -> Próxima execução em: " +
+              dia +
+              " dia(s) " +
+              hora +
+              "h " +
+              min +
+              " min " +
+              seg +
+              " s"
+            );
+          }, 1);
+        } else {
+          console.log("Script finalizado, tempo de execução:" + segundos_exec + "s");
+          clearInterval(int);
+          clearInterval(segundos);
+          callback(1);
+        }
+      }
+    }, 10000); //atraso para que o programa conssiga gerar todas as requisicoes
+  });
+}
 
 async function iniciar_leitura(j, i, estrutura) {
   while (j <= i) {

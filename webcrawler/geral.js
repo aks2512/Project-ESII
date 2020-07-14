@@ -18,7 +18,7 @@ module.exports = {
         //duplicação de chave primária é automaticamente resolvida pelo phpmyadmin, então pode ser ignorada nessa função no estado de produção
 
       }
-      console.log("Insert Concluido!, dados:" + fields);
+      console.log("Insert Concluido!, tabela:" + alvo);
 
     })
   }

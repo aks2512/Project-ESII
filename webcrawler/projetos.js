@@ -8,180 +8,188 @@ const {
 } = require("./geral");
 var iconv = require("iconv-lite");
 const fs = require("fs");
-
 var requisicoes = 0;
 var finalizacoes = 0;
-
+var segundos_exec = 0;
 module.exports = {
-  async principal(ac_automatico) {
+  async principal(ac_automatico, callback) {
+    return main(ac_automatico, callback);
+  }
+}
 
-    var seg = 59;
-    var min = 59;
-    var hora = 23;
-    var dia = 6;
+async function main(ac_automatico, callback) {
+  var segundos = setInterval(function() {
+    segundos_exec++;
+  }, 1000)
 
-
-    con.on("acquire", function() {
-      requisicoes++;
-    });
-    con.on("release", function() {
-      setTimeout(function() {
-        finalizacoes++;
-        console.log(finalizacoes + ":" + requisicoes);
-        if (finalizacoes == requisicoes) {
-          //quando todas as requisições estiverem acabadas
+  var seg = 59;
+  var min = 59;
+  var hora = 23;
+  var dia = 1;
 
 
+  con.on("acquire", function() {
+    requisicoes++;
+  });
+  con.on("release", function() {
+    setTimeout(function() {
+      finalizacoes++;
+      //console.log(finalizacoes + ":" + requisicoes);
+      if (finalizacoes == requisicoes) {
+        //quando todas as requisições estiverem acabadas
 
-          if (ac_automatico == true) {
-            var int = setInterval(function() {
+
+
+        if (ac_automatico == true) {
+          var int = setInterval(function() {
+            seg--;
+
+            if (seg == -1) {
+              seg = 59;
+              min--;
+            }
+            if (min == -1) {
+              min = 59;
+              hora--;
+            }
+            if (hora == -1) {
+              hora = 23;
+              dia--;
+            }
+            if (dia <= -1) {
+              dia = 6;
+              self.principal(true);
+              clearInterval(int);
               console.clear();
-              seg--;
-
-              if (seg == -1) {
-                seg = 59;
-                min--;
-              }
-              if (min == -1) {
-                min = 59;
-                hora--;
-              }
-              if (hora == -1) {
-                hora = 23;
-                dia--;
-              }
-              if (dia <= -1) {
-                dia = 6;
-                principal(true);
-                clearInterval(int);
-              }
-              console.log(
-                "Próxima execução em: " +
-                dia +
-                " dia(s) " +
-                hora +
-                "h " +
-                min +
-                " min " +
-                seg +
-                " s"
-              );
-            }, 1);
-          } else {
-            console.log("Programa finalizado...");
-            clearInterval(int);
-          }
-
+            }
+            console.log(
+              "Projetos -> Próxima execução em: " +
+              dia +
+              " dia(s) " +
+              hora +
+              "h " +
+              min +
+              " min " +
+              seg +
+              " s"
+            );
+          }, 1);
+        } else {
+          console.log("Script finalizado, tempo de execução:" + segundos_exec + "s");
+          clearInterval(int);
+          clearInterval(segundos);
+          callback(1);
         }
-      }, 10000); //atraso para que o programa conssiga gerar todas as requisicoes
-    });
-    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    var data = new Date();
-    var AnoAtual = data.getFullYear(); //Coleta o ano atual
-    var items = 0;
 
-    var tipodelei = new Array(
-      "leiordinaria",
-      "leicomplementar",
-      "pelo",
-      "decreto legislativo",
-      "resolução"
-    ); //essa variavel serve para mostrar qual tipo de projeto está sendo gravado
-    var tipourl = new Array("plo", "plc", "pelo", "pdl", "pr"); //Esse vetor é responsavel por passar pelos links daonde existe cada ano e páginas dos respectivos projetos
-    var projetos = new Array();
+      }
+    }, 10000); //atraso para que o programa conssiga gerar todas as requisicoes
+  });
+  //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  var data = new Date();
+  var AnoAtual = data.getFullYear(); //Coleta o ano atual
+  var items = 0;
 
-    var insert = new Array(0, 0, 0, 0, 0, 0, 0);
-    var cont = 0;
-    var tipo = 0;
-    while (tipo < tipourl.length) {
-      var ano = 2005;
-      console.log(tipodelei[tipo]);
-      while (ano <= AnoAtual) {
-        var paginas = 0;
-        projetos[cont] = new Array();
-        var k = 0;
-        await request(
-          //Esse request mapeia a quantidade de paginas das tabelas de cada ano
-          "http://www.cmmc.com.br/projetos/" +
-          tipourl[tipo] +
-          ".php?pg=0&textfield_num=&textfield_assunto=&textfield_autor=&ano=" +
-          ano,
-          async function(err, response, html) {
-            var $ = await cheerio.load(html);
-            $(".pg").each(function() {
-              paginas++;
-            });
+  var tipodelei = new Array(
+    "leiordinaria",
+    "leicomplementar",
+    "pelo",
+    "decreto legislativo",
+    "resolução"
+  ); //essa variavel serve para mostrar qual tipo de projeto está sendo gravado
+  var tipourl = new Array("plo", "plc", "pelo", "pdl", "pr"); //Esse vetor é responsavel por passar pelos links daonde existe cada ano e páginas dos respectivos projetos
+  var projetos = new Array();
+
+  var insert = new Array(0, 0, 0, 0, 0, 0, 0);
+  var cont = 0;
+  var tipo = 0;
+  while (tipo < tipourl.length) {
+    var ano = 2005;
+    console.log(tipodelei[tipo]);
+    while (ano <= AnoAtual) {
+      var paginas = 0;
+      projetos[cont] = new Array();
+      var k = 0;
+      await request(
+        //Esse request mapeia a quantidade de paginas das tabelas de cada ano
+        "http://www.cmmc.com.br/projetos/" +
+        tipourl[tipo] +
+        ".php?pg=0&textfield_num=&textfield_assunto=&textfield_autor=&ano=" +
+        ano,
+        async function(err, response, html) {
+          var $ = await cheerio.load(html);
+          $(".pg").each(function() {
+            paginas++;
+          });
+        }
+      );
+      var linhas = 0;
+      while (k <= paginas) {
+        await request.get({
+            uri: "http://www.cmmc.com.br/projetos/" +
+              tipourl[tipo] +
+              ".php?pg=" +
+              k +
+              "&textfield_num=&textfield_assunto=&textfield_autor=&ano=" +
+              ano,
+            encoding: null,
+          },
+          function(err, response, html) {
+            if (err) console.log("Erro:" + err);
+            html = iconv.decode(html, "ISO-8859-1");
+            var $ = cheerio.load(html);
+            var link;
+
+            var colunas = 0;
+
+            $('tbody tr[title="Clique para abrir o anexo."] a').each(
+              function() {
+                insert[colunas] = $(this).text().trim().replace("'", "");
+                link = $(this).attr("href") || link;
+
+                colunas++;
+                if (colunas == 4) {
+                  colunas = 0;
+                  insert[4] = link;
+                  insert[5] = ano;
+                  insert[6] =
+                    parseInt(insert[0].replace("/", "") - (ano - 2001)) / 100;
+                  projetos[cont][linhas] = new Array(
+                    tipodelei[tipo],
+                    tipourl[tipo] + ":" + insert[0],
+                    insert[1],
+                    insert[2],
+                    insert[3],
+                    insert[4],
+                    insert[5],
+                    insert[6],
+                    null
+                  );
+                  console.log(insert);
+                  linhas++;
+                  items++;
+                }
+              }
+            );
           }
         );
-        var linhas = 0;
-        while (k <= paginas) {
-          await request.get({
-              uri: "http://www.cmmc.com.br/projetos/" +
-                tipourl[tipo] +
-                ".php?pg=" +
-                k +
-                "&textfield_num=&textfield_assunto=&textfield_autor=&ano=" +
-                ano,
-              encoding: null,
-            },
-            function(err, response, html) {
-              if (err) console.log("Erro:" + err);
-              html = iconv.decode(html, "ISO-8859-1");
-              var $ = cheerio.load(html);
-              var link;
-
-              var colunas = 0;
-
-              $('tbody tr[title="Clique para abrir o anexo."] a').each(
-                function() {
-                  insert[colunas] = $(this).text().trim().replace("'", "");
-                  link = $(this).attr("href") || link;
-
-                  colunas++;
-                  if (colunas == 4) {
-                    colunas = 0;
-                    insert[4] = link;
-                    insert[5] = ano;
-                    insert[6] =
-                      parseInt(insert[0].replace("/", "") - (ano - 2001)) / 100;
-                    projetos[cont][linhas] = new Array(
-                      tipodelei[tipo],
-                      tipourl[tipo] + ":" + insert[0],
-                      insert[1],
-                      insert[2],
-                      insert[3],
-                      insert[4],
-                      insert[5],
-                      insert[6],
-                      null
-                    );
-                    console.log(insert);
-                    linhas++;
-                    items++;
-                  }
-                }
-              );
-            }
-          );
-          k++;
-        }
-        console.log(ano);
-        cont++;
-        ano++;
+        k++;
       }
-      cont--; //correção do ultimo incremento de cont
-      var j = 0;
-      while (j <= cont) {
-        //quando todos os projetos forem gravados eles serão inseridos no BD
-        var linhas = 0;
-        while (linhas < projetos[j].length) {
-          insere(projetos[j][linhas]);
-          linhas++;
-        }
-        j++;
-      }
-      tipo++;
+      console.log(ano);
+      cont++;
+      ano++;
     }
+    cont--; //correção do ultimo incremento de cont
+    var j = 0;
+    while (j <= cont) {
+      //quando todos os projetos forem gravados eles serão inseridos no BD
+      var linhas = 0;
+      while (linhas < projetos[j].length) {
+        insere(projetos[j][linhas]);
+        linhas++;
+      }
+      j++;
+    }
+    tipo++;
   }
 }
 

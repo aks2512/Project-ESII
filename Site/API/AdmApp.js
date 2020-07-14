@@ -1,71 +1,78 @@
 const express = require("express");
 const app = express();
 var reqq = 0;
-var webcrawler = false;
-app.get("/API", function(req, res) {
-    res.send("MAIN")
-})
 
-app.get("/API/ligar_webcrawler", function(req, res) {
-    if (webcrawler == false) {
-        var funcionarios = require("../../webcrawler/spider");
-        webcrawler = true;
-        funcionarios.todos_os_funcionarios(true, true) //com contagem automatica + funcionarios camara +prefeitura
-        res.send("...Webcrawler Inicializado...")
-    } else {
-        console.log("Webcrawler já está ligado");
-    }
-    return;
-})
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+app.get("/API", function(req, res) {
+    res.send("MAIN");
+});
 
 app.get("/API/carregar_funcionarios_geral", function(req, res) {
     if (reqq == 0) {
-        reqq = 1
+        reqq = 1;
         var funcionarios = require("../../webcrawler/spider");
-        funcionarios.todos_os_funcionarios(false, true) //funcionarios camara + prefeitura
-        res.json({
-            aviso: "ok!"
-        });
+
+        funcionarios.todos_os_funcionarios(false, true, function(resultado) {
+            console.log("Finalizado com sucesso!");
+            res.send("Carregar Funcionarios -> Finalizado com sucesso!");
+            reqq = 0;
+        }); //funcionarios camara + prefeitura
+        res.send("Carregando...");
     } else {
-        console.log("Aguarde a operação anterior...")
+        res.send("Aguarde a operação anterior...");
     }
-    return;
-})
+    return "Resposta";
+});
 
 app.get("/API/carregar_funcionarios_prefeitura", async function(req, res) {
     if (reqq == 0) {
-        reqq = 1
-        var funcionarios = require("../../webcrawler/spider")
-        funcionarios.todos_os_funcionarios(false, false);
+        reqq = 1;
+        var funcionarios = require("../../webcrawler/spider");
+        funcionarios.todos_os_funcionarios(false, false, function(resultado) {
+            console.log("Finalizado com sucesso!");
+            res.send("Carregar Funcionarios -> Finalizado com sucesso!");
+            reqq = 0;
+        });
         res.send("Carregando...");
     } else {
-        console.log("Aguarde a operação anterior...")
+        console.log("Aguarde a operação anterior...");
     }
     return;
-
-})
+});
 
 app.get("/API/carregar_funcionarios_camara", async function(req, res) {
     if (reqq == 0) {
-        reqq = 1
+        reqq = 1;
         var funcionarios = require("../../webcrawler/prepara_pdf");
-        funcionarios.pegar_cargos();
+        funcionarios.pegar_cargos(function(resultado) {
+            console.log("Finalizado com sucesso!");
+            reqq = 0;
+        });
     } else {
-        console.log("Aguarde a operação anterior...")
+        console.log("Aguarde a operação anterior...");
     }
     return;
-})
+});
 
 app.get("/API/carregar_projetos", function(req, res) {
     if (reqq == 0) {
-        reqq = 1
-        var projetos = require("../../webcrawler/projetos")
-        projetos.principal(false);
+        reqq = 1;
+        var projetos = require("../../webcrawler/projetos");
+        var resposta = projetos.principal(false, function(resultado) {
+            console.log("Finalizado com sucesso!");
+            reqq = 0;
+            res.send("Finalizado com sucesso!");
+        });
     } else {
-        console.log("Aguarde a operação anterior...")
+        console.log("Aguarde a operação anterior...");
+        res.send("Aguarde a operação anterior...");
     }
-    return;
-})
+});
 
 app.get("/API/selecionar_funcionarios_prefeitura", function(req, res) {
     var select = require("../../webcrawler/retorna_json");
@@ -78,7 +85,7 @@ app.get("/API/selecionar_funcionarios_prefeitura", function(req, res) {
         return resultado;
     });
     return;
-})
+});
 
 app.get("/API/selecionar_funcionarios_camara", function(req, res) {
     var select = require("../../webcrawler/retorna_json");
@@ -88,7 +95,7 @@ app.get("/API/selecionar_funcionarios_camara", function(req, res) {
         return resultado;
     });
     return;
-})
+});
 
 app.get("/API/selecionar_projetos", function(req, res) {
     var select = require("../../webcrawler/retorna_json");
@@ -98,13 +105,13 @@ app.get("/API/selecionar_projetos", function(req, res) {
         return resultado;
     });
     return;
-})
+});
 
-app.get("/")
+app.get("/");
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
     console.log("Escutando porta " + port);
-})
+});
 
 module.exports = app;
