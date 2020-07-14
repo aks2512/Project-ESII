@@ -43,7 +43,6 @@ app.get("/API/carregar_funcionarios_geral", function(req, res) {
     if (reqq == 0) {
         reqq = 1;
         var funcionarios = require("../../webcrawler/spider");
-        res.send("Acionamento manual executado com sucesso!");
         contador();
         funcionarios.todos_os_funcionarios(false, true, function(resultado) {
             console.log("Finalizado com sucesso!");
@@ -62,7 +61,6 @@ app.get("/API/carregar_funcionarios_prefeitura", async function(req, res) {
     if (reqq == 0) {
         reqq = 1;
         var funcionarios = require("../../webcrawler/spider");
-        res.send("Acionamento manual executado com sucesso!");
         contador();
         funcionarios.todos_os_funcionarios(false, false, function(resultado) {
             console.log("Funcionarios Prefeitura -> Finalizado com sucesso!");
@@ -80,7 +78,6 @@ app.get("/API/carregar_funcionarios_camara", async function(req, res) {
     if (reqq == 0) {
         reqq = 1;
         var funcionarios = require("../../webcrawler/prepara_pdf");
-        res.send("Acionamento manual executado com sucesso!");
         contador();
         funcionarios.pegar_cargos(function(resultado) {
             console.log("Finalizado com sucesso!");
@@ -98,7 +95,6 @@ app.get("/API/carregar_projetos", function(req, res) {
     if (reqq == 0) {
         reqq = 1;
         var projetos = require("../../webcrawler/projetos");
-        res.send("Acionamento manual executado com sucesso!");
         contador();
         var resposta = projetos.principal(false, function(resultado) {
             console.log("Finalizado com sucesso!");
@@ -135,6 +131,36 @@ app.get("/API/selecionar_funcionarios_camara", function(req, res) {
 app.get("/API/selecionar_projetos", function(req, res) {
     var select = require("../../webcrawler/retorna_json");
     var resultado = select.projetos(function(resultado) {
+        res.json(resultado);
+        console.log("retornado com sucesso!");
+        return resultado;
+    });
+    return;
+});
+
+app.get("/API/selecionar_historico_prefeitura", function(req, res) {
+    var select = require("../../webcrawler/retorna_json");
+    var resultado = select.historico_prefeitura(function(resultado) {
+        res.json(resultado);
+        console.log("retornado com sucesso!");
+        return resultado;
+    });
+    return;
+});
+
+app.get("/API/selecionar_historico_camara", function(req, res) {
+    var select = require("../../webcrawler/retorna_json");
+    var resultado = select.historico_camara(function(resultado) {
+        res.json(resultado);
+        console.log("retornado com sucesso!");
+        return resultado;
+    });
+    return;
+});
+
+app.get("/API/selecionar_historico_prefeitura", function(req, res) {
+    var select = require("../../webcrawler/retorna_json");
+    var resultado = select.historico_projetos(function(resultado) {
         res.json(resultado);
         console.log("retornado com sucesso!");
         return resultado;

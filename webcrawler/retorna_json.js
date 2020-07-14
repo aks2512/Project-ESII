@@ -19,5 +19,15 @@ module.exports = {
             callback(results);
         })
 
+    },
+    historico_prefeitura(callback) {
+        var resultado = con.query("SELECT * FROM historico_prefeitura", function(err, results) {
+            callback(results);
+        })
+    },
+    historico_camara(callback) {
+        var resultado = con.query("SELECT * FROM historico_camara", function(err, results) {
+            callback(results);
+        })
     }
 }

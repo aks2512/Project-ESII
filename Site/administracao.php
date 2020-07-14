@@ -40,9 +40,9 @@ if ($_SESSION['usuario'] == NULL) {
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right ">
-          <li class="nav-item"><button id="btn-carregar_funcionarios" onclick="manual_func_att()" class="btn btn-info">| Carregar Funcionarios|</button></li>
-          <li class="nav-item"><button id="btn-carregar_projetos" onclick="manual_projeto_att()" class="btn btn-info">| Carregar Projetos |</button></li>
-          <li class="nav-item"><button id="btn-acionar-wc" onclick="acionar_webcrawler()" class="btn btn-info">| Ligar Webcrawler |</button></li>
+          <li class="nav-item"><button id="btn-API" onclick="manual_func_att()" class="btn btn-info">| Carregar Funcionarios|</button></li>
+          <li class="nav-item"><button id="btn-API" onclick="manual_projeto_att()" class="btn btn-info">| Carregar Projetos |</button></li>
+          <li class="nav-item"><button id="btn-API" onclick="acionar_webcrawler()" class="btn btn-info">| Ligar Webcrawler |</button></li>
           <li class="nav-item"><a class=" nav-link" href="Login.php?signout=1"><strong class="btn btn-danger">Sair</strong></a></li>
 
 

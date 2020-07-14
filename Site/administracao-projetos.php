@@ -73,7 +73,7 @@
       <!-- Botões -->
       <button id="btn-inserir" class="btn btn-primary" data-toggle="modal" data-target="#OptIncluir" href="" onclick="inserir()">Inserir</button>
       <button id="btn-excluir" class="btn btn-danger" onclick="excluir()" href="">Excluir</button>
-      <button id="btn-historico" class="btn btn-secondary" href="">Histórico</button>
+      <a href="http://localhost:3000//API/selecionar_historico_projetos"><strong class="btn btn-secondary">HISTÓRICO</strong></a>
       <a href="http://localhost:3000/API/selecionar_projetos"><strong class="btn btn-info">JSON</strong></a>
     </div>
   </div>

@@ -72,7 +72,7 @@ async function main(ac_automatico, geral, callback) {
             }
             if (dia <= -1) {
               dia = 29;
-              self.todos_os_funcionarios(true, true);
+              main(true, true);
               clearInterval(int);
             }
             console.clear();
