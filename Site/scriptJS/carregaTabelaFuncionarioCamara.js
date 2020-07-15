@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     //todos os "listeners" relacionados a atualização de tabela do menu-principal
     $(document).ready(function (){
-      registrarPesquisa();
+      escrevertabela();
     });
 
     //Carrega informação adicional do funcionário
@@ -30,7 +30,9 @@ $(document).ready(function () {
 function pesquisaAutomatica() {
   $(document).on("click", ".fc_pesquisa_automatica", function () {
     var valor_pesquisa = $(this).attr("value");
+    var filtro_pesquisa = $(this).attr("name");
     document.getElementById("busca").value = valor_pesquisa;
+    document.getElementById("filtro").value = filtro_pesquisa;
     escrevertabela();
   });
 }
@@ -62,8 +64,8 @@ function escrevertabela(pagina) {
     url: "./paginacao_funcionarioCamaraMenu.php",
     data: {
       busca: busca,
-      mostrar: mostrar,
       filtro: filtro,
+      mostrar: mostrar,
       pagina: pagina,
     },
     success: function (dados) {

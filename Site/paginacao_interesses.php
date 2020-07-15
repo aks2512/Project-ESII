@@ -2,37 +2,31 @@
 
     require_once 'vendor/autoload.php';
 
-    //filtro buscar
-    $busca = isset($_POST['busca']) ? $_POST['busca'] : '';
-    
-    //filtro de pesquisa
-    $filtro = isset($_POST['filtro']) ? $_POST['filtro'] : '';
-
     //verifica se está sendo passado na url a pagina atual, senão é atribuido a pagina
     $paginaAtual = isset($_POST['pagina']) ? $_POST['pagina'] : 1;
 
     //seleciona todos os funcionarios
-    $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE $filtro LIKE '%$busca%'";
+    $sql = "SELECT * ";
+    $sql.= "FROM pesquisa_interesses "; 
 
     $stmt = \App\Model\DB::getCon()->prepare($sql);
     $stmt->execute();
 
     //conta o total de funcionarios
-    $total_funcionarios = $stmt->rowCount();
+    $total_projetos = $stmt->rowCount();
 
     //seta a quantidade de funcionarios por pagina
-    $quantidade_pg = isset($_POST['mostrar']) ? $_POST['mostrar'] : 10;
+    $quantidade_pg = 10;
 
     //calcula a quantidade de paginas necessarias para apresentar os funcionarios
-    $num_pagina = ceil($total_funcionarios / $quantidade_pg);
+    $num_pagina = ceil($total_projetos / $quantidade_pg);
 
     //calcula o inicio da vizualização
     $inicio = ($quantidade_pg*$paginaAtual)-$quantidade_pg;
-
     echo'<!-- nº Registros e Paginação -->
     <div class="row justify-align-center align-items-center">
     <div class="col-md-6 text-center">
-        <p><strong>Numero de Registros:</strong> '.$total_funcionarios.'</p>
+        <p><strong>Numero de Registros:</strong> '.$total_projetos.'</p>
     </div>
     <div class="col-md-6">
         <nav aria-label="Page navigation example">

@@ -14,11 +14,10 @@
             $stmt->execute();
         }
 
-        public function read($id){
-            $sql = "SELECT * FROM pesquisa_interesses WHERE id = ? ";
+        public function read($inicio,$quantidade_pg){
+            $sql = "SELECT * FROM pesquisa_interesses LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
-            $stmt->bindValue(1, $id);
             $stmt->execute();
 
             if($stmt->rowCount() > 0):

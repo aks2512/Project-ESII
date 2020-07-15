@@ -4,9 +4,9 @@
     </div>
     <div class="my-5">
       <div class="row align-items-center justify-content-center">
-        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-primary" value="AGENTE ESCOLAR" onclick="pesquisaAutomatica();">Pesquisar Agente Escolar</button>
-        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-success" value="ENFERMEIRO" onclick="pesquisaAutomatica();">Pesquisar Enfermeiro</button>
-        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-danger" value="5000" onclick="pesquisaAutomatica();">Pesquisa Salário de até 5000</button>
+        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-primary" name="cargo" value="AGENTE ESCOLAR" onclick="pesquisaAutomatica();">Pesquisar Agente Escolar</button>
+        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-success" name="cargo" value="ENFERMEIRO" onclick="pesquisaAutomatica();">Pesquisar Enfermeiro</button>
+        <button class="col-md-3 fp_pesquisa_automatica btn btn-outline-danger" name="tbruto" value="5012.06" onclick="pesquisaAutomatica();">Pesquisa Salário de até 5012.06</button>
       </div>
     </div>
 
@@ -27,7 +27,7 @@
 
         <div class="col-md-4">
           <label>Filtro
-            <select id="filtro" name="filtro" type="number" onchange="registrarPesquisa();">
+            <select id="filtro" name="filtro" type="number" onchange="escrevertabela();">
               <option value=nome>Nome</option>
               <option value=cargo>Cargo</option>
               <option value=tbruto>Salário</option>
@@ -37,7 +37,7 @@
 
         <div class="col-md-4">
           <label>Buscar
-            <input class="col-md-9" id="busca" type="text" onkeyup="escrevertabela();">
+            <input class="col-md-9" id="busca" type="text" onclick="registrarPesquisa();" onkeyup="escrevertabela();">
           </label>
         </div>
       </div>

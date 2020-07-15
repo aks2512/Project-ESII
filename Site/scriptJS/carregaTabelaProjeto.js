@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     //todos os "listeners" relacionados a atualização de tabela do menu-principal
     $(document).ready(function (){
-      registrarPesquisa();
+      escrevertabela();
     });
 
     $(document).on("click", ".page-link", function (event) {

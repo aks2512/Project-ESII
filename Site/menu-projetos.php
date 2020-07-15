@@ -51,13 +51,13 @@
 
           <div class="col-md-3">
             <label>Buscar
-              <input id="busca" type="text" onclick="escrevertabela();">
+              <input id="busca" type="text" onclick="registrarPesquisa();" onkeyup="escrevertabela();">
             </label>
           </div>
 
           <div class="col-md-3">
             <label>Projeto
-              <select id="projeto" name="projeto" type="number" onchange="registrarPesquisa();">
+              <select id="projeto" name="projeto" type="number" onchange="escrevertabela();">
                 <option value="leiordinaria">Lei Ordinaria</option>
                 <option value="leicomplementar">Lei Complementar</option>
                 <option value="pelo">Emenda a Lei Orgânica</option>
