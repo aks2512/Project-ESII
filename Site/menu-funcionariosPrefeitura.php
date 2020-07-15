@@ -12,26 +12,34 @@
 
     <!-- Barra Pesquisa -->
     <form id="formulario-pesquisa" method="post" class="col-md-10">
-      <div class="row">
+      <div class="row justify-content-center align-items-center">
+
         <div class="col-md-4">
-          <div class="row justify-content-center align-items-center">
-            <p class="p-form col-md-4 m-0">Mostrar</p>
-            <select class="col-md-4" id="controlalinhas" name="qtdeLinhas" type="number"
-              title="quantidade de items a aparecer (quanto mais itens, mais lenta a página...)" onchange="escrevertabela();">
+          <label>Mostrar
+            <select id="controlalinhas" name="qtdeLinhas" type="number" onchange="escrevertabela();">
               <option value=10>10</option>
               <option value=25>25</option>
               <option value=50>50</option>
               <option value=100>100</option>
             </select>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <div class="row justify-content-center align-items-center">
-            <p class="p-form m-0 col-md-2">Buscar</p>
-            <input class="col-md-9" id="busca" type="text" onkeyup="escrevertabela();">
-          </div>
+          </label>
         </div>
 
+        <div class="col-md-4">
+          <label>Filtro
+            <select id="filtro" name="filtro" type="number" onchange="registrarPesquisa();">
+              <option value=nome>Nome</option>
+              <option value=cargo>Cargo</option>
+              <option value=tbruto>Salário</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="col-md-4">
+          <label>Buscar
+            <input class="col-md-9" id="busca" type="text" onkeyup="escrevertabela();">
+          </label>
+        </div>
       </div>
     </form>
 

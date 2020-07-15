@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     //todos os "listeners" relacionados a atualização de tabela do menu-principal
     $(document).ready(function (){
-      escrevertabela();
+      registrarPesquisa();
     });
 
     //Carrega informação adicional do funcionário
@@ -37,6 +37,7 @@ function pesquisaAutomatica() {
 
 function escrevertabela(pagina) {
   var busca = document.getElementById("busca").value;
+  var filtro = document.getElementById("filtro").value;
   var mostrar = document.getElementById("controlalinhas").value;
   $.ajax({
     type: "POST",
@@ -44,6 +45,7 @@ function escrevertabela(pagina) {
     data: {
       busca: busca,
       mostrar: mostrar,
+      filtro: filtro,
       pagina: pagina,
     },
     success: function (dados) {
@@ -57,10 +59,11 @@ function escrevertabela(pagina) {
   });
   $.ajax({
     type: "POST",
-    url: "./paginacao_funcionarioCamara.php",
+    url: "./paginacao_funcionarioCamaraMenu.php",
     data: {
       busca: busca,
       mostrar: mostrar,
+      filtro: filtro,
       pagina: pagina,
     },
     success: function (dados) {
@@ -70,6 +73,20 @@ function escrevertabela(pagina) {
       alert("Problema ocorrido: " + status + "\nDescrição: " + erro);
 
       alert("Informações da requisição: \n" + request.getAllResponseHeaders());
+    },
+  });
+}
+
+function registrarPesquisa(){
+  var filtro = document.getElementById("filtro").value;
+  var tabela = "Funcionários Câmara";
+  escrevertabela();
+  $.ajax({
+    type: "POST",
+    url: "./funcionarioInteresse.php",
+    data: {
+      filtro: filtro,
+      tabela: tabela,
     },
   });
 }

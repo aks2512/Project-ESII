@@ -26,8 +26,8 @@
                     '.$funcionario['nome'].'</p>
                 </div>
                 <div class="col-md-12 text-left">
-                    <p><span class="bold">Cargo:</span></p>
-                    <input id="cargo" name="cargo" type="text" value="'.$funcionario['cargo'].'">
+                    <p><span class="bold">Cargo:</span><br>
+                    '.$funcionario['cargo'].'</p>
                 </div>
                 <div class="col-md-12 text-left">
                     <p><span class="bold">Referência:</span><br>
