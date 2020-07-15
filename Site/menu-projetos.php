@@ -51,7 +51,7 @@
 
           <div class="col-md-3">
             <label>Buscar
-              <input id="busca" type="text" onclick="escrevertabela();">
+              <input id="busca" type="text" onkeyup="escrevertabela();">
             </label>
           </div>
 

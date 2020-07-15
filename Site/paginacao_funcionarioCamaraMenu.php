@@ -6,13 +6,13 @@
     $busca = isset($_POST['busca']) ? $_POST['busca'] : '';
     
     //filtro de pesquisa
-    $filtro = isset($_POST['filtro']) ? $_POST['filtro'] : '';
+    $filtro = isset($_POST['filtro']) ? $_POST['filtro'] : 'nome';
 
     //verifica se está sendo passado na url a pagina atual, senão é atribuido a pagina
     $paginaAtual = isset($_POST['pagina']) ? $_POST['pagina'] : 1;
 
     //seleciona todos os funcionarios
-    $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_camara WHERE '$filtro' LIKE '%$busca%'";
+    $sql = "SELECT * FROM funcionarios_camara WHERE $filtro LIKE '%$busca%'";
 
     $stmt = \App\Model\DB::getCon()->prepare($sql);
     $stmt->execute();

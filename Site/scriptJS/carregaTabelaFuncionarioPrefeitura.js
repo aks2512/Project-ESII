@@ -30,7 +30,9 @@ $(document).ready(function () {
 function pesquisaAutomatica() {
   $(document).on("click", ".fp_pesquisa_automatica", function () {
     var valor_pesquisa = $(this).attr("value");
+    var filtro_pesquisa = $(this).attr("name");
     document.getElementById("busca").value = valor_pesquisa;
+    document.getElementById("filtro").value = filtro_pesquisa;
     escrevertabela();
   });
 }

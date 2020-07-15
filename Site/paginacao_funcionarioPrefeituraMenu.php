@@ -12,7 +12,7 @@
     $paginaAtual = isset($_POST['pagina']) ? $_POST['pagina'] : 1;
 
     //seleciona todos os funcionarios
-    $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE '$filtro' LIKE '%$busca%'";
+    $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE $filtro LIKE '%$busca%'";
 
     $stmt = \App\Model\DB::getCon()->prepare($sql);
     $stmt->execute();

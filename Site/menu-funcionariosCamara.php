@@ -4,9 +4,9 @@
     </div>
     <div class="my-5">
       <div class="row align-items-center justify-content-center">
-        <button class="col-md-3 fc_pesquisa_automatica btn btn-outline-primary" value="prefeito" onclick="pesquisaAutomatica();">Pesquisar Vereador</button>
-        <button class="col-md-3 fc_pesquisa_automatica btn btn-outline-success" value="30000" onclick="pesquisaAutomatica();">Pesquisar Salário de 30000</button>
-        <button class="col-md-3 fc_pesquisa_automatica btn btn-outline-danger" value="5000" onclick="pesquisaAutomatica();">Pesquisa Salário de 5000</button>
+        <button class="col-md-3 fc_pesquisa_automatica btn btn-outline-primary" name="cargo" value="vereador" onclick="pesquisaAutomatica();">Pesquisar Vereador</button>
+        <button class="col-md-3 fc_pesquisa_automatica btn btn-outline-success" name="tbruto" value="5020.23" onclick="pesquisaAutomatica();">Pesquisar Salário de 5020.23</button>
+        <button class="col-md-3 fc_pesquisa_automatica btn btn-outline-danger" name="tbruto" value="3741.5" onclick="pesquisaAutomatica();">Pesquisa Salário de 3741.5</button>
       </div>
     </div>
 
