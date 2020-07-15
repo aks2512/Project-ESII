@@ -31,8 +31,8 @@ if ($projetoDao->read($busca, $projeto, $ano, $inicio, $quantidade_pg) != NULL) 
                     <td><a href="' . $projeto['link'] . '">' . $projeto['autor'] . '</a></td>
                     <td><a href="' . $projeto['link'] . '">' . $projeto['assunto'] . '</a></td>
                     <td><a href="' . $projeto['link'] . '">' . $projeto['anotacao'] . '</a></td>  
-                    <td><form action="App/Model/avaliacao.php"><button type="submit" class="btn btn-primary"><i class="fas fa-thumbs-up"></i></button><input value="1" name="positivo" type="hidden"><input value="' . $projeto['codigo'] . '" name="codigo" type="hidden"></form></td>  
-                    <td><form action="App/Model/avaliacao.php"><button type="submit" class="btn btn-danger"><i class="fas fa-thumbs-down"></i></button><input value="1" name="negativo" type="hidden"><input value="' . $projeto['codigo'] . '" name="codigo" type="hidden"></form></td>  
+                    <td><form action="App/Model/avaliacao.php"><button type="submit" class="btn btn-primary"><i class="fas fa-thumbs-up"></i></button><input value="positivo" name="tipo" type="hidden"><input value="' . $projeto['codigo'] . '" name="codigo" type="hidden"></form></td>  
+                    <td><form action="App/Model/avaliacao.php"><button type="submit" class="btn btn-danger"><i class="fas fa-thumbs-down"></i></button><input value="negativo" name="tipo" type="hidden"><input value="' . $projeto['codigo'] . '" name="codigo" type="hidden"></form></td>  
 
                 </tr>';
     endforeach;

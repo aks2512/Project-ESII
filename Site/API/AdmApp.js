@@ -46,7 +46,7 @@ app.get("/API/carregar_funcionarios_geral", function(req, res) {
         contador();
         funcionarios.todos_os_funcionarios(false, true, function(resultado) {
             console.log("Finalizado com sucesso!");
-            res.send("Carregar Funcionarios -> Finalizado com sucesso!");
+            res.send(resultado);
             clearInterval(cont);
             reqq = 0;
         }); //funcionarios camara + prefeitura
@@ -82,7 +82,7 @@ app.get("/API/carregar_funcionarios_camara", async function(req, res) {
         funcionarios.pegar_cargos(function(resultado) {
             console.log("Finalizado com sucesso!");
             reqq = 0;
-            res.send("Finalizado com sucesso!");
+            res.send(resultado);
         });
     } else {
         console.log("Aguarde a operação anterior...,\ntempo de execução atual -> " + time.dias + " Dias/" + time.horas + "h " + time.minutos + "min " + time.segundos + "s ");
@@ -99,7 +99,7 @@ app.get("/API/carregar_projetos", function(req, res) {
         var resposta = projetos.principal(false, function(resultado) {
             console.log("Finalizado com sucesso!");
             reqq = 0;
-            res.send("Finalizado com sucesso!");
+            res.send(resultado);
         });
     } else {
         console.log("Aguarde a operação anterior...,\ntempo de execução atual -> " + time.dias + " Dias/" + time.horas + "h " + time.minutos + "min " + time.segundos + "s ");

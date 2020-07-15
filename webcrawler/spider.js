@@ -72,6 +72,7 @@ async function main(ac_automatico, geral, callback) {
             }
             if (dia <= -1) {
               dia = 29;
+              callback("Webcrawler Funcionarios -> Terminou de carregar dados da Prefeitura/Camara!");
               main(true, true);
               clearInterval(int);
             }

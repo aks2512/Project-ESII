@@ -8,7 +8,8 @@ time.segundos = 0;
 time.minutos = 0;
 time.horas = 0;
 time.dias = 0;
-
+var pro = 0;
+var func = 0;
 appwc.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -37,12 +38,18 @@ appwc.get("/API/ligar_webcrawler", function(req, res) {
         var projetos = require("../../webcrawler/projetos");
         webcrawler = true;
 
-        funcionarios.todos_os_funcionarios(true, true); //com contagem automatica + funcionarios camara +prefeitura
-        projetos.principal(true);
+        funcionarios.todos_os_funcionarios(true, true, function(resultado) {
+            func++;
+            console.log(resultado);
+        }); //com contagem automatica + funcionarios camara +prefeitura
+        projetos.principal(true, function(resultado) {
+            pro++;
+            console.log(resultado);
+        });
         res.send("...Webcrawler Inicializado...");
     } else {
         console.log("Webcrawler já está ligado -> Tempo de execução " + time.dias + " Dias / " + time.horas + "h " + time.minutos + "min " + time.segundos + "s");
-        res.send("Webcrawler já está ligado -> Tempo de execução " + time.dias + " Dias / " + time.horas + "h " + time.minutos + "min " + time.segundos + "s");
+        res.send("Webcrawler já está ligado -> Tempo de execução " + time.dias + " Dias / " + time.horas + "h " + time.minutos + "min " + time.segundos + "s\n" + "Executou com sucesso:\n" + "Projetos:" + pro + " vezes\nFuncionarios:" + func + " vezes");
     }
 });
 

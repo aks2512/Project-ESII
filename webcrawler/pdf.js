@@ -97,9 +97,10 @@ module.exports = {
                           funcionarios[i],
                           "funcionarios_camara"
                         );
-
+                        console.log(funcionarios[i]);
                         res(0);
                       } else {
+                        console.log(funcionarios[i]);
                         con.query(
                           "UPDATE funcionarios_camara SET nome = '" +
                           funcionarios[i][2] +
@@ -117,8 +118,10 @@ module.exports = {
                           funcionarios[i][8] +
                           "', tliquido = '" +
                           funcionarios[i][9] +
-                          "', irrf = '" +
+                          "', tdesconto = '" +
                           funcionarios[i][10] +
+                          "', irrf = '" +
+                          funcionarios[i][11] +
                           "',Modificado = NULL WHERE rgf = '" +
                           funcionarios[i][0] +
                           "'",
