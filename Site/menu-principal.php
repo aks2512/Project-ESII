@@ -5,6 +5,7 @@ session_start();
 $_SESSION['ip_user'] = $_SERVER['REMOTE_ADDR'];
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
