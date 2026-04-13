@@ -5,7 +5,7 @@
     require_once 'vendor/autoload.php';
 
     $usuario = $_POST['Usuario'];
-    $senha = MD5($_POST['Senha']);
+    $senha = $_POST['Senha'];
 
     $administradorDao = new \App\Model\AdministradorDao();
     $resultado = $administradorDao->verificaAdm($usuario,$senha);

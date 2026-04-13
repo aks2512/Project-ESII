@@ -23,12 +23,21 @@
 
         public function read($busca,$projeto,$ano,$inicio,$quantidade_pg){
 
-            $sql = "SELECT * ";
-            $sql.= "FROM projetos "; 
-            $sql.= "WHERE tipo_projeto = '$projeto' and ano = '$ano' and (codigo LIKE '%$busca%' OR autor LIKE '%$busca%' OR assunto LIKE '%$busca%' OR anotacao LIKE '%$busca%') ";
-            $sql.= "LIMIT $quantidade_pg OFFSET $inicio";
+            $inicio = (int)$inicio;
+            $quantidade_pg = (int)$quantidade_pg;
+            $like = '%' . $busca . '%';
+            $sql  = "SELECT * ";
+            $sql .= "FROM projetos "; 
+            $sql .= "WHERE tipo_projeto = ? and ano = ? and (codigo LIKE ? OR autor LIKE ? OR assunto LIKE ? OR anotacao LIKE ?) ";
+            $sql .= "LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
+            $stmt->bindValue(1, $projeto);
+            $stmt->bindValue(2, $ano);
+            $stmt->bindValue(3, $like);
+            $stmt->bindValue(4, $like);
+            $stmt->bindValue(5, $like);
+            $stmt->bindValue(6, $like);
             $stmt->execute();
 
             if($stmt->rowCount() > 0):

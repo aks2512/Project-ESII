@@ -5,7 +5,8 @@
     $signout = isset($_GET['signout']) ? $_GET['signout'] : 0;
 
     if($signout == 1){
-        $_SESSION['usuario'] = NULL;
+        session_unset();
+        session_destroy();
     }
 
 ?>

@@ -32,9 +32,15 @@
 
         public function read($busca,$inicio,$quantidade_pg){
 
-            $sql = "SELECT * FROM funcionarios_camara WHERE nome LIKE '%$busca%' OR cargo LIKE '%$busca%' OR tbruto <= '$busca' LIMIT $quantidade_pg OFFSET $inicio";
+            $inicio = (int)$inicio;
+            $quantidade_pg = (int)$quantidade_pg;
+            $like = '%' . $busca . '%';
+            $sql = "SELECT * FROM funcionarios_camara WHERE nome LIKE ? OR cargo LIKE ? OR tbruto <= ? LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
+            $stmt->bindValue(1, $like);
+            $stmt->bindValue(2, $like);
+            $stmt->bindValue(3, $busca);
             $stmt->execute();
 
             if($stmt->rowCount() > 0):
@@ -46,9 +52,16 @@
 
         public function readFiltro($busca, $filtro,$inicio,$quantidade_pg){
 
-            $sql = "SELECT * FROM funcionarios_camara WHERE $filtro LIKE '%$busca%' LIMIT $quantidade_pg OFFSET $inicio";
+            $allowed_columns = ['nome', 'cargo', 'tbruto'];
+            if (!in_array($filtro, $allowed_columns, true)) {
+                $filtro = 'nome';
+            }
+            $inicio = (int)$inicio;
+            $quantidade_pg = (int)$quantidade_pg;
+            $sql = "SELECT * FROM funcionarios_camara WHERE $filtro LIKE ? LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
+            $stmt->bindValue(1, '%' . $busca . '%');
             $stmt->execute();
 
             if($stmt->rowCount() > 0):
@@ -60,9 +73,10 @@
 
         public function readRgf($rgf){
 
-            $sql = "SELECT * FROM funcionarios_camara WHERE rgf = '$rgf'";
+            $sql = "SELECT * FROM funcionarios_camara WHERE rgf = ?";
 
             $stmt = DB::getCon()->prepare($sql);
+            $stmt->bindValue(1, $rgf);
             $stmt->execute();
 
             if($stmt->rowCount() > 0):

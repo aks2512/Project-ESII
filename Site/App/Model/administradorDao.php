@@ -9,22 +9,24 @@
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $a->getUsuario());
-            $stmt->bindValue(2, MD5($a->getSenha()));
+            $stmt->bindValue(2, password_hash($a->getSenha(), PASSWORD_BCRYPT));
             $stmt->execute();
         }
 
         public function verificaAdm($usuario,$senha){
-            $sql = "SELECT * FROM administradores WHERE usuario = ? and senha = ? ";
+            $sql = "SELECT * FROM administradores WHERE usuario = ?";
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $usuario);
-            $stmt->bindValue(2, $senha);
             $stmt->execute();
 
             if($stmt->rowCount() > 0):
                 $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-                return $resultado;
+                if (password_verify($senha, $resultado[0]['senha'])) {
+                    return $resultado;
+                }
             endif;
+            return null;
         }
 
         public function update(Administrador $a){
@@ -32,7 +34,7 @@
 
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $a->getUsuario());
-            $stmt->bindValue(2, MD5($a->getSenha()));
+            $stmt->bindValue(2, password_hash($a->getSenha(), PASSWORD_BCRYPT));
             $stmt->bindValue(3, $a->getId());
             $stmt->execute();
         }
