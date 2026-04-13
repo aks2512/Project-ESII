@@ -5,9 +5,14 @@
 
     class FuncionarioPrefeituraDao{
 
+        private static $allowed_categorias = ['remuneracoes', 'descontos'];
+
         //CRUD das remunerações e descontos
         static private function inserirValoresMonetarios($Rgf, $Categoria, $ArrayObject){
         
+            if (!in_array($Categoria, self::$allowed_categorias, true)) {
+                return;
+            }
             foreach ($ArrayObject as $key => $value) {
                 $sql = 'INSERT INTO '.$Categoria.' (rgf,nome,valor) VALUES (?,?,?)';
                 $stmt = DB::getCon()->prepare($sql);
@@ -22,6 +27,9 @@
 
         static private function inserirValorMonetario($Rgf, $Categoria, $Object){
         
+            if (!in_array($Categoria, self::$allowed_categorias, true)) {
+                return;
+            }
             $sql = 'INSERT INTO '.$Categoria.' (rgf,nome,valor) VALUES (?,?,?)';
             $stmt = DB::getCon()->prepare($sql);
             $stmt->bindValue(1, $Rgf);
@@ -34,6 +42,9 @@
 
         static private function atualizarValoresMonetarios($Rgf, $Categoria, $ArrayObject){
         
+            if (!in_array($Categoria, self::$allowed_categorias, true)) {
+                return;
+            }
             foreach ($ArrayObject as $key => $value) {
                 if($value->getId() != NULL && $value->getDelete() == "true"){                                 // deletar valor monetario
                     $Id_item = $value->getId();
@@ -59,9 +70,13 @@
         
         static public function readValoresMonetarios($rgf,$Categoria){
             
-            $sql = 'SELECT * FROM '.$Categoria.' WHERE rgf = '.$rgf;
+            if (!in_array($Categoria, self::$allowed_categorias, true)) {
+                return null;
+            }
+            $sql = 'SELECT * FROM '.$Categoria.' WHERE rgf = ?';
 
             $stmt = DB::getCon()->prepare($sql);
+            $stmt->bindValue(1, $rgf);
             $stmt->execute();
 
             if($stmt->rowCount() > 0):
@@ -73,6 +88,9 @@
 
         static public function deleteValoresMonetarios($Rgf,$Categoria){
             
+            if (!in_array($Categoria, self::$allowed_categorias, true)) {
+                return;
+            }
             $sql = 'DELETE FROM '.$Categoria.' WHERE rgf = ?';
             
             $stmt = DB::getCon()->prepare($sql);
@@ -84,6 +102,9 @@
 
         static public function deleteValorMonetario($Rgf,$Id_item,$Categoria){
             
+            if (!in_array($Categoria, self::$allowed_categorias, true)) {
+                return;
+            }
             $sql = 'DELETE FROM '.$Categoria.' WHERE rgf = ? and id_item = ?';
             
             $stmt = DB::getCon()->prepare($sql);
@@ -122,9 +143,15 @@
 
         public function read($busca,$inicio,$quantidade_pg){
 
-            $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE nome LIKE '%$busca%' OR cargo LIKE '%$busca%' OR tbruto <= '$busca' LIMIT $quantidade_pg OFFSET $inicio";
+            $inicio = (int)$inicio;
+            $quantidade_pg = (int)$quantidade_pg;
+            $like = '%' . $busca . '%';
+            $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE nome LIKE ? OR cargo LIKE ? OR tbruto <= ? LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
+            $stmt->bindValue(1, $like);
+            $stmt->bindValue(2, $like);
+            $stmt->bindValue(3, $busca);
             $stmt->execute();
 
             if($stmt->rowCount() > 0):
@@ -136,9 +163,10 @@
 
         public function readRgf($rgf){
 
-            $sql = "SELECT * FROM funcionarios_prefeitura WHERE rgf = '$rgf'";
+            $sql = "SELECT * FROM funcionarios_prefeitura WHERE rgf = ?";
 
             $stmt = DB::getCon()->prepare($sql);
+            $stmt->bindValue(1, $rgf);
             $stmt->execute();
 
             if($stmt->rowCount() > 0):
@@ -151,9 +179,16 @@
 
         public function readFiltro($busca, $filtro,$inicio,$quantidade_pg){
 
-            $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE $filtro LIKE '%$busca%' LIMIT $quantidade_pg OFFSET $inicio";
+            $allowed_columns = ['nome', 'cargo', 'tbruto'];
+            if (!in_array($filtro, $allowed_columns, true)) {
+                $filtro = 'nome';
+            }
+            $inicio = (int)$inicio;
+            $quantidade_pg = (int)$quantidade_pg;
+            $sql = "SELECT id,nome,cargo,tbruto,rgf FROM funcionarios_prefeitura WHERE $filtro LIKE ? LIMIT $quantidade_pg OFFSET $inicio";
 
             $stmt = DB::getCon()->prepare($sql);
+            $stmt->bindValue(1, '%' . $busca . '%');
             $stmt->execute();
 
             if($stmt->rowCount() > 0):
